@@ -1,0 +1,264 @@
+[
+ {
+  "id": "t-e9a9ccab",
+  "title": "이상금융거래 탐지시스템(FDS)",
+  "title_en": "Fraud Detection System",
+  "aliases": [],
+  "subs": [
+   "주요기능·판정방식"
+  ],
+  "questions": [
+   {
+    "id": "r116-s3-q01",
+    "round": 116,
+    "session": 3,
+    "text": "이상금융거래 탐지시스템(FDS, Fraud Detection System)의 정의 및 주요기능, 이상금융거래 판정방식에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-7fcf8210",
+  "title": "인젝션 공격(Injection)",
+  "title_en": "Injection Attack",
+  "aliases": [],
+  "subs": [
+   "OWASP, 개념·대응방안"
+  ],
+  "questions": [
+   {
+    "id": "r124-s2-q06",
+    "round": 124,
+    "session": 2,
+    "text": "OWASP에서 발표한 보안 위협 인젝션(Injection)의 개념과 대응 방안을 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-5ab4495e",
+  "title": "인증기관(CA)",
+  "title_en": "Certificate Authority",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r68-s1-q12",
+    "round": 68,
+    "session": 1,
+    "text": "CA(Certificate authority)에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-b3956229",
+  "title": "인터넷 대란(1.25 인터넷 침해사고)",
+  "title_en": "1.25 Internet Incident",
+  "aliases": [],
+  "subs": [
+   "원인·대책"
+  ],
+  "questions": [
+   {
+    "id": "r69-s3-q02",
+    "round": 69,
+    "session": 3,
+    "text": "인터넷대란(2003.1.25)의 원인과 대책에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-147dbc3f",
+  "title": "인터넷 보안(Internet Security)",
+  "title_en": "Internet Security",
+  "aliases": [],
+  "subs": [
+   "보안 방안"
+  ],
+  "questions": [
+   {
+    "id": "r66-s4-q04",
+    "round": 66,
+    "session": 4,
+    "text": "인터넷 보안 방안에 대해서 논하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-818e07ce",
+  "title": "인포스틸러(InfoStealer)",
+  "title_en": "InfoStealer",
+  "aliases": [],
+  "subs": [
+   "공격 절차·대응방안"
+  ],
+  "questions": [
+   {
+    "id": "r129-s4-q01",
+    "round": 129,
+    "session": 4,
+    "text": "인포스틸러(InfoStealer) 개념을 설명하고 공격 절차와 공격에 대한 대응방안을 조직의 정보보안 담당자 입장에서 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-483eca83",
+  "title": "전자ID지갑(Electronic ID Wallet)",
+  "title_en": "Electronic ID Wallet",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r89-s1-q04",
+    "round": 89,
+    "session": 1,
+    "text": "전자ID지갑 시스템에 대해 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-c567ca0e",
+  "title": "전자상거래 보안(E-Commerce Security)",
+  "title_en": "E-Commerce Security",
+  "aliases": [],
+  "subs": [
+   "4가지 원칙"
+  ],
+  "questions": [
+   {
+    "id": "r81-s1-q04",
+    "round": 81,
+    "session": 1,
+    "text": "전자상거래 보안의 4가지 원칙을 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-68d16f75",
+  "title": "전자여권 보안(e-Passport Security)",
+  "title_en": "e-Passport Security",
+  "aliases": [],
+  "subs": [
+   "PA·AA·BAC·EAC 비교"
+  ],
+  "questions": [
+   {
+    "id": "r89-s2-q06",
+    "round": 89,
+    "session": 2,
+    "text": "전자 여권의 보안 문제점과 적용되는 보안 기술인 PA(Passive Authentication), AA(Active Authentication), BAC(Basic Access Control), EAC(Extended Access Control)를 비교하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-12abe3cc",
+  "title": "정보보호 거버넌스(Information Security Governance)",
+  "title_en": "Information Security Governance",
+  "aliases": [],
+  "subs": [
+   "6대 원리·핵심 프로세스·구성요소"
+  ],
+  "questions": [
+   {
+    "id": "r114-s3-q05",
+    "round": 114,
+    "session": 3,
+    "text": "국제표준(ISO)에 준하여 정보보호 거버넌스의 6대 원리, 핵심 프로세스 및 주요 구성 요소에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-175fd923",
+  "title": "정보보호 정책(Information Security Policy)",
+  "title_en": "Information Security Policy",
+  "aliases": [],
+  "subs": [
+   "보안 활동 주기·전문가 역할"
+  ],
+  "questions": [
+   {
+    "id": "r132-s4-q06",
+    "round": 132,
+    "session": 4,
+    "text": "A 기업의 경영진은 임직원들의 증가로 인해 정보보안의 필요성을 인식하고 정보보안 부서의 신설과 정보보안 체계를 수립하고자 한다. 다음을 설명하시오. 가. 정보보호 정책의 개념 나. 정보보호 시점별 보안 활동(Security Action Cycle) 다. 정보보안 전문가의 역할과 역량"
+   }
+  ]
+ },
+ {
+  "id": "t-4af8722a",
+  "title": "정보보호 제품 신속 확인제도",
+  "title_en": "Rapid Security Product Verification Program",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r129-s1-q11",
+    "round": 129,
+    "session": 1,
+    "text": "정보보호 제품 신속 확인제도"
+   }
+  ]
+ },
+ {
+  "id": "t-43109e09",
+  "title": "좀비 쿠키(Zombie Cookie)",
+  "title_en": "Zombie Cookie",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r99-s1-q13",
+    "round": 99,
+    "session": 1,
+    "text": "좀비 쿠키(Zombie cookie)에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-4b8df3ed",
+  "title": "컴퓨터 바이러스(Computer Virus)",
+  "title_en": "Computer Virus",
+  "aliases": [],
+  "subs": [
+   "압축·암호화 은닉 기법"
+  ],
+  "questions": [
+   {
+    "id": "r107-s4-q05",
+    "round": 107,
+    "session": 4,
+    "text": "바이러스가 임의 숙주 프로그램에 감염되었다는 사실을 감추기 위한 압축(Compression) 기법과 암호화(Encrypted) 기법의 동작원리를 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-43da786e",
+  "title": "코드 난독화(Code Obfuscation)",
+  "title_en": "Code Obfuscation",
+  "aliases": [],
+  "subs": [
+   "역공학과의 관계"
+  ],
+  "questions": [
+   {
+    "id": "r95-s1-q13",
+    "round": 95,
+    "session": 1,
+    "text": "소프트웨어 역공학(Reverse Engineering)과 코드 난독화(Code Obfuscation)의 관계에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-f27077a4",
+  "title": "콘텐츠 무해화(CDR)",
+  "title_en": "Content Disarm and Reconstruction",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r121-s1-q10",
+    "round": 121,
+    "session": 1,
+    "text": "CDR(Content Disarm & Reconstruction)"
+   }
+  ]
+ }
+]

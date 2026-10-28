@@ -1,0 +1,30 @@
+{
+ "id": "t-0f5dbce6",
+ "answers": {
+  "short": "## 1. EAM의 개요\n- 정의: 기업 내·외부([[extranet|엑스트라넷]]) 사용자가 웹 기반 다수 응용에 접근할 때 [[single-sign-on|SSO]] 통합 [[authentication|인증]], 역할 기반 [[authorization|인가]], 통합 감사를 한 체계로 제공하는 접근관리 솔루션\n- 필요성: 응용별 개별 계정·권한 관리의 비효율과 보안 공백, 협력사·고객 등 외부 사용자 확대\n\n## 2. EAM의 개념도 및 구성요소\n```mermaid\nflowchart LR\n  U[내부·외부 사용자] --> AG[\"웹 에이전트(플러그인·리버스 프록시)\"]\n  AG --> AUTH[인증 서버 SSO] --> DIR[\"디렉터리(LDAP)\"]\n  AG --> PS[\"정책 서버(인가)\"]\n  AG --> APP[업무 응용]\n  AUTH --> AUD[감사 서버]\n```\n| 구성요소 | 역할 |\n|---|---|\n| 인증 서버 | 1회 인증 후 토큰·쿠키 발급(SSO) |\n| 정책 서버 | [[role-based-access-control|RBAC]]·[[access-control-list|ACL]] 기반 자원 접근 판정 |\n| 에이전트 | 웹 서버에서 요청 가로채어 인증·인가 강제 |\n| 디렉터리 | [[ldap|LDAP]] 기반 사용자·조직·역할 저장 |\n\n## 3. SSO·EAM·IAM 비교\n| 구분 | SSO | EAM | [[identity-and-access-management|IAM]] |\n|---|---|---|---|\n| 범위 | 통합 인증 | 인증 + 인가 + 감사 | EAM + 계정 생명주기·프로비저닝 |\n| 대상 | 내부 응용 | 엑스트라넷 포함 웹 응용 | 전사 자원·클라우드 |\n| 핵심 | 편의성 | 통합 접근제어 | ID 거버넌스 |\n\n## 4. 고려사항\n- [[pki|PKI]]·[[multi-factor-authentication|MFA]] 연계 인증 강화, 토큰 탈취 대비 세션 보호\n- [[security-assertion-markup-language|SAML]]·[[oauth|OAuth]] 표준 연계로 IAM·클라우드 ID 연합으로 발전",
+  "long": "## 1. EAM의 개요\n### 가. 정의\n- 기업 내부 사용자와 협력사·고객 등 외부 사용자가 [[extranet|엑스트라넷]] 환경의 다양한 웹 응용에 접근할 때, 통합 [[authentication|인증]]([[single-sign-on|SSO]])·통합 [[authorization|인가]](접근제어)·통합 감사를 단일 정책 체계로 제공하는 접근관리 솔루션(Extranet Access Management)\n### 나. 등장배경 / 필요성\n- 웹 응용 급증으로 응용별 ID·패스워드 중복, 권한 불일치, 퇴직자 계정 잔존 등 관리 공백\n- 협력사 포털·고객 서비스 등 외부 개방 확대로 외부 사용자에 대한 세분화된 접근제어 요구\n- SSO의 \"인증만\" 한계를 넘어 자원 단위 인가와 감사까지 통합 필요\n### 다. 핵심 개념\n| 개념 | 설명 |\n|---|---|\n| 통합 인증 | 1회 로그인으로 모든 연계 응용 접근, 토큰·쿠키로 인증 상태 전파 |\n| 통합 인가 | 사용자 역할·속성에 따라 URL·메뉴·기능 단위 접근 판정 |\n| 통합 감사 | 접근·권한 변경 이력 중앙 기록으로 [[accountability|책임추적성]] 확보 |\n\n## 2. EAM의 구성도 및 구성요소\n### 가. 구성도\n```mermaid\nflowchart TB\n  U1[내부 사용자] --> AG\n  U2[\"외부 사용자(협력사·고객)\"] --> RP[\"리버스 프록시 게이트웨이\"] --> AG[\"웹 에이전트\"]\n  AG -->|인증 요청| AS[\"인증 서버(SSO)\"]\n  AS --> DIR[\"디렉터리 서버(LDAP)\"]\n  AS --> CA[\"PKI·MFA 연계\"]\n  AG -->|인가 질의| PS[\"정책 서버\"]\n  PS --> PDB[\"정책 DB(역할·자원·규칙)\"]\n  AG -->|허용| APP1[포털] \n  AG -->|허용| APP2[ERP·그룹웨어]\n  AS --> AUD[\"감사·로그 서버\"]\n  PS --> AUD\n  ADM[관리 콘솔] --> PDB\n```\n### 나. 구성요소\n| 구성요소 | 역할 | 핵심기술 |\n|---|---|---|\n| 인증 서버 | 자격 검증 후 SSO 토큰 발급·갱신·폐기 | [[kerberos|Kerberos]], [[pki|PKI]] 인증서, [[multi-factor-authentication|MFA]], [[session-cookie|쿠키]]·토큰 |\n| 정책 서버 | 자원별 접근 규칙 평가, 허용·거부 응답 | [[role-based-access-control|RBAC]], [[access-control-list|ACL]], 속성 규칙 |\n| 웹 에이전트 | 웹·응용 서버에 설치되어 요청 가로채기, 미인증 시 로그인 리다이렉트 | 웹 서버 플러그인, 필터, [[reverse-proxy|리버스 프록시]] |\n| 디렉터리 | 사용자·조직·역할 정보 중앙 저장 | [[ldap|LDAP]], [[directory-service|디렉터리 서비스]], AD 연동 |\n| 관리 콘솔 | 정책·역할·자원 등록, 위임 관리 | 웹 UI, 역할 계층 |\n| 감사 서버 | 인증·인가 이벤트 기록·보고 | [[audit-log|감사 로그]], SIEM 연계 |\n### 다. 동작 절차\n1. 사용자가 응용 URL 요청, 에이전트가 세션 토큰 유무 확인\n2. 미인증 시 인증 서버로 리다이렉트, ID·패스워드·인증서·OTP 등으로 인증\n3. 인증 서버가 암호화된 토큰(쿠키) 발급, 디렉터리에서 역할 정보 조회\n4. 에이전트가 정책 서버에 \"사용자-자원-행위\" 인가 질의, 허용 시 응용으로 전달\n5. 이후 다른 응용 접근 시 토큰 검증만으로 SSO 처리, 모든 이벤트 감사 서버 기록\n\n## 3. EAM의 상세\n### 가. SSO·EAM·IAM 비교\n| 구분 | SSO | EAM | [[identity-and-access-management|IAM]] |\n|---|---|---|---|\n| 핵심 기능 | 통합 인증 | 통합 인증 + 권한 관리 + 감사 | EAM + 계정 생명주기·프로비저닝·워크플로 |\n| 대상 사용자 | 내부 임직원 | 내부 + 외부(협력사·고객) | 전사 + 클라우드·파트너 ID 연합 |\n| 통제 단위 | 응용 로그인 | URL·메뉴·기능 단위 | 자원·계정·권한 전체 |\n| 발전 단계 | 1세대 | 2세대 | 3세대, [[identity-governance-and-administration|IGA]]·[[privileged-access-management|PAM]]로 세분화 |\n### 나. SSO 구현 방식\n| 방식 | 설명 | 특징 |\n|---|---|---|\n| 인증 대행(Delegation) | 에이전트가 응용 대신 자격 전달 | 응용 수정 최소, 패스워드 저장 위험 |\n| 인증 정보 전달(Propagation) | 토큰·쿠키를 응용이 검증 | 표준적, 응용 연동 필요 |\n| 표준 연합 | [[security-assertion-markup-language|SAML]], [[oauth|OAuth]] 2.0·OIDC | 도메인 간·클라우드 SSO |\n### 다. 인가 모델 적용\n| 모델 | EAM 적용 |\n|---|---|\n| RBAC | 조직·직무 역할에 자원 묶음 부여, 외부 사용자는 협력사별 역할 |\n| ACL | 특정 URL·문서에 사용자 직접 지정 |\n| 속성·조건 | 시간·IP·단말 조건부 접근, 외부 사용자 접속 시간대 제한 |\n\n## 4. EAM 적용 시 고려사항 및 발전방향\n| 구분 | 고려사항 |\n|---|---|\n| 보안 | 토큰 암호화·만료·재발급, 세션 고정·탈취 대비, 단일 장애점(SPOF) 이중화 |\n| 연동 | 레거시 응용 에이전트 호환성, 디렉터리 스키마 표준화 |\n| 운영 | 역할 폭증 방지 위한 역할 정제, 외부 사용자 계정 만료 자동화, 정기 권한 검토 |\n| 발전방향 | 클라우드 IAM·IDaaS, [[zero-trust|제로 트러스트]] 정책 결정점으로 확장, 패스워드리스(FIDO) 인증 |\n\n## 5. 결론\n- EAM은 SSO의 편의성 위에 자원 단위 인가와 통합 감사를 더해 엑스트라넷 접근을 일원화하는 체계로, 표준 연합 인증과 IAM 거버넌스로 확장하여 전사 ID 통제 기반으로 발전시켜야 함"
+ },
+ "keywords": [
+  "extranet",
+  "single-sign-on",
+  "authentication",
+  "authorization",
+  "role-based-access-control",
+  "access-control-list",
+  "ldap",
+  "identity-and-access-management",
+  "pki",
+  "multi-factor-authentication",
+  "security-assertion-markup-language",
+  "oauth",
+  "accountability",
+  "kerberos",
+  "session-cookie",
+  "reverse-proxy",
+  "directory-service",
+  "audit-log",
+  "identity-governance-and-administration",
+  "privileged-access-management",
+  "zero-trust"
+ ]
+}

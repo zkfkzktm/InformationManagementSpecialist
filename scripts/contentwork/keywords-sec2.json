@@ -1,0 +1,4146 @@
+[
+ {
+  "id": "access-control",
+  "term": "접근통제",
+  "term_en": "Access Control",
+  "definition": "주체가 객체에 접근하는 권한을 식별·인증·인가에 따라 허용 또는 차단하는 보안 통제.",
+  "features": [
+   "식별·인증·인가 3단계",
+   "MAC·DAC·RBAC 모델",
+   "최소권한·직무분리 원칙"
+  ],
+  "related": [
+   "role-based-access-control",
+   "least-privilege",
+   "identity-and-access-management"
+  ]
+ },
+ {
+  "id": "adequacy-evaluation",
+  "term": "적정성 검토",
+  "term_en": "Adequacy Evaluation",
+  "definition": "가명처리 결과가 재식별 위험을 충분히 낮췄는지 평가·심의하는 절차.",
+  "features": [
+   "재식별 위험 정량 평가",
+   "처리수준 적정성 심의",
+   "가명정보 활용 전 필수"
+  ],
+  "related": [
+   "re-identification",
+   "pseudonymization",
+   "k-anonymity"
+  ]
+ },
+ {
+  "id": "ai-watermarking",
+  "term": "AI 워터마킹",
+  "term_en": "AI Watermarking",
+  "definition": "AI 생성 콘텐츠에 식별 정보를 삽입해 생성물 여부·출처를 표시하는 기술.",
+  "features": [
+   "생성형 AI 콘텐츠 식별",
+   "딥페이크 대응",
+   "비인지성·강인성 요구"
+  ],
+  "related": [
+   "watermarking",
+   "information-hiding"
+  ]
+ },
+ {
+  "id": "anonymization",
+  "term": "익명처리",
+  "term_en": "Anonymization",
+  "definition": "추가정보를 사용해도 특정 개인을 복원할 수 없도록 개인정보를 처리하는 기법.",
+  "features": [
+   "복원 불가능성",
+   "개인정보에 해당하지 않음",
+   "활용 제한 없음"
+  ],
+  "related": [
+   "pseudonymization",
+   "re-identification",
+   "k-anonymity"
+  ]
+ },
+ {
+  "id": "attack-surface",
+  "term": "공격면",
+  "term_en": "Attack Surface",
+  "definition": "공격자가 시스템에 침투할 수 있는 모든 진입점·인터페이스의 총합.",
+  "features": [
+   "진입점 최소화 대상",
+   "API·포트·입력점 포함",
+   "설계 단계 축소"
+  ],
+  "related": [
+   "threat-modeling",
+   "security-by-design"
+  ]
+ },
+ {
+  "id": "audit-log",
+  "term": "감사로그",
+  "term_en": "Audit Log",
+  "definition": "시스템 접근·변경 행위를 시간순으로 기록해 사후 추적성을 제공하는 로그.",
+  "features": [
+   "접속기록 보관 의무",
+   "위변조 방지 필요",
+   "SIEM 상관분석 입력"
+  ],
+  "related": [
+   "siem",
+   "access-control"
+  ]
+ },
+ {
+  "id": "authenticated-encryption",
+  "term": "인증 암호화",
+  "term_en": "Authenticated Encryption",
+  "definition": "기밀성과 무결성을 동시에 제공하는 암호 방식(AEAD).",
+  "features": [
+   "암호화+무결성 결합",
+   "GCM·CCM 모드",
+   "TLS 1.3 기본"
+  ],
+  "related": [
+   "symmetric-key-cryptography",
+   "message-authentication-code",
+   "tls-1-3"
+  ]
+ },
+ {
+  "id": "bayesian-filter",
+  "term": "베이지안 필터",
+  "term_en": "Bayesian Filter",
+  "definition": "단어 출현 확률을 학습해 스팸 여부를 통계적으로 분류하는 필터.",
+  "features": [
+   "확률 기반 분류",
+   "학습으로 정확도 향상",
+   "내용 기반 스팸 필터"
+  ],
+  "related": [
+   "machine-learning"
+  ]
+ },
+ {
+  "id": "blind-sql-injection",
+  "term": "블라인드 SQL 인젝션",
+  "term_en": "Blind SQL Injection",
+  "definition": "오류·결과가 표시되지 않는 환경에서 응답 차이로 데이터를 간접 추론하는 SQL 인젝션.",
+  "features": [
+   "참·거짓·지연 기반 추론",
+   "결과 미표시 환경",
+   "자동화 시 다수 요청"
+  ],
+  "related": [
+   "sql-injection",
+   "boolean-based-blind-sql-injection",
+   "time-based-blind-sql-injection"
+  ]
+ },
+ {
+  "id": "blockchain",
+  "term": "블록체인",
+  "term_en": "Blockchain",
+  "definition": "거래 기록을 블록으로 연결해 분산 저장하는 위변조 방지 분산원장 기술.",
+  "features": [
+   "분산 합의",
+   "위변조 방지",
+   "탈중앙 신뢰"
+  ],
+  "related": [
+   "did-identifier",
+   "self-sovereign-identity"
+  ]
+ },
+ {
+  "id": "boolean-based-blind-sql-injection",
+  "term": "불리언 기반 블라인드 SQLi",
+  "term_en": "Boolean-based Blind SQL Injection",
+  "definition": "조건의 참·거짓에 따른 응답 페이지 차이로 데이터를 추론하는 기법.",
+  "features": [
+   "정상·비정상 응답 비교",
+   "1비트씩 추출",
+   "응답 표준화로 방어"
+  ],
+  "related": [
+   "blind-sql-injection",
+   "sql-injection"
+  ]
+ },
+ {
+  "id": "bootstrapping",
+  "term": "부트스트래핑",
+  "term_en": "Bootstrapping",
+  "definition": "동형암호에서 누적된 잡음을 복호화 없이 재암호화로 초기화하는 연산.",
+  "features": [
+   "잡음 초기화",
+   "완전 동형암호 핵심",
+   "높은 연산 비용"
+  ],
+  "related": [
+   "fully-homomorphic-encryption",
+   "noise-growth",
+   "homomorphic-encryption"
+  ]
+ },
+ {
+  "id": "botnet",
+  "term": "봇넷",
+  "term_en": "Botnet",
+  "definition": "악성코드에 감염되어 공격자 명령을 수행하는 좀비 PC·기기 네트워크.",
+  "features": [
+   "C&C 원격제어",
+   "DDoS·스팸 발송",
+   "대규모 분산 공격"
+  ],
+  "related": [
+   "ddos",
+   "malware",
+   "mirai-botnet"
+  ]
+ },
+ {
+  "id": "bsimm",
+  "term": "BSIMM",
+  "term_en": "Building Security In Maturity Model",
+  "definition": "실제 기업 사례를 기반으로 소프트웨어 보안 성숙도를 측정하는 모델.",
+  "features": [
+   "사례 기반 벤치마킹",
+   "성숙도 측정",
+   "개발보안 거버넌스"
+  ],
+  "related": [
+   "owasp-samm",
+   "microsoft-sdl",
+   "secure-coding"
+  ]
+ },
+ {
+  "id": "casb",
+  "term": "CASB",
+  "term_en": "Cloud Access Security Broker",
+  "definition": "클라우드 이용을 가시화하고 보안정책을 중개·시행하는 보안 솔루션.",
+  "features": [
+   "SaaS 가시성",
+   "DLP·접근정책",
+   "Shadow IT 탐지"
+  ],
+  "related": [
+   "cloud-computing",
+   "data-loss-prevention",
+   "identity-and-access-management"
+  ]
+ },
+ {
+  "id": "cc-national-certification",
+  "term": "국가 보안적합성 평가·인증",
+  "term_en": "National Security Evaluation and Certification",
+  "definition": "국내 공공기관 도입 정보보호제품의 보안성을 CC 기반으로 평가·인증하는 제도.",
+  "features": [
+   "국정원 IT보안인증사무국",
+   "공공 조달 연계",
+   "보안적합성 검증"
+  ],
+  "related": [
+   "common-criteria",
+   "evaluation-assurance-level",
+   "protection-profile"
+  ]
+ },
+ {
+  "id": "certificate-authority",
+  "term": "인증기관",
+  "term_en": "Certificate Authority",
+  "definition": "공개키와 소유자 신원을 결합한 인증서를 발급·관리하는 신뢰기관.",
+  "features": [
+   "인증서 발급·폐지",
+   "PKI 신뢰 루트",
+   "서명으로 신원 보증"
+  ],
+  "related": [
+   "public-key-infrastructure",
+   "digital-certificate",
+   "certificate-revocation-list"
+  ]
+ },
+ {
+  "id": "certificate-revocation-list",
+  "term": "인증서 폐지목록",
+  "term_en": "Certificate Revocation List",
+  "definition": "유효기간 전 폐지된 인증서 목록을 배포하는 PKI 메커니즘.",
+  "features": [
+   "폐지 인증서 식별",
+   "주기적 갱신·배포",
+   "OCSP로 실시간 대체"
+  ],
+  "related": [
+   "public-key-infrastructure",
+   "ocsp",
+   "digital-certificate"
+  ]
+ },
+ {
+  "id": "certificate-transparency",
+  "term": "인증서 투명성",
+  "term_en": "Certificate Transparency",
+  "definition": "발급된 인증서를 공개 로그에 기록해 부정 발급을 탐지하는 체계.",
+  "features": [
+   "공개 감사 로그",
+   "오발급 탐지",
+   "SCT 포함"
+  ],
+  "related": [
+   "digital-certificate",
+   "certificate-authority"
+  ]
+ },
+ {
+  "id": "cipher-suite",
+  "term": "암호스위트",
+  "term_en": "Cipher Suite",
+  "definition": "TLS에서 키교환·인증·암호화·해시 알고리즘의 조합.",
+  "features": [
+   "알고리즘 조합 협상",
+   "핸드셰이크 시 선택",
+   "취약 스위트 배제"
+  ],
+  "related": [
+   "ssl-tls",
+   "diffie-hellman",
+   "forward-secrecy"
+  ]
+ },
+ {
+  "id": "ckks",
+  "term": "CKKS",
+  "term_en": "Cheon-Kim-Kim-Song",
+  "definition": "실수 근사 연산을 지원하는 완전 동형암호 스킴.",
+  "features": [
+   "실수·부동소수 연산",
+   "AI·통계 분석 적합",
+   "근사 오차 관리"
+  ],
+  "related": [
+   "fully-homomorphic-encryption",
+   "homomorphic-encryption",
+   "privacy-preserving-machine-learning"
+  ]
+ },
+ {
+  "id": "cloud-computing",
+  "term": "클라우드 컴퓨팅",
+  "term_en": "Cloud Computing",
+  "definition": "가상화된 IT 자원을 네트워크로 필요에 따라 제공받는 컴퓨팅 모델.",
+  "features": [
+   "온디맨드·확장성",
+   "IaaS·PaaS·SaaS",
+   "종량제 과금"
+  ],
+  "related": [
+   "virtualization",
+   "multi-tenancy",
+   "iaas",
+   "shared-responsibility-model"
+  ]
+ },
+ {
+  "id": "cloud-controls-matrix",
+  "term": "CSA CCM",
+  "term_en": "Cloud Controls Matrix",
+  "definition": "클라우드 보안 통제항목을 정리한 CSA의 보안 통제 프레임워크.",
+  "features": [
+   "클라우드 통제 매핑",
+   "컴플라이언스 연계",
+   "CSA 발행"
+  ],
+  "related": [
+   "cloud-computing",
+   "csap",
+   "iso-iec-27017"
+  ]
+ },
+ {
+  "id": "cms",
+  "term": "CMS",
+  "term_en": "Cryptographic Message Syntax",
+  "definition": "암호화·서명된 메시지 구조를 정의하는 표준(PKCS#7 후속).",
+  "features": [
+   "암호·서명 메시지 포맷",
+   "S/MIME 기반",
+   "전자봉투 구현"
+  ],
+  "related": [
+   "pkcs",
+   "s-mime",
+   "digital-envelope"
+  ]
+ },
+ {
+  "id": "coap",
+  "term": "CoAP",
+  "term_en": "Constrained Application Protocol",
+  "definition": "제약 환경 IoT용 UDP 기반 경량 REST 프로토콜.",
+  "features": [
+   "UDP 기반 REST",
+   "4바이트 헤더",
+   "DTLS로 보안"
+  ],
+  "related": [
+   "internet-of-things",
+   "dtls",
+   "lwm2m"
+  ]
+ },
+ {
+  "id": "collaborative-protection-profile",
+  "term": "cPP",
+  "term_en": "Collaborative Protection Profile",
+  "definition": "국제 기술커뮤니티가 공동 개발하는 공통 보호프로파일.",
+  "features": [
+   "국제 공통 요구사항",
+   "상호인정 강화",
+   "iTC 개발"
+  ],
+  "related": [
+   "protection-profile",
+   "common-criteria",
+   "common-criteria-recognition-arrangement"
+  ]
+ },
+ {
+  "id": "collusion-attack",
+  "term": "공모공격",
+  "term_en": "Collusion Attack",
+  "definition": "여러 구매자가 서로 다른 핑거프린트를 비교·조합해 워터마크를 제거하는 공격.",
+  "features": [
+   "핑거프린트 비교·제거",
+   "다수 공모자",
+   "공모 내성 코드 필요"
+  ],
+  "related": [
+   "fingerprinting",
+   "watermarking"
+  ]
+ },
+ {
+  "id": "command-injection",
+  "term": "명령 삽입",
+  "term_en": "Command Injection",
+  "definition": "입력값을 통해 OS 명령을 실행시키는 인젝션 공격.",
+  "features": [
+   "OS 명령 실행",
+   "입력 검증 부재",
+   "시스템 권한 탈취"
+  ],
+  "related": [
+   "injection-attack",
+   "input-validation",
+   "secure-coding"
+  ]
+ },
+ {
+  "id": "common-criteria",
+  "term": "공통평가기준",
+  "term_en": "Common Criteria",
+  "definition": "정보보호제품의 보안성을 평가·인증하는 국제표준(ISO/IEC 15408).",
+  "features": [
+   "PP·ST 체계",
+   "EAL 보증등급",
+   "CCRA 상호인정"
+  ],
+  "related": [
+   "evaluation-assurance-level",
+   "protection-profile",
+   "security-target",
+   "common-criteria-recognition-arrangement"
+  ]
+ },
+ {
+  "id": "common-criteria-recognition-arrangement",
+  "term": "CC 상호인정협정",
+  "term_en": "Common Criteria Recognition Arrangement",
+  "definition": "CC 인증 결과를 회원국 간 상호 인정하는 국제 협정.",
+  "features": [
+   "1회 평가 다국 통용",
+   "중복평가 비용 절감",
+   "cPP 기반 인정"
+  ],
+  "related": [
+   "common-criteria",
+   "collaborative-protection-profile"
+  ]
+ },
+ {
+  "id": "confidential-computing",
+  "term": "기밀 컴퓨팅",
+  "term_en": "Confidential Computing",
+  "definition": "신뢰실행환경(TEE)에서 이용 중 데이터를 보호하는 기술.",
+  "features": [
+   "TEE 기반 격리",
+   "이용 중 데이터 보호",
+   "하드웨어 암호화"
+  ],
+  "related": [
+   "trusted-execution-environment",
+   "data-in-use",
+   "homomorphic-encryption"
+  ]
+ },
+ {
+  "id": "content-security-policy",
+  "term": "CSP",
+  "term_en": "Content Security Policy",
+  "definition": "허용된 콘텐츠 출처를 지정해 XSS 등을 완화하는 웹 보안 정책.",
+  "features": [
+   "출처 화이트리스트",
+   "스크립트 실행 제한",
+   "XSS 완화"
+  ],
+  "related": [
+   "xss",
+   "web-application-firewall",
+   "secure-coding"
+  ]
+ },
+ {
+  "id": "copyright-protection",
+  "term": "저작권 보호",
+  "term_en": "Copyright Protection",
+  "definition": "디지털 콘텐츠의 창작자 권리를 보호하는 기술·제도.",
+  "features": [
+   "불법복제 방지",
+   "소유권 증명",
+   "DRM·워터마킹 활용"
+  ],
+  "related": [
+   "digital-rights-management",
+   "watermarking",
+   "fingerprinting"
+  ]
+ },
+ {
+  "id": "csap",
+  "term": "CSAP",
+  "term_en": "Cloud Security Assurance Program",
+  "definition": "공공부문 클라우드 서비스의 보안성을 평가·인증하는 국내 제도.",
+  "features": [
+   "공공 클라우드 인증",
+   "KISA 운영",
+   "등급제(상·중·하)"
+  ],
+  "related": [
+   "cloud-computing",
+   "isms-p",
+   "iso-iec-27017"
+  ]
+ },
+ {
+  "id": "cspm",
+  "term": "CSPM",
+  "term_en": "Cloud Security Posture Management",
+  "definition": "클라우드 자원 설정오류를 상시 점검·교정하는 보안관리.",
+  "features": [
+   "설정오류 탐지",
+   "벤치마크 자동점검",
+   "컴플라이언스 가시화"
+  ],
+  "related": [
+   "cloud-computing",
+   "cwpp"
+  ]
+ },
+ {
+  "id": "csrf",
+  "term": "CSRF",
+  "term_en": "Cross-Site Request Forgery",
+  "definition": "인증된 사용자의 권한으로 위조된 요청을 전송시키는 공격.",
+  "features": [
+   "인증 세션 악용",
+   "CSRF 토큰 방어",
+   "SameSite 쿠키"
+  ],
+  "related": [
+   "xss",
+   "web-application-firewall",
+   "secure-coding"
+  ]
+ },
+ {
+  "id": "cve",
+  "term": "CVE",
+  "term_en": "Common Vulnerabilities and Exposures",
+  "definition": "공개된 보안 취약점에 부여되는 표준 식별자.",
+  "features": [
+   "취약점 고유번호",
+   "NVD 연계",
+   "SBOM 매칭 기준"
+  ],
+  "related": [
+   "national-vulnerability-database",
+   "cvss",
+   "sbom"
+  ]
+ },
+ {
+  "id": "cvss",
+  "term": "CVSS",
+  "term_en": "Common Vulnerability Scoring System",
+  "definition": "취약점의 심각도를 0~10으로 정량화하는 표준 점수체계.",
+  "features": [
+   "심각도 정량화",
+   "패치 우선순위 기준",
+   "기본·시간·환경 지표"
+  ],
+  "related": [
+   "cve",
+   "national-vulnerability-database",
+   "vulnerability-exploitability-exchange"
+  ]
+ },
+ {
+  "id": "cwpp",
+  "term": "CWPP",
+  "term_en": "Cloud Workload Protection Platform",
+  "definition": "VM·컨테이너·서버리스 워크로드를 보호하는 플랫폼.",
+  "features": [
+   "워크로드 취약점 관리",
+   "이미지 스캐닝",
+   "런타임 보호"
+  ],
+  "related": [
+   "cloud-computing",
+   "cspm",
+   "virtualization"
+  ]
+ },
+ {
+  "id": "cyclonedx",
+  "term": "CycloneDX",
+  "term_en": "CycloneDX",
+  "definition": "OWASP가 주관하는 보안 중심 경량 SBOM 표준 포맷.",
+  "features": [
+   "보안·취약점 중심",
+   "JSON·XML 지원",
+   "경량 구조"
+  ],
+  "related": [
+   "sbom",
+   "spdx",
+   "software-composition-analysis"
+  ]
+ },
+ {
+  "id": "data-3-acts",
+  "term": "데이터 3법",
+  "term_en": "Three Data Acts",
+  "definition": "개인정보보호법·정보통신망법·신용정보법 개정으로 가명정보 활용을 허용한 법 묶음.",
+  "features": [
+   "2020년 개정",
+   "가명정보 특례 신설",
+   "개인정보보호위 일원화"
+  ],
+  "related": [
+   "personal-information-protection-act",
+   "pseudonymization",
+   "personal-information"
+  ]
+ },
+ {
+  "id": "data-at-rest",
+  "term": "저장 데이터",
+  "term_en": "Data at Rest",
+  "definition": "저장매체에 보관 중인 데이터 상태.",
+  "features": [
+   "저장 암호화 대상",
+   "DB·파일·백업",
+   "접근통제 필요"
+  ],
+  "related": [
+   "data-encryption",
+   "data-in-transit",
+   "data-in-use"
+  ]
+ },
+ {
+  "id": "data-combination-agency",
+  "term": "결합전문기관",
+  "term_en": "Data Combination Agency",
+  "definition": "서로 다른 개인정보처리자의 가명정보를 안전하게 결합하는 지정기관.",
+  "features": [
+   "가명정보 결합 수행",
+   "재식별 방지 통제",
+   "정부 지정"
+  ],
+  "related": [
+   "pseudonymization",
+   "re-identification",
+   "personal-information-protection-act"
+  ]
+ },
+ {
+  "id": "data-encryption",
+  "term": "데이터 암호화",
+  "term_en": "Data Encryption",
+  "definition": "데이터를 암호 알고리즘으로 변환해 기밀성을 보장하는 기술.",
+  "features": [
+   "저장·전송·이용 보호",
+   "대칭·공개키 방식",
+   "키 관리 중요"
+  ],
+  "related": [
+   "encryption",
+   "symmetric-key-cryptography",
+   "key-management-system"
+  ]
+ },
+ {
+  "id": "data-in-transit",
+  "term": "전송 데이터",
+  "term_en": "Data in Transit",
+  "definition": "네트워크로 전송 중인 데이터 상태.",
+  "features": [
+   "전송 암호화 대상",
+   "TLS·IPsec 보호",
+   "도청·변조 위협"
+  ],
+  "related": [
+   "data-at-rest",
+   "data-in-use",
+   "ssl-tls"
+  ]
+ },
+ {
+  "id": "data-in-use",
+  "term": "이용 중 데이터",
+  "term_en": "Data in Use",
+  "definition": "메모리에서 처리·연산 중인 데이터 상태.",
+  "features": [
+   "연산 시 노출 위험",
+   "동형암호·TEE 보호",
+   "가장 보호 어려움"
+  ],
+  "related": [
+   "data-at-rest",
+   "data-in-transit",
+   "homomorphic-encryption",
+   "confidential-computing"
+  ]
+ },
+ {
+  "id": "data-loss-prevention",
+  "term": "DLP",
+  "term_en": "Data Loss Prevention",
+  "definition": "민감데이터의 외부 유출을 탐지·차단하는 솔루션.",
+  "features": [
+   "콘텐츠 식별",
+   "유출 경로 통제",
+   "정책 기반 차단"
+  ],
+  "related": [
+   "data-encryption",
+   "casb",
+   "access-control"
+  ]
+ },
+ {
+  "id": "data-masking",
+  "term": "데이터 마스킹",
+  "term_en": "Data Masking",
+  "definition": "데이터 일부를 특수문자로 대체해 식별성을 낮추는 기법.",
+  "features": [
+   "부분 은닉(**)",
+   "표시 데이터 보호",
+   "가명처리 기법"
+  ],
+  "related": [
+   "pseudonymization",
+   "generalization",
+   "tokenization"
+  ]
+ },
+ {
+  "id": "data-perturbation",
+  "term": "잡음 추가",
+  "term_en": "Data Perturbation",
+  "definition": "수치 데이터에 변형·잡음을 더해 원값을 은닉하는 기법.",
+  "features": [
+   "라운딩·잡음",
+   "통계 특성 유지",
+   "재식별 저감"
+  ],
+  "related": [
+   "differential-privacy",
+   "generalization",
+   "pseudonymization"
+  ]
+ },
+ {
+  "id": "data-sovereignty",
+  "term": "데이터 주권",
+  "term_en": "Data Sovereignty",
+  "definition": "데이터가 저장·처리되는 국가의 법·관할에 따르는 원칙.",
+  "features": [
+   "국외이전 규제",
+   "리전 통제",
+   "관할권 이슈"
+  ],
+  "related": [
+   "cloud-computing",
+   "personal-information-protection-act"
+  ]
+ },
+ {
+  "id": "data-swapping",
+  "term": "데이터 재배열",
+  "term_en": "Data Swapping",
+  "definition": "레코드 간 값을 교환해 개인과 속성의 연계성을 차단하는 기법.",
+  "features": [
+   "값 교환",
+   "연계성 차단",
+   "통계 보존"
+  ],
+  "related": [
+   "pseudonymization",
+   "generalization"
+  ]
+ },
+ {
+  "id": "database-encryption",
+  "term": "DB 암호화",
+  "term_en": "Database Encryption",
+  "definition": "데이터베이스 저장 데이터를 암호화해 유출 시 노출을 방지하는 기술.",
+  "features": [
+   "컬럼·블록 암호화",
+   "TDE·API 방식",
+   "키 관리 연계"
+  ],
+  "related": [
+   "data-encryption",
+   "key-management-system",
+   "data-at-rest"
+  ]
+ },
+ {
+  "id": "dct",
+  "term": "DCT",
+  "term_en": "Discrete Cosine Transform",
+  "definition": "신호를 주파수 성분으로 변환하는 기법으로 주파수영역 워터마킹에 사용.",
+  "features": [
+   "주파수 변환",
+   "압축 내성",
+   "JPEG 기반"
+  ],
+  "related": [
+   "frequency-domain",
+   "watermarking",
+   "dwt"
+  ]
+ },
+ {
+  "id": "ddos",
+  "term": "DDoS",
+  "term_en": "Distributed Denial of Service",
+  "definition": "다수 좀비 기기로 대량 트래픽을 보내 서비스를 마비시키는 공격.",
+  "features": [
+   "분산 트래픽 폭주",
+   "봇넷 활용",
+   "가용성 침해"
+  ],
+  "related": [
+   "botnet",
+   "mirai-botnet"
+  ]
+ },
+ {
+  "id": "device-authentication",
+  "term": "디바이스 인증",
+  "term_en": "Device Authentication",
+  "definition": "IoT 기기의 신원을 검증해 위변조 기기 접속을 차단하는 기술.",
+  "features": [
+   "기기 신원 증명",
+   "인증서·PUF 기반",
+   "상호 인증"
+  ],
+  "related": [
+   "internet-of-things",
+   "physically-unclonable-function",
+   "digital-certificate"
+  ]
+ },
+ {
+  "id": "devsecops",
+  "term": "DevSecOps",
+  "term_en": "DevSecOps",
+  "definition": "개발·보안·운영을 통합해 CI/CD에 보안을 자동화하는 문화·방법론.",
+  "features": [
+   "보안 자동화",
+   "파이프라인 통합",
+   "Shift-Left"
+  ],
+  "related": [
+   "secure-coding",
+   "static-application-security-testing",
+   "shift-left-security"
+  ]
+ },
+ {
+  "id": "did-document",
+  "term": "DID 문서",
+  "term_en": "DID Document",
+  "definition": "DID의 공개키·인증수단·서비스 엔드포인트를 기술한 문서.",
+  "features": [
+   "공개키 명세",
+   "JSON-LD 형식",
+   "검증 기준 제공"
+  ],
+  "related": [
+   "did-identifier",
+   "public-key-cryptography",
+   "self-sovereign-identity"
+  ]
+ },
+ {
+  "id": "did-identifier",
+  "term": "DID 식별자",
+  "term_en": "DID Identifier",
+  "definition": "분산원장에 등록되는 전역 고유 탈중앙 식별자.",
+  "features": [
+   "did:method:id 형식",
+   "중앙기관 불필요",
+   "자기주권 기반"
+  ],
+  "related": [
+   "did-document",
+   "did-method",
+   "self-sovereign-identity"
+  ]
+ },
+ {
+  "id": "did-method",
+  "term": "DID 메소드",
+  "term_en": "DID Method",
+  "definition": "특정 분산원장에서 DID를 생성·조회·갱신·폐지하는 규격.",
+  "features": [
+   "원장별 구현 규격",
+   "상호운용 과제",
+   "CRUD 정의"
+  ],
+  "related": [
+   "did-identifier",
+   "self-sovereign-identity",
+   "blockchain"
+  ]
+ },
+ {
+  "id": "differential-privacy",
+  "term": "차분 프라이버시",
+  "term_en": "Differential Privacy",
+  "definition": "질의 결과에 수학적 잡음을 더해 개인의 기여를 은닉하는 프라이버시 모델.",
+  "features": [
+   "수학적 잡음 추가",
+   "프라이버시 예산(ε)",
+   "개인 식별 방지"
+  ],
+  "related": [
+   "anonymization",
+   "data-perturbation",
+   "k-anonymity"
+  ]
+ },
+ {
+  "id": "diffie-hellman",
+  "term": "디피-헬만",
+  "term_en": "Diffie-Hellman",
+  "definition": "공개 채널에서 비밀키를 안전하게 합의하는 키교환 알고리즘.",
+  "features": [
+   "키 합의",
+   "이산대수 기반",
+   "ECDHE로 전방향 비밀성"
+  ],
+  "related": [
+   "forward-secrecy",
+   "cipher-suite",
+   "public-key-cryptography"
+  ]
+ },
+ {
+  "id": "digital-certificate",
+  "term": "디지털 인증서",
+  "term_en": "Digital Certificate",
+  "definition": "공개키와 소유자 신원을 CA 서명으로 결합한 전자 증명서(X.509).",
+  "features": [
+   "공개키-신원 결합",
+   "CA 서명",
+   "유효기간·폐지 관리"
+  ],
+  "related": [
+   "public-key-infrastructure",
+   "certificate-authority",
+   "public-key-cryptography"
+  ]
+ },
+ {
+  "id": "digital-envelope",
+  "term": "디지털 봉투",
+  "term_en": "Digital Envelope",
+  "definition": "데이터는 대칭키로, 세션키는 수신자 공개키로 암호화하는 하이브리드 기법.",
+  "features": [
+   "하이브리드 암호",
+   "세션키 보호",
+   "키 분배 해결"
+  ],
+  "related": [
+   "hybrid-cryptosystem",
+   "session-key",
+   "public-key-cryptography"
+  ]
+ },
+ {
+  "id": "digital-rights-management",
+  "term": "DRM",
+  "term_en": "Digital Rights Management",
+  "definition": "디지털 콘텐츠의 이용 권한을 암호화·정책으로 통제하는 기술.",
+  "features": [
+   "접근·이용 통제",
+   "라이선스 관리",
+   "워터마킹 보완"
+  ],
+  "related": [
+   "copyright-protection",
+   "watermarking",
+   "data-encryption"
+  ]
+ },
+ {
+  "id": "digital-signature",
+  "term": "전자서명",
+  "term_en": "Digital Signature",
+  "definition": "개인키로 해시를 서명해 무결성·인증·부인방지를 제공하는 공개키 기반 서명.",
+  "features": [
+   "개인키 서명·공개키 검증",
+   "무결성·부인방지",
+   "해시 결합"
+  ],
+  "related": [
+   "hash-function",
+   "public-key-cryptography",
+   "public-key-infrastructure",
+   "non-repudiation"
+  ]
+ },
+ {
+  "id": "digital-signature-act",
+  "term": "전자서명법",
+  "term_en": "Digital Signature Act",
+  "definition": "전자서명의 법적 효력과 인증체계를 규정한 법률.",
+  "features": [
+   "전자서명 효력 부여",
+   "공인인증서 독점 폐지",
+   "다양한 인증 허용"
+  ],
+  "related": [
+   "digital-signature",
+   "public-key-infrastructure"
+  ]
+ },
+ {
+  "id": "dkim",
+  "term": "DKIM",
+  "term_en": "DomainKeys Identified Mail",
+  "definition": "발신 메일에 전자서명을 더해 발신 도메인과 무결성을 검증하는 기술.",
+  "features": [
+   "도메인 전자서명",
+   "무결성 검증",
+   "DMARC 연계"
+  ],
+  "related": [
+   "spf",
+   "dmarc",
+   "digital-signature"
+  ]
+ },
+ {
+  "id": "dmarc",
+  "term": "DMARC",
+  "term_en": "Domain-based Message Authentication",
+  "definition": "SPF·DKIM 결과로 메일 처리정책을 적용하는 발신 인증 표준.",
+  "features": [
+   "SPF·DKIM 통합",
+   "정책(reject) 적용",
+   "도메인 사칭 차단"
+  ],
+  "related": [
+   "spf",
+   "dkim",
+   "phishing"
+  ]
+ },
+ {
+  "id": "dsa",
+  "term": "DSA",
+  "term_en": "Digital Signature Algorithm",
+  "definition": "이산대수 기반 전자서명 전용 알고리즘.",
+  "features": [
+   "서명 전용",
+   "이산대수 기반",
+   "NIST 표준"
+  ],
+  "related": [
+   "digital-signature",
+   "ecdsa",
+   "rsa"
+  ]
+ },
+ {
+  "id": "dtls",
+  "term": "DTLS",
+  "term_en": "Datagram Transport Layer Security",
+  "definition": "UDP 등 데이터그램 환경에 TLS 보안을 제공하는 프로토콜.",
+  "features": [
+   "UDP용 TLS",
+   "CoAP 보안",
+   "재전송·순서 처리"
+  ],
+  "related": [
+   "ssl-tls",
+   "coap",
+   "lwm2m"
+  ]
+ },
+ {
+  "id": "dwt",
+  "term": "DWT",
+  "term_en": "Discrete Wavelet Transform",
+  "definition": "신호를 다해상도로 분해하는 변환으로 주파수영역 워터마킹에 사용.",
+  "features": [
+   "다해상도 분해",
+   "강인 워터마킹",
+   "JPEG2000 기반"
+  ],
+  "related": [
+   "frequency-domain",
+   "watermarking",
+   "dct"
+  ]
+ },
+ {
+  "id": "dynamic-application-security-testing",
+  "term": "DAST",
+  "term_en": "Dynamic Application Security Testing",
+  "definition": "실행 중인 애플리케이션을 외부에서 점검해 취약점을 찾는 테스트.",
+  "features": [
+   "런타임 점검",
+   "소스 불필요",
+   "웹 취약점 탐지"
+  ],
+  "related": [
+   "static-application-security-testing",
+   "interactive-application-security-testing",
+   "secure-coding"
+  ]
+ },
+ {
+  "id": "eap",
+  "term": "EAP",
+  "term_en": "Extensible Authentication Protocol",
+  "definition": "다양한 인증 방식을 수용하는 확장형 인증 프레임워크.",
+  "features": [
+   "확장형 인증",
+   "EAP-TLS·PEAP",
+   "802.1X에서 사용"
+  ],
+  "related": [
+   "ieee-802-1x",
+   "radius",
+   "wpa2"
+  ]
+ },
+ {
+  "id": "ecdsa",
+  "term": "ECDSA",
+  "term_en": "Elliptic Curve Digital Signature Algorithm",
+  "definition": "타원곡선 기반 전자서명 알고리즘으로 짧은 키로 높은 안전성 제공.",
+  "features": [
+   "타원곡선 기반",
+   "짧은 키 길이",
+   "모바일 적합"
+  ],
+  "related": [
+   "digital-signature",
+   "dsa",
+   "rsa"
+  ]
+ },
+ {
+  "id": "encryption",
+  "term": "암호화",
+  "term_en": "Encryption",
+  "definition": "평문을 키로 암호문으로 변환해 기밀성을 보장하는 기술.",
+  "features": [
+   "대칭·공개키",
+   "키 기반 변환",
+   "기밀성 제공"
+  ],
+  "related": [
+   "symmetric-key-cryptography",
+   "public-key-cryptography",
+   "data-encryption"
+  ]
+ },
+ {
+  "id": "error-based-sql-injection",
+  "term": "에러 기반 SQLi",
+  "term_en": "Error-based SQL Injection",
+  "definition": "DB 오류 메시지에 노출되는 정보로 구조·데이터를 파악하는 기법.",
+  "features": [
+   "오류 메시지 악용",
+   "구조 노출",
+   "오류 숨김으로 방어"
+  ],
+  "related": [
+   "sql-injection",
+   "union-based-sql-injection",
+   "blind-sql-injection"
+  ]
+ },
+ {
+  "id": "evaluation-assurance-level",
+  "term": "보증등급",
+  "term_en": "Evaluation Assurance Level",
+  "definition": "CC 평가에서 보증 수준을 EAL1~7로 나타내는 등급.",
+  "features": [
+   "EAL1~7 체계",
+   "평가 깊이 표현",
+   "상용 상한 EAL4"
+  ],
+  "related": [
+   "common-criteria",
+   "protection-profile",
+   "security-target"
+  ]
+ },
+ {
+  "id": "evil-twin",
+  "term": "이블 트윈",
+  "term_en": "Evil Twin",
+  "definition": "정상 AP로 위장해 단말 접속을 유도하고 정보를 탈취하는 무선 공격.",
+  "features": [
+   "AP 위장",
+   "자격증명 탈취",
+   "WIPS로 탐지"
+  ],
+  "related": [
+   "rogue-ap",
+   "wireless-lan",
+   "wips"
+  ]
+ },
+ {
+  "id": "executive-order-14028",
+  "term": "미국 행정명령 14028",
+  "term_en": "Executive Order 14028",
+  "definition": "연방 SW 공급망 보안 강화와 SBOM 제출을 의무화한 미국 행정명령.",
+  "features": [
+   "2021년 발효",
+   "SBOM 의무화",
+   "공급망 보안 강화"
+  ],
+  "related": [
+   "sbom",
+   "software-supply-chain-attack"
+  ]
+ },
+ {
+  "id": "federated-identity",
+  "term": "연합 신원",
+  "term_en": "Federated Identity",
+  "definition": "여러 서비스가 신뢰된 IdP를 통해 신원을 공유하는 모델.",
+  "features": [
+   "SSO·소셜로그인",
+   "IdP 의존",
+   "신원 공유"
+  ],
+  "related": [
+   "single-sign-on",
+   "self-sovereign-identity",
+   "identity-and-access-management"
+  ]
+ },
+ {
+  "id": "federated-learning",
+  "term": "연합학습",
+  "term_en": "Federated Learning",
+  "definition": "데이터를 중앙 수집 없이 분산 학습해 모델만 통합하는 기법.",
+  "features": [
+   "데이터 미이동",
+   "프라이버시 보존",
+   "분산 모델 학습"
+  ],
+  "related": [
+   "privacy-preserving-machine-learning",
+   "differential-privacy",
+   "synthetic-data"
+  ]
+ },
+ {
+  "id": "fingerprinting",
+  "term": "핑거프린팅",
+  "term_en": "Fingerprinting",
+  "definition": "구매자별 고유 정보를 삽입해 불법 유포자를 추적하는 기술.",
+  "features": [
+   "구매자별 식별정보",
+   "유포자 추적",
+   "공모공격 대응"
+  ],
+  "related": [
+   "watermarking",
+   "forensic-watermarking",
+   "collusion-attack"
+  ]
+ },
+ {
+  "id": "fmc",
+  "term": "FMC",
+  "term_en": "Fixed Mobile Convergence",
+  "definition": "유선·무선 통신을 통합해 단일 단말로 끊김없이 이용하는 융합 서비스.",
+  "features": [
+   "유무선 통합",
+   "단일 번호·단말",
+   "무선 보안 중요"
+  ],
+  "related": [
+   "wireless-lan",
+   "smart-office"
+  ]
+ },
+ {
+  "id": "forensic-watermarking",
+  "term": "포렌식 워터마킹",
+  "term_en": "Forensic Watermarking",
+  "definition": "유출 추적을 위해 수신자 식별정보를 삽입하는 워터마킹.",
+  "features": [
+   "유출 경로 추적",
+   "수신자 식별",
+   "비가시 삽입"
+  ],
+  "related": [
+   "watermarking",
+   "fingerprinting",
+   "copyright-protection"
+  ]
+ },
+ {
+  "id": "forward-secrecy",
+  "term": "순방향 비밀성",
+  "term_en": "Forward Secrecy",
+  "definition": "장기키가 노출돼도 과거 세션키가 안전하게 유지되는 성질.",
+  "features": [
+   "세션별 임시키",
+   "과거 통신 보호",
+   "ECDHE 제공"
+  ],
+  "related": [
+   "diffie-hellman",
+   "cipher-suite",
+   "tls-1-3"
+  ]
+ },
+ {
+  "id": "frequency-domain",
+  "term": "주파수영역",
+  "term_en": "Frequency Domain",
+  "definition": "신호를 주파수 성분으로 변환한 영역으로 강인한 워터마킹에 활용.",
+  "features": [
+   "변환 후 삽입",
+   "압축·변형 내성",
+   "DCT·DWT 사용"
+  ],
+  "related": [
+   "dct",
+   "dwt",
+   "watermarking"
+  ]
+ },
+ {
+  "id": "fully-homomorphic-encryption",
+  "term": "완전 동형암호",
+  "term_en": "Fully Homomorphic Encryption",
+  "definition": "임의 횟수의 덧셈·곱셈을 암호문 상태로 수행하는 동형암호.",
+  "features": [
+   "무제한 연산",
+   "부트스트래핑 필요",
+   "높은 연산비용"
+  ],
+  "related": [
+   "homomorphic-encryption",
+   "bootstrapping",
+   "somewhat-homomorphic-encryption"
+  ]
+ },
+ {
+  "id": "gdpr",
+  "term": "GDPR",
+  "term_en": "General Data Protection Regulation",
+  "definition": "EU의 개인정보보호 일반규정.",
+  "features": [
+   "EU 역내 적용",
+   "강한 정보주체 권리",
+   "고액 과징금"
+  ],
+  "related": [
+   "personal-information-protection-act",
+   "personal-information"
+  ]
+ },
+ {
+  "id": "generalization",
+  "term": "범주화",
+  "term_en": "Generalization",
+  "definition": "값을 구간·상위개념으로 일반화해 식별성을 낮추는 가명처리 기법.",
+  "features": [
+   "구간·범주 변환",
+   "예: 나이→연령대",
+   "k-익명성 달성"
+  ],
+  "related": [
+   "k-anonymity",
+   "pseudonymization",
+   "data-masking"
+  ]
+ },
+ {
+  "id": "hardware-security-module",
+  "term": "HSM",
+  "term_en": "Hardware Security Module",
+  "definition": "암호키 생성·저장·연산을 전용 하드웨어로 안전하게 수행하는 장치.",
+  "features": [
+   "키 안전 보관",
+   "변조 방지",
+   "암호연산 가속"
+  ],
+  "related": [
+   "key-management-system",
+   "private-key",
+   "data-encryption"
+  ]
+ },
+ {
+  "id": "hash-function",
+  "term": "해시함수",
+  "term_en": "Hash Function",
+  "definition": "임의 데이터를 고정길이 값으로 변환하는 일방향 함수.",
+  "features": [
+   "일방향성",
+   "충돌 저항성",
+   "무결성 검증"
+  ],
+  "related": [
+   "digital-signature",
+   "message-authentication-code"
+  ]
+ },
+ {
+  "id": "homomorphic-encryption",
+  "term": "동형암호",
+  "term_en": "Homomorphic Encryption",
+  "definition": "복호화 없이 암호문 상태로 연산을 수행하는 암호 기술.",
+  "features": [
+   "암호문 연산",
+   "이용 중 데이터 보호",
+   "잡음 관리 필요"
+  ],
+  "related": [
+   "fully-homomorphic-encryption",
+   "partially-homomorphic-encryption",
+   "bootstrapping",
+   "data-in-use"
+  ]
+ },
+ {
+  "id": "hsts",
+  "term": "HSTS",
+  "term_en": "HTTP Strict Transport Security",
+  "definition": "브라우저가 HTTPS로만 접속하도록 강제하는 보안 정책.",
+  "features": [
+   "HTTPS 강제",
+   "다운그레이드 방지",
+   "헤더 기반"
+  ],
+  "related": [
+   "ssl-tls",
+   "tls-1-3"
+  ]
+ },
+ {
+  "id": "hybrid-cryptosystem",
+  "term": "하이브리드 암호",
+  "term_en": "Hybrid Cryptosystem",
+  "definition": "대칭키의 속도와 공개키의 키 분배 장점을 결합한 암호 방식.",
+  "features": [
+   "데이터=대칭키",
+   "키=공개키",
+   "성능·보안 균형"
+  ],
+  "related": [
+   "symmetric-key-cryptography",
+   "public-key-cryptography",
+   "digital-envelope"
+  ]
+ },
+ {
+  "id": "hypervisor",
+  "term": "하이퍼바이저",
+  "term_en": "Hypervisor",
+  "definition": "물리 자원 위에 다수 가상머신을 생성·격리·관리하는 가상화 계층.",
+  "features": [
+   "VM 생성·격리",
+   "자원 분배",
+   "보안 핵심 계층"
+  ],
+  "related": [
+   "virtualization",
+   "vm-escape",
+   "multi-tenancy"
+  ]
+ },
+ {
+  "id": "iaas",
+  "term": "IaaS",
+  "term_en": "Infrastructure as a Service",
+  "definition": "서버·스토리지·네트워크 인프라를 서비스로 제공하는 클라우드 모델.",
+  "features": [
+   "인프라 제공",
+   "이용자 OS 이상 책임",
+   "높은 자유도"
+  ],
+  "related": [
+   "cloud-computing",
+   "paas",
+   "saas",
+   "shared-responsibility-model"
+  ]
+ },
+ {
+  "id": "identity-and-access-management",
+  "term": "IAM",
+  "term_en": "Identity and Access Management",
+  "definition": "사용자 신원과 접근권한을 통합 관리하는 체계.",
+  "features": [
+   "계정·권한 수명주기",
+   "최소권한·SSO",
+   "중앙 집중 관리"
+  ],
+  "related": [
+   "access-control",
+   "role-based-access-control",
+   "single-sign-on",
+   "multi-factor-authentication"
+  ]
+ },
+ {
+  "id": "ieee-802-15-4",
+  "term": "IEEE 802.15.4",
+  "term_en": "IEEE 802.15.4",
+  "definition": "저전력·저속 근거리 무선통신 표준으로 IoT 하위계층에 사용.",
+  "features": [
+   "저전력 PHY·MAC",
+   "AES-CCM 보안",
+   "Zigbee 기반"
+  ],
+  "related": [
+   "internet-of-things",
+   "lightweight-cryptography"
+  ]
+ },
+ {
+  "id": "ieee-802-1x",
+  "term": "IEEE 802.1X",
+  "term_en": "IEEE 802.1X",
+  "definition": "포트 기반 네트워크 접근통제 표준으로 EAP 인증을 수행.",
+  "features": [
+   "포트 기반 인증",
+   "EAP·RADIUS 연계",
+   "기업 무선 인증"
+  ],
+  "related": [
+   "eap",
+   "radius",
+   "wpa2",
+   "network-access-control"
+  ]
+ },
+ {
+  "id": "imperceptibility",
+  "term": "비인지성",
+  "term_en": "Imperceptibility",
+  "definition": "워터마크가 사람의 감각으로 인지되지 않는 성질.",
+  "features": [
+   "품질 저하 없음",
+   "투명성",
+   "강인성과 상충"
+  ],
+  "related": [
+   "watermarking",
+   "robustness",
+   "watermark-capacity"
+  ]
+ },
+ {
+  "id": "information-hiding",
+  "term": "정보은닉",
+  "term_en": "Information Hiding",
+  "definition": "데이터 내부에 정보를 비가시적으로 삽입하는 기술.",
+  "features": [
+   "스테가노그래피 계열",
+   "비가시 삽입",
+   "워터마킹 기반"
+  ],
+  "related": [
+   "watermarking",
+   "ai-watermarking"
+  ]
+ },
+ {
+  "id": "injection-attack",
+  "term": "인젝션 공격",
+  "term_en": "Injection Attack",
+  "definition": "신뢰되지 않은 입력을 명령·질의로 해석시키는 공격 유형.",
+  "features": [
+   "입력→명령 해석",
+   "SQL·명령·LDAP",
+   "OWASP 상위"
+  ],
+  "related": [
+   "sql-injection",
+   "command-injection",
+   "input-validation",
+   "owasp-top-10"
+  ]
+ },
+ {
+  "id": "input-validation",
+  "term": "입력값 검증",
+  "term_en": "Input Validation",
+  "definition": "사용자 입력의 형식·범위·값을 검사해 악성 입력을 차단하는 기법.",
+  "features": [
+   "화이트리스트 검증",
+   "신뢰경계 통제",
+   "인젝션 예방"
+  ],
+  "related": [
+   "injection-attack",
+   "sql-injection",
+   "secure-coding"
+  ]
+ },
+ {
+  "id": "interactive-application-security-testing",
+  "term": "IAST",
+  "term_en": "Interactive Application Security Testing",
+  "definition": "실행과 내부 계측을 결합해 취약점을 정확히 탐지하는 테스트.",
+  "features": [
+   "실행+계측 결합",
+   "높은 정확도",
+   "낮은 오탐"
+  ],
+  "related": [
+   "static-application-security-testing",
+   "dynamic-application-security-testing"
+  ]
+ },
+ {
+  "id": "internet-of-things",
+  "term": "사물인터넷",
+  "term_en": "Internet of Things",
+  "definition": "사물에 센서·통신을 결합해 데이터를 수집·교환하는 초연결 환경.",
+  "features": [
+   "초연결성",
+   "저사양·저전력",
+   "넓은 공격면"
+  ],
+  "related": [
+   "lightweight-cryptography",
+   "device-authentication",
+   "coap"
+  ]
+ },
+ {
+  "id": "intrusion-detection-system",
+  "term": "침입탐지시스템",
+  "term_en": "Intrusion Detection System",
+  "definition": "네트워크·시스템의 침입 행위를 탐지해 경보하는 시스템.",
+  "features": [
+   "시그니처·이상 탐지",
+   "경보 발생",
+   "IPS와 연계"
+  ],
+  "related": [
+   "siem",
+   "web-application-firewall"
+  ]
+ },
+ {
+  "id": "ipsec",
+  "term": "IPsec",
+  "term_en": "Internet Protocol Security",
+  "definition": "IP 계층에서 인증·암호화로 통신을 보호하는 프로토콜군.",
+  "features": [
+   "IP 계층 보안",
+   "VPN 기반",
+   "AH·ESP"
+  ],
+  "related": [
+   "ssl-tls",
+   "data-in-transit"
+  ]
+ },
+ {
+  "id": "isms",
+  "term": "ISMS",
+  "term_en": "Information Security Management System",
+  "definition": "정보보호 관리체계 인증 제도.",
+  "features": [
+   "PDCA 운영",
+   "위험기반 통제",
+   "ISMS-P로 통합"
+  ],
+  "related": [
+   "isms-p",
+   "pims",
+   "risk-assessment"
+  ]
+ },
+ {
+  "id": "isms-p",
+  "term": "ISMS-P",
+  "term_en": "Personal Information & Information Security Management System",
+  "definition": "정보보호와 개인정보보호 관리체계를 통합한 국내 인증.",
+  "features": [
+   "ISMS+PIMS 통합",
+   "수명주기 보호",
+   "3년 유효·사후관리"
+  ],
+  "related": [
+   "isms",
+   "pims",
+   "personal-information-protection-act"
+  ]
+ },
+ {
+  "id": "iso-iec-27017",
+  "term": "ISO/IEC 27017",
+  "term_en": "ISO/IEC 27017",
+  "definition": "클라우드 서비스 정보보안 통제 지침 국제표준.",
+  "features": [
+   "클라우드 보안 통제",
+   "27002 확장",
+   "CSP·이용자 역할"
+  ],
+  "related": [
+   "cloud-computing",
+   "iso-iec-27018",
+   "csap"
+  ]
+ },
+ {
+  "id": "iso-iec-27018",
+  "term": "ISO/IEC 27018",
+  "term_en": "ISO/IEC 27018",
+  "definition": "퍼블릭 클라우드 개인정보보호 통제 국제표준.",
+  "features": [
+   "클라우드 PII 보호",
+   "프라이버시 통제",
+   "27001 연계"
+  ],
+  "related": [
+   "cloud-computing",
+   "iso-iec-27017",
+   "personal-information"
+  ]
+ },
+ {
+  "id": "itsec",
+  "term": "ITSEC",
+  "term_en": "Information Technology Security Evaluation Criteria",
+  "definition": "유럽이 제정한 정보보호 평가기준으로 기능·보증을 분리.",
+  "features": [
+   "유럽 평가기준",
+   "기능·보증 분리",
+   "E0~E6 등급"
+  ],
+  "related": [
+   "tcsec",
+   "common-criteria",
+   "evaluation-assurance-level"
+  ]
+ },
+ {
+  "id": "k-anonymity",
+  "term": "k-익명성",
+  "term_en": "k-Anonymity",
+  "definition": "동일 준식별자 조합이 최소 k개 존재하도록 하는 프라이버시 모델.",
+  "features": [
+   "동질집합 k개",
+   "재식별 저감",
+   "일반화·삭제로 달성"
+  ],
+  "related": [
+   "l-diversity",
+   "t-closeness",
+   "generalization",
+   "anonymization"
+  ]
+ },
+ {
+  "id": "kcdsa",
+  "term": "KCDSA",
+  "term_en": "Korean Certificate-based Digital Signature Algorithm",
+  "definition": "국내 표준 전자서명 알고리즘.",
+  "features": [
+   "국내 표준",
+   "이산대수·타원곡선",
+   "전자서명 적용"
+  ],
+  "related": [
+   "digital-signature",
+   "ecdsa",
+   "dsa"
+  ]
+ },
+ {
+  "id": "key-distribution-problem",
+  "term": "키 분배 문제",
+  "term_en": "Key Distribution Problem",
+  "definition": "대칭키를 안전하게 공유·전달하기 어려운 문제.",
+  "features": [
+   "사전 키 공유 곤란",
+   "n제곱 키 관리",
+   "공개키로 해결"
+  ],
+  "related": [
+   "symmetric-key-cryptography",
+   "public-key-cryptography",
+   "digital-envelope"
+  ]
+ },
+ {
+  "id": "key-management-system",
+  "term": "KMS",
+  "term_en": "Key Management System",
+  "definition": "암호키의 생성·배포·보관·폐기 수명주기를 관리하는 시스템.",
+  "features": [
+   "키 수명주기 관리",
+   "BYOK 지원",
+   "HSM 연계"
+  ],
+  "related": [
+   "data-encryption",
+   "hardware-security-module",
+   "tokenization"
+  ]
+ },
+ {
+  "id": "krack-attack",
+  "term": "KRACK",
+  "term_en": "Key Reinstallation Attack",
+  "definition": "WPA2 4-way handshake의 키 재설치 취약점을 악용한 공격.",
+  "features": [
+   "키 재설치 악용",
+   "WPA2 취약",
+   "WPA3로 대응"
+  ],
+  "related": [
+   "wpa2",
+   "wpa3",
+   "wireless-lan"
+  ]
+ },
+ {
+  "id": "kyc",
+  "term": "KYC",
+  "term_en": "Know Your Customer",
+  "definition": "금융거래 시 고객 신원을 확인하는 절차.",
+  "features": [
+   "비대면 신원확인",
+   "자금세탁 방지",
+   "DID 활용"
+  ],
+  "related": [
+   "self-sovereign-identity",
+   "verifiable-credential",
+   "mobile-id"
+  ]
+ },
+ {
+  "id": "l-diversity",
+  "term": "l-다양성",
+  "term_en": "l-Diversity",
+  "definition": "동질집합 내 민감정보가 최소 l개의 다양성을 갖도록 하는 모델.",
+  "features": [
+   "민감정보 다양성",
+   "k-익명성 보완",
+   "동질성 공격 방어"
+  ],
+  "related": [
+   "k-anonymity",
+   "t-closeness",
+   "anonymization"
+  ]
+ },
+ {
+  "id": "learning-with-errors",
+  "term": "LWE",
+  "term_en": "Learning With Errors",
+  "definition": "격자 기반 암호의 안전성 근거가 되는 수학적 문제.",
+  "features": [
+   "격자 기반",
+   "양자내성",
+   "동형암호 기반"
+  ],
+  "related": [
+   "homomorphic-encryption",
+   "post-quantum-cryptography"
+  ]
+ },
+ {
+  "id": "least-privilege",
+  "term": "최소권한",
+  "term_en": "Least Privilege",
+  "definition": "업무 수행에 필요한 최소한의 권한만 부여하는 원칙.",
+  "features": [
+   "필요 최소 권한",
+   "피해 범위 축소",
+   "접근통제 기본"
+  ],
+  "related": [
+   "access-control",
+   "separation-of-duties",
+   "role-based-access-control"
+  ]
+ },
+ {
+  "id": "lightweight-cryptography",
+  "term": "경량암호",
+  "term_en": "Lightweight Cryptography",
+  "definition": "자원 제약 기기에 적합하도록 경량화한 암호 기술.",
+  "features": [
+   "저자원 환경",
+   "IoT 적합",
+   "ASCON 등 표준"
+  ],
+  "related": [
+   "internet-of-things",
+   "symmetric-key-cryptography"
+  ]
+ },
+ {
+  "id": "log4shell",
+  "term": "Log4Shell",
+  "term_en": "Log4Shell",
+  "definition": "Log4j 라이브러리의 원격코드실행 취약점(CVE-2021-44228).",
+  "features": [
+   "오픈소스 치명 취약점",
+   "원격코드실행",
+   "공급망 경각심"
+  ],
+  "related": [
+   "software-supply-chain-attack",
+   "open-source-software",
+   "sbom"
+  ]
+ },
+ {
+  "id": "lsb",
+  "term": "LSB",
+  "term_en": "Least Significant Bit",
+  "definition": "최하위 비트에 정보를 삽입하는 공간영역 은닉 기법.",
+  "features": [
+   "최하위 비트 수정",
+   "단순 구현",
+   "변형에 취약"
+  ],
+  "related": [
+   "watermarking",
+   "information-hiding"
+  ]
+ },
+ {
+  "id": "lwm2m",
+  "term": "LwM2M",
+  "term_en": "Lightweight M2M",
+  "definition": "CoAP 위에서 동작하는 IoT 경량 장치관리 프로토콜.",
+  "features": [
+   "장치관리 계층",
+   "부트스트랩·등록",
+   "DTLS 보안"
+  ],
+  "related": [
+   "coap",
+   "dtls",
+   "internet-of-things"
+  ]
+ },
+ {
+  "id": "mac-filtering",
+  "term": "MAC 필터링",
+  "term_en": "MAC Filtering",
+  "definition": "허용된 MAC 주소만 네트워크 접속을 허용하는 통제.",
+  "features": [
+   "MAC 화이트리스트",
+   "무선 접근통제",
+   "스푸핑 취약"
+  ],
+  "related": [
+   "wireless-lan",
+   "access-control",
+   "network-access-control"
+  ]
+ },
+ {
+  "id": "machine-learning",
+  "term": "머신러닝",
+  "term_en": "Machine Learning",
+  "definition": "데이터로부터 패턴을 학습해 예측·분류하는 기술.",
+  "features": [
+   "데이터 기반 학습",
+   "스팸·이상 탐지",
+   "지속 개선"
+  ],
+  "related": [
+   "bayesian-filter"
+  ]
+ },
+ {
+  "id": "malware",
+  "term": "악성코드",
+  "term_en": "Malware",
+  "definition": "시스템을 손상·탈취하기 위해 제작된 악성 소프트웨어.",
+  "features": [
+   "바이러스·웜·트로이",
+   "피해 유발",
+   "탐지·차단 필요"
+  ],
+  "related": [
+   "ransomware",
+   "phishing",
+   "botnet"
+  ]
+ },
+ {
+  "id": "man-in-the-middle-attack",
+  "term": "중간자 공격",
+  "term_en": "Man-in-the-Middle Attack",
+  "definition": "통신 경로에 개입해 도청·변조하는 공격.",
+  "features": [
+   "통신 가로채기",
+   "도청·변조",
+   "암호화로 방어"
+  ],
+  "related": [
+   "ssl-tls",
+   "data-in-transit"
+  ]
+ },
+ {
+  "id": "message-authentication-code",
+  "term": "메시지 인증코드",
+  "term_en": "Message Authentication Code",
+  "definition": "비밀키로 생성해 무결성과 인증을 제공하는 코드(HMAC 등).",
+  "features": [
+   "무결성·인증",
+   "비밀키 기반",
+   "HMAC 대표"
+  ],
+  "related": [
+   "hash-function",
+   "symmetric-key-cryptography",
+   "authenticated-encryption"
+  ]
+ },
+ {
+  "id": "microsoft-sdl",
+  "term": "MS SDL",
+  "term_en": "Microsoft Security Development Lifecycle",
+  "definition": "개발 단계별 보안활동을 정의한 마이크로소프트의 보안 개발 방법론.",
+  "features": [
+   "단계별 보안활동",
+   "위협 모델링 포함",
+   "개발보안 표준"
+  ],
+  "related": [
+   "secure-coding",
+   "threat-modeling",
+   "owasp-samm"
+  ]
+ },
+ {
+  "id": "mirai-botnet",
+  "term": "미라이 봇넷",
+  "term_en": "Mirai Botnet",
+  "definition": "기본 비밀번호 IoT 기기를 장악해 대규모 DDoS를 수행한 봇넷.",
+  "features": [
+   "IoT 기기 장악",
+   "기본 비밀번호 악용",
+   "대규모 DDoS"
+  ],
+  "related": [
+   "botnet",
+   "ddos",
+   "internet-of-things"
+  ]
+ },
+ {
+  "id": "mobile-id",
+  "term": "모바일 신분증",
+  "term_en": "Mobile ID",
+  "definition": "스마트폰에 저장·제시하는 디지털 신분증.",
+  "features": [
+   "모바일 운전면허증",
+   "DID 기반",
+   "선택적 제출"
+  ],
+  "related": [
+   "self-sovereign-identity",
+   "verifiable-credential",
+   "did-identifier"
+  ]
+ },
+ {
+  "id": "mqtt",
+  "term": "MQTT",
+  "term_en": "Message Queuing Telemetry Transport",
+  "definition": "발행·구독 기반 경량 IoT 메시징 프로토콜.",
+  "features": [
+   "Pub/Sub 구조",
+   "브로커 중심",
+   "TLS로 보안"
+  ],
+  "related": [
+   "publish-subscribe",
+   "internet-of-things",
+   "ssl-tls"
+  ]
+ },
+ {
+  "id": "multi-factor-authentication",
+  "term": "다중인증",
+  "term_en": "Multi-Factor Authentication",
+  "definition": "지식·소유·존재 등 둘 이상의 인증요소를 결합하는 인증.",
+  "features": [
+   "2개 이상 요소",
+   "계정탈취 방어",
+   "OTP·생체"
+  ],
+  "related": [
+   "identity-and-access-management",
+   "access-control",
+   "zero-trust"
+  ]
+ },
+ {
+  "id": "multi-party-computation",
+  "term": "다자간 비밀연산",
+  "term_en": "Secure Multi-Party Computation",
+  "definition": "여러 참여자가 입력을 공개하지 않고 공동 연산하는 기법.",
+  "features": [
+   "입력 비공개 연산",
+   "프라이버시 보존",
+   "동형암호 결합"
+  ],
+  "related": [
+   "secure-computation",
+   "homomorphic-encryption",
+   "privacy-preserving-machine-learning"
+  ]
+ },
+ {
+  "id": "multi-tenancy",
+  "term": "멀티테넌시",
+  "term_en": "Multi-Tenancy",
+  "definition": "다수 고객이 동일 자원을 논리적으로 분리해 공유하는 구조.",
+  "features": [
+   "자원 공유",
+   "논리적 격리",
+   "격리 실패 위험"
+  ],
+  "related": [
+   "cloud-computing",
+   "virtualization",
+   "hypervisor"
+  ]
+ },
+ {
+  "id": "national-vulnerability-database",
+  "term": "NVD",
+  "term_en": "National Vulnerability Database",
+  "definition": "미국 NIST가 운영하는 취약점 공개 데이터베이스.",
+  "features": [
+   "CVE 상세 제공",
+   "CVSS 점수",
+   "SBOM 매칭"
+  ],
+  "related": [
+   "cve",
+   "cvss",
+   "sbom"
+  ]
+ },
+ {
+  "id": "network-access-control",
+  "term": "NAC",
+  "term_en": "Network Access Control",
+  "definition": "단말의 보안상태를 점검해 네트워크 접근을 통제하는 솔루션.",
+  "features": [
+   "단말 보안점검",
+   "접근 허용·격리",
+   "정책 기반 통제"
+  ],
+  "related": [
+   "access-control",
+   "ieee-802-1x",
+   "zero-trust"
+  ]
+ },
+ {
+  "id": "noise-growth",
+  "term": "잡음 증가",
+  "term_en": "Noise Growth",
+  "definition": "동형암호 연산마다 암호문 잡음이 누적되는 현상.",
+  "features": [
+   "연산 깊이 제약",
+   "임계치 초과 시 복호 실패",
+   "부트스트래핑 필요"
+  ],
+  "related": [
+   "homomorphic-encryption",
+   "bootstrapping",
+   "fully-homomorphic-encryption"
+  ]
+ },
+ {
+  "id": "non-repudiation",
+  "term": "부인방지",
+  "term_en": "Non-Repudiation",
+  "definition": "행위 사실을 당사자가 부인할 수 없게 하는 보안 서비스.",
+  "features": [
+   "행위 증명",
+   "전자서명 제공",
+   "법적 효력"
+  ],
+  "related": [
+   "digital-signature",
+   "public-key-infrastructure"
+  ]
+ },
+ {
+  "id": "ntia-minimum-elements",
+  "term": "NTIA 최소요소",
+  "term_en": "NTIA Minimum Elements",
+  "definition": "SBOM이 갖춰야 할 최소 데이터 필드를 정의한 기준.",
+  "features": [
+   "공급자·버전·의존관계",
+   "작성자·생성시각",
+   "SBOM 기본 요건"
+  ],
+  "related": [
+   "sbom",
+   "spdx",
+   "cyclonedx"
+  ]
+ },
+ {
+  "id": "oauth",
+  "term": "OAuth",
+  "term_en": "OAuth",
+  "definition": "자원 소유자의 권한을 토큰으로 위임하는 인가 프레임워크.",
+  "features": [
+   "권한 위임",
+   "액세스 토큰",
+   "API 인가"
+  ],
+  "related": [
+   "single-sign-on",
+   "identity-and-access-management",
+   "device-authentication"
+  ]
+ },
+ {
+  "id": "object-relational-mapping",
+  "term": "ORM",
+  "term_en": "Object-Relational Mapping",
+  "definition": "객체와 DB 테이블을 자동 매핑하는 기술로 안전한 쿼리 생성에 기여.",
+  "features": [
+   "객체-테이블 매핑",
+   "파라미터 바인딩",
+   "동적쿼리 지양"
+  ],
+  "related": [
+   "prepared-statement",
+   "sql-injection",
+   "secure-coding"
+  ]
+ },
+ {
+  "id": "ocsp",
+  "term": "OCSP",
+  "term_en": "Online Certificate Status Protocol",
+  "definition": "인증서 폐지 여부를 실시간 조회하는 프로토콜.",
+  "features": [
+   "실시간 폐지 확인",
+   "CRL 대체",
+   "스테이플링"
+  ],
+  "related": [
+   "certificate-revocation-list",
+   "digital-certificate",
+   "public-key-infrastructure"
+  ]
+ },
+ {
+  "id": "onem2m",
+  "term": "oneM2M",
+  "term_en": "oneM2M",
+  "definition": "IoT·M2M 서비스의 국제 공통 플랫폼 표준.",
+  "features": [
+   "IoT 공통 플랫폼",
+   "상호운용",
+   "보안 규격 포함"
+  ],
+  "related": [
+   "internet-of-things",
+   "coap",
+   "mqtt"
+  ]
+ },
+ {
+  "id": "open-source-license",
+  "term": "오픈소스 라이선스",
+  "term_en": "Open Source License",
+  "definition": "오픈소스 사용·배포 조건을 규정하는 라이선스.",
+  "features": [
+   "GPL·MIT 등",
+   "의무 준수",
+   "전염성 주의"
+  ],
+  "related": [
+   "open-source-software",
+   "sbom"
+  ]
+ },
+ {
+  "id": "open-source-software",
+  "term": "오픈소스 소프트웨어",
+  "term_en": "Open Source Software",
+  "definition": "소스코드가 공개되어 자유롭게 사용·수정·배포 가능한 소프트웨어.",
+  "features": [
+   "소스 공개",
+   "광범위 사용",
+   "취약점 관리 필요"
+  ],
+  "related": [
+   "sbom",
+   "software-composition-analysis",
+   "open-source-license"
+  ]
+ },
+ {
+  "id": "opt-in",
+  "term": "옵트인",
+  "term_en": "Opt-in",
+  "definition": "사전 동의를 받은 경우에만 정보를 전송하는 방식.",
+  "features": [
+   "사전 동의 필수",
+   "광고 규제 원칙",
+   "국내 채택"
+  ],
+  "related": [
+   "opt-out",
+   "personal-information-protection-act"
+  ]
+ },
+ {
+  "id": "opt-out",
+  "term": "옵트아웃",
+  "term_en": "Opt-out",
+  "definition": "수신자가 거부하기 전까지 전송을 허용하는 방식.",
+  "features": [
+   "사후 거부",
+   "수신거부 보장",
+   "옵트인과 대비"
+  ],
+  "related": [
+   "opt-in"
+  ]
+ },
+ {
+  "id": "out-of-band-sql-injection",
+  "term": "아웃오브밴드 SQLi",
+  "term_en": "Out-of-band SQL Injection",
+  "definition": "DNS·HTTP 등 외부 채널로 데이터를 반출하는 SQL 인젝션.",
+  "features": [
+   "외부 채널 반출",
+   "비동기 추출",
+   "아웃바운드 통제"
+  ],
+  "related": [
+   "sql-injection",
+   "blind-sql-injection"
+  ]
+ },
+ {
+  "id": "over-the-air-update",
+  "term": "OTA 업데이트",
+  "term_en": "Over-the-Air Update",
+  "definition": "무선 네트워크로 펌웨어·소프트웨어를 원격 갱신하는 기술.",
+  "features": [
+   "원격 펌웨어 갱신",
+   "서명 검증 필요",
+   "수명주기 관리"
+  ],
+  "related": [
+   "internet-of-things",
+   "secure-boot",
+   "device-authentication"
+  ]
+ },
+ {
+  "id": "owasp-samm",
+  "term": "OWASP SAMM",
+  "term_en": "Software Assurance Maturity Model",
+  "definition": "소프트웨어 보증 성숙도를 평가·개선하는 OWASP 모델.",
+  "features": [
+   "성숙도 평가",
+   "개선 로드맵",
+   "개발보안 거버넌스"
+  ],
+  "related": [
+   "bsimm",
+   "microsoft-sdl",
+   "secure-coding"
+  ]
+ },
+ {
+  "id": "owasp-top-10",
+  "term": "OWASP Top 10",
+  "term_en": "OWASP Top 10",
+  "definition": "가장 중요한 웹 애플리케이션 보안 위험 10선.",
+  "features": [
+   "주요 웹 취약점",
+   "인젝션·인증 등",
+   "개발보안 기준"
+  ],
+  "related": [
+   "sql-injection",
+   "xss",
+   "injection-attack"
+  ]
+ },
+ {
+  "id": "paas",
+  "term": "PaaS",
+  "term_en": "Platform as a Service",
+  "definition": "개발·실행 플랫폼을 서비스로 제공하는 클라우드 모델.",
+  "features": [
+   "플랫폼 제공",
+   "개발환경 포함",
+   "중간 책임 분담"
+  ],
+  "related": [
+   "cloud-computing",
+   "iaas",
+   "saas",
+   "shared-responsibility-model"
+  ]
+ },
+ {
+  "id": "partially-homomorphic-encryption",
+  "term": "부분 동형암호",
+  "term_en": "Partially Homomorphic Encryption",
+  "definition": "덧셈 또는 곱셈 한 가지 연산만 무제한 지원하는 동형암호.",
+  "features": [
+   "단일 연산 지원",
+   "RSA·Paillier",
+   "효율적이나 제한적"
+  ],
+  "related": [
+   "homomorphic-encryption",
+   "somewhat-homomorphic-encryption",
+   "fully-homomorphic-encryption"
+  ]
+ },
+ {
+  "id": "pdca",
+  "term": "PDCA",
+  "term_en": "Plan-Do-Check-Act",
+  "definition": "계획·실행·점검·개선을 반복하는 지속적 관리 순환 모델.",
+  "features": [
+   "지속적 개선",
+   "관리체계 운영",
+   "순환 구조"
+  ],
+  "related": [
+   "isms-p",
+   "risk-assessment"
+  ]
+ },
+ {
+  "id": "personal-information",
+  "term": "개인정보",
+  "term_en": "Personal Information",
+  "definition": "살아있는 개인을 식별할 수 있는 정보.",
+  "features": [
+   "식별 가능성",
+   "민감·고유식별정보",
+   "보호 대상"
+  ],
+  "related": [
+   "personal-information-protection-act",
+   "pseudonymization",
+   "resident-registration-number"
+  ]
+ },
+ {
+  "id": "personal-information-protection-act",
+  "term": "개인정보보호법",
+  "term_en": "Personal Information Protection Act",
+  "definition": "개인정보의 처리와 보호를 규정한 국내 기본법.",
+  "features": [
+   "수집·이용·파기 규율",
+   "가명정보 특례",
+   "정보주체 권리"
+  ],
+  "related": [
+   "personal-information",
+   "data-3-acts",
+   "pseudonymization"
+  ]
+ },
+ {
+  "id": "phishing",
+  "term": "피싱",
+  "term_en": "Phishing",
+  "definition": "신뢰기관을 사칭해 개인정보·자격증명을 탈취하는 사기 기법.",
+  "features": [
+   "기관 사칭",
+   "자격증명 탈취",
+   "메일·메신저 경로"
+  ],
+  "related": [
+   "malware",
+   "dmarc",
+   "botnet"
+  ]
+ },
+ {
+  "id": "physically-unclonable-function",
+  "term": "PUF",
+  "term_en": "Physically Unclonable Function",
+  "definition": "칩의 고유 물리 특성으로 복제 불가능한 키를 생성하는 기술.",
+  "features": [
+   "물리적 고유성",
+   "복제 불가",
+   "하드웨어 신원"
+  ],
+  "related": [
+   "device-authentication",
+   "secure-boot",
+   "trusted-platform-module"
+  ]
+ },
+ {
+  "id": "pims",
+  "term": "PIMS",
+  "term_en": "Personal Information Management System",
+  "definition": "개인정보보호 관리체계 인증(현 ISMS-P에 통합).",
+  "features": [
+   "개인정보 관리체계",
+   "수명주기 보호",
+   "ISMS-P 통합"
+  ],
+  "related": [
+   "isms-p",
+   "isms",
+   "personal-information-protection-act"
+  ]
+ },
+ {
+  "id": "pkcs",
+  "term": "PKCS",
+  "term_en": "Public Key Cryptography Standards",
+  "definition": "공개키 암호 활용을 위한 표준군(PKCS#1·7·11 등).",
+  "features": [
+   "공개키 표준군",
+   "PKCS#7 메시지",
+   "상호운용"
+  ],
+  "related": [
+   "cms",
+   "public-key-cryptography",
+   "digital-envelope"
+  ]
+ },
+ {
+  "id": "poodle-attack",
+  "term": "POODLE",
+  "term_en": "POODLE",
+  "definition": "SSL 3.0 패딩 취약점을 악용한 공격.",
+  "features": [
+   "SSL 3.0 취약",
+   "패딩 오라클",
+   "SSL 폐기 계기"
+  ],
+  "related": [
+   "ssl-tls",
+   "tls-1-3"
+  ]
+ },
+ {
+  "id": "post-quantum-cryptography",
+  "term": "양자내성암호",
+  "term_en": "Post-Quantum Cryptography",
+  "definition": "양자컴퓨터 공격에도 안전한 암호 알고리즘.",
+  "features": [
+   "양자 공격 대비",
+   "격자·해시 기반",
+   "표준화 진행"
+  ],
+  "related": [
+   "learning-with-errors",
+   "public-key-cryptography",
+   "digital-signature"
+  ]
+ },
+ {
+  "id": "pre-master-secret",
+  "term": "프리마스터시크릿",
+  "term_en": "Pre-Master Secret",
+  "definition": "TLS 핸드셰이크에서 세션키 도출의 기초가 되는 비밀값.",
+  "features": [
+   "세션키 기초",
+   "공개키로 전달",
+   "마스터시크릿 도출"
+  ],
+  "related": [
+   "session-key",
+   "ssl-tls",
+   "ssl-handshake-protocol"
+  ]
+ },
+ {
+  "id": "prepared-statement",
+  "term": "준비된 구문",
+  "term_en": "Prepared Statement",
+  "definition": "질의 구조와 입력값을 분리해 바인딩하는 안전한 쿼리 방식.",
+  "features": [
+   "질의·데이터 분리",
+   "파라미터 바인딩",
+   "SQLi 근본 대책"
+  ],
+  "related": [
+   "sql-injection",
+   "input-validation",
+   "secure-coding"
+  ]
+ },
+ {
+  "id": "privacy-by-design",
+  "term": "프라이버시 중심 설계",
+  "term_en": "Privacy by Design",
+  "definition": "설계 단계부터 프라이버시 보호를 내재화하는 원칙.",
+  "features": [
+   "설계 단계 내재화",
+   "기본값 보호",
+   "선제적 대응"
+  ],
+  "related": [
+   "security-by-design",
+   "personal-information-protection-act",
+   "privacy-impact-assessment"
+  ]
+ },
+ {
+  "id": "privacy-impact-assessment",
+  "term": "개인정보 영향평가",
+  "term_en": "Privacy Impact Assessment",
+  "definition": "개인정보 처리 시스템의 위험을 사전 분석·개선하는 평가.",
+  "features": [
+   "사전 위험 분석",
+   "개선과제 도출",
+   "공공 의무 대상"
+  ],
+  "related": [
+   "personal-information-protection-act",
+   "risk-assessment",
+   "privacy-by-design"
+  ]
+ },
+ {
+  "id": "privacy-officer",
+  "term": "개인정보보호책임자",
+  "term_en": "Chief Privacy Officer",
+  "definition": "조직의 개인정보보호를 총괄하는 책임자(CPO).",
+  "features": [
+   "보호업무 총괄",
+   "법적 지정 의무",
+   "사고 대응 책임"
+  ],
+  "related": [
+   "personal-information-protection-act",
+   "isms-p"
+  ]
+ },
+ {
+  "id": "privacy-preserving-machine-learning",
+  "term": "프라이버시 보존 머신러닝",
+  "term_en": "Privacy-Preserving Machine Learning",
+  "definition": "데이터 프라이버시를 유지하며 모델을 학습·추론하는 기법.",
+  "features": [
+   "데이터 보호 학습",
+   "동형암호·연합학습",
+   "민감정보 활용"
+  ],
+  "related": [
+   "homomorphic-encryption",
+   "federated-learning",
+   "differential-privacy"
+  ]
+ },
+ {
+  "id": "private-key",
+  "term": "개인키",
+  "term_en": "Private Key",
+  "definition": "소유자만 보유하는 비밀키로 복호화·서명에 사용.",
+  "features": [
+   "비밀 보관",
+   "서명·복호화",
+   "공개키와 쌍"
+  ],
+  "related": [
+   "public-key-cryptography",
+   "digital-signature",
+   "hardware-security-module"
+  ]
+ },
+ {
+  "id": "protection-profile",
+  "term": "보호프로파일",
+  "term_en": "Protection Profile",
+  "definition": "제품군의 공통 보안요구사항을 구현 독립적으로 정의한 문서.",
+  "features": [
+   "제품군 요구사항",
+   "구현 독립적",
+   "ST 기준 제공"
+  ],
+  "related": [
+   "common-criteria",
+   "security-target",
+   "evaluation-assurance-level"
+  ]
+ },
+ {
+  "id": "pseudonymization",
+  "term": "가명처리",
+  "term_en": "Pseudonymization",
+  "definition": "추가정보 사용 시 복원 가능하도록 개인정보를 처리하는 기법.",
+  "features": [
+   "추가정보 분리보관",
+   "가명정보 특례",
+   "통계·연구 활용"
+  ],
+  "related": [
+   "anonymization",
+   "re-identification",
+   "pseudonymization-technique",
+   "personal-information-protection-act"
+  ]
+ },
+ {
+  "id": "pseudonymization-technique",
+  "term": "가명·대체 기법",
+  "term_en": "Pseudonymization Technique",
+  "definition": "식별자를 일련번호·토큰 등으로 대체하는 가명처리 기법.",
+  "features": [
+   "식별자 대체",
+   "규칙·토큰화",
+   "매핑정보 분리"
+  ],
+  "related": [
+   "pseudonymization",
+   "tokenization",
+   "data-masking"
+  ]
+ },
+ {
+  "id": "public-key-cryptography",
+  "term": "공개키 암호",
+  "term_en": "Public Key Cryptography",
+  "definition": "공개키·개인키 쌍을 사용하는 비대칭 암호 방식.",
+  "features": [
+   "키 쌍 사용",
+   "키 분배 용이",
+   "서명·암호화"
+  ],
+  "related": [
+   "private-key",
+   "digital-signature",
+   "public-key-infrastructure",
+   "symmetric-key-cryptography"
+  ]
+ },
+ {
+  "id": "public-key-infrastructure",
+  "term": "PKI",
+  "term_en": "Public Key Infrastructure",
+  "definition": "공개키와 인증서를 발급·관리하는 신뢰 기반 구조.",
+  "features": [
+   "인증서 발급·관리",
+   "CA 신뢰 체계",
+   "공개키 진위 보증"
+  ],
+  "related": [
+   "certificate-authority",
+   "digital-certificate",
+   "public-key-cryptography"
+  ]
+ },
+ {
+  "id": "publish-subscribe",
+  "term": "발행·구독",
+  "term_en": "Publish-Subscribe",
+  "definition": "발행자와 구독자가 브로커를 통해 비동기 메시지를 교환하는 모델.",
+  "features": [
+   "비동기 통신",
+   "브로커 중개",
+   "토픽 기반"
+  ],
+  "related": [
+   "mqtt",
+   "internet-of-things"
+  ]
+ },
+ {
+  "id": "race-condition",
+  "term": "경쟁조건",
+  "term_en": "Race Condition",
+  "definition": "검사와 사용 사이 시점차를 악용하는 TOCTOU 결함.",
+  "features": [
+   "TOCTOU 결함",
+   "동시성 문제",
+   "원자적 처리로 방어"
+  ],
+  "related": [
+   "secure-coding",
+   "security-weakness"
+  ]
+ },
+ {
+  "id": "radius",
+  "term": "RADIUS",
+  "term_en": "Remote Authentication Dial-In User Service",
+  "definition": "중앙 인증·인가·과금을 제공하는 AAA 프로토콜.",
+  "features": [
+   "중앙 인증 서버",
+   "AAA 제공",
+   "802.1X 연계"
+  ],
+  "related": [
+   "ieee-802-1x",
+   "eap",
+   "identity-and-access-management"
+  ]
+ },
+ {
+  "id": "ransomware",
+  "term": "랜섬웨어",
+  "term_en": "Ransomware",
+  "definition": "데이터를 암호화하고 금전을 요구하는 악성코드.",
+  "features": [
+   "데이터 암호화",
+   "금전 요구",
+   "백업으로 대응"
+  ],
+  "related": [
+   "malware",
+   "phishing",
+   "botnet"
+  ]
+ },
+ {
+  "id": "rbl",
+  "term": "RBL",
+  "term_en": "Real-time Blackhole List",
+  "definition": "스팸 발신 IP를 실시간 공유하는 블랙리스트.",
+  "features": [
+   "악성 IP 목록",
+   "실시간 조회",
+   "평판 기반 차단"
+  ],
+  "related": [
+   "phishing",
+   "dmarc"
+  ]
+ },
+ {
+  "id": "re-identification",
+  "term": "재식별",
+  "term_en": "Re-identification",
+  "definition": "가명·익명 데이터를 다른 정보와 결합해 개인을 다시 식별하는 것.",
+  "features": [
+   "결합 재식별",
+   "위험 평가 대상",
+   "처리 핵심 위협"
+  ],
+  "related": [
+   "pseudonymization",
+   "anonymization",
+   "adequacy-evaluation",
+   "k-anonymity"
+  ]
+ },
+ {
+  "id": "resident-registration-number",
+  "term": "주민등록번호",
+  "term_en": "Resident Registration Number",
+  "definition": "국민 개개인에게 부여되는 고유식별번호.",
+  "features": [
+   "고유식별정보",
+   "암호화 의무",
+   "처리 제한"
+  ],
+  "related": [
+   "personal-information",
+   "personal-information-protection-act",
+   "data-encryption"
+  ]
+ },
+ {
+  "id": "risk-assessment",
+  "term": "위험평가",
+  "term_en": "Risk Assessment",
+  "definition": "자산·위협·취약점을 분석해 위험을 산정·대응하는 활동.",
+  "features": [
+   "자산·위협 분석",
+   "위험 산정",
+   "통제 선정"
+  ],
+  "related": [
+   "isms-p",
+   "privacy-impact-assessment",
+   "threat-modeling"
+  ]
+ },
+ {
+  "id": "robustness",
+  "term": "강인성",
+  "term_en": "Robustness",
+  "definition": "압축·변형·공격에도 워터마크가 유지되는 성질.",
+  "features": [
+   "변형 내성",
+   "주파수영역 강화",
+   "비인지성과 상충"
+  ],
+  "related": [
+   "watermarking",
+   "imperceptibility",
+   "frequency-domain"
+  ]
+ },
+ {
+  "id": "rogue-ap",
+  "term": "불법 AP",
+  "term_en": "Rogue AP",
+  "definition": "무단 설치되어 네트워크 우회 침입 경로가 되는 액세스포인트.",
+  "features": [
+   "무단 설치 AP",
+   "우회 침입 경로",
+   "WIPS 탐지"
+  ],
+  "related": [
+   "wireless-lan",
+   "evil-twin",
+   "wips"
+  ]
+ },
+ {
+  "id": "role-based-access-control",
+  "term": "역할기반 접근통제",
+  "term_en": "Role-Based Access Control",
+  "definition": "사용자의 역할에 권한을 부여해 접근을 통제하는 모델.",
+  "features": [
+   "역할 기반 권한",
+   "관리 효율",
+   "최소권한 적용"
+  ],
+  "related": [
+   "access-control",
+   "least-privilege",
+   "identity-and-access-management"
+  ]
+ },
+ {
+  "id": "rsa",
+  "term": "RSA",
+  "term_en": "RSA",
+  "definition": "소인수분해 난제에 기반한 대표적 공개키 암호·서명 알고리즘.",
+  "features": [
+   "소인수분해 기반",
+   "암호화·서명",
+   "긴 키 길이"
+  ],
+  "related": [
+   "public-key-cryptography",
+   "digital-signature",
+   "ecdsa"
+  ]
+ },
+ {
+  "id": "s-http",
+  "term": "S-HTTP",
+  "term_en": "Secure HTTP",
+  "definition": "HTTP 메시지 단위로 암호화·서명하는 응용계층 보안 프로토콜.",
+  "features": [
+   "메시지 단위 보안",
+   "HTTP 전용",
+   "현재 미사용"
+  ],
+  "related": [
+   "ssl-tls",
+   "digital-signature"
+  ]
+ },
+ {
+  "id": "s-mime",
+  "term": "S/MIME",
+  "term_en": "Secure/Multipurpose Internet Mail Extensions",
+  "definition": "이메일에 암호화·전자서명을 제공하는 표준.",
+  "features": [
+   "메일 암호·서명",
+   "인증서 기반",
+   "CMS 활용"
+  ],
+  "related": [
+   "cms",
+   "digital-signature",
+   "digital-envelope"
+  ]
+ },
+ {
+  "id": "saas",
+  "term": "SaaS",
+  "term_en": "Software as a Service",
+  "definition": "완성된 소프트웨어를 서비스로 제공하는 클라우드 모델.",
+  "features": [
+   "SW 제공",
+   "이용자 데이터만 책임",
+   "구독 이용"
+  ],
+  "related": [
+   "cloud-computing",
+   "iaas",
+   "paas",
+   "shared-responsibility-model"
+  ]
+ },
+ {
+  "id": "sase",
+  "term": "SASE",
+  "term_en": "Secure Access Service Edge",
+  "definition": "네트워크와 보안을 클라우드에서 통합 제공하는 아키텍처.",
+  "features": [
+   "네트워크+보안 통합",
+   "클라우드 전달",
+   "제로트러스트 기반"
+  ],
+  "related": [
+   "zero-trust",
+   "cloud-computing",
+   "network-access-control"
+  ]
+ },
+ {
+  "id": "sbom",
+  "term": "SBOM",
+  "term_en": "Software Bill of Materials",
+  "definition": "소프트웨어 구성요소와 의존관계를 기술한 자재명세서.",
+  "features": [
+   "구성요소 명세",
+   "공급망 투명성",
+   "취약점 영향분석"
+  ],
+  "related": [
+   "spdx",
+   "cyclonedx",
+   "software-composition-analysis",
+   "open-source-software"
+  ]
+ },
+ {
+  "id": "secure-boot",
+  "term": "시큐어부트",
+  "term_en": "Secure Boot",
+  "definition": "부팅 시 펌웨어·OS 서명을 검증해 무결성을 보장하는 기술.",
+  "features": [
+   "서명 검증 부팅",
+   "변조 차단",
+   "신뢰 체인"
+  ],
+  "related": [
+   "trusted-platform-module",
+   "device-authentication",
+   "physically-unclonable-function"
+  ]
+ },
+ {
+  "id": "secure-coding",
+  "term": "시큐어코딩",
+  "term_en": "Secure Coding",
+  "definition": "보안약점을 예방하도록 안전하게 코드를 작성하는 기법.",
+  "features": [
+   "보안약점 예방",
+   "코딩 규칙 준수",
+   "개발보안 핵심"
+  ],
+  "related": [
+   "software-development-lifecycle",
+   "input-validation",
+   "static-application-security-testing"
+  ]
+ },
+ {
+  "id": "secure-coding-guide",
+  "term": "SW 개발보안 가이드",
+  "term_en": "Secure Coding Guide",
+  "definition": "행정안전부가 제시한 소프트웨어 보안약점 진단·제거 기준.",
+  "features": [
+   "보안약점 7유형",
+   "공공사업 적용",
+   "진단 기준"
+  ],
+  "related": [
+   "secure-coding",
+   "security-weakness",
+   "owasp-top-10"
+  ]
+ },
+ {
+  "id": "secure-computation",
+  "term": "비밀 연산",
+  "term_en": "Secure Computation",
+  "definition": "데이터를 노출하지 않고 연산을 수행하는 암호 기술.",
+  "features": [
+   "입력 비공개 연산",
+   "동형암호·MPC",
+   "프라이버시 보존"
+  ],
+  "related": [
+   "homomorphic-encryption",
+   "multi-party-computation",
+   "privacy-preserving-machine-learning"
+  ]
+ },
+ {
+  "id": "security-by-design",
+  "term": "보안 내재화 설계",
+  "term_en": "Security by Design",
+  "definition": "설계 단계부터 보안을 내재화하는 원칙.",
+  "features": [
+   "설계 단계 보안",
+   "사전 예방",
+   "공격면 축소"
+  ],
+  "related": [
+   "privacy-by-design",
+   "threat-modeling",
+   "attack-surface"
+  ]
+ },
+ {
+  "id": "security-target",
+  "term": "보안목표명세서",
+  "term_en": "Security Target",
+  "definition": "특정 제품의 보안환경·목표·기능·보증을 구체화한 문서.",
+  "features": [
+   "제품별 명세",
+   "PP 참조",
+   "평가 기준"
+  ],
+  "related": [
+   "common-criteria",
+   "protection-profile",
+   "evaluation-assurance-level"
+  ]
+ },
+ {
+  "id": "security-weakness",
+  "term": "보안약점",
+  "term_en": "Security Weakness",
+  "definition": "악용되면 취약점이 될 수 있는 소프트웨어의 잠재 결함.",
+  "features": [
+   "잠재 결함",
+   "진단·제거 대상",
+   "CWE 분류"
+  ],
+  "related": [
+   "secure-coding",
+   "secure-coding-guide",
+   "software-development-lifecycle"
+  ]
+ },
+ {
+  "id": "selective-disclosure",
+  "term": "선택적 공개",
+  "term_en": "Selective Disclosure",
+  "definition": "필요한 속성만 제시하고 나머지는 숨기는 증명 방식.",
+  "features": [
+   "최소정보 제출",
+   "속성 선택 공개",
+   "프라이버시 보호"
+  ],
+  "related": [
+   "self-sovereign-identity",
+   "zero-knowledge-proof",
+   "verifiable-presentation"
+  ]
+ },
+ {
+  "id": "self-sovereign-identity",
+  "term": "자기주권 신원",
+  "term_en": "Self-Sovereign Identity",
+  "definition": "이용자가 자신의 신원을 직접 소유·통제하는 모델.",
+  "features": [
+   "이용자 통제",
+   "탈중앙",
+   "최소정보 제출"
+  ],
+  "related": [
+   "did-identifier",
+   "verifiable-credential",
+   "selective-disclosure",
+   "blockchain"
+  ]
+ },
+ {
+  "id": "separation-of-duties",
+  "term": "직무분리",
+  "term_en": "Separation of Duties",
+  "definition": "한 사람이 전 과정을 수행하지 못하도록 업무를 분리하는 통제.",
+  "features": [
+   "권한 분산",
+   "내부통제",
+   "부정 방지"
+  ],
+  "related": [
+   "least-privilege",
+   "access-control"
+  ]
+ },
+ {
+  "id": "service-level-agreement",
+  "term": "SLA",
+  "term_en": "Service Level Agreement",
+  "definition": "서비스 수준과 책임을 규정한 계약.",
+  "features": [
+   "가용성 보장",
+   "책임 명시",
+   "클라우드 필수"
+  ],
+  "related": [
+   "cloud-computing",
+   "vendor-lock-in"
+  ]
+ },
+ {
+  "id": "session-key",
+  "term": "세션키",
+  "term_en": "Session Key",
+  "definition": "한 세션에 한정해 사용하는 임시 대칭키.",
+  "features": [
+   "1회성 대칭키",
+   "데이터 암호화",
+   "공개키로 보호"
+  ],
+  "related": [
+   "symmetric-key-cryptography",
+   "digital-envelope",
+   "pre-master-secret"
+  ]
+ },
+ {
+  "id": "shared-responsibility-model",
+  "term": "책임공유모델",
+  "term_en": "Shared Responsibility Model",
+  "definition": "CSP와 이용자가 보안 책임을 분담하는 클라우드 보안 원칙.",
+  "features": [
+   "CSP·이용자 분담",
+   "모델별 경계 상이",
+   "계약 명시 필요"
+  ],
+  "related": [
+   "cloud-computing",
+   "iaas",
+   "paas",
+   "saas"
+  ]
+ },
+ {
+  "id": "shift-left-security",
+  "term": "Shift-Left 보안",
+  "term_en": "Shift-Left Security",
+  "definition": "보안활동을 개발 초기 단계로 앞당기는 접근.",
+  "features": [
+   "초기 단계 보안",
+   "비용 절감",
+   "DevSecOps 연계"
+  ],
+  "related": [
+   "devsecops",
+   "secure-coding",
+   "software-development-lifecycle"
+  ]
+ },
+ {
+  "id": "side-channel-attack",
+  "term": "측채널 공격",
+  "term_en": "Side-Channel Attack",
+  "definition": "전력·시간·전자파 등 부수 정보로 비밀을 추출하는 공격.",
+  "features": [
+   "물리 정보 분석",
+   "키 추출",
+   "가상화 공유자원 위협"
+  ],
+  "related": [
+   "multi-tenancy",
+   "vm-escape"
+  ]
+ },
+ {
+  "id": "siem",
+  "term": "SIEM",
+  "term_en": "Security Information and Event Management",
+  "definition": "보안 이벤트·로그를 수집·상관분석해 위협을 탐지하는 시스템.",
+  "features": [
+   "로그 통합 수집",
+   "상관분석",
+   "실시간 탐지"
+  ],
+  "related": [
+   "audit-log",
+   "intrusion-detection-system"
+  ]
+ },
+ {
+  "id": "single-sign-on",
+  "term": "SSO",
+  "term_en": "Single Sign-On",
+  "definition": "한 번 인증으로 여러 서비스에 접근하는 통합 인증.",
+  "features": [
+   "통합 인증",
+   "편의성 향상",
+   "IdP 의존"
+  ],
+  "related": [
+   "identity-and-access-management",
+   "federated-identity",
+   "oauth"
+  ]
+ },
+ {
+  "id": "slsa",
+  "term": "SLSA",
+  "term_en": "Supply-chain Levels for Software Artifacts",
+  "definition": "소프트웨어 빌드 출처·무결성 보증 수준 프레임워크.",
+  "features": [
+   "빌드 출처 증명",
+   "무결성 등급",
+   "공급망 보안"
+  ],
+  "related": [
+   "sbom",
+   "software-supply-chain-attack",
+   "digital-signature"
+  ]
+ },
+ {
+  "id": "smart-office",
+  "term": "스마트 오피스",
+  "term_en": "Smart Office",
+  "definition": "무선·모바일 기반으로 업무 환경을 지능화한 사무공간.",
+  "features": [
+   "무선 업무환경",
+   "모바일 협업",
+   "무선 보안 중요"
+  ],
+  "related": [
+   "wireless-lan",
+   "fmc"
+  ]
+ },
+ {
+  "id": "soc-2",
+  "term": "SOC 2",
+  "term_en": "Service Organization Control 2",
+  "definition": "서비스 조직의 보안·가용성 등 통제를 검증하는 감사 보고서.",
+  "features": [
+   "신뢰서비스 기준",
+   "제3자 감사",
+   "클라우드 신뢰 입증"
+  ],
+  "related": [
+   "cloud-computing",
+   "iso-iec-27017"
+  ]
+ },
+ {
+  "id": "software-composition-analysis",
+  "term": "SCA",
+  "term_en": "Software Composition Analysis",
+  "definition": "오픈소스 구성요소의 취약점·라이선스를 분석하는 기술.",
+  "features": [
+   "오픈소스 식별",
+   "취약점·라이선스",
+   "SBOM 생성"
+  ],
+  "related": [
+   "sbom",
+   "open-source-software",
+   "cve"
+  ]
+ },
+ {
+  "id": "software-development-lifecycle",
+  "term": "소프트웨어 개발수명주기",
+  "term_en": "Software Development Lifecycle",
+  "definition": "요구분석부터 운영·폐기까지의 소프트웨어 개발 전 과정.",
+  "features": [
+   "단계별 프로세스",
+   "보안 내재화 대상",
+   "반복·개선"
+  ],
+  "related": [
+   "secure-coding",
+   "devsecops",
+   "shift-left-security"
+  ]
+ },
+ {
+  "id": "software-supply-chain-attack",
+  "term": "소프트웨어 공급망 공격",
+  "term_en": "Software Supply Chain Attack",
+  "definition": "개발·배포 공급망을 침해해 다수 사용자를 감염시키는 공격.",
+  "features": [
+   "공급망 침해",
+   "광범위 파급",
+   "SBOM으로 대응"
+  ],
+  "related": [
+   "solarwinds-attack",
+   "log4shell",
+   "sbom",
+   "slsa"
+  ]
+ },
+ {
+  "id": "solarwinds-attack",
+  "term": "솔라윈즈 공격",
+  "term_en": "SolarWinds Attack",
+  "definition": "빌드 시스템을 침해해 업데이트에 악성코드를 삽입한 공급망 공격.",
+  "features": [
+   "빌드 서버 침해",
+   "업데이트 오염",
+   "대규모 침투"
+  ],
+  "related": [
+   "software-supply-chain-attack",
+   "sbom"
+  ]
+ },
+ {
+  "id": "somewhat-homomorphic-encryption",
+  "term": "부분수준 동형암호",
+  "term_en": "Somewhat Homomorphic Encryption",
+  "definition": "덧셈·곱셈을 제한된 횟수만 지원하는 동형암호.",
+  "features": [
+   "제한된 연산 깊이",
+   "잡음 누적 제약",
+   "FHE 전단계"
+  ],
+  "related": [
+   "homomorphic-encryption",
+   "partially-homomorphic-encryption",
+   "fully-homomorphic-encryption"
+  ]
+ },
+ {
+  "id": "spdx",
+  "term": "SPDX",
+  "term_en": "Software Package Data Exchange",
+  "definition": "라이선스·구성요소 정보를 기술하는 SBOM 국제표준(ISO/IEC 5962).",
+  "features": [
+   "라이선스 상세",
+   "ISO 표준",
+   "다양한 형식"
+  ],
+  "related": [
+   "sbom",
+   "cyclonedx",
+   "open-source-license"
+  ]
+ },
+ {
+  "id": "spf",
+  "term": "SPF",
+  "term_en": "Sender Policy Framework",
+  "definition": "허용된 발신 서버 IP를 DNS에 공개해 위장을 차단하는 인증.",
+  "features": [
+   "발신 IP 검증",
+   "DNS 레코드",
+   "DMARC 연계"
+  ],
+  "related": [
+   "dkim",
+   "dmarc",
+   "phishing"
+  ]
+ },
+ {
+  "id": "sql-injection",
+  "term": "SQL 인젝션",
+  "term_en": "SQL Injection",
+  "definition": "검증되지 않은 입력으로 SQL 질의 구조를 변경하는 인젝션 공격.",
+  "features": [
+   "질의 구조 변조",
+   "데이터 유출·변조",
+   "Prepared Statement 방어"
+  ],
+  "related": [
+   "injection-attack",
+   "prepared-statement",
+   "blind-sql-injection",
+   "input-validation"
+  ]
+ },
+ {
+  "id": "ssl-handshake-protocol",
+  "term": "SSL 핸드셰이크 프로토콜",
+  "term_en": "SSL Handshake Protocol",
+  "definition": "암호스위트 협상·인증·키 교환을 수행하는 TLS 하위 프로토콜.",
+  "features": [
+   "암호스위트 협상",
+   "인증·키교환",
+   "세션 수립"
+  ],
+  "related": [
+   "ssl-tls",
+   "cipher-suite",
+   "pre-master-secret"
+  ]
+ },
+ {
+  "id": "ssl-record-protocol",
+  "term": "SSL 레코드 프로토콜",
+  "term_en": "SSL Record Protocol",
+  "definition": "데이터를 분할·암호화·MAC 처리해 전송하는 TLS 하위 프로토콜.",
+  "features": [
+   "분할·암호화",
+   "MAC 부가",
+   "AEAD 처리"
+  ],
+  "related": [
+   "ssl-tls",
+   "message-authentication-code",
+   "authenticated-encryption"
+  ]
+ },
+ {
+  "id": "ssl-tls",
+  "term": "SSL/TLS",
+  "term_en": "Secure Sockets Layer / Transport Layer Security",
+  "definition": "전송 구간의 인증·기밀성·무결성을 제공하는 보안 프로토콜.",
+  "features": [
+   "전송 보안",
+   "핸드셰이크·레코드",
+   "HTTPS 기반"
+  ],
+  "related": [
+   "ssl-handshake-protocol",
+   "ssl-record-protocol",
+   "tls-1-3",
+   "cipher-suite"
+  ]
+ },
+ {
+  "id": "static-application-security-testing",
+  "term": "SAST",
+  "term_en": "Static Application Security Testing",
+  "definition": "소스코드를 정적 분석해 보안약점을 탐지하는 테스트.",
+  "features": [
+   "소스 정적 분석",
+   "개발 초기 적용",
+   "오탐 관리"
+  ],
+  "related": [
+   "dynamic-application-security-testing",
+   "secure-coding",
+   "devsecops"
+  ]
+ },
+ {
+  "id": "stored-procedure",
+  "term": "저장 프로시저",
+  "term_en": "Stored Procedure",
+  "definition": "DB에 저장되어 실행되는 사전 컴파일 질의 집합.",
+  "features": [
+   "사전 컴파일",
+   "파라미터화 가능",
+   "동적쿼리 주의"
+  ],
+  "related": [
+   "prepared-statement",
+   "sql-injection"
+  ]
+ },
+ {
+  "id": "swid-tag",
+  "term": "SWID 태그",
+  "term_en": "Software Identification Tag",
+  "definition": "설치 소프트웨어를 식별하는 ISO/IEC 19770-2 태그.",
+  "features": [
+   "SW 식별 태그",
+   "자산관리",
+   "SBOM 포맷"
+  ],
+  "related": [
+   "sbom",
+   "spdx",
+   "cyclonedx"
+  ]
+ },
+ {
+  "id": "symmetric-key-cryptography",
+  "term": "대칭키 암호",
+  "term_en": "Symmetric Key Cryptography",
+  "definition": "암·복호화에 동일 키를 사용하는 암호 방식.",
+  "features": [
+   "동일 키 사용",
+   "고속 처리",
+   "키 분배 과제"
+  ],
+  "related": [
+   "public-key-cryptography",
+   "session-key",
+   "key-distribution-problem"
+  ]
+ },
+ {
+  "id": "synthetic-data",
+  "term": "합성데이터",
+  "term_en": "Synthetic Data",
+  "definition": "원본 통계 특성을 모사해 생성한 가상 데이터.",
+  "features": [
+   "가상 생성 데이터",
+   "프라이버시 보존",
+   "AI 학습 활용"
+  ],
+  "related": [
+   "differential-privacy",
+   "anonymization",
+   "privacy-preserving-machine-learning"
+  ]
+ },
+ {
+  "id": "t-closeness",
+  "term": "t-근접성",
+  "term_en": "t-Closeness",
+  "definition": "동질집합의 민감정보 분포를 전체 분포와 유사하게 유지하는 모델.",
+  "features": [
+   "분포 유사성",
+   "l-다양성 보완",
+   "쏠림 공격 방어"
+  ],
+  "related": [
+   "k-anonymity",
+   "l-diversity",
+   "anonymization"
+  ]
+ },
+ {
+  "id": "target-of-evaluation",
+  "term": "평가대상",
+  "term_en": "Target of Evaluation",
+  "definition": "CC 평가의 대상이 되는 제품·시스템과 관련 문서(TOE).",
+  "features": [
+   "평가 대상 제품",
+   "ST 기준 평가",
+   "문서 포함"
+  ],
+  "related": [
+   "common-criteria",
+   "security-target",
+   "evaluation-assurance-level"
+  ]
+ },
+ {
+  "id": "tcsec",
+  "term": "TCSEC",
+  "term_en": "Trusted Computer System Evaluation Criteria",
+  "definition": "미국 국방부의 정보보호 평가기준(오렌지북).",
+  "features": [
+   "기밀성 중심",
+   "D~A1 등급",
+   "기능·보증 통합"
+  ],
+  "related": [
+   "itsec",
+   "common-criteria",
+   "evaluation-assurance-level"
+  ]
+ },
+ {
+  "id": "threat-modeling",
+  "term": "위협 모델링",
+  "term_en": "Threat Modeling",
+  "definition": "시스템의 위협을 식별·분석해 대응책을 수립하는 설계 활동.",
+  "features": [
+   "STRIDE 등 기법",
+   "공격면 분석",
+   "설계 단계 수행"
+  ],
+  "related": [
+   "security-by-design",
+   "attack-surface",
+   "risk-assessment"
+  ]
+ },
+ {
+  "id": "time-based-blind-sql-injection",
+  "term": "시간 기반 블라인드 SQLi",
+  "term_en": "Time-based Blind SQL Injection",
+  "definition": "조건 성립 시 응답 지연으로 데이터를 추론하는 기법.",
+  "features": [
+   "응답 지연 관찰",
+   "결과 미노출 환경",
+   "타임아웃·WAF 방어"
+  ],
+  "related": [
+   "blind-sql-injection",
+   "sql-injection"
+  ]
+ },
+ {
+  "id": "tls-1-3",
+  "term": "TLS 1.3",
+  "term_en": "Transport Layer Security 1.3",
+  "definition": "핸드셰이크를 간소화하고 취약 암호를 제거한 최신 TLS 버전.",
+  "features": [
+   "1-RTT·0-RTT",
+   "전방향 비밀성 기본",
+   "취약 암호 제거"
+  ],
+  "related": [
+   "ssl-tls",
+   "forward-secrecy",
+   "cipher-suite"
+  ]
+ },
+ {
+  "id": "tokenization",
+  "term": "토큰화",
+  "term_en": "Tokenization",
+  "definition": "민감데이터를 의미 없는 토큰으로 치환해 보호하는 기법.",
+  "features": [
+   "토큰 치환",
+   "원본 분리 보관",
+   "PCI 활용"
+  ],
+  "related": [
+   "data-masking",
+   "pseudonymization-technique",
+   "key-management-system"
+  ]
+ },
+ {
+  "id": "tradeoff",
+  "term": "트레이드오프",
+  "term_en": "Trade-off",
+  "definition": "한 특성을 높이면 다른 특성이 희생되는 상충관계.",
+  "features": [
+   "특성 간 상충",
+   "최적점 탐색",
+   "설계 균형"
+  ],
+  "related": [
+   "imperceptibility",
+   "robustness",
+   "watermark-capacity"
+  ]
+ },
+ {
+  "id": "trusted-execution-environment",
+  "term": "신뢰실행환경",
+  "term_en": "Trusted Execution Environment",
+  "definition": "프로세서 내 격리된 보안 실행영역.",
+  "features": [
+   "하드웨어 격리",
+   "민감연산 보호",
+   "기밀 컴퓨팅 기반"
+  ],
+  "related": [
+   "confidential-computing",
+   "trusted-platform-module",
+   "data-in-use"
+  ]
+ },
+ {
+  "id": "trusted-platform-module",
+  "term": "TPM",
+  "term_en": "Trusted Platform Module",
+  "definition": "키 저장·무결성 측정을 수행하는 하드웨어 보안 칩.",
+  "features": [
+   "키 안전 저장",
+   "무결성 측정",
+   "시큐어부트 지원"
+  ],
+  "related": [
+   "secure-boot",
+   "physically-unclonable-function",
+   "hardware-security-module"
+  ]
+ },
+ {
+  "id": "union-based-sql-injection",
+  "term": "유니온 기반 SQLi",
+  "term_en": "UNION-based SQL Injection",
+  "definition": "UNION으로 다른 테이블 결과를 결합해 노출시키는 기법.",
+  "features": [
+   "질의 결과 결합",
+   "타 테이블 노출",
+   "바인딩으로 방어"
+  ],
+  "related": [
+   "sql-injection",
+   "error-based-sql-injection",
+   "blind-sql-injection"
+  ]
+ },
+ {
+  "id": "vendor-lock-in",
+  "term": "벤더 종속",
+  "term_en": "Vendor Lock-in",
+  "definition": "특정 공급자에 종속되어 이전이 어려워지는 현상.",
+  "features": [
+   "이전 곤란",
+   "출구전략 필요",
+   "멀티클라우드 대응"
+  ],
+  "related": [
+   "cloud-computing",
+   "service-level-agreement"
+  ]
+ },
+ {
+  "id": "verifiable-credential",
+  "term": "검증가능 자격증명",
+  "term_en": "Verifiable Credential",
+  "definition": "발급자가 전자서명해 검증 가능한 디지털 신원 주장(VC).",
+  "features": [
+   "발급자 서명",
+   "검증 가능",
+   "지갑 저장"
+  ],
+  "related": [
+   "self-sovereign-identity",
+   "verifiable-presentation",
+   "digital-signature"
+  ]
+ },
+ {
+  "id": "verifiable-presentation",
+  "term": "검증가능 제시",
+  "term_en": "Verifiable Presentation",
+  "definition": "소유자가 검증자에게 제출하는 VC 기반 증명 묶음(VP).",
+  "features": [
+   "소유자 제출",
+   "선택적 공개",
+   "서명 검증"
+  ],
+  "related": [
+   "verifiable-credential",
+   "selective-disclosure",
+   "self-sovereign-identity"
+  ]
+ },
+ {
+  "id": "virtualization",
+  "term": "가상화",
+  "term_en": "Virtualization",
+  "definition": "물리 자원을 추상화해 다수 가상 자원으로 분할·통합하는 기술.",
+  "features": [
+   "자원 추상화",
+   "격리 제공",
+   "클라우드 기반"
+  ],
+  "related": [
+   "hypervisor",
+   "multi-tenancy",
+   "cloud-computing"
+  ]
+ },
+ {
+  "id": "vm-escape",
+  "term": "VM 탈출",
+  "term_en": "VM Escape",
+  "definition": "가상머신 격리를 뚫고 하이퍼바이저·타 VM에 접근하는 공격.",
+  "features": [
+   "격리 우회",
+   "하이퍼바이저 침해",
+   "테넌트 간 위협"
+  ],
+  "related": [
+   "hypervisor",
+   "virtualization",
+   "side-channel-attack"
+  ]
+ },
+ {
+  "id": "vulnerability-exploitability-exchange",
+  "term": "VEX",
+  "term_en": "Vulnerability Exploitability eXchange",
+  "definition": "취약점의 실제 악용 가능성·영향 여부를 전달하는 문서.",
+  "features": [
+   "악용가능성 전달",
+   "불필요 패치 방지",
+   "SBOM 연계"
+  ],
+  "related": [
+   "sbom",
+   "cve",
+   "cvss"
+  ]
+ },
+ {
+  "id": "w3c-did",
+  "term": "W3C DID",
+  "term_en": "W3C Decentralized Identifiers",
+  "definition": "탈중앙 식별자 구조를 정의한 W3C 표준.",
+  "features": [
+   "DID 표준",
+   "상호운용 기반",
+   "VC와 연계"
+  ],
+  "related": [
+   "did-identifier",
+   "did-document",
+   "verifiable-credential"
+  ]
+ },
+ {
+  "id": "watermark-capacity",
+  "term": "삽입용량",
+  "term_en": "Watermark Capacity",
+  "definition": "품질을 유지하며 삽입 가능한 워터마크 정보량.",
+  "features": [
+   "삽입 정보량",
+   "품질과 균형",
+   "강인성과 상충"
+  ],
+  "related": [
+   "watermarking",
+   "imperceptibility",
+   "robustness"
+  ]
+ },
+ {
+  "id": "watermark-security",
+  "term": "워터마크 보안성",
+  "term_en": "Watermark Security",
+  "definition": "키 없이 워터마크를 제거·위조·검출할 수 없는 성질.",
+  "features": [
+   "무단 제거 곤란",
+   "키 기반 보호",
+   "위조 방지"
+  ],
+  "related": [
+   "watermarking",
+   "robustness"
+  ]
+ },
+ {
+  "id": "watermarking",
+  "term": "워터마킹",
+  "term_en": "Watermarking",
+  "definition": "콘텐츠에 저작권 정보를 비가시적으로 삽입하는 정보은닉 기술.",
+  "features": [
+   "비가시 삽입",
+   "저작권 증명",
+   "강인성·비인지성"
+  ],
+  "related": [
+   "information-hiding",
+   "fingerprinting",
+   "copyright-protection",
+   "imperceptibility"
+  ]
+ },
+ {
+  "id": "web-application-firewall",
+  "term": "웹 방화벽",
+  "term_en": "Web Application Firewall",
+  "definition": "웹 공격 패턴을 탐지·차단하는 애플리케이션 계층 방화벽.",
+  "features": [
+   "웹 공격 차단",
+   "시그니처·이상 탐지",
+   "SQLi·XSS 방어"
+  ],
+  "related": [
+   "sql-injection",
+   "xss",
+   "intrusion-detection-system"
+  ]
+ },
+ {
+  "id": "wep",
+  "term": "WEP",
+  "term_en": "Wired Equivalent Privacy",
+  "definition": "초기 무선랜 암호 방식으로 심각한 취약점으로 폐기됨.",
+  "features": [
+   "RC4 기반",
+   "심각한 취약점",
+   "사용 금지"
+  ],
+  "related": [
+   "wpa2",
+   "wpa3",
+   "wireless-lan"
+  ]
+ },
+ {
+  "id": "wips",
+  "term": "WIPS",
+  "term_en": "Wireless Intrusion Prevention System",
+  "definition": "무선 침입·불법 AP를 탐지·차단하는 시스템.",
+  "features": [
+   "불법 AP 탐지",
+   "무선 공격 차단",
+   "상시 모니터링"
+  ],
+  "related": [
+   "rogue-ap",
+   "evil-twin",
+   "wireless-lan"
+  ]
+ },
+ {
+  "id": "wireless-dos",
+  "term": "무선 DoS",
+  "term_en": "Wireless DoS",
+  "definition": "디어소시에이션·전파방해로 무선 서비스를 방해하는 공격.",
+  "features": [
+   "관리 프레임 악용",
+   "전파 방해",
+   "가용성 침해"
+  ],
+  "related": [
+   "wireless-lan",
+   "ddos"
+  ]
+ },
+ {
+  "id": "wireless-lan",
+  "term": "무선 LAN",
+  "term_en": "Wireless LAN",
+  "definition": "전파로 데이터를 전송하는 근거리 무선 네트워크(Wi-Fi).",
+  "features": [
+   "전파 전송",
+   "물리 경계 없음",
+   "인증·암호화 필요"
+  ],
+  "related": [
+   "wpa2",
+   "wpa3",
+   "wips",
+   "ieee-802-1x"
+  ]
+ },
+ {
+  "id": "wpa2",
+  "term": "WPA2",
+  "term_en": "Wi-Fi Protected Access 2",
+  "definition": "AES-CCMP 기반 무선랜 보안 표준으로 널리 사용.",
+  "features": [
+   "AES-CCMP",
+   "PSK·엔터프라이즈",
+   "KRACK 취약"
+  ],
+  "related": [
+   "wpa3",
+   "wep",
+   "wireless-lan",
+   "krack-attack"
+  ]
+ },
+ {
+  "id": "wpa3",
+  "term": "WPA3",
+  "term_en": "Wi-Fi Protected Access 3",
+  "definition": "SAE·GCMP로 보안을 강화한 최신 무선랜 보안 표준.",
+  "features": [
+   "SAE 핸드셰이크",
+   "사전공격 방어",
+   "전방향 비밀성"
+  ],
+  "related": [
+   "wpa2",
+   "wireless-lan",
+   "forward-secrecy"
+  ]
+ },
+ {
+  "id": "xss",
+  "term": "XSS",
+  "term_en": "Cross-Site Scripting",
+  "definition": "악성 스크립트를 삽입해 사용자 브라우저에서 실행시키는 공격.",
+  "features": [
+   "스크립트 삽입",
+   "출력 인코딩 방어",
+   "CSP 완화"
+  ],
+  "related": [
+   "injection-attack",
+   "content-security-policy",
+   "web-application-firewall",
+   "owasp-top-10"
+  ]
+ },
+ {
+  "id": "zero-knowledge-proof",
+  "term": "영지식증명",
+  "term_en": "Zero-Knowledge Proof",
+  "definition": "정보를 노출하지 않고 사실의 참을 증명하는 암호 기법.",
+  "features": [
+   "정보 비노출 증명",
+   "선택적 공개 기반",
+   "프라이버시 강화"
+  ],
+  "related": [
+   "selective-disclosure",
+   "self-sovereign-identity"
+  ]
+ },
+ {
+  "id": "zero-trust",
+  "term": "제로트러스트",
+  "term_en": "Zero Trust",
+  "definition": "아무것도 신뢰하지 않고 항상 검증하는 보안 모델.",
+  "features": [
+   "항상 검증",
+   "최소권한",
+   "마이크로세분화"
+  ],
+  "related": [
+   "multi-factor-authentication",
+   "network-access-control",
+   "sase"
+  ]
+ }
+]

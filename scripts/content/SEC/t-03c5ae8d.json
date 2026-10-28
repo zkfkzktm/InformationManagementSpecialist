@@ -1,0 +1,32 @@
+{
+ "id": "t-03c5ae8d",
+ "answers": {
+  "short": "## 1. 블록 암호의 개요\n- 정의: 평문을 고정 길이(64·128비트) 블록으로 나누어 동일한 비밀키로 [[round-function|라운드 함수]]를 반복 적용, 각 블록을 같은 길이의 암호문 블록으로 변환하는 [[symmetric-key-cryptography|대칭키 암호]] 알고리즘\n- 필요성: 대용량 데이터의 고속 암호화, [[confusion-and-diffusion|혼돈·확산]] 원리로 통계적 분석 저항, 운용 모드 결합으로 다양한 응용 지원\n\n## 2. 블록 암호의 개념도 및 구성요소\n```mermaid\nflowchart LR\n  P[\"평문 블록(n비트)\"] --> R1[\"라운드 1\"] --> R2[\"라운드 2..r\"] --> C[\"암호문 블록(n비트)\"]\n  K[\"비밀키\"] --> KS[\"키 스케줄\"]\n  KS -->|\"라운드 키\"| R1\n  KS -->|\"라운드 키\"| R2\n```\n| 구성요소 | 역할 |\n|---|---|\n| 라운드 함수 | 치환·전치·키 결합을 수행하는 반복 단위 |\n| [[s-box|S-박스]] | 비선형 치환으로 혼돈(Confusion) 제공 |\n| P-박스·확산층 | 비트 전치·선형 변환으로 확산(Diffusion), [[avalanche-effect|쇄도 효과]] |\n| [[key-schedule|키 스케줄]] | 비밀키에서 라운드별 부분키 생성 |\n\n## 3. 블록 암호의 구조 및 주요 알고리즘\n| 구분 | 내용 |\n|---|---|\n| [[feistel-structure|Feistel 구조]] | 블록을 좌우 분할, 한쪽에 F함수 적용 후 XOR·교환, 암·복호 동일 구조([[des|DES]], [[seed|SEED]]) |\n| [[substitution-permutation-network|SPN 구조]] | 전체 블록에 S-박스 치환·전치를 병렬 적용, 라운드 효율 우수, 복호화 역함수 필요([[aes|AES]], [[aria|ARIA]]) |\n| ARX 구조 | 덧셈·회전·XOR만 사용, 경량·고속([[lea|LEA]]) |\n| 국제 알고리즘 | DES(64/56비트, 16라운드), [[triple-des|3DES]], AES(128블록, 128·192·256키, 10·12·14라운드) |\n| 국산 알고리즘 | SEED(128/128, 16라운드), ARIA(128블록, 12·14·16라운드), LEA(128블록, 24·28·32라운드), [[hight|HIGHT]](64/128, 경량) |\n\n## 4. 고려사항 및 발전방향\n- [[differential-cryptanalysis|차분 분석]]·[[linear-cryptanalysis|선형 분석]]·[[brute-force-attack|전수 조사]] 저항을 위한 충분한 라운드·키 길이(128비트 이상), DES 단독 사용 금지\n- 단일 블록 처리 한계는 [[block-cipher-mode-of-operation|운용 모드]](CBC·CTR·GCM)로 보완, [[side-channel-attack|부채널 공격]] 대응 구현\n- [[kcmvp|KCMVP]] 검증 알고리즘 사용, [[stream-cipher|스트림 암호]] 대비 구현 유연성, 경량·양자내성 환경 대응\n",
+  "long": "## 1. 블록 암호의 개요\n### 가. 정의\n- 평문을 고정 길이(64·128비트)의 블록으로 분할하고, 비밀키로부터 생성된 라운드 키를 사용하는 [[round-function|라운드 함수]]를 수 회 반복 적용하여 각 블록을 동일 길이의 암호문 블록으로 변환하는 [[symmetric-key-cryptography|대칭키 암호]] 알고리즘\n\n### 나. 등장배경 / 필요성\n- 1970년대 상업용 표준 암호 요구로 [[des|DES]](1977, FIPS 46) 제정, 키 길이 56비트 한계로 1990년대 [[brute-force-attack|전수 조사]]에 노출\n- 2001년 [[aes|AES]](FIPS 197) 선정, 국내는 SEED(1999)·ARIA(2004)·LEA(2013) 등 국산 표준 개발\n- 대용량 데이터 고속 암호화와 기밀성 보장, 하드웨어·소프트웨어 구현 유연성 요구\n\n### 다. 핵심 개념 (Shannon의 설계 원리)\n| 개념 | 내용 |\n|---|---|\n| 혼돈(Confusion) | 키와 암호문의 관계를 복잡하게 하여 통계적 추론 차단, [[s-box|S-박스]] 비선형 치환 |\n| 확산(Diffusion) | 평문 1비트 변화가 암호문 전체에 영향([[avalanche-effect|쇄도 효과]]), 전치·선형 변환 |\n| 반복 라운드 | 단순 변환을 여러 라운드 반복하여 [[confusion-and-diffusion|혼돈·확산]] 누적 |\n\n## 2. 블록 암호의 구성도 및 구성요소\n### 가. 구성도 (Feistel 구조 1라운드)\n```mermaid\nflowchart TB\n  L0[\"L_i-1 (좌측 n/2비트)\"]\n  R0[\"R_i-1 (우측 n/2비트)\"]\n  F[\"F 함수: 확장-키 XOR-S박스-P박스\"]\n  K[\"라운드 키 K_i\"] --> F\n  R0 --> F\n  F --> X[\"XOR\"]\n  L0 --> X\n  X --> R1[\"R_i = L_i-1 XOR F(R_i-1, K_i)\"]\n  R0 --> L1[\"L_i = R_i-1\"]\n  KEY[\"비밀키 K\"] --> KS[\"키 스케줄\"] --> K\n```\n### 나. 구성요소\n| 구성요소 | 역할 | 핵심기술 |\n|---|---|---|\n| 블록 분할·[[padding|패딩]] | 평문을 블록 길이 배수로 분할·보정 | PKCS#7, 운용 모드 연계 |\n| 라운드 함수 | 치환·전치·키 결합 반복 단위 | F함수, SubBytes·ShiftRows·MixColumns |\n| S-박스 | 비선형 치환으로 혼돈 제공 | 룩업 테이블, GF(2^8) 역원 기반(AES) |\n| P-박스·확산층 | 비트 전치·선형 변환으로 확산 | 순열, MDS 행렬 |\n| [[key-schedule|키 스케줄]] | 비밀키에서 라운드별 부분키 생성 | 키 확장, 회전·상수 결합 |\n| 키 결합 | 라운드 키와 중간 상태 XOR | AddRoundKey |\n\n### 다. 동작 절차 (AES-128 기준)\n1. 키 확장: 128비트 키에서 11개 라운드 키 생성\n2. 초기 라운드: 평문 상태(4×4 바이트)에 라운드 키 0 XOR\n3. 메인 라운드(9회): SubBytes(S-박스 치환) → ShiftRows(행 이동) → MixColumns(열 혼합) → AddRoundKey\n4. 최종 라운드: MixColumns 제외한 3단계 수행\n5. 출력: 128비트 암호문 블록, 복호화는 역변환을 역순 적용\n\n## 3. 블록 암호의 상세\n### 가. 구조 비교\n| 구분 | [[feistel-structure|Feistel 구조]] | [[substitution-permutation-network|SPN 구조]] | ARX 구조 |\n|---|---|---|---|\n| 원리 | 블록 좌우 분할, 한쪽에 F함수 적용 후 XOR·교환 | 전체 블록에 S-박스 치환·전치 병렬 적용 | 모듈러 덧셈·회전·XOR 조합 |\n| 암·복호 | 동일 구조(라운드 키 역순) | 역함수(InvSubBytes 등) 별도 구현 | 역연산 간단 |\n| 라운드 효율 | 라운드당 절반만 변환, 라운드 수 많음 | 라운드당 전체 변환, 라운드 수 적음 | 연산 단순, 라운드 수 많음 |\n| 장점 | F함수 가역성 불필요, 구현 단순 | 병렬·고속, 확산 빠름 | S-박스 없어 경량, 캐시 타이밍 공격 저항 |\n| 대표 | DES, [[seed|SEED]], Blowfish, Camellia | AES, [[aria|ARIA]], PRESENT | [[lea|LEA]], Speck, ChaCha(스트림) |\n\n### 나. 주요 알고리즘 비교\n| 알고리즘 | 블록(비트) | 키(비트) | 라운드 | 구조 | 비고 |\n|---|---|---|---|---|---|\n| DES | 64 | 56 | 16 | Feistel | 1977 FIPS 46, 전수 조사 취약으로 폐기 |\n| [[triple-des|3DES]] | 64 | 112·168 | 48 | Feistel | DES 3회(EDE), 2023 NIST 사용 중단 권고 |\n| AES | 128 | 128·192·256 | 10·12·14 | SPN | 2001 FIPS 197, Rijndael, 사실상 세계 표준 |\n| SEED | 128 | 128 | 16 | Feistel | 1999 KISA, 국내 전자상거래·금융 표준 |\n| ARIA | 128 | 128·192·256 | 12·14·16 | SPN | 2004 국가정보원·학계, KS X 1213 |\n| LEA | 128 | 128·192·256 | 24·28·32 | ARX | 2013 NSR, 경량·고속, ISO/IEC 29192-2 |\n| [[hight|HIGHT]] | 64 | 128 | 32 | 일반화 Feistel | 2005, RFID·센서용 경량 |\n\n### 다. 블록 암호 공격 기법과 대응\n| 공격 | 내용 | 대응 |\n|---|---|---|\n| 전수 조사 | 모든 키 후보 대입 | 128비트 이상 키 길이 |\n| [[differential-cryptanalysis|차분 분석]] | 평문 차분과 암호문 차분의 확률 편향 이용 | S-박스 차분 균일성, 충분한 라운드 |\n| [[linear-cryptanalysis|선형 분석]] | 평문·암호문·키 비트의 선형 근사 이용 | S-박스 비선형도 극대화 |\n| 관련 키 공격 | 관련된 키 간 암호문 관계 분석 | 비선형 키 스케줄 |\n| [[side-channel-attack|부채널 공격]] | 전력·시간·전자파 분석으로 키 추출 | 마스킹, 상수 시간 구현, 하드웨어 보호 |\n| 운용 모드 공격 | ECB 패턴 노출, 패딩 오라클 | [[block-cipher-mode-of-operation|운용 모드]] 적절 선택, 인증 암호 |\n\n### 라. 스트림 암호와 비교\n| 구분 | 블록 암호 | [[stream-cipher|스트림 암호]] |\n|---|---|---|\n| 처리 단위 | 고정 길이 블록 | 비트·바이트 단위 |\n| 속도·자원 | 상대적 느림, 메모리 필요 | 고속, 경량 |\n| 오류 전파 | 모드에 따라 블록 전파 | 해당 비트만 |\n| 응용 | 파일·DB·전자문서, 운용 모드로 스트림화 가능 | 실시간 음성·무선 통신 |\n| 대표 | AES, SEED, ARIA | ChaCha20, A5/1, RC4(폐기) |\n\n## 4. 블록 암호 적용 시 고려사항 및 발전방향\n| 구분 | 고려사항 |\n|---|---|\n| 알고리즘 선택 | [[kcmvp|KCMVP]] 검증 알고리즘(AES·SEED·ARIA·LEA), DES·3DES·RC4 사용 금지 |\n| 키 관리 | 안전한 키 생성·분배·폐기, HSM 보관, 키 수명 주기 |\n| 운용 모드 | 단일 블록 한계는 모드로 보완, 기밀성+무결성 위해 GCM 등 인증 암호 |\n| 구현 안전성 | 부채널 대응 상수 시간 구현, 하드웨어 가속(AES-NI) 활용 |\n| 발전방향 | 경량 암호(IoT) 표준화, 형태보존암호(FPE), 양자컴퓨터 대응 키 길이 256비트 확대(Grover 알고리즘) |\n\n## 5. 결론\n- 블록 암호는 혼돈·확산 원리를 라운드 반복으로 구현한 대칭키 암호의 핵심으로, 검증된 알고리즘(AES·ARIA·LEA)과 충분한 키 길이, 인증 암호 운용 모드 및 부채널 안전 구현을 결합하여 적용 필요\n"
+ },
+ "keywords": [
+  "round-function",
+  "symmetric-key-cryptography",
+  "confusion-and-diffusion",
+  "s-box",
+  "avalanche-effect",
+  "key-schedule",
+  "feistel-structure",
+  "des",
+  "seed",
+  "substitution-permutation-network",
+  "aes",
+  "aria",
+  "lea",
+  "triple-des",
+  "hight",
+  "differential-cryptanalysis",
+  "linear-cryptanalysis",
+  "brute-force-attack",
+  "block-cipher-mode-of-operation",
+  "side-channel-attack",
+  "kcmvp",
+  "stream-cipher",
+  "padding"
+ ]
+}

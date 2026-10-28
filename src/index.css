@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+/* 디자인 토큰: 시험지(종이)·잉크·볼펜 파랑·채점 빨강 */
+:root {
+  --paper: #f4f6f8;
+  --sheet: #ffffff;
+  --rule: #d8dfe6;
+  --ink: #1c2a3a;
+  --ink-2: #51606f;
+  --ink-3: #8a97a5;
+  --pen: #2b4ea2;
+  --pen-soft: #e6ecf8;
+  --stamp: #c8372d;
+  --ok: #2f7d4f;
+  --warn: #b7791f;
+  color-scheme: light;
+}
+:root:not([data-theme="light"]) {
+  @media (prefers-color-scheme: dark) {
+    --paper: #0f151c;
+    --sheet: #171f28;
+    --rule: #2a3542;
+    --ink: #e6ebf0;
+    --ink-2: #a9b4bf;
+    --ink-3: #6f7c89;
+    --pen: #8fb0ff;
+    --pen-soft: #1d2a44;
+    --stamp: #ef6a5f;
+    --ok: #6fc28f;
+    --warn: #e0a84a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0f151c;
+  --sheet: #171f28;
+  --rule: #2a3542;
+  --ink: #e6ebf0;
+  --ink-2: #a9b4bf;
+  --ink-3: #6f7c89;
+  --pen: #8fb0ff;
+  --pen-soft: #1d2a44;
+  --stamp: #ef6a5f;
+  --ok: #6fc28f;
+  --warn: #e0a84a;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-sheet: var(--sheet);
+  --color-rule: var(--rule);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-pen: var(--pen);
+  --color-pen-soft: var(--pen-soft);
+  --color-stamp: var(--stamp);
+  --color-ok: var(--ok);
+  --color-warn: var(--warn);
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, system-ui, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-serif: "Noto Serif KR", "Nanum Myeongjo", Batang, serif;
+}
+
+html { background: var(--paper); }
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.55;
+}
+a { color: var(--pen); }
+button { font: inherit; }
+:focus-visible { outline: 2px solid var(--pen); outline-offset: 2px; }
+
+/* 시험 문항: 실제 시험지처럼 명조체 */
+.exam-text {
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  word-break: keep-all;
+}
+
+/* 답안지: 괘선 위에 쓰는 느낌 */
+.sheet {
+  background:
+    repeating-linear-gradient(to bottom, transparent 0 calc(1.75rem - 1px), var(--rule) calc(1.75rem - 1px) 1.75rem);
+  background-color: var(--sheet);
+  background-position: 0 0.35rem;
+}
+.answer { font-size: 0.9375rem; line-height: 1.75rem; word-break: keep-all; }
+.answer h2 { font-size: 1rem; font-weight: 700; margin: 1.75rem 0 0; line-height: 1.75rem; }
+.answer h2:first-child { margin-top: 0; }
+.answer h3 { font-size: 0.9375rem; font-weight: 600; margin: 0.875rem 0 0; line-height: 1.75rem; color: var(--ink); }
+.answer p { margin: 0; }
+.answer ul, .answer ol { margin: 0; padding-left: 1.25rem; }
+.answer li { margin: 0; }
+.answer table { border-collapse: collapse; width: 100%; margin: 0.875rem 0; background: var(--sheet); font-size: 0.875rem; line-height: 1.4; }
+.answer th, .answer td { border: 1px solid var(--ink-3); padding: 0.4rem 0.55rem; vertical-align: top; text-align: left; }
+.answer th { background: var(--pen-soft); font-weight: 600; }
+.answer pre { background: var(--sheet); border: 1px solid var(--rule); border-radius: 4px; padding: 0.75rem; overflow-x: auto; font-size: 0.8125rem; line-height: 1.35; margin: 0.875rem 0; }
+.answer code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+.answer p code { background: var(--pen-soft); padding: 0 0.25em; border-radius: 3px; font-size: 0.875em; }
+.answer a.kw {
+  color: var(--pen);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.answer a.kw:hover { text-decoration-style: solid; }
+.answer blockquote { margin: 0; padding-left: 0.75rem; border-left: 3px solid var(--rule); color: var(--ink-2); }
+.answer hr { border: 0; border-top: 1px solid var(--ink-3); margin: 0.875rem 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

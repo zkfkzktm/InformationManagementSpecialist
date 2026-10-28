@@ -1,0 +1,266 @@
+[
+ {
+  "id": "t-5e12f5fc",
+  "title": "내부자 위협(Insider Threat)",
+  "title_en": "Insider Threat",
+  "aliases": [],
+  "subs": [
+   "행동적 특성"
+  ],
+  "questions": [
+   {
+    "id": "r104-s1-q06",
+    "round": 104,
+    "session": 1,
+    "text": "기관 내부자에 의해 행해지는 보안위협의 주요 행동적 특성을 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-26560bbf",
+  "title": "네트워크 스캐닝(Network Scanning)",
+  "title_en": "Network Scanning",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r126-s1-q12",
+    "round": 126,
+    "session": 1,
+    "text": "네트워크 스캐닝(Network Scanning)"
+   }
+  ]
+ },
+ {
+  "id": "t-23841066",
+  "title": "네트워크 접근제어(NAC)",
+  "title_en": "Network Access Control",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r124-s1-q13",
+    "round": 124,
+    "session": 1,
+    "text": "NAC(Network Access Control)"
+   }
+  ]
+ },
+ {
+  "id": "t-ecad7490",
+  "title": "다자간 계산(MPC)",
+  "title_en": "Multi-Party Computation",
+  "aliases": [],
+  "subs": [
+   "기술 종류·인증서비스"
+  ],
+  "questions": [
+   {
+    "id": "r133-s4-q01",
+    "round": 133,
+    "session": 4,
+    "text": "데이터 중심 사회에서 데이터의 프라이버시와 보안은 매우 중요한 이슈로 부상하고 있고, 이를 해결하기 위한 다양한 기술적 접근이 시도되고 있다. 그러한 시도 중에서 다자간 계산(Multi-Party Computation; MPC)에 대하여 다음을 설명하시오. 가. MPC 개념, 원리, 특징 나. MPC 기술 종류 다. MPC 기반 인증서비스"
+   }
+  ]
+ },
+ {
+  "id": "t-07f807c3",
+  "title": "데이터 익명화(Data Anonymization)",
+  "title_en": "Data Anonymization",
+  "aliases": [],
+  "subs": [
+   "ISO 25237 의료정보 익명화"
+  ],
+  "questions": [
+   {
+    "id": "r102-s2-q05",
+    "round": 102,
+    "session": 2,
+    "text": "ISO 25237 의료 정보 데이터 익명화 기법의 개념과 필요성 및 장단점에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-7bdaffaa",
+  "title": "데이터 카빙(Data Carving)",
+  "title_en": "Data Carving",
+  "aliases": [],
+  "subs": [
+   "포렌식 복구 기법"
+  ],
+  "questions": [
+   {
+    "id": "r95-s1-q04",
+    "round": 95,
+    "session": 1,
+    "text": "데이터 카빙(Data Carving) 기법에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-bbd5f09e",
+  "title": "데이터베이스 보안(Database Security)",
+  "title_en": "Database Security",
+  "aliases": [],
+  "subs": [
+   "정보보안 3요소·침해경로·접근통제 유형"
+  ],
+  "questions": [
+   {
+    "id": "r92-s3-q04",
+    "round": 92,
+    "session": 3,
+    "text": "정보보안의 세가지 특징과 데이터베이스 침해경로, 접근통제 유형에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-902406c9",
+  "title": "데이터베이스 암호화(DB Encryption)",
+  "title_en": "Database Encryption",
+  "aliases": [],
+  "subs": [
+   "구축전략·절차·기술"
+  ],
+  "questions": [
+   {
+    "id": "r96-s4-q04",
+    "round": 96,
+    "session": 4,
+    "text": "효과적인 개인정보보호를 위한 DB 암호화 구축전략, 절차 및 데이터베이스 암호화 기술에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-e95675ff",
+  "title": "도청·감청 방지(Anti-Wiretapping)",
+  "title_en": "Anti-Wiretapping",
+  "aliases": [],
+  "subs": [
+   "감청 경로·방지기술"
+  ],
+  "questions": [
+   {
+    "id": "r77-s3-q04",
+    "round": 77,
+    "session": 3,
+    "text": "통신(일반전화, 휴대전화)의 감청 경로를 설명하고, 도․감청 방지기술 및 방안에 대하여 기술하시오"
+   }
+  ]
+ },
+ {
+  "id": "t-f380517d",
+  "title": "드론 보안(Drone Security)",
+  "title_en": "Drone Security",
+  "aliases": [],
+  "subs": [
+   "보안위협·대응방안"
+  ],
+  "questions": [
+   {
+    "id": "r130-s1-q05",
+    "round": 130,
+    "session": 1,
+    "text": "드론의 보안위협과 대응방안"
+   }
+  ]
+ },
+ {
+  "id": "t-3d423659",
+  "title": "디지털 저작권 보호 기술",
+  "title_en": "Digital Copyright Protection Technology",
+  "aliases": [],
+  "subs": [
+   "워터마킹 vs DOI"
+  ],
+  "questions": [
+   {
+    "id": "r74-s2-q02",
+    "round": 74,
+    "session": 2,
+    "text": "디지털 저작권 보호 기술에는 디지털 워터마킹과 DOI(Digital Object Identifier)가 있다. 1) 디지털 저작권 보호 기술의 의미에 대해서 설명하시오. 2) 디지털 저작권 보호 기술의 종류를 들고 약술하시오. 3) 워터마킹과 DOI의 차이점을 비교 논하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-8fa26a17",
+  "title": "디지털 포렌식 아티팩트(Forensic Artifact)",
+  "title_en": "Digital Forensic Artifact",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r137-s1-q02",
+    "round": 137,
+    "session": 1,
+    "text": "디지털 포렌식에서 아티팩트(Artifact)를 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-86b3be5a",
+  "title": "마이데이터 전송 보안(MyData Transmission Security)",
+  "title_en": "MyData Transmission Security",
+  "aliases": [],
+  "subs": [
+   "보호책임자·접근관리·재해대비"
+  ],
+  "questions": [
+   {
+    "id": "r132-s2-q04",
+    "round": 132,
+    "session": 2,
+    "text": "최근 개인정보보호위원회는 마이데이터 전송 시 개인정보의 안전한 처리를 보장하기 위한 가이드라인(마이데이터 전송 보안 안내서, 2023.09.)을 발간하였다. 이와 관련하여 다음을 설명하시오. 가. 전송대상 개인정보 보호책임자의 지정 나. 전송대상 개인정보처리시스템의 접근 관리 다. 전송대상 개인정보관리 및 재해·재난 대비 조치"
+   }
+  ]
+ },
+ {
+  "id": "t-0bba4365",
+  "title": "망분리(Network Separation)",
+  "title_en": "Network Separation",
+  "aliases": [],
+  "subs": [
+   "구축 방안·보안/성능/비용 비교"
+  ],
+  "questions": [
+   {
+    "id": "r113-s4-q01",
+    "round": 113,
+    "session": 4,
+    "text": "업무용 망을 인터넷 망에서 분리하는 경우의 장단점과 그 구축 방안을 제시하고, 각 방안을 3가지 관점(보안, 성능, 비용)에서 비교하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-2bf42272",
+  "title": "메시지 인증 코드(MAC)",
+  "title_en": "Message Authentication Code",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r127-s1-q05",
+    "round": 127,
+    "session": 1,
+    "text": "메시지 인증 코드(Message Authentication Code)"
+   }
+  ]
+ },
+ {
+  "id": "t-550129e8",
+  "title": "멜트다운(Meltdown)",
+  "title_en": "Meltdown",
+  "aliases": [],
+  "subs": [
+   "CPU 마이크로아키텍처 관점"
+  ],
+  "questions": [
+   {
+    "id": "r114-s3-q02",
+    "round": 114,
+    "session": 3,
+    "text": "CPU 아키텍처의 보안 취약점인 멜트다운(Meltdown)에 대하여 CPU 마이크로 아키 텍처 및 CPU 아키텍처 측면에서 설명하시오."
+   }
+  ]
+ }
+]

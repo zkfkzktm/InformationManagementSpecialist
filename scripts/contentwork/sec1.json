@@ -1,0 +1,645 @@
+[
+ {
+  "id": "t-41d4bd78",
+  "title": "디지털 포렌식(Digital Forensics)",
+  "title_en": "Digital Forensics",
+  "aliases": [],
+  "subs": [
+   "구조·발전방향",
+   "기업 감사 활용 기술·적용 분야",
+   "원칙·유형·관련기술",
+   "유형·절차·기술",
+   "조사모델·분야별 소프트웨어·5대 원칙",
+   "주요기술·네트워크 포렌식",
+   "증거 수집절차·Slack Space·스테가노그래피 분석",
+   "증거수집·증거분석 기술",
+   "클라우드 환경 포렌식 절차",
+   "필요성·절차·기술"
+  ],
+  "questions": [
+   {
+    "id": "r130-s4-q02",
+    "round": 130,
+    "session": 4,
+    "text": "최근 많은 범죄들이 지능화·고도화 되면서 디지털 포렌식의 중요성이 증가하고 있다. 이러한 디지털 포렌식과 관련하여 아래 사항을 설명하시오. 1) 디지털 포렌식의 개념 2) 디지털 포렌식의 유형과 절차 3) 디지털 포렌식 기술 및 활용분야"
+   },
+   {
+    "id": "r121-s2-q03",
+    "round": 121,
+    "session": 2,
+    "text": "침해사고 대응 측면과 디지털 감사(Audit) 측면에서 디지털포렌식의 필요성을 설명 하고, 디지털포렌식 절차 및 활용되는 기술을 설명하시오."
+   },
+   {
+    "id": "r118-s4-q03",
+    "round": 118,
+    "session": 4,
+    "text": "디지털 포렌식(Digital Forensics)과 관련하여 다음을 설명하시오. 가. 디지털 포렌식 조사모델 나. 디지털 포렌식의 분야와 각 분야별 활용 소프트웨어 다. 디지털 포렌식 수행 시 고려사항 및 디지털 포렌식 5대 원칙"
+   },
+   {
+    "id": "r117-s4-q05",
+    "round": 117,
+    "session": 4,
+    "text": "디지털 포렌식의 증거수집기술과 증거분석기술에 대하여 설명하시오."
+   },
+   {
+    "id": "r105-s4-q05",
+    "round": 105,
+    "session": 4,
+    "text": "최근 IT와 법률의 융합서비스 분야의 디지털포렌식 기술이 수사기관에서 기업의 감사영역으로 확대되고 있다. 기업에서 활용 가능한 디지털포렌식 기술을 설명하고 기업에서 적용 가능한 분야를 설명하시오."
+   },
+   {
+    "id": "r99-s2-q03",
+    "round": 99,
+    "session": 2,
+    "text": "최근 범죄의 증거 수집 및 분석에 디지털 포렌식이 핵심기술로 활용되고 있다. 디지털 포렌식에 사용되는 주요 기술과 해킹사고 분석 시 활용되는 네트워크 포렌식에 대하여 설명하시오."
+   },
+   {
+    "id": "r96-s2-q04",
+    "round": 96,
+    "session": 2,
+    "text": "컴퓨터 포렌식(Computer forensics)의 원칙, 유형 및 관련기술에 대하여 설명하시오."
+   },
+   {
+    "id": "r95-s4-q01",
+    "round": 95,
+    "session": 4,
+    "text": "디지털 포렌직(Digital Forensic)의 디지털 증거물 수집절차를 설명하고 디지털 증거물 분석기술 중 Slack Space 분석법과 스테가노그래피(Steganography) 분석법을 설명하시오."
+   },
+   {
+    "id": "r92-s2-q03",
+    "round": 92,
+    "session": 2,
+    "text": "클라우드 컴퓨팅(Cloud Computing) 환경에서 디지털 증거수집 및 정보분석 기법인 컴퓨터 포렌식 (Computer Forensics)의 절차에 대하여 설명하시오."
+   },
+   {
+    "id": "r81-s3-q04",
+    "round": 81,
+    "session": 3,
+    "text": "인터넷 및 전자상거래 확산에 따라 관련 범죄가 급격히 지능화, 일반화 되고 있다. 최근에 공인민간조사원법(가칭 탐정법)이 국회에서 검토되는 등 대응방안이 필요한 시점에서 과학수사 및 정보분석 분야인 Computer Forensics의 구조와 발전 방향에 대하여 기술하시오."
+   },
+   {
+    "id": "r78-s1-q13",
+    "round": 78,
+    "session": 1,
+    "text": "컴퓨터 포렌식(Computer Forensics)에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-6a576804",
+  "title": "랜섬웨어(Ransomware)",
+  "title_en": "Ransomware",
+  "aliases": [],
+  "subs": [
+   "RaaS",
+   "RaaS·감염 경로·대응 절차",
+   "감염경로·방지방법",
+   "사전·사후 대응방안",
+   "파밍"
+  ],
+  "questions": [
+   {
+    "id": "r138-s4-q05",
+    "round": 138,
+    "session": 4,
+    "text": "최근 기업과 개인을 대상으로 한 랜섬웨어(Ransomware) 피해가 지속적으로 발생하고 있으며, 이를 서비스 형태로 제공하는 RaaS(Ransomware as a Service)의 등장으로 진입 장벽이 낮아지고 있다. 다음 내용을 설명하시오. 가. 랜섬웨어와 RaaS(Ransomware as a Service)의 개념 및 비교 나. 랜섬웨어의 주요 감염 경로 및 암호화 동작 원리 다. 랜섬웨어 피해 예방 및 침해 사고 발생 시 대응 절차"
+   },
+   {
+    "id": "r128-s1-q12",
+    "round": 128,
+    "session": 1,
+    "text": "랜섬웨어(Ransomware)와 RaaS(Ransomware as a Service)에 대하여 설명하시오."
+   },
+   {
+    "id": "r113-s3-q03",
+    "round": 113,
+    "session": 3,
+    "text": "랜섬웨어 공격에 대하여 사전, 사후적 대응방안을 기술적, 관리적 관점에서 설명하시오."
+   },
+   {
+    "id": "r107-s1-q05",
+    "round": 107,
+    "session": 1,
+    "text": "랜섬웨어(Ransomware)를 정의하고, 감염경로와 방지방법을 제시하시오."
+   },
+   {
+    "id": "r104-s1-q03",
+    "round": 104,
+    "session": 1,
+    "text": "랜섬웨어(Ransomware)와 파밍(Pharming)에 대해 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-92e5a7e4",
+  "title": "정보보호 관리체계(ISMS)",
+  "title_en": "Information Security Management System",
+  "aliases": [],
+  "subs": [
+   "ISMS-P 차이·의무대상",
+   "ISMS·G-ISMS·PIPL·PIMS 인증제도 비교",
+   "개념·관리과정",
+   "인증 영역·관리과정·ISMS-P 간편인증",
+   "인증 의무대상·ISMS-P 인증기준"
+  ],
+  "questions": [
+   {
+    "id": "r138-s3-q06",
+    "round": 138,
+    "session": 3,
+    "text": "최근 보안과 관련된 사고 및 이슈의 빈번한 발생으로 정보보호를 위한 관리체계에 대한 중요성이 부각되고 있다. 다음 내용을 설명하시오. 가. 정보보호 관리체계(ISMS)의 인증 영역과 법적 근거 나. 정보보호 관리체계(ISMS)의 관리과정 다. ISMS-P 간편인증 제도 라. ISMS-P 제도의 강화 방안"
+   },
+   {
+    "id": "r131-s3-q06",
+    "round": 131,
+    "session": 3,
+    "text": "정보보호 및 개인정보보호 인증제도(ISMS, Information Security Management System)에 대하여 다음을 설명하시오. 가. ISMS와 ISMS-P 차이점 나. ISMS 의무 대상 기준"
+   },
+   {
+    "id": "r124-s4-q04",
+    "round": 124,
+    "session": 4,
+    "text": "정보보호 관리체계(Information Security Management System)의 개념과 관리과정을 설명하시오."
+   },
+   {
+    "id": "r119-s3-q03",
+    "round": 119,
+    "session": 3,
+    "text": "ISMS(Information Security Management System)에 대하여 설명하시오. 가. ISMS 인증 의무대상자 기준(단, 정보통신망법 제47조 2항) 나. ISMS-P 인증기준과 주요 개정 사항"
+   },
+   {
+    "id": "r110-s4-q02",
+    "round": 110,
+    "session": 4,
+    "text": "정보보호 인증제도인 ISMS, G-ISMS, PIPL, PIMS에 대하여 근거 법령, 인증 대상, 인증 평가 내용, 의무 여부, 인증 취득 시 혜택을 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-d6be3334",
+  "title": "해시 함수(Hash Function)",
+  "title_en": "Hash Function",
+  "aliases": [],
+  "subs": [
+   "레인보우 테이블·솔트·키 스트레칭",
+   "종류",
+   "특성·종류",
+   "해시 알고리즘",
+   "해시값 구분·종류·용도"
+  ],
+  "questions": [
+   {
+    "id": "r138-s4-q02",
+    "round": 138,
+    "session": 4,
+    "text": "단방향 해시 함수(Hash Function)에 대하여 다음 내용을 설명하시오. 가. 단방향 해시 함수의 문제점 나. Rainbow Table 다. 해시 솔트(Hash Salt) 와 키 스트레칭(Key Stretching) 라. 해시함수의 활용"
+   },
+   {
+    "id": "r120-s1-q09",
+    "round": 120,
+    "session": 1,
+    "text": "해쉬 알고리즘(Hash Algorithm)의 특성 및 종류"
+   },
+   {
+    "id": "r118-s1-q12",
+    "round": 118,
+    "session": 1,
+    "text": "해시값(Hash Value)과 해시함수의 구분, 종류, 용도"
+   },
+   {
+    "id": "r116-s1-q03",
+    "round": 116,
+    "session": 1,
+    "text": "해쉬 알고리즘(Hash Algorithm)"
+   },
+   {
+    "id": "r105-s1-q11",
+    "round": 105,
+    "session": 1,
+    "text": "정보보호를 위한 해시함수(Hash Function) 종류에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-56a38fb7",
+  "title": "FIDO(Fast Identity Online)",
+  "title_en": "Fast Identity Online",
+  "aliases": [
+   "FIDO(Fast IDentity Online)"
+  ],
+  "subs": [
+   "FIDO 1.0 vs 2.0",
+   "FIDO 2.0",
+   "UAF·U2F·UAF 기술표준 구성요소",
+   "도입배경·인증 절차"
+  ],
+  "questions": [
+   {
+    "id": "r118-s3-q02",
+    "round": 118,
+    "session": 3,
+    "text": "패스워드 없는 인증기술인 FIDO(Fast IDentity Online)에 대하여 다음을 설명하시오. 가. FIDO의 개념 나. 표준 프로토콜인 UAF와 U2F 다. 유니버셜 인증 프레임워크 (UAF) 총 11개 기술표준 구성요소"
+   },
+   {
+    "id": "r116-s4-q03",
+    "round": 116,
+    "session": 4,
+    "text": "FIDO(Fast Identity Online) 1.0과 FIDO 2.0을 비교하여 설명하시오."
+   },
+   {
+    "id": "r113-s1-q04",
+    "round": 113,
+    "session": 1,
+    "text": "FIDO(Fast Identity Online) 2.0"
+   },
+   {
+    "id": "r107-s1-q11",
+    "round": 107,
+    "session": 1,
+    "text": "FIDO(Fast IDentity Online) 규격의 도입배경과 FIDO 기반 인증 절차에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-dbee7777",
+  "title": "가상사설망(VPN)",
+  "title_en": "Virtual Private Network",
+  "aliases": [
+   "VPN"
+  ],
+  "subs": [
+   "IPSec VPN vs SSL VPN",
+   "VPN vs Tor"
+  ],
+  "questions": [
+   {
+    "id": "r133-s4-q06",
+    "round": 133,
+    "session": 4,
+    "text": "VPN(Virtual Private Network)에 대하여 다음을 설명하시오. 가. VPN의 개념 및 특징 나. IPSec(Internet Protocol Security) VPN과 SSL(Secure Socket Layer) VPN 다. VPN의 기술요소"
+   },
+   {
+    "id": "r126-s4-q04",
+    "round": 126,
+    "session": 4,
+    "text": "VPN(Virtual Private Network)과 Tor에 대하여 설명하시오."
+   },
+   {
+    "id": "r66-s1-q05",
+    "round": 66,
+    "session": 1,
+    "text": "VPN(Virtual Private network)에 대해서 설명하시오."
+   },
+   {
+    "id": "r63-s1-q01",
+    "round": 63,
+    "session": 1,
+    "text": "VPN(Virtual Private Network)"
+   }
+  ]
+ },
+ {
+  "id": "t-90215128",
+  "title": "개인정보 비식별화(De-identification)",
+  "title_en": "De-identification",
+  "aliases": [
+   "개인정보 비식별 조치(De-identification)"
+  ],
+  "subs": [
+   "단계별 조치·사후관리·개인정보 판단기준",
+   "비식별 조치 가이드라인·조치기준",
+   "비식별조치 가이드라인",
+   "처리기법"
+  ],
+  "questions": [
+   {
+    "id": "r120-s4-q05",
+    "round": 120,
+    "session": 4,
+    "text": "개인정보의 비식별조치 가이드라인에 대하여 설명하시오."
+   },
+   {
+    "id": "r118-s2-q04",
+    "round": 118,
+    "session": 2,
+    "text": "개인정보 비식별 조치 관련하여 다음을 설명하시오. 가. 비식별화의 개념 나. 단계별 조치사항 다. 비식별 조치 및 사후관리 절차 라. 개인정보 해당 여부 판단 기준"
+   },
+   {
+    "id": "r110-s3-q05",
+    "round": 110,
+    "session": 3,
+    "text": "최근 발간된 \"개인정보 비식별 조치 가이드라인\"의 추진 배경, 비식별 조치기준을 설명하고 향후 기대되는 효과에 대하여 설명하시오."
+   },
+   {
+    "id": "r107-s4-q02",
+    "round": 107,
+    "session": 4,
+    "text": "개인정보 비식별화의 개념과 처리기법에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-75d1c4dd",
+  "title": "디지털 저작권 관리(DRM)",
+  "title_en": "Digital Rights Management",
+  "aliases": [
+   "디지털 콘텐츠 보호(DRM)"
+  ],
+  "subs": [
+   "보호기술",
+   "홈 네트워크 콘텐츠 보호 구조"
+  ],
+  "questions": [
+   {
+    "id": "r90-s3-q01",
+    "round": 90,
+    "session": 3,
+    "text": "디지털콘텐츠 보호기술에 대하여 설명하시오."
+   },
+   {
+    "id": "r84-s3-q06",
+    "round": 84,
+    "session": 3,
+    "text": "사설공간인 홈(Home)에서 컨텐츠는 다양한 장치에서 자유롭게 사용(Seamless access) 할 수 있어야 한다. 반면에 홈의 범위를 벗어난 불법적인 복제나 재분배로부터 컨텐츠는 보호되어야 한다. 홈 네트워크환경에서 두가지 조건을 만족할 수 있는 효과적인 컨텐츠보호 구조와 방안을 제시하시오."
+   },
+   {
+    "id": "r74-s1-q03",
+    "round": 74,
+    "session": 1,
+    "text": "DRM(Digital Rights Management)"
+   },
+   {
+    "id": "r66-s1-q10",
+    "round": 66,
+    "session": 1,
+    "text": "Digital Rights Management에 대해서 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-ddd27c9e",
+  "title": "양자 암호(Quantum Cryptography)",
+  "title_en": "Quantum Cryptography",
+  "aliases": [
+   "양자암호통신(Quantum Cryptography)"
+  ],
+  "subs": [
+   "QKD vs PQC",
+   "QKD 키분배·주요기술·취약점",
+   "양자암호통신"
+  ],
+  "questions": [
+   {
+    "id": "r135-s3-q04",
+    "round": 135,
+    "session": 3,
+    "text": "양자 암호 기술에 대하여 다음을 설명하시오. 가. 양자키분배(QKD : Quantum Key Distribution) 나. 양자내성암호(PQC : Post Quantum Cryptography) 다. QKD와 PQC 비교"
+   },
+   {
+    "id": "r128-s4-q04",
+    "round": 128,
+    "session": 4,
+    "text": "최근 정보통신의 발전으로 인해 도감청이 불가능한 양자암호통신에 대한 관심이 높아 지고 있다. 양자암호통신에 대하여 다음을 설명하시오. 가. 양자암호통신의 암호키 분배방식 나. 양자암호통신의 주요기술 다. 양자암호통신의 취약점"
+   },
+   {
+    "id": "r117-s1-q03",
+    "round": 117,
+    "session": 1,
+    "text": "양자암호통신"
+   },
+   {
+    "id": "r114-s1-q03",
+    "round": 114,
+    "session": 1,
+    "text": "양자 암호(Quantum Cryptography)"
+   }
+  ]
+ },
+ {
+  "id": "t-316908c3",
+  "title": "침입탐지시스템(IDS)",
+  "title_en": "Intrusion Detection System",
+  "aliases": [],
+  "subs": [
+   "IDS vs IPS",
+   "개요·목적·주요기능·종류",
+   "구현 방식"
+  ],
+  "questions": [
+   {
+    "id": "r124-s3-q06",
+    "round": 124,
+    "session": 3,
+    "text": "침입탐지시스템(Intrusion Detection System, IDS)과 침입방지시스템(Intrusion Prevention System, IPS)의 개념을 비교하여 설명하시오."
+   },
+   {
+    "id": "r75-s4-q05",
+    "round": 75,
+    "session": 4,
+    "text": "네트워크기반의 개인정보보호기술인 '침입탐지시스템(IDS)'의 개요와 목적 및 IDS의 주요기능 그리고 IDS의 종류를 설명하시오."
+   },
+   {
+    "id": "r68-s4-q01",
+    "round": 68,
+    "session": 4,
+    "text": "정보를 보안하기 위한 침입탐지 시스템(Intrusion Detection System)의 구현 방식을 열거하고 설명하시오."
+   },
+   {
+    "id": "r66-s1-q12",
+    "round": 66,
+    "session": 1,
+    "text": "IDS(Intrusion Detection System) 에 대해서 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-8332aadc",
+  "title": "개인정보 보호 강화기술(PET)",
+  "title_en": "Privacy Enhancing Technology",
+  "aliases": [
+   "개인정보 보호기술(Privacy Enhancing Technology)"
+  ],
+  "subs": [
+   "동형암호·차분 프라이버시·합성데이터 비교",
+   "정책협상·암호화·필터링·익명화"
+  ],
+  "questions": [
+   {
+    "id": "r138-s4-q06",
+    "round": 138,
+    "session": 4,
+    "text": "인공지능(AI) 기술의 확산으로 데이터의 가치가 증대됨에 따라, 프라이버시를 보호 하면서도 데이터의 활용성을 극대화할 수 있는 개인정보 보호 강화기술(PET: Privacy Enhancing Technology)이 주목받고 있다. 다음 내용을 설명하시오. 가. PET의 정의 및 등장 배경 나. PET의 주요 기술 분류 및 핵심 기술 다. PET 기술(동형암호, 차분 프라이버시, 합성데이터)의 상세 비교"
+   },
+   {
+    "id": "r134-s1-q11",
+    "round": 134,
+    "session": 1,
+    "text": "개인정보 보호 강화기술(Privacy Enhancing Technology)"
+   },
+   {
+    "id": "r78-s2-q04",
+    "round": 78,
+    "session": 2,
+    "text": "개인정보 보호기술로서의 정책협상기술, 암호화 기술, 필터링기술, 익명화기술에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-eb563e14",
+  "title": "공개키 기반구조(PKI)",
+  "title_en": "Public Key Infrastructure",
+  "aliases": [],
+  "subs": [
+   "전자서명 부인봉쇄",
+   "전자입찰 전자서명·암호화 적용"
+  ],
+  "questions": [
+   {
+    "id": "r89-s1-q03",
+    "round": 89,
+    "session": 1,
+    "text": "공개키 기반 구조(PKI)에 대해 설명하시오."
+   },
+   {
+    "id": "r69-s4-q03",
+    "round": 69,
+    "session": 4,
+    "text": "인터넷을 이용한 전자입찰시스템에서 PKI(Public Key Infrastructure) 인 증서를 사용한 전자서명과 암호화의 적용과 효과에 대하여 설명하시오."
+   },
+   {
+    "id": "r63-s3-q05",
+    "round": 63,
+    "session": 3,
+    "text": "전자서명에서 공개키 기반구조(PKI)를 이용하여 부인을 봉쇄하는 방안을 기술하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-ef8631f4",
+  "title": "분산 서비스 거부 공격(DDoS)",
+  "title_en": "Distributed Denial of Service",
+  "aliases": [
+   "디도스 공격(DDoS)"
+  ],
+  "subs": [
+   "공격 유형",
+   "스크러빙 센터 vs CDN 클라우드 대응",
+   "전용 방어장비·중장기 대책"
+  ],
+  "questions": [
+   {
+    "id": "r116-s4-q02",
+    "round": 116,
+    "session": 4,
+    "text": "디도스 공격(DDoS, Distributed Denial of Service Attack)에 대응하기 위한 클라우드 기반 보안서비스 구축 방식 모델인 스크러빙 센터(Scrubbing Center) 및 콘텐츠 전송네트워크(Content Delivery Network)의 대응방법, 대응규모, 대응시점, 암호화 트래픽 방어 여부, 기존 시스템 활용 관점에서 비교하여 설명하시오."
+   },
+   {
+    "id": "r93-s1-q02",
+    "round": 93,
+    "session": 1,
+    "text": "DDoS(Distributed Denial-of-Service)공격의 유형을 설명하시오."
+   },
+   {
+    "id": "r89-s4-q04",
+    "round": 89,
+    "session": 4,
+    "text": "최근 DDoS(Distributed Denial of Service) 공격으로 국가적인 혼란에 직면하였는데, 이런 DDoS 공격에 대한 전용 방어 장비의 종류(두가지 방식)와 중장기적인 대책에 대해 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-22e59714",
+  "title": "블록체인 보안(Blockchain Security)",
+  "title_en": "Blockchain Security",
+  "aliases": [],
+  "subs": [
+   "금융권 도입 시 정보보안 이슈",
+   "기업 도입 보안 고려사항",
+   "플랫폼 보안 위협·대응"
+  ],
+  "questions": [
+   {
+    "id": "r119-s2-q06",
+    "round": 119,
+    "session": 2,
+    "text": "기업에 블록체인기술을 도입하기 위한 보안 고려사항을 설명하시오."
+   },
+   {
+    "id": "r118-s1-q09",
+    "round": 118,
+    "session": 1,
+    "text": "금융권에서 블록체인 시스템을 도입할 시 고려해야 할 정보보안 이슈"
+   },
+   {
+    "id": "r116-s3-q03",
+    "round": 116,
+    "session": 3,
+    "text": "블록체인(Block Chain) 플랫폼의 보안 위협과 대응 방안에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-56719bb2",
+  "title": "업무연속성계획(BCP)",
+  "title_en": "Business Continuity Planning",
+  "aliases": [],
+  "subs": [
+   "구성방안·검사방안",
+   "주요 지표·DRS 고려사항",
+   "프로세스·프레임워크·주요계획"
+  ],
+  "questions": [
+   {
+    "id": "r133-s1-q09",
+    "round": 133,
+    "session": 1,
+    "text": "BCP(Business Continuity Planning) 수립 시의 주요 지표와 DRS(Disaster Recovery System) 구축 시의 핵심 고려사항에 대하여 설명하시오."
+   },
+   {
+    "id": "r114-s2-q05",
+    "round": 114,
+    "session": 2,
+    "text": "비즈니스 연속성 계획(BCP : Business Continuity Plan)의 구성방안과 검사방안에 대하여 설명하시오."
+   },
+   {
+    "id": "r80-s2-q06",
+    "round": 80,
+    "session": 2,
+    "text": "업무연속성계획(BCP, Business Continuity Planning) 수립을 검토하고 있다. 가. 이를 효율적으로 수행하기 위한 프로세스와 프레임 워크를 제시하시오. 나. 프레임 워크내의 주요계획(재해예방, 대응 및 복구, 유지보수, 모의훈련)에 대하여 기술하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-5129faf6",
+  "title": "지능형 지속 위협(APT)",
+  "title_en": "Advanced Persistent Threat",
+  "aliases": [
+   "지능형 지속 공격(APT)"
+  ],
+  "subs": [
+   "공격과정·관리적/기술적 대응방안",
+   "공격기법·대응방법",
+   "공격기법·악성코드"
+  ],
+  "questions": [
+   {
+    "id": "r116-s2-q01",
+    "round": 116,
+    "session": 2,
+    "text": "지능형 지속공격(APT, Advanced Persistent Threat)의 정의, 특징, 공격과정 및 대응방안을 관리적, 기술적 관점에서 설명하시오."
+   },
+   {
+    "id": "r105-s3-q04",
+    "round": 105,
+    "session": 3,
+    "text": "최근 APT(Advanced Persistent Threats)공격과 변종 악성코드 공격이 늘어나고 있다. APT 공격기법과 악성코드(Malicious codes)에 대하여 설명하시오."
+   },
+   {
+    "id": "r96-s3-q04",
+    "round": 96,
+    "session": 3,
+    "text": "APT(Advanced Persistent Threat) 공격기법과 대응방법에 대하여 설명하시오."
+   }
+  ]
+ }
+]

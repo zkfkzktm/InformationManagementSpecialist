@@ -1,0 +1,4303 @@
+[
+ {
+  "id": "software-vulnerability",
+  "term": "보안 취약점",
+  "term_en": "Software Vulnerability",
+  "definition": "소프트웨어의 설계·구현·운영상 결함으로 공격자가 악용하여 시스템의 기밀성·무결성·가용성을 침해할 수 있는 약점.",
+  "features": [
+   "보안약점(CWE)이 실제 악용 가능한 상태가 되면 취약점(CVE)으로 공표",
+   "제로데이·N-day 취약점으로 구분",
+   "CVSS로 심각도 점수화",
+   "패치·가상 패치·시큐어 코딩으로 제거"
+  ],
+  "related": [
+   "cwe",
+   "cve",
+   "zero-day-attack",
+   "input-validation"
+  ]
+ },
+ {
+  "id": "input-validation",
+  "term": "입력값 검증",
+  "term_en": "Input Validation",
+  "definition": "외부에서 들어오는 모든 입력 데이터의 형식·길이·범위·문자를 신뢰 경계에서 검사하여 악의적 입력을 차단하는 시큐어 코딩의 기본 원칙.",
+  "features": [
+   "화이트리스트(허용 목록) 방식 우선",
+   "서버 측 검증 필수, 클라이언트 검증은 보조",
+   "SQL 삽입·XSS·경로 조작 등 다수 취약점의 공통 대책",
+   "정규화 후 검증 원칙"
+  ],
+  "related": [
+   "sql-injection",
+   "xss",
+   "path-traversal"
+  ]
+ },
+ {
+  "id": "zero-day-attack",
+  "term": "제로데이 공격",
+  "term_en": "Zero-Day Attack",
+  "definition": "취약점이 공개되거나 패치가 배포되기 전에 해당 취약점을 악용하는 공격.",
+  "features": [
+   "패치 부재로 시그니처 기반 방어 무력",
+   "행위 기반 탐지·가상 패치·최소 권한으로 완화",
+   "APT·웜 전파에 자주 활용",
+   "취약점 공개 후 패치까지의 기간을 '윈도우 오브 익스포저'라 함"
+  ],
+  "related": [
+   "software-vulnerability",
+   "exploit",
+   "advanced-persistent-threat"
+  ]
+ },
+ {
+  "id": "software-development-security-guide",
+  "term": "SW 개발보안 가이드",
+  "term_en": "Software Development Security Guide",
+  "definition": "행정안전부·KISA가 발행하는 소프트웨어 개발 단계에서 제거해야 할 보안약점과 안전한 코딩 기법을 정리한 공공 정보화사업 적용 기준.",
+  "features": [
+   "입력데이터 검증 및 표현 등 7개 영역 보안약점 정의",
+   "Java·C·Python 등 언어별 가이드 제공",
+   "전자정부법 시행령에 따라 공공 정보화사업 의무 적용",
+   "감리 시 보안약점 진단·제거 확인"
+  ],
+  "related": [
+   "cwe",
+   "static-application-security-testing",
+   "secure-software-development-lifecycle"
+  ]
+ },
+ {
+  "id": "static-application-security-testing",
+  "term": "정적 애플리케이션 보안 테스트",
+  "term_en": "Static Application Security Testing (SAST)",
+  "definition": "소스코드·바이트코드를 실행하지 않고 분석하여 보안약점을 자동 검출하는 기법 및 도구.",
+  "features": [
+   "개발 초기 단계 적용 가능(Shift-Left)",
+   "전체 코드 경로 분석, 오탐 존재",
+   "KISA 보안약점 진단도구 인증 제도",
+   "CI/CD 파이프라인에 통합"
+  ],
+  "related": [
+   "dynamic-application-security-testing",
+   "devsecops",
+   "software-development-security-guide"
+  ]
+ },
+ {
+  "id": "sql-injection",
+  "term": "SQL 삽입",
+  "term_en": "SQL Injection",
+  "definition": "검증되지 않은 입력값에 SQL 구문을 삽입하여 데이터베이스 질의를 조작함으로써 인증 우회·정보 유출·데이터 변조를 유발하는 공격.",
+  "features": [
+   "OWASP Top 10 상위 항목",
+   "Prepared Statement·파라미터 바인딩으로 근본 차단",
+   "입력값 화이트리스트 검증, 최소 권한 DB 계정",
+   "Blind·Union·Error 기반 등 변형 존재"
+  ],
+  "related": [
+   "prepared-statement",
+   "input-validation",
+   "owasp-top-10"
+  ]
+ },
+ {
+  "id": "xss",
+  "term": "크로스사이트 스크립팅",
+  "term_en": "Cross-Site Scripting (XSS)",
+  "definition": "웹 페이지에 악성 스크립트를 삽입하여 다른 사용자의 브라우저에서 실행되게 함으로써 세션 탈취·피싱 등을 수행하는 공격.",
+  "features": [
+   "Stored·Reflected·DOM 기반으로 구분",
+   "출력값 HTML 인코딩이 핵심 대책",
+   "HttpOnly 쿠키, CSP(Content Security Policy) 적용",
+   "CSRF와 결합 시 피해 확대"
+  ],
+  "related": [
+   "input-validation",
+   "session-hijacking",
+   "cross-site-request-forgery"
+  ]
+ },
+ {
+  "id": "path-traversal",
+  "term": "경로 조작",
+  "term_en": "Path Traversal",
+  "definition": "../ 등 상대 경로 문자를 입력하여 허용되지 않은 디렉터리·파일에 접근하는 공격.",
+  "features": [
+   "디렉터리 트래버설이라고도 함",
+   "입력 경로 정규화 후 허용 경로 내 여부 검증",
+   "경로 구분 문자 필터링, 파일명 화이트리스트",
+   "설정 파일·소스코드 유출로 이어짐"
+  ],
+  "related": [
+   "input-validation",
+   "software-vulnerability"
+  ]
+ },
+ {
+  "id": "race-condition",
+  "term": "경쟁조건",
+  "term_en": "Race Condition",
+  "definition": "둘 이상의 프로세스·스레드가 공유 자원에 동시에 접근할 때 실행 순서에 따라 결과가 달라져 발생하는 보안약점.",
+  "features": [
+   "TOCTOU(검사 시점과 사용 시점 차이) 취약점이 대표",
+   "권한 상승·데이터 무결성 훼손 유발",
+   "동기화(뮤텍스·세마포어)·원자적 연산으로 방지",
+   "SW 개발보안 가이드 '시간 및 상태' 영역"
+  ],
+  "related": [
+   "software-vulnerability"
+  ]
+ },
+ {
+  "id": "buffer-overflow",
+  "term": "버퍼 오버플로우",
+  "term_en": "Buffer Overflow",
+  "definition": "할당된 버퍼 크기를 초과하는 데이터를 기록하여 인접 메모리를 덮어쓰고 리턴 주소 변조 등으로 임의 코드를 실행하는 취약점.",
+  "features": [
+   "스택·힙 오버플로우로 구분",
+   "gets·strcpy 등 길이 미검사 함수가 원인",
+   "fgets·strncpy 등 안전 함수, 경계 검사",
+   "ASLR·스택 카나리·NX 비트로 완화"
+  ],
+  "related": [
+   "address-space-layout-randomization",
+   "exploit",
+   "worm"
+  ]
+ },
+ {
+  "id": "devsecops",
+  "term": "DevSecOps",
+  "term_en": "DevSecOps",
+  "definition": "개발(Dev)·보안(Sec)·운영(Ops)을 통합하여 CI/CD 파이프라인 전 과정에 보안 활동을 자동화·내재화하는 문화와 방법론.",
+  "features": [
+   "Shift-Left: 개발 초기에 보안 검증",
+   "SAST·DAST·SCA 자동화 통합",
+   "보안을 모두의 책임으로 문화 전환",
+   "빠른 배포와 보안의 균형"
+  ],
+  "related": [
+   "static-application-security-testing",
+   "dynamic-application-security-testing",
+   "software-composition-analysis"
+  ]
+ },
+ {
+  "id": "dynamic-application-security-testing",
+  "term": "동적 애플리케이션 보안 테스트",
+  "term_en": "Dynamic Application Security Testing (DAST)",
+  "definition": "실행 중인 애플리케이션에 외부에서 공격 패턴을 전송하여 취약점을 검출하는 블랙박스 테스트 기법.",
+  "features": [
+   "소스코드 없이 수행 가능",
+   "런타임·설정 취약점 발견에 유리",
+   "테스트 환경 필요, 커버리지 한계",
+   "SAST와 상호 보완"
+  ],
+  "related": [
+   "static-application-security-testing",
+   "penetration-testing"
+  ]
+ },
+ {
+  "id": "secure-software-development-lifecycle",
+  "term": "보안 개발 생명주기",
+  "term_en": "Secure Software Development Lifecycle (Secure SDLC)",
+  "definition": "요구사항·설계·구현·시험·운영 등 SW 개발 생명주기 각 단계에 보안 활동을 통합한 개발 프로세스.",
+  "features": [
+   "MS SDL, 7-Touchpoints, CLASP 등 모델",
+   "단계별 보안 요구사항·위협 모델링·코드 검토·테스트",
+   "결함 조기 발견으로 수정 비용 절감",
+   "시큐어 코딩은 구현 단계 활동"
+  ],
+  "related": [
+   "software-development-security-guide",
+   "devsecops"
+  ]
+ },
+ {
+  "id": "cwe",
+  "term": "공통 약점 목록",
+  "term_en": "Common Weakness Enumeration (CWE)",
+  "definition": "MITRE가 관리하는 소프트웨어·하드웨어 보안약점의 표준 분류 체계.",
+  "features": [
+   "취약점의 근본 원인인 약점 유형을 식별자(CWE-ID)로 관리",
+   "CWE Top 25 위험 약점 발표",
+   "SAST 도구·개발보안 가이드와 매핑",
+   "CVE(개별 취약점 사례)와 구분"
+  ],
+  "related": [
+   "cve",
+   "software-vulnerability",
+   "owasp-top-10"
+  ]
+ },
+ {
+  "id": "cve",
+  "term": "공통 취약점 및 노출",
+  "term_en": "Common Vulnerabilities and Exposures (CVE)",
+  "definition": "공개된 개별 보안 취약점에 고유 식별자(CVE-연도-번호)를 부여하여 관리하는 표준 목록.",
+  "features": [
+   "MITRE 운영, NVD에서 CVSS 점수 연계",
+   "취약점 정보 공유·패치 관리의 공통 언어",
+   "CWE는 약점 유형, CVE는 개별 사례",
+   "공급망·SBOM 취약점 점검에 활용"
+  ],
+  "related": [
+   "cwe",
+   "cvss",
+   "software-vulnerability"
+  ]
+ },
+ {
+  "id": "owasp-top-10",
+  "term": "OWASP Top 10",
+  "term_en": "OWASP Top 10",
+  "definition": "OWASP가 주기적으로 발표하는 웹 애플리케이션의 가장 치명적인 보안 위험 10가지 목록.",
+  "features": [
+   "접근통제 취약, 암호화 실패, 인젝션 등 포함",
+   "웹 보안 교육·점검의 사실상 표준",
+   "개발보안 가이드와 매핑",
+   "API·LLM 등 분야별 Top 10 파생"
+  ],
+  "related": [
+   "sql-injection",
+   "xss",
+   "cwe"
+  ]
+ },
+ {
+  "id": "penetration-testing",
+  "term": "모의해킹",
+  "term_en": "Penetration Testing",
+  "definition": "공격자 관점에서 실제 공격 기법을 사용하여 시스템·애플리케이션의 취약점을 발견하고 악용 가능성을 검증하는 보안 점검.",
+  "features": [
+   "블랙·화이트·그레이 박스로 구분",
+   "자동 스캐닝으로 찾지 못하는 논리적 취약점 발견",
+   "사전 승인·범위 정의 필수",
+   "결과를 취약점 관리 체계에 환류"
+  ],
+  "related": [
+   "dynamic-application-security-testing",
+   "software-vulnerability"
+  ]
+ },
+ {
+  "id": "prepared-statement",
+  "term": "Prepared Statement",
+  "term_en": "Prepared Statement",
+  "definition": "SQL 구문 구조를 먼저 컴파일하고 입력값을 파라미터로 바인딩하여 데이터가 코드로 해석되지 않게 하는 데이터베이스 질의 기법.",
+  "features": [
+   "SQL 삽입의 근본적 대책",
+   "파라미터는 항상 데이터로 처리",
+   "질의 재사용으로 성능 향상",
+   "ORM·JDBC·ODBC 등 대부분 API 지원"
+  ],
+  "related": [
+   "sql-injection",
+   "input-validation"
+  ]
+ },
+ {
+  "id": "address-space-layout-randomization",
+  "term": "주소 공간 배치 난수화",
+  "term_en": "Address Space Layout Randomization (ASLR)",
+  "definition": "프로세스의 스택·힙·라이브러리 주소를 실행 시마다 무작위로 배치하여 메모리 공격의 주소 예측을 어렵게 하는 운영체제 보호 기법.",
+  "features": [
+   "버퍼 오버플로우·ROP 공격 완화",
+   "NX/DEP·스택 카나리와 함께 적용",
+   "정보 누출 취약점과 결합 시 우회 가능",
+   "PIE 컴파일 옵션으로 실행 파일에도 적용"
+  ],
+  "related": [
+   "buffer-overflow"
+  ]
+ },
+ {
+  "id": "cross-site-request-forgery",
+  "term": "크로스사이트 요청 위조",
+  "term_en": "Cross-Site Request Forgery (CSRF)",
+  "definition": "인증된 사용자의 브라우저가 공격자가 의도한 요청을 자신도 모르게 서버에 전송하게 만드는 공격.",
+  "features": [
+   "세션 쿠키 자동 전송 특성 악용",
+   "CSRF 토큰·SameSite 쿠키·Referer 검증으로 방어",
+   "중요 기능은 재인증 요구",
+   "XSS와 결합 시 토큰 방어 우회 가능"
+  ],
+  "related": [
+   "xss",
+   "session-management"
+  ]
+ },
+ {
+  "id": "session-management",
+  "term": "세션 관리",
+  "term_en": "Session Management",
+  "definition": "인증 후 사용자 상태를 유지하기 위한 세션 ID의 생성·전달·만료·폐기를 안전하게 처리하는 보안 기능.",
+  "features": [
+   "예측 불가능한 세션 ID 생성",
+   "로그인 시 세션 ID 재발급으로 세션 고정 방지",
+   "유휴·절대 타임아웃 설정",
+   "HttpOnly·Secure 쿠키 속성"
+  ],
+  "related": [
+   "session-hijacking",
+   "cross-site-request-forgery"
+  ]
+ },
+ {
+  "id": "session-hijacking",
+  "term": "세션 하이재킹",
+  "term_en": "Session Hijacking",
+  "definition": "유효한 세션 ID를 탈취·추측하여 정당한 사용자로 위장해 서비스에 접근하는 공격.",
+  "features": [
+   "XSS·스니핑·세션 고정으로 세션 ID 획득",
+   "TLS 전송, HttpOnly 쿠키로 탈취 방지",
+   "세션 타임아웃·IP 바인딩으로 피해 제한",
+   "세션 미만료 설정 시 영구 재사용 가능"
+  ],
+  "related": [
+   "session-management",
+   "xss"
+  ]
+ },
+ {
+  "id": "software-composition-analysis",
+  "term": "소프트웨어 구성 분석",
+  "term_en": "Software Composition Analysis (SCA)",
+  "definition": "애플리케이션에 포함된 오픈소스·서드파티 컴포넌트를 식별하고 알려진 취약점·라이선스 위험을 분석하는 기법.",
+  "features": [
+   "의존성 목록과 CVE 데이터베이스 대조",
+   "SBOM 생성 기반",
+   "공급망 공격 대응의 핵심",
+   "CI/CD에서 자동 차단 정책 적용"
+  ],
+  "related": [
+   "software-bill-of-materials",
+   "cve",
+   "devsecops"
+  ]
+ },
+ {
+  "id": "software-bill-of-materials",
+  "term": "소프트웨어 자재명세서",
+  "term_en": "Software Bill of Materials (SBOM)",
+  "definition": "소프트웨어를 구성하는 모든 컴포넌트·라이브러리·의존성과 버전 정보를 기록한 목록.",
+  "features": [
+   "SPDX·CycloneDX 표준 형식",
+   "취약점 발생 시 영향 범위 신속 파악",
+   "공급망 보안 규제(미 행정명령 14028) 요구",
+   "SCA 도구로 자동 생성"
+  ],
+  "related": [
+   "software-composition-analysis",
+   "cve"
+  ]
+ },
+ {
+  "id": "credential",
+  "term": "크리덴셜",
+  "term_en": "Credential",
+  "definition": "주체가 주장하는 신원이 진정함을 입증하기 위해 제시하는 패스워드·토큰·인증서·생체정보 등의 인증 정보.",
+  "features": [
+   "지식·소유·존재·행위 기반으로 구분",
+   "전송·저장 시 암호화 필수",
+   "유출 시 크리덴셜 스터핑에 악용",
+   "주기적 갱신·폐기 관리"
+  ],
+  "related": [
+   "authentication",
+   "password",
+   "credential-stuffing"
+  ]
+ },
+ {
+  "id": "access-control",
+  "term": "접근통제",
+  "term_en": "Access Control",
+  "definition": "인가된 주체만이 허용된 방식으로 객체에 접근하도록 식별·인증·인가·책임추적을 통해 통제하는 보안 기능.",
+  "features": [
+   "식별 → 인증 → 인가 → 감사의 단계",
+   "DAC·MAC·RBAC·ABAC 모델",
+   "최소 권한·직무 분리 원칙 구현",
+   "ACL·보안 레이블·역할 등 메커니즘"
+  ],
+  "related": [
+   "authentication",
+   "authorization",
+   "discretionary-access-control",
+   "mandatory-access-control",
+   "attribute-based-access-control"
+  ]
+ },
+ {
+  "id": "authorization",
+  "term": "인가",
+  "term_en": "Authorization",
+  "definition": "인증된 주체에게 자원에 대한 특정 연산을 수행할 권한을 부여하고 접근 요청 시 허용 여부를 결정하는 과정.",
+  "features": [
+   "인증 이후 단계",
+   "역할·속성·정책 기반 결정",
+   "최소 권한 원칙 적용",
+   "OAuth는 인가 위임 프로토콜"
+  ],
+  "related": [
+   "authentication",
+   "access-control",
+   "oauth",
+   "least-privilege"
+  ]
+ },
+ {
+  "id": "accountability",
+  "term": "책임추적성",
+  "term_en": "Accountability",
+  "definition": "시스템 내 모든 행위를 행위 주체와 연결하여 추적·감사할 수 있도록 보장하는 보안 속성.",
+  "features": [
+   "감사 로그·식별·인증이 전제",
+   "1인 1계정 원칙, 계정 공유 금지",
+   "부인방지와 연계",
+   "침해사고 원인 규명의 근거"
+  ],
+  "related": [
+   "access-control",
+   "non-repudiation"
+  ]
+ },
+ {
+  "id": "otp",
+  "term": "일회용 비밀번호",
+  "term_en": "One-Time Password (OTP)",
+  "definition": "한 번 사용하면 무효화되는 일회성 비밀번호로, 시간·이벤트·질의응답 방식으로 생성하는 소유 기반 인증 수단.",
+  "features": [
+   "TOTP(시간 동기)·HOTP(이벤트)·챌린지-리스폰스 방식",
+   "재전송 공격 방어",
+   "하드웨어 토큰·앱·SMS로 제공",
+   "다중요소 인증의 대표 요소"
+  ],
+  "related": [
+   "multi-factor-authentication",
+   "replay-attack",
+   "authentication"
+  ]
+ },
+ {
+  "id": "password",
+  "term": "패스워드",
+  "term_en": "Password",
+  "definition": "사용자만 알고 있는 비밀 문자열로 신원을 검증하는 지식 기반 인증 수단.",
+  "features": [
+   "가장 보편적이나 추측·유출·재사용에 취약",
+   "솔트+해시로 저장, 평문 저장 금지",
+   "복잡도·길이·실패 횟수 제한 정책",
+   "패스워드리스(FIDO)로 대체 추세"
+  ],
+  "related": [
+   "salt",
+   "hash-function",
+   "brute-force-attack",
+   "fido"
+  ]
+ },
+ {
+  "id": "smart-card",
+  "term": "스마트카드",
+  "term_en": "Smart Card",
+  "definition": "암호 연산이 가능한 IC 칩을 내장하여 개인키·인증서를 안전하게 보관하고 인증을 수행하는 소유 기반 인증 매체.",
+  "features": [
+   "접촉식·비접촉식, 보안 요소로 키 추출 방지",
+   "PIN과 결합하여 2요소 인증",
+   "공동인증서·출입카드·신용카드에 활용",
+   "분실·도난 시 즉시 폐기 필요"
+  ],
+  "related": [
+   "multi-factor-authentication",
+   "pki"
+  ]
+ },
+ {
+  "id": "biometric-authentication",
+  "term": "생체인증",
+  "term_en": "Biometric Authentication",
+  "definition": "지문·얼굴·홍채·정맥 등 신체 특징이나 행동 특성으로 개인을 식별·인증하는 존재 기반 인증 방식.",
+  "features": [
+   "분실·망각 없음, 높은 편의성",
+   "변경 불가로 유출 시 영구적 위험",
+   "FAR·FRR·EER로 성능 평가",
+   "생체정보는 민감정보로 템플릿 보호 필수"
+  ],
+  "related": [
+   "false-acceptance-rate",
+   "false-rejection-rate",
+   "biometric-template",
+   "liveness-detection"
+  ]
+ },
+ {
+  "id": "multi-factor-authentication",
+  "term": "다중요소 인증",
+  "term_en": "Multi-Factor Authentication (MFA)",
+  "definition": "지식·소유·존재 등 서로 다른 범주의 인증 요소 두 가지 이상을 결합하여 단일 요소 탈취 시에도 인증을 보호하는 방식.",
+  "features": [
+   "동일 범주 반복은 다단계 인증으로 구분",
+   "OTP·FIDO·생체인증과 패스워드 결합",
+   "피싱 저항 MFA(FIDO2) 권장",
+   "제로 트러스트의 기본 요건"
+  ],
+  "related": [
+   "otp",
+   "fido",
+   "biometric-authentication",
+   "password"
+  ]
+ },
+ {
+  "id": "salt",
+  "term": "솔트",
+  "term_en": "Salt",
+  "definition": "패스워드 해시 생성 시 사용자별로 추가하는 난수 값으로, 동일 패스워드가 다른 해시를 갖게 하여 레인보우 테이블 공격을 무력화하는 기법.",
+  "features": [
+   "사용자마다 고유한 충분한 길이의 난수",
+   "해시와 함께 저장, 비밀 아님",
+   "bcrypt·PBKDF2·Argon2 등 키 스트레칭과 병행",
+   "사전 계산 공격 방어"
+  ],
+  "related": [
+   "hash-function",
+   "password",
+   "brute-force-attack"
+  ]
+ },
+ {
+  "id": "hash-function",
+  "term": "해시함수",
+  "term_en": "Hash Function",
+  "definition": "임의 길이 입력을 고정 길이 출력으로 변환하는 일방향 함수로, 무결성 검증·패스워드 저장·전자서명에 사용되는 키 없는 암호 기술.",
+  "features": [
+   "일방향성·역상저항성·충돌저항성",
+   "SHA-256·SHA-3·LSH 권고, MD5·SHA-1 사용 금지",
+   "충돌저항성 보안강도는 출력길이의 1/2",
+   "HMAC으로 메시지 인증"
+  ],
+  "related": [
+   "birthday-attack",
+   "message-authentication-code",
+   "digital-signature",
+   "salt"
+  ]
+ },
+ {
+  "id": "brute-force-attack",
+  "term": "무차별 대입 공격",
+  "term_en": "Brute-Force Attack",
+  "definition": "가능한 모든 키 또는 패스워드 조합을 순차적으로 시도하여 정답을 찾는 전수조사 공격.",
+  "features": [
+   "키 길이 n비트에 평균 2^(n-1)회 시도",
+   "보안강도 산정의 기준 공격",
+   "로그인 실패 횟수 제한·지연·CAPTCHA로 방어",
+   "양자 Grover 알고리즘은 복잡도를 제곱근으로 감소"
+  ],
+  "related": [
+   "key-length",
+   "password",
+   "grover-algorithm",
+   "credential-stuffing"
+  ]
+ },
+ {
+  "id": "ldap",
+  "term": "LDAP",
+  "term_en": "Lightweight Directory Access Protocol",
+  "definition": "사용자·그룹·자원 정보를 계층적 디렉터리로 저장·조회하는 경량 디렉터리 접근 프로토콜.",
+  "features": [
+   "Active Directory 등 디렉터리 서비스의 표준 인터페이스",
+   "중앙 집중 계정 관리·인증 저장소",
+   "LDAPS로 전송 암호화",
+   "SSO·IAM의 기반"
+  ],
+  "related": [
+   "identity-and-access-management",
+   "single-sign-on"
+  ]
+ },
+ {
+  "id": "pki",
+  "term": "공개키 기반구조",
+  "term_en": "Public Key Infrastructure (PKI)",
+  "definition": "공개키의 소유자를 인증서로 보증하기 위해 인증기관(CA)·등록기관·저장소·인증서 정책 등을 갖춘 신뢰 체계.",
+  "features": [
+   "X.509 인증서로 공개키-신원 바인딩",
+   "CA 계층 구조와 인증서 폐기(CRL·OCSP)",
+   "TLS·전자서명·코드 서명의 기반",
+   "공동인증서 등 국가 PKI"
+  ],
+  "related": [
+   "digital-signature",
+   "asymmetric-key-cryptography",
+   "ssl-tls"
+  ]
+ },
+ {
+  "id": "fido",
+  "term": "FIDO",
+  "term_en": "Fast Identity Online (FIDO)",
+  "definition": "공개키 암호를 이용해 서버에 비밀을 저장하지 않고 기기 내 인증(생체·PIN)으로 온라인 인증을 수행하는 패스워드리스 인증 표준.",
+  "features": [
+   "FIDO2(WebAuthn+CTAP), UAF, U2F 규격",
+   "개인키는 기기에, 서버는 공개키만 보관",
+   "피싱 저항(출처 바인딩)",
+   "패스키(Passkey)로 다기기 동기화"
+  ],
+  "related": [
+   "multi-factor-authentication",
+   "password",
+   "phishing"
+  ]
+ },
+ {
+  "id": "json-web-token",
+  "term": "JSON 웹 토큰",
+  "term_en": "JSON Web Token (JWT)",
+  "definition": "헤더·페이로드·서명을 Base64URL로 인코딩하여 점으로 연결한 자기 완결형 토큰으로, 클레임을 안전하게 전달하는 표준(RFC 7519).",
+  "features": [
+   "서명(JWS)·암호화(JWE) 지원",
+   "OpenID Connect의 ID 토큰 형식",
+   "상태 비저장 세션 구현",
+   "만료·서명 알고리즘 검증 필수(none 알고리즘 금지)"
+  ],
+  "related": [
+   "openid-connect",
+   "oauth",
+   "hmac"
+  ]
+ },
+ {
+  "id": "ssl-tls",
+  "term": "TLS",
+  "term_en": "Transport Layer Security (SSL/TLS)",
+  "definition": "전송 계층에서 서버 인증·키 교환·대칭 암호화로 통신의 기밀성과 무결성을 보장하는 보안 프로토콜.",
+  "features": [
+   "핸드셰이크(ECDHE 키 교환, 인증서 검증)와 레코드 계층",
+   "TLS 1.3 권장, SSL 3.0·TLS 1.0/1.1 사용 금지",
+   "하이브리드 암호 구조의 대표 사례",
+   "PQC 하이브리드 키 교환 도입 중"
+  ],
+  "related": [
+   "hybrid-encryption",
+   "pki",
+   "diffie-hellman",
+   "hybrid-key-exchange"
+  ]
+ },
+ {
+  "id": "digital-signature",
+  "term": "전자서명",
+  "term_en": "Digital Signature",
+  "definition": "서명자의 개인키로 메시지 해시를 서명하고 공개키로 검증하여 무결성·인증·부인방지를 제공하는 공개키 암호 응용.",
+  "features": [
+   "RSA-PSS·ECDSA·KCDSA·ML-DSA 등",
+   "해시 후 서명으로 효율성·안전성 확보",
+   "PKI 인증서로 공개키 신뢰",
+   "전자서명법에 따른 법적 효력"
+  ],
+  "related": [
+   "hash-function",
+   "pki",
+   "non-repudiation",
+   "asymmetric-key-cryptography",
+   "digital-signature-algorithm"
+  ]
+ },
+ {
+  "id": "message-authentication-code",
+  "term": "메시지 인증 코드",
+  "term_en": "Message Authentication Code (MAC)",
+  "definition": "공유 비밀키와 메시지로부터 생성한 고정 길이 태그로 메시지의 무결성과 출처를 검증하는 대칭키 기반 인증 기술.",
+  "features": [
+   "HMAC(해시 기반), CMAC(블록 암호 기반)",
+   "부인방지는 제공하지 않음(키 공유)",
+   "Encrypt-then-MAC 구성 권장",
+   "보안강도는 키 길이와 태그 길이의 최소값"
+  ],
+  "related": [
+   "hash-function",
+   "hmac",
+   "authenticated-encryption",
+   "integrity"
+  ]
+ },
+ {
+  "id": "replay-attack",
+  "term": "재전송 공격",
+  "term_en": "Replay Attack",
+  "definition": "정당한 통신에서 획득한 인증 정보나 메시지를 가로채 나중에 다시 전송하여 인증을 우회하거나 거래를 반복시키는 공격.",
+  "features": [
+   "암호화만으로는 방어 불가",
+   "논스·타임스탬프·시퀀스 번호로 방어",
+   "OTP·챌린지-리스폰스 인증 적용",
+   "TLS·Kerberos 등 프로토콜에 대응 설계 포함"
+  ],
+  "related": [
+   "otp",
+   "man-in-the-middle-attack"
+  ]
+ },
+ {
+  "id": "credential-stuffing",
+  "term": "크리덴셜 스터핑",
+  "term_en": "Credential Stuffing",
+  "definition": "유출된 ID·패스워드 목록을 다른 서비스에 자동으로 대입하여 패스워드 재사용 계정을 탈취하는 공격.",
+  "features": [
+   "무차별 대입과 달리 실제 유출 자격증명 사용",
+   "패스워드 재사용 습관이 원인",
+   "MFA·이상 로그인 탐지·CAPTCHA로 방어",
+   "유출 패스워드 DB 대조 서비스 활용"
+  ],
+  "related": [
+   "brute-force-attack",
+   "password",
+   "multi-factor-authentication"
+  ]
+ },
+ {
+  "id": "phishing",
+  "term": "피싱",
+  "term_en": "Phishing",
+  "definition": "신뢰할 수 있는 기관·서비스를 사칭한 메일·사이트로 사용자를 속여 인증 정보나 금전을 탈취하는 사회공학 공격.",
+  "features": [
+   "스피어 피싱·스미싱·보이스 피싱 등 변형",
+   "OpenID 등 리다이렉트 기반 인증의 취약 지점",
+   "피싱 저항 인증(FIDO2)으로 근본 대응",
+   "이메일 인증(SPF·DKIM·DMARC)과 사용자 교육"
+  ],
+  "related": [
+   "social-engineering",
+   "fido",
+   "multi-factor-authentication"
+  ]
+ },
+ {
+  "id": "false-rejection-rate",
+  "term": "오거부률",
+  "term_en": "False Rejection Rate (FRR)",
+  "definition": "생체인식 시스템이 정당한 사용자를 타인으로 판단하여 거부하는 비율로, 편의성을 나타내는 지표.",
+  "features": [
+   "FNMR(False Non-Match Rate)이라고도 함",
+   "임계값을 높이면 FRR 증가, FAR 감소",
+   "FAR과 교차하는 지점이 EER",
+   "사용자 불만·재시도 비용과 직결"
+  ],
+  "related": [
+   "false-acceptance-rate",
+   "equal-error-rate",
+   "biometric-authentication"
+  ]
+ },
+ {
+  "id": "false-acceptance-rate",
+  "term": "오인식률",
+  "term_en": "False Acceptance Rate (FAR)",
+  "definition": "생체인식 시스템이 타인을 정당한 사용자로 잘못 수락하는 비율로, 보안성을 나타내는 지표.",
+  "features": [
+   "FMR(False Match Rate)이라고도 함",
+   "임계값을 낮추면 FAR 증가",
+   "고보안 용도는 FAR 최소화 우선",
+   "EER로 FRR과 균형 평가"
+  ],
+  "related": [
+   "false-rejection-rate",
+   "equal-error-rate",
+   "biometric-authentication"
+  ]
+ },
+ {
+  "id": "risk-based-authentication",
+  "term": "위험 기반 인증",
+  "term_en": "Risk-Based (Adaptive) Authentication",
+  "definition": "접속 위치·기기·시간·행위 패턴 등 컨텍스트로 위험 점수를 산정하고 위험 수준에 따라 인증 강도를 동적으로 조정하는 인증 방식.",
+  "features": [
+   "저위험은 간편 인증, 고위험은 추가 인증 요구",
+   "사용자 편의와 보안의 균형",
+   "머신러닝 기반 이상 탐지 활용",
+   "제로 트러스트 지속 검증의 요소"
+  ],
+  "related": [
+   "multi-factor-authentication",
+   "zero-trust",
+   "anomaly-detection"
+  ]
+ },
+ {
+  "id": "single-sign-on",
+  "term": "통합 인증",
+  "term_en": "Single Sign-On (SSO)",
+  "definition": "한 번의 인증으로 여러 시스템·서비스에 재인증 없이 접근할 수 있게 하는 인증 체계.",
+  "features": [
+   "SAML·OpenID Connect·Kerberos 등 프로토콜",
+   "패스워드 수 감소로 편의성·보안성 향상",
+   "인증 서버가 단일 장애점·공격 지점",
+   "IAM과 결합하여 계정 생명주기 관리"
+  ],
+  "related": [
+   "openid-connect",
+   "saml",
+   "identity-and-access-management",
+   "federated-identity"
+  ]
+ },
+ {
+  "id": "identity-and-access-management",
+  "term": "계정 및 접근 관리",
+  "term_en": "Identity and Access Management (IAM)",
+  "definition": "조직의 사용자 계정 생명주기와 인증·권한 부여를 중앙에서 통합 관리하는 체계와 솔루션.",
+  "features": [
+   "프로비저닝·권한 검토·SSO·MFA 포함",
+   "RBAC·ABAC 정책 적용",
+   "클라우드 IAM으로 자원 접근 통제",
+   "규제 준수·감사 증적 제공"
+  ],
+  "related": [
+   "single-sign-on",
+   "access-control",
+   "ldap"
+  ]
+ },
+ {
+  "id": "zero-trust",
+  "term": "제로 트러스트",
+  "term_en": "Zero Trust",
+  "definition": "네트워크 위치와 무관하게 어떤 주체도 기본적으로 신뢰하지 않고 모든 접근 요청을 지속적으로 검증하는 보안 모델.",
+  "features": [
+   "'절대 신뢰하지 말고 항상 검증'",
+   "최소 권한·마이크로 세그멘테이션·지속 인증",
+   "NIST SP 800-207 아키텍처",
+   "내부자 위협·측면 이동 대응"
+  ],
+  "related": [
+   "multi-factor-authentication",
+   "least-privilege",
+   "network-segmentation",
+   "risk-based-authentication"
+  ]
+ },
+ {
+  "id": "decentralized-identity",
+  "term": "분산 신원",
+  "term_en": "Decentralized Identity (DID)",
+  "definition": "중앙 기관 없이 사용자가 자신의 신원 정보를 직접 생성·보관·제출하는 자기주권 신원 체계와 W3C 표준 식별자.",
+  "features": [
+   "블록체인·분산원장에 DID 문서 등록",
+   "검증 가능 자격증명(VC)으로 선택적 정보 제출",
+   "모바일 신분증 등에 적용",
+   "기존 OpenID·SAML 연합 신원의 대안"
+  ],
+  "related": [
+   "federated-identity",
+   "openid-connect",
+   "single-sign-on"
+  ]
+ },
+ {
+  "id": "resident-registration-number",
+  "term": "주민등록번호",
+  "term_en": "Resident Registration Number",
+  "definition": "대한민국 국민에게 출생 시 부여되는 13자리 고유 식별번호로, 생년월일·성별 정보를 포함하며 변경이 원칙적으로 불가한 개인정보.",
+  "features": [
+   "법령 근거 없는 수집·처리 금지(개인정보보호법 제24조의2)",
+   "유출 시 전 생애 피해 지속",
+   "아이핀·휴대폰 인증 등 대체수단 도입 배경",
+   "암호화 저장 의무"
+  ],
+  "related": [
+   "personal-information",
+   "identity-verification-agency",
+   "my-pin"
+  ]
+ },
+ {
+  "id": "identity-verification-agency",
+  "term": "본인확인기관",
+  "term_en": "Identity Verification Agency",
+  "definition": "정보통신망법 제23조의3에 따라 방송통신위원회가 지정하여 주민등록번호를 대체하는 본인확인 서비스를 제공할 수 있는 기관.",
+  "features": [
+   "아이핀·휴대폰·인증서 본인확인 서비스 제공",
+   "신용평가사·이동통신사·인증서 발급기관 등 지정",
+   "주민등록번호 원본 보관으로 높은 보안 요구",
+   "CI·DI 생성·제공"
+  ],
+  "related": [
+   "connecting-information",
+   "duplication-information",
+   "mobile-phone-identity-verification"
+  ]
+ },
+ {
+  "id": "identity-theft",
+  "term": "명의도용",
+  "term_en": "Identity Theft",
+  "definition": "타인의 주민등록번호·계정 등 신원 정보를 도용하여 회원가입·금융거래 등을 수행하는 범죄.",
+  "features": [
+   "개인정보 유출의 대표적 2차 피해",
+   "명의도용 방지 서비스·본인확인 강화로 대응",
+   "가상 식별번호(아이핀)로 피해 차단 가능",
+   "개인정보보호법·정보통신망법 처벌"
+  ],
+  "related": [
+   "resident-registration-number",
+   "personal-information"
+  ]
+ },
+ {
+  "id": "connecting-information",
+  "term": "연계정보",
+  "term_en": "Connecting Information (CI)",
+  "definition": "주민등록번호를 일방향 해시하여 생성한 88바이트 값으로, 서로 다른 서비스 간 동일인 여부를 연계하기 위해 본인확인기관이 제공하는 정보.",
+  "features": [
+   "개인당 하나의 값, 기관 공통",
+   "주민등록번호 대체 식별자",
+   "온·오프라인 서비스 연계에 사용",
+   "CI 유출 시 서비스 간 결합 위험으로 관리 필요"
+  ],
+  "related": [
+   "duplication-information",
+   "identity-verification-agency",
+   "hash-function"
+  ]
+ },
+ {
+  "id": "duplication-information",
+  "term": "중복가입확인정보",
+  "term_en": "Duplication Information (DI)",
+  "definition": "주민등록번호와 사이트 식별자를 함께 해시하여 생성한 64바이트 값으로, 특정 웹사이트 내 중복가입 여부 확인에만 사용되는 정보.",
+  "features": [
+   "사이트마다 다른 값으로 서비스 간 연계 불가",
+   "CI보다 프라이버시 보호 수준 높음",
+   "본인확인기관이 인증 결과와 함께 제공",
+   "회원가입 중복 방지 용도 한정"
+  ],
+  "related": [
+   "connecting-information",
+   "identity-verification-agency"
+  ]
+ },
+ {
+  "id": "my-pin",
+  "term": "마이핀",
+  "term_en": "MyPIN",
+  "definition": "오프라인에서 주민등록번호 대신 본인확인에 사용하는 13자리 무작위 번호로, 아이핀과 연계되어 발급되는 대체 식별수단.",
+  "features": [
+   "의미 없는 난수, 재발급 가능",
+   "오프라인 회원가입·본인확인 용도",
+   "2014년 주민등록번호 수집 금지와 함께 도입",
+   "아이핀과 동일하게 본인확인기관 발급"
+  ],
+  "related": [
+   "resident-registration-number",
+   "identity-verification-agency"
+  ]
+ },
+ {
+  "id": "mobile-phone-identity-verification",
+  "term": "휴대폰 본인확인",
+  "term_en": "Mobile Phone Identity Verification",
+  "definition": "이동통신사 가입 정보(이름·생년월일·전화번호)와 SMS 인증번호로 본인 여부를 확인하는 본인확인 서비스.",
+  "features": [
+   "가장 널리 사용되는 주민등록번호 대체 수단",
+   "소유 기반 인증 요소 활용",
+   "SIM 스와핑·스미싱 위험 존재",
+   "CI·DI를 이용기관에 제공"
+  ],
+  "related": [
+   "identity-verification-agency",
+   "connecting-information"
+  ]
+ },
+ {
+  "id": "personal-information",
+  "term": "개인정보",
+  "term_en": "Personal Information",
+  "definition": "살아 있는 개인에 관한 정보로서 이름·주민등록번호·영상 등 개인을 알아볼 수 있는 정보와 다른 정보와 쉽게 결합하여 알아볼 수 있는 정보.",
+  "features": [
+   "개인정보보호법상 보호 대상",
+   "민감정보(생체·건강 등)·고유식별정보는 별도 규제",
+   "수집 최소화·목적 외 이용 금지 원칙",
+   "가명·익명 처리로 활용 가능"
+  ],
+  "related": [
+   "personal-information-protection-act",
+   "resident-registration-number"
+  ]
+ },
+ {
+  "id": "information-and-communications-network-act",
+  "term": "정보통신망법",
+  "term_en": "Act on Promotion of Information and Communications Network Utilization and Information Protection",
+  "definition": "정보통신망의 이용 촉진과 정보보호를 규정한 법률로, 주민등록번호 사용 제한·본인확인기관 지정·침해사고 대응 등을 규율.",
+  "features": [
+   "제23조의2 주민등록번호 사용 제한(2012년)",
+   "제23조의3 본인확인기관 지정",
+   "ISMS 인증·침해사고 신고 의무 규정",
+   "개인정보 조항은 2020년 개인정보보호법으로 이관"
+  ],
+  "related": [
+   "personal-information-protection-act",
+   "identity-verification-agency",
+   "isms-p"
+  ]
+ },
+ {
+  "id": "personal-information-protection-act",
+  "term": "개인정보보호법",
+  "term_en": "Personal Information Protection Act",
+  "definition": "개인정보의 수집·이용·제공·파기 등 처리 전반에 관한 원칙과 정보주체의 권리를 규정한 대한민국의 개인정보 보호 일반법.",
+  "features": [
+   "제24조의2 주민등록번호 처리 제한",
+   "민감정보·고유식별정보 처리 제한",
+   "안전조치 의무·유출 통지·과징금",
+   "2023년 개정으로 전송요구권 등 신설"
+  ],
+  "related": [
+   "personal-information",
+   "information-and-communications-network-act"
+  ]
+ },
+ {
+  "id": "isms-p",
+  "term": "정보보호 및 개인정보보호 관리체계",
+  "term_en": "ISMS-P",
+  "definition": "조직의 정보보호 및 개인정보보호 관리체계가 인증기준에 적합한지 KISA 등이 심사하여 인증하는 국내 제도.",
+  "features": [
+   "관리체계 수립·운영(16), 보호대책(64), 개인정보 처리(21) 기준",
+   "1.2 위험관리에서 자산 식별·위험 평가·보호대책 선정 요구",
+   "정보통신망법·개인정보보호법에 근거",
+   "일정 규모 이상 사업자 의무 인증"
+  ],
+  "related": [
+   "iso-iec-27001",
+   "risk-management",
+   "information-and-communications-network-act"
+  ]
+ },
+ {
+  "id": "advanced-persistent-threat",
+  "term": "지능형 지속 위협",
+  "term_en": "Advanced Persistent Threat (APT)",
+  "definition": "특정 조직을 목표로 다양한 공격 기법을 결합하여 장기간 은밀하게 침투·잠복하며 정보를 탈취하는 조직적 공격.",
+  "features": [
+   "국가·조직 배후, 명확한 목표",
+   "제로데이·사회공학·맞춤형 악성코드 활용",
+   "침투 → 거점 확보 → 측면 이동 → 유출 단계",
+   "EDR·위협 인텔리전스·이상 탐지로 대응"
+  ],
+  "related": [
+   "zero-day-attack",
+   "malware",
+   "social-engineering",
+   "endpoint-detection-and-response"
+  ]
+ },
+ {
+  "id": "ransomware",
+  "term": "랜섬웨어",
+  "term_en": "Ransomware",
+  "definition": "시스템·파일을 암호화하거나 접근을 차단한 뒤 복구 대가로 금전을 요구하는 악성코드.",
+  "features": [
+   "비대칭 암호로 공격자만 복호화 가능",
+   "데이터 유출 협박을 더한 이중 갈취",
+   "RaaS(서비스형 랜섬웨어)로 확산",
+   "오프라인 백업·패치·EDR로 대응"
+  ],
+  "related": [
+   "malware",
+   "worm",
+   "backdoor"
+  ]
+ },
+ {
+  "id": "computer-virus",
+  "term": "컴퓨터 바이러스",
+  "term_en": "Computer Virus",
+  "definition": "실행 파일·문서·부트섹터 등 숙주에 기생하여 숙주 실행 시 자신을 복제하고 다른 파일을 감염시키는 악성코드.",
+  "features": [
+   "숙주 필요, 사용자 실행으로 전파",
+   "파일형·부트형·매크로형·다형성 등",
+   "웜과 달리 네트워크 자체 전파 불가",
+   "백신 시그니처·무결성 검사로 탐지"
+  ],
+  "related": [
+   "worm",
+   "trojan-horse",
+   "malware",
+   "polymorphic-virus"
+  ]
+ },
+ {
+  "id": "worm",
+  "term": "웜",
+  "term_en": "Worm",
+  "definition": "숙주 없이 독립 실행되며 네트워크 취약점을 이용해 스스로 복제·전파하는 자기복제형 악성코드.",
+  "features": [
+   "사용자 개입 없이 지수적 확산",
+   "네트워크 대역폭 고갈·대규모 서비스 마비",
+   "모리스·Slammer·Conficker·WannaCry 사례",
+   "패치·포트 차단·망 분리로 예방"
+  ],
+  "related": [
+   "computer-virus",
+   "malware",
+   "exploit",
+   "buffer-overflow"
+  ]
+ },
+ {
+  "id": "trojan-horse",
+  "term": "트로이목마",
+  "term_en": "Trojan Horse",
+  "definition": "유용한 정상 프로그램으로 위장하여 사용자가 설치·실행하도록 유도한 뒤 백도어·정보 유출 등 악성 기능을 수행하는 악성코드.",
+  "features": [
+   "자기복제 기능 없음",
+   "원격제어(RAT)·뱅킹·다운로더형",
+   "DAC 환경에서 사용자 권한으로 실행되어 위험",
+   "행위 기반 탐지·C&C 차단"
+  ],
+  "related": [
+   "backdoor",
+   "malware",
+   "computer-virus"
+  ]
+ },
+ {
+  "id": "spyware",
+  "term": "스파이웨어",
+  "term_en": "Spyware",
+  "definition": "사용자 동의 없이 설치되어 활동·입력·개인정보를 수집하여 외부로 전송하는 악성코드.",
+  "features": [
+   "키로거·화면 캡처·브라우저 추적 포함",
+   "광고·마케팅부터 감시 목적까지 다양",
+   "번들 설치·드라이브 바이 다운로드로 유포",
+   "안티스파이웨어·권한 점검으로 대응"
+  ],
+  "related": [
+   "keylogger",
+   "malware",
+   "adware"
+  ]
+ },
+ {
+  "id": "keylogger",
+  "term": "키로거",
+  "term_en": "Keylogger",
+  "definition": "키보드 입력을 가로채 기록·전송하여 패스워드·카드번호 등을 탈취하는 악성코드 또는 장치.",
+  "features": [
+   "SW(후킹)·HW(USB 삽입형) 유형",
+   "가상 키보드·OTP로 피해 완화",
+   "키보드 보안 프로그램으로 입력 암호화",
+   "스파이웨어의 대표 기능"
+  ],
+  "related": [
+   "spyware",
+   "malware"
+  ]
+ },
+ {
+  "id": "rootkit",
+  "term": "루트킷",
+  "term_en": "Rootkit",
+  "definition": "운영체제 커널·펌웨어 수준에서 프로세스·파일·네트워크 연결을 숨겨 악성코드의 존재와 공격자 접근을 은닉하는 도구.",
+  "features": [
+   "사용자·커널·부트킷·펌웨어 루트킷",
+   "시스템 호출 후킹으로 탐지 회피",
+   "일반 백신으로 탐지 어려움",
+   "무결성 검사·보안 부팅·메모리 포렌식으로 대응"
+  ],
+  "related": [
+   "malware",
+   "backdoor",
+   "obfuscation"
+  ]
+ },
+ {
+  "id": "botnet",
+  "term": "봇넷",
+  "term_en": "Botnet",
+  "definition": "악성코드에 감염되어 공격자의 C&C 서버 명령을 수행하는 좀비 PC·IoT 기기의 네트워크.",
+  "features": [
+   "DDoS·스팸·암호화폐 채굴·정보 유출에 동원",
+   "중앙집중형·P2P형 C&C 구조",
+   "Mirai 등 IoT 봇넷 등장",
+   "C&C 통신 차단·싱크홀로 무력화"
+  ],
+  "related": [
+   "ddos",
+   "malware",
+   "worm"
+  ]
+ },
+ {
+  "id": "ddos",
+  "term": "분산 서비스 거부 공격",
+  "term_en": "Distributed Denial of Service (DDoS)",
+  "definition": "다수의 감염 시스템에서 동시에 대량 트래픽·요청을 보내 대상 서비스의 자원을 고갈시켜 정상 서비스를 불가능하게 하는 공격.",
+  "features": [
+   "볼륨·프로토콜·애플리케이션 계층 공격",
+   "봇넷·증폭(DNS, NTP) 기법 활용",
+   "CDN·스크러빙 센터·Anti-DDoS 장비로 방어",
+   "웜·봇넷의 대표 페이로드"
+  ],
+  "related": [
+   "botnet",
+   "worm",
+   "malware"
+  ]
+ },
+ {
+  "id": "static-analysis",
+  "term": "정적 분석",
+  "term_en": "Static Analysis",
+  "definition": "프로그램을 실행하지 않고 파일 구조·문자열·코드를 분석하여 기능과 악성 여부를 파악하는 악성코드 분석 기법.",
+  "features": [
+   "해시·문자열·PE 헤더 분석(기초), 디스어셈블(고급)",
+   "안전하고 전체 코드 경로 분석 가능",
+   "패킹·난독화 시 분석 어려움",
+   "IDA Pro·Ghidra 등 도구"
+  ],
+  "related": [
+   "dynamic-analysis",
+   "disassembler",
+   "packing",
+   "reverse-engineering"
+  ]
+ },
+ {
+  "id": "dynamic-analysis",
+  "term": "동적 분석",
+  "term_en": "Dynamic Analysis",
+  "definition": "격리된 환경에서 악성코드를 실제 실행하여 프로세스·파일·레지스트리·네트워크 행위를 관찰하는 분석 기법.",
+  "features": [
+   "샌드박스 자동 분석(기초), 디버깅(고급)",
+   "패킹·난독화 우회, 실제 행위 확인",
+   "안티 VM·조건부 실행에 취약",
+   "Cuckoo·Process Monitor·Wireshark 활용"
+  ],
+  "related": [
+   "static-analysis",
+   "sandbox",
+   "debugger"
+  ]
+ },
+ {
+  "id": "packing",
+  "term": "패킹",
+  "term_en": "Packing",
+  "definition": "실행 파일을 압축·암호화하고 실행 시 메모리에서 복원하는 로더를 붙여 정적 분석과 시그니처 탐지를 회피하는 기법.",
+  "features": [
+   "UPX·Themida 등 패커",
+   "엔트로피 높음, 임포트 테이블 축소가 징후",
+   "언패킹 또는 메모리 덤프로 원본 추출",
+   "정상 SW 보호에도 사용"
+  ],
+  "related": [
+   "obfuscation",
+   "static-analysis",
+   "reverse-engineering"
+  ]
+ },
+ {
+  "id": "sandbox",
+  "term": "샌드박스",
+  "term_en": "Sandbox",
+  "definition": "호스트와 격리된 가상 환경에서 의심 파일을 실행하여 행위를 안전하게 관찰·분석하는 기술.",
+  "features": [
+   "자동 행위 분석 보고서 생성",
+   "안티 VM 기법으로 회피 가능",
+   "메일·웹 게이트웨이 보안에 적용",
+   "브라우저·앱 격리에도 동일 개념"
+  ],
+  "related": [
+   "dynamic-analysis",
+   "malware"
+  ]
+ },
+ {
+  "id": "disassembler",
+  "term": "디스어셈블러",
+  "term_en": "Disassembler",
+  "definition": "기계어 바이너리를 어셈블리 코드로 변환하여 소스 없이 프로그램 로직을 분석할 수 있게 하는 도구.",
+  "features": [
+   "IDA Pro·Ghidra·radare2",
+   "디컴파일러는 고급 언어 수준으로 복원",
+   "고급 정적 분석의 핵심 도구",
+   "제어 흐름 그래프·교차 참조 제공"
+  ],
+  "related": [
+   "static-analysis",
+   "reverse-engineering",
+   "debugger"
+  ]
+ },
+ {
+  "id": "reverse-engineering",
+  "term": "역공학",
+  "term_en": "Reverse Engineering",
+  "definition": "완성된 소프트웨어·시스템을 분해·분석하여 설계·동작 원리·알고리즘을 역으로 파악하는 기술.",
+  "features": [
+   "악성코드 분석·취약점 연구·호환성 확보에 활용",
+   "디스어셈블·디컴파일·디버깅 병행",
+   "난독화·안티 디버깅이 방해 기법",
+   "저작권법상 호환 목적 등 제한적 허용"
+  ],
+  "related": [
+   "disassembler",
+   "debugger",
+   "obfuscation"
+  ]
+ },
+ {
+  "id": "debugger",
+  "term": "디버거",
+  "term_en": "Debugger",
+  "definition": "프로그램을 단계별로 실행하며 레지스터·메모리·실행 흐름을 관찰·제어하는 도구로, 고급 동적 분석에 사용.",
+  "features": [
+   "x64dbg·OllyDbg·WinDbg·gdb",
+   "브레이크포인트·단계 실행·메모리 덤프",
+   "언패킹된 코드 추출에 활용",
+   "안티 디버깅 기법으로 회피 시도"
+  ],
+  "related": [
+   "dynamic-analysis",
+   "disassembler",
+   "reverse-engineering"
+  ]
+ },
+ {
+  "id": "indicator-of-compromise",
+  "term": "침해지표",
+  "term_en": "Indicator of Compromise (IoC)",
+  "definition": "악성코드 해시·C&C IP·도메인·파일 경로·레지스트리 키 등 침해 발생을 식별할 수 있는 관찰 가능한 증거 데이터.",
+  "features": [
+   "분석 결과를 탐지 규칙으로 환류",
+   "STIX/TAXII로 위협 정보 공유",
+   "공격자가 쉽게 변경 가능(피라미드 오브 페인)",
+   "TTP 기반 탐지로 보완"
+  ],
+  "related": [
+   "yara",
+   "signature-based-detection",
+   "endpoint-detection-and-response"
+  ]
+ },
+ {
+  "id": "yara",
+  "term": "YARA",
+  "term_en": "YARA",
+  "definition": "문자열·바이트 패턴·조건식으로 악성코드 패밀리를 식별하는 규칙 기반 탐지 도구 및 규칙 언어.",
+  "features": [
+   "악성코드 분석가의 사실상 표준",
+   "텍스트·16진수·정규식 패턴 지원",
+   "파일·메모리·네트워크에 적용",
+   "오픈소스 규칙 공유 생태계"
+  ],
+  "related": [
+   "indicator-of-compromise",
+   "signature-based-detection",
+   "static-analysis"
+  ]
+ },
+ {
+  "id": "fileless-malware",
+  "term": "파일리스 악성코드",
+  "term_en": "Fileless Malware",
+  "definition": "디스크에 실행 파일을 남기지 않고 메모리·레지스트리·정상 도구(PowerShell, WMI)를 이용해 동작하는 악성코드.",
+  "features": [
+   "LotL(Living off the Land) 기법",
+   "파일 기반 백신 탐지 회피",
+   "메모리 포렌식·행위 탐지·스크립트 로깅으로 대응",
+   "재부팅 시 소멸하나 지속성 기법 결합"
+  ],
+  "related": [
+   "malware",
+   "behavior-based-detection",
+   "endpoint-detection-and-response"
+  ]
+ },
+ {
+  "id": "signature-based-detection",
+  "term": "시그니처 기반 탐지",
+  "term_en": "Signature-Based Detection",
+  "definition": "알려진 악성코드의 고유 패턴(해시·바이트 열)을 데이터베이스와 비교하여 탐지하는 방식.",
+  "features": [
+   "오탐 낮고 빠름",
+   "신종·변종·다형성 악성코드 미탐",
+   "지속적 시그니처 업데이트 필요",
+   "휴리스틱·행위 기반과 병행"
+  ],
+  "related": [
+   "heuristic-detection",
+   "behavior-based-detection",
+   "yara"
+  ]
+ },
+ {
+  "id": "behavior-based-detection",
+  "term": "행위 기반 탐지",
+  "term_en": "Behavior-Based Detection",
+  "definition": "프로세스의 실행 행위(파일 암호화, 레지스트리 변경, 네트워크 통신 등)를 모니터링하여 악성 여부를 판단하는 탐지 방식.",
+  "features": [
+   "알려지지 않은 악성코드·파일리스 탐지 가능",
+   "오탐 가능성, 실행 후 탐지",
+   "EDR·샌드박스의 핵심",
+   "머신러닝으로 정확도 향상"
+  ],
+  "related": [
+   "signature-based-detection",
+   "heuristic-detection",
+   "endpoint-detection-and-response"
+  ]
+ },
+ {
+  "id": "exploit",
+  "term": "익스플로잇",
+  "term_en": "Exploit",
+  "definition": "소프트웨어·하드웨어 취약점을 실제로 악용하여 권한 획득·코드 실행 등을 수행하는 공격 코드나 기법.",
+  "features": [
+   "제로데이·N-day 익스플로잇",
+   "익스플로잇 킷으로 자동화·상품화",
+   "웜·APT의 침투 수단",
+   "패치·ASLR·DEP로 완화"
+  ],
+  "related": [
+   "software-vulnerability",
+   "zero-day-attack",
+   "buffer-overflow"
+  ]
+ },
+ {
+  "id": "social-engineering",
+  "term": "사회공학",
+  "term_en": "Social Engineering",
+  "definition": "기술적 취약점이 아닌 사람의 심리·신뢰를 이용하여 정보를 탈취하거나 악성 행위를 유도하는 공격 기법.",
+  "features": [
+   "피싱·프리텍스팅·베이팅·테일게이팅",
+   "악성코드 유포의 주요 경로",
+   "기술 통제로 방어 한계, 교육·모의훈련 필수",
+   "APT 초기 침투 단계에 활용"
+  ],
+  "related": [
+   "phishing",
+   "malware",
+   "advanced-persistent-threat"
+  ]
+ },
+ {
+  "id": "polymorphic-virus",
+  "term": "다형성 바이러스",
+  "term_en": "Polymorphic Virus",
+  "definition": "감염할 때마다 암호화 키·복호화 루틴을 변경하여 코드 형태를 바꿈으로써 시그니처 탐지를 회피하는 바이러스.",
+  "features": [
+   "핵심 코드는 동일, 외형만 변화",
+   "메타모픽은 코드 자체를 재작성",
+   "휴리스틱·에뮬레이션으로 탐지",
+   "패커와 결합하여 변종 대량 생성"
+  ],
+  "related": [
+   "computer-virus",
+   "signature-based-detection",
+   "obfuscation"
+  ]
+ },
+ {
+  "id": "adware",
+  "term": "애드웨어",
+  "term_en": "Adware",
+  "definition": "사용자 동의 없이 광고를 노출하거나 브라우저 설정을 변경하여 광고 수익을 얻는 잠재적 유해 프로그램.",
+  "features": [
+   "번들 설치로 유포",
+   "검색 하이재킹·팝업 광고",
+   "스파이웨어 기능 동반 가능",
+   "PUP(잠재적 원치 않는 프로그램)로 분류"
+  ],
+  "related": [
+   "spyware",
+   "malware"
+  ]
+ },
+ {
+  "id": "backdoor",
+  "term": "백도어",
+  "term_en": "Backdoor",
+  "definition": "정상 인증 절차를 우회하여 시스템에 비밀리에 접근할 수 있도록 설치된 숨겨진 통로.",
+  "features": [
+   "트로이목마·웜의 페이로드로 설치",
+   "리버스 쉘·웹셸 형태",
+   "개발자가 남긴 디버그 백도어도 위험",
+   "C&C 통신 탐지·무결성 검사로 발견"
+  ],
+  "related": [
+   "trojan-horse",
+   "malware",
+   "worm"
+  ]
+ },
+ {
+  "id": "obfuscation",
+  "term": "난독화",
+  "term_en": "Obfuscation",
+  "definition": "코드의 의미는 유지하면서 읽기·분석하기 어렵게 변환하여 역공학과 탐지를 방해하는 기법.",
+  "features": [
+   "제어 흐름 평탄화·문자열 암호화·쓰레기 코드 삽입",
+   "악성코드 분석 회피와 정상 SW 보호에 모두 사용",
+   "동적 분석으로 우회 가능",
+   "패킹과 병행"
+  ],
+  "related": [
+   "packing",
+   "reverse-engineering",
+   "polymorphic-virus"
+  ]
+ },
+ {
+  "id": "heuristic-detection",
+  "term": "휴리스틱 탐지",
+  "term_en": "Heuristic Detection",
+  "definition": "알려진 시그니처 없이 코드 구조·명령 패턴·의심 특성에 가중치를 부여하여 악성 가능성을 추정하는 탐지 방식.",
+  "features": [
+   "신종·변종 탐지 가능",
+   "오탐 가능성 존재",
+   "정적 휴리스틱·에뮬레이션 기반",
+   "시그니처·행위 기반과 병행"
+  ],
+  "related": [
+   "signature-based-detection",
+   "behavior-based-detection"
+  ]
+ },
+ {
+  "id": "endpoint-detection-and-response",
+  "term": "엔드포인트 탐지 및 대응",
+  "term_en": "Endpoint Detection and Response (EDR)",
+  "definition": "엔드포인트의 프로세스·파일·네트워크 행위를 지속 수집·분석하여 위협을 탐지하고 격리·복구 등 대응을 수행하는 보안 솔루션.",
+  "features": [
+   "행위 기반·머신러닝 탐지",
+   "위협 헌팅·타임라인 분석",
+   "자동 격리·원격 대응",
+   "XDR로 네트워크·클라우드까지 확장"
+  ],
+  "related": [
+   "behavior-based-detection",
+   "indicator-of-compromise",
+   "fileless-malware"
+  ]
+ },
+ {
+  "id": "digital-forensics",
+  "term": "디지털 포렌식",
+  "term_en": "Digital Forensics",
+  "definition": "디지털 기기·저장매체·네트워크에서 증거를 법적 효력을 갖도록 수집·보존·분석·보고하는 과학적 절차와 기술.",
+  "features": [
+   "식별 → 수집 → 보존 → 분석 → 보고 절차",
+   "무결성·연계보관성·재현성 원칙",
+   "디스크·메모리·네트워크·모바일 포렌식",
+   "안티포렌식이 방해 요소"
+  ],
+  "related": [
+   "digital-evidence",
+   "chain-of-custody",
+   "write-blocker",
+   "e-discovery"
+  ]
+ },
+ {
+  "id": "digital-evidence",
+  "term": "디지털 증거",
+  "term_en": "Digital Evidence",
+  "definition": "컴퓨터·저장매체·네트워크에 디지털 형태로 저장·전송되는 정보 중 법적 증거 가치를 갖는 데이터.",
+  "features": [
+   "복제·변조 용이로 무결성 입증 필수",
+   "휘발성(메모리)·비휘발성(디스크) 구분",
+   "해시·타임스탬프로 원본 동일성 증명",
+   "증거능력 요건: 진정성·무결성·신뢰성"
+  ],
+  "related": [
+   "digital-forensics",
+   "chain-of-custody",
+   "hash-function"
+  ]
+ },
+ {
+  "id": "data-wiping",
+  "term": "데이터 와이핑",
+  "term_en": "Data Wiping",
+  "definition": "저장매체의 데이터를 난수·고정 패턴으로 여러 번 덮어써 복구가 불가능하도록 완전 삭제하는 기법.",
+  "features": [
+   "DoD 5220.22-M(3회)·Gutmann(35회) 등 표준",
+   "SSD는 웨어 레벨링으로 Secure Erase 필요",
+   "정당한 폐기 절차이자 안티포렌식 수단",
+   "디가우징·물리 파괴와 병행"
+  ],
+  "related": [
+   "steganography",
+   "slack-space"
+  ]
+ },
+ {
+  "id": "steganography",
+  "term": "스테가노그래피",
+  "term_en": "Steganography",
+  "definition": "이미지·음성·영상 등 일반 파일 안에 비밀 데이터를 숨겨 존재 자체를 감추는 정보 은닉 기술.",
+  "features": [
+   "LSB 치환 등 기법, 암호화와 결합 가능",
+   "암호화는 내용을, 스테가노그래피는 존재를 숨김",
+   "안티포렌식·정보 유출·C&C 통신에 악용",
+   "스테가널리시스(통계 분석)로 탐지"
+  ],
+  "related": [
+   "encryption",
+   "data-wiping",
+   "slack-space"
+  ]
+ },
+ {
+  "id": "encryption",
+  "term": "암호화",
+  "term_en": "Encryption",
+  "definition": "평문을 키를 이용해 암호문으로 변환하여 인가되지 않은 자가 내용을 알 수 없게 하는 기밀성 보호 기술.",
+  "features": [
+   "대칭·비대칭 암호화로 구분",
+   "전체 디스크·파일·전송 암호화",
+   "개인정보보호법 안전조치 의무 사항",
+   "안티포렌식에서는 증거 접근 차단 수단"
+  ],
+  "related": [
+   "symmetric-key-cryptography",
+   "asymmetric-key-cryptography",
+   "confidentiality"
+  ]
+ },
+ {
+  "id": "slack-space",
+  "term": "슬랙 공간",
+  "term_en": "Slack Space",
+  "definition": "파일 시스템이 클러스터 단위로 공간을 할당할 때 파일 끝과 클러스터 끝 사이에 남는 미사용 영역.",
+  "features": [
+   "이전 파일 잔존 데이터로 포렌식 증거원",
+   "안티포렌식에서 데이터 은닉 장소로 악용",
+   "램 슬랙·파일 슬랙·볼륨 슬랙 구분",
+   "포렌식 도구가 비할당 영역과 함께 분석"
+  ],
+  "related": [
+   "steganography",
+   "data-wiping",
+   "digital-forensics"
+  ]
+ },
+ {
+  "id": "timestomping",
+  "term": "타임스탬핑",
+  "term_en": "Timestomping",
+  "definition": "파일의 생성·수정·접근(MAC) 시간 정보를 조작하여 포렌식 타임라인 분석을 교란하는 안티포렌식 기법.",
+  "features": [
+   "Timestomp 등 도구로 수행",
+   "$STANDARD_INFORMATION과 $FILE_NAME 속성 불일치로 탐지",
+   "로그·저널($UsnJrnl)과 교차 검증",
+   "공인 타임스탬프로 대응"
+  ],
+  "related": [
+   "timestamp",
+   "digital-forensics"
+  ]
+ },
+ {
+  "id": "litigation-hold",
+  "term": "소송 보존 명령",
+  "term_en": "Litigation Hold",
+  "definition": "소송·조사가 예상되는 시점부터 관련 데이터의 삭제·변경을 중단하고 보존하도록 조직 내에 발동하는 명령 및 절차.",
+  "features": [
+   "전자증거개시(e-Discovery)의 전제",
+   "일반 보존기간 정책보다 우선",
+   "위반 시 증거 인멸로 제재",
+   "컴플라이언스 시스템에서 자동 적용"
+  ],
+  "related": [
+   "e-discovery",
+   "data-retention",
+   "chain-of-custody"
+  ]
+ },
+ {
+  "id": "e-discovery",
+  "term": "전자증거개시",
+  "term_en": "Electronic Discovery (e-Discovery)",
+  "definition": "소송·조사 과정에서 전자적으로 저장된 정보(ESI)를 식별·보존·수집·검토·제출하는 법적 절차.",
+  "features": [
+   "EDRM(식별·보존·수집·처리·검토·분석·제출) 참조 모델",
+   "미국 연방민사소송규칙 기반, 국제 분쟁에 적용",
+   "컴플라이언스 시스템 구축의 핵심 동인",
+   "안티포렌식 대응의 법적 근거"
+  ],
+  "related": [
+   "litigation-hold",
+   "digital-forensics",
+   "data-retention"
+  ]
+ },
+ {
+  "id": "write-once-read-many",
+  "term": "WORM 저장",
+  "term_en": "Write Once Read Many (WORM)",
+  "definition": "한 번 기록한 데이터를 수정·삭제할 수 없고 읽기만 가능하도록 하는 저장 기술 및 정책.",
+  "features": [
+   "로그·아카이브·증거 무결성 보장",
+   "광디스크·전용 스토리지·클라우드 객체 잠금",
+   "규제 보존(SEC 17a-4 등) 요구 충족",
+   "랜섬웨어·안티포렌식으로부터 증거 보호"
+  ],
+  "related": [
+   "data-retention",
+   "integrity",
+   "timestamp"
+  ]
+ },
+ {
+  "id": "timestamp",
+  "term": "타임스탬프",
+  "term_en": "Timestamp",
+  "definition": "특정 데이터가 특정 시각에 존재했음을 증명하기 위해 신뢰기관이 해시값에 시각 정보를 결합해 서명한 정보.",
+  "features": [
+   "RFC 3161 TSA(시점확인기관)",
+   "타임스탬핑 조작에 대한 대응 수단",
+   "전자문서·증거의 존재 시점 입증",
+   "해시·전자서명과 결합"
+  ],
+  "related": [
+   "hash-function",
+   "digital-signature",
+   "timestomping"
+  ]
+ },
+ {
+  "id": "siem",
+  "term": "보안 정보 및 이벤트 관리",
+  "term_en": "Security Information and Event Management (SIEM)",
+  "definition": "다양한 보안 장비·시스템의 로그와 이벤트를 중앙 수집·정규화·상관분석하여 위협을 탐지하고 감사 증적을 보존하는 솔루션.",
+  "features": [
+   "실시간 상관분석·경보",
+   "로그 중앙 보존으로 로그 변조 대응",
+   "규제 준수 보고서 생성",
+   "SOAR·UEBA와 연계"
+  ],
+  "related": [
+   "anomaly-detection",
+   "write-once-read-many",
+   "indicator-of-compromise"
+  ]
+ },
+ {
+  "id": "chain-of-custody",
+  "term": "증거 연계보관성",
+  "term_en": "Chain of Custody",
+  "definition": "증거의 수집부터 법정 제출까지 보관·이동·분석 이력을 빠짐없이 기록하여 증거가 변조되지 않았음을 입증하는 절차.",
+  "features": [
+   "담당자·일시·장소·목적 문서화",
+   "해시값으로 원본 동일성 확인",
+   "단절 시 증거능력 부정",
+   "안티포렌식의 공격 대상"
+  ],
+  "related": [
+   "digital-forensics",
+   "digital-evidence",
+   "hash-function"
+  ]
+ },
+ {
+  "id": "data-retention",
+  "term": "데이터 보존",
+  "term_en": "Data Retention",
+  "definition": "법규·업무 요구에 따라 데이터를 정해진 기간 동안 보관하고 기간 경과 후 안전하게 파기하는 정책과 관리 활동.",
+  "features": [
+   "법정 보존기간(상법·전자문서법·통신비밀보호법 등)",
+   "보존 분류표와 자동 파기",
+   "소송 보존 명령 시 파기 중단",
+   "개인정보 최소 보유 원칙과 조화"
+  ],
+  "related": [
+   "litigation-hold",
+   "e-discovery",
+   "write-once-read-many"
+  ]
+ },
+ {
+  "id": "data-loss-prevention",
+  "term": "데이터 유출 방지",
+  "term_en": "Data Loss Prevention (DLP)",
+  "definition": "중요 데이터의 이동·사용·저장을 모니터링하여 정책에 위반되는 외부 유출을 탐지·차단하는 솔루션.",
+  "features": [
+   "엔드포인트·네트워크·스토리지 DLP",
+   "콘텐츠 인식(패턴·지문·분류 태그)",
+   "내부자 유출·안티포렌식 징후 탐지에 활용",
+   "개인정보·영업비밀 보호"
+  ],
+  "related": [
+   "siem",
+   "digital-forensics"
+  ]
+ },
+ {
+  "id": "write-blocker",
+  "term": "쓰기 방지 장치",
+  "term_en": "Write Blocker",
+  "definition": "포렌식 수집 시 저장매체에 대한 쓰기 명령을 차단하여 원본 변조 없이 읽기만 허용하는 하드웨어·소프트웨어 장치.",
+  "features": [
+   "원본 무결성 보장의 필수 도구",
+   "이미징(비트 단위 복제) 전 연결",
+   "HW 방식이 신뢰성 높음",
+   "해시 검증과 병행"
+  ],
+  "related": [
+   "digital-forensics",
+   "chain-of-custody",
+   "digital-evidence"
+  ]
+ },
+ {
+  "id": "key-length",
+  "term": "키 길이",
+  "term_en": "Key Length",
+  "definition": "암호 키의 비트 수로, 대칭키에서는 전수조사 복잡도를 직접 결정하고 공개키에서는 수학적 난제의 크기를 나타내는 안전성 척도.",
+  "features": [
+   "대칭키 보안강도 = 키 길이(지름길 공격 없을 때)",
+   "RSA 2048·ECC 224·AES-128이 112~128비트 강도",
+   "컴퓨팅 발전에 따라 권고 길이 증가",
+   "KISA·NIST 키 길이 안내서"
+  ],
+  "related": [
+   "brute-force-attack",
+   "symmetric-key-cryptography",
+   "asymmetric-key-cryptography"
+  ]
+ },
+ {
+  "id": "symmetric-key-cryptography",
+  "term": "대칭키 암호",
+  "term_en": "Symmetric-Key Cryptography",
+  "definition": "암호화와 복호화에 동일한 비밀키를 사용하는 암호 방식으로, 고속 처리에 적합하나 키 분배 문제를 가짐.",
+  "features": [
+   "블록 암호(AES, SEED, ARIA)와 스트림 암호",
+   "n명 통신에 n(n-1)/2개 키 필요",
+   "기밀성 제공, 부인방지 불가",
+   "하이브리드 암호에서 데이터 암호화 담당"
+  ],
+  "related": [
+   "asymmetric-key-cryptography",
+   "block-cipher",
+   "stream-cipher",
+   "key-distribution",
+   "aes"
+  ]
+ },
+ {
+  "id": "birthday-attack",
+  "term": "생일 공격",
+  "term_en": "Birthday Attack",
+  "definition": "생일 역설에 기반하여 n비트 해시에서 약 2^(n/2)번의 시도로 충돌 쌍을 찾는 확률적 공격.",
+  "features": [
+   "해시 충돌저항성 보안강도가 출력길이의 절반인 이유",
+   "SHA-1 충돌(2017년 SHAttered) 실증",
+   "전자서명 위조에 악용 가능",
+   "SHA-256 이상 사용으로 대응"
+  ],
+  "related": [
+   "hash-function",
+   "brute-force-attack"
+  ]
+ },
+ {
+  "id": "asymmetric-key-cryptography",
+  "term": "비대칭키 암호",
+  "term_en": "Asymmetric-Key Cryptography",
+  "definition": "수학적으로 연관된 공개키·개인키 쌍을 사용하여 한 키로 암호화한 것을 다른 키로 복호화하는 공개키 암호 방식.",
+  "features": [
+   "RSA·ElGamal·ECC·DH 등 수학적 난제 기반",
+   "키 분배 용이, 전자서명·부인방지 제공",
+   "대칭키 대비 느림, 긴 키 필요",
+   "양자컴퓨터 Shor 알고리즘에 취약"
+  ],
+  "related": [
+   "symmetric-key-cryptography",
+   "rsa",
+   "elliptic-curve-cryptography",
+   "digital-signature",
+   "pki"
+  ]
+ },
+ {
+  "id": "rsa",
+  "term": "RSA",
+  "term_en": "RSA",
+  "definition": "1977년 Rivest·Shamir·Adleman이 제안한 큰 수의 소인수분해 난해성에 기반한 공개키 암호·전자서명 알고리즘.",
+  "features": [
+   "n = p×q, 공개 지수 e, 개인 지수 d",
+   "2048비트 이상 권고(112비트 강도)",
+   "OAEP·PSS 패딩 필수",
+   "Shor 알고리즘으로 양자 취약"
+  ],
+  "related": [
+   "asymmetric-key-cryptography",
+   "oaep",
+   "elgamal",
+   "post-quantum-cryptography"
+  ]
+ },
+ {
+  "id": "elliptic-curve-cryptography",
+  "term": "타원곡선 암호",
+  "term_en": "Elliptic Curve Cryptography (ECC)",
+  "definition": "타원곡선 위 점들의 군에서 이산대수 문제의 난해성에 기반하여 짧은 키로 높은 보안강도를 제공하는 공개키 암호.",
+  "features": [
+   "256비트 키로 RSA 3072비트와 동등 강도",
+   "ECDSA·ECDH·EC-KCDSA",
+   "모바일·IoT 등 자원 제약 환경에 적합",
+   "양자컴퓨터에 취약"
+  ],
+  "related": [
+   "asymmetric-key-cryptography",
+   "discrete-logarithm-problem",
+   "rsa",
+   "diffie-hellman"
+  ]
+ },
+ {
+  "id": "aes",
+  "term": "AES",
+  "term_en": "Advanced Encryption Standard",
+  "definition": "2001년 NIST가 DES 후속으로 표준화한 128비트 블록, 128·192·256비트 키의 SPN 구조 대칭키 블록 암호(Rijndael).",
+  "features": [
+   "10·12·14 라운드, SubBytes·ShiftRows·MixColumns·AddRoundKey",
+   "하드웨어 가속(AES-NI)으로 고속",
+   "GCM 모드로 인증 암호 구성",
+   "양자 대비 AES-256 권고"
+  ],
+  "related": [
+   "block-cipher",
+   "symmetric-key-cryptography",
+   "spn-structure",
+   "des"
+  ]
+ },
+ {
+  "id": "quantum-computer",
+  "term": "양자컴퓨터",
+  "term_en": "Quantum Computer",
+  "definition": "큐비트의 중첩·얽힘을 이용하여 특정 문제를 고전 컴퓨터보다 지수적으로 빠르게 계산하는 컴퓨터.",
+  "features": [
+   "Shor·Grover 알고리즘으로 현행 암호 위협",
+   "오류 보정 가능한 대규모 양자컴퓨터(CRQC)는 미실현",
+   "HNDL 위협으로 선제 대응 필요",
+   "양자내성암호·QKD로 대응"
+  ],
+  "related": [
+   "shor-algorithm",
+   "grover-algorithm",
+   "post-quantum-cryptography",
+   "quantum-key-distribution"
+  ]
+ },
+ {
+  "id": "grover-algorithm",
+  "term": "Grover 알고리즘",
+  "term_en": "Grover's Algorithm",
+  "definition": "비정렬 데이터 탐색을 O(√N)에 수행하는 양자 알고리즘으로, 대칭키·해시의 전수조사 복잡도를 제곱근으로 감소시킴.",
+  "features": [
+   "AES-128 강도를 64비트 수준으로 저하",
+   "키 길이 2배(AES-256)로 대응 가능",
+   "공개키 암호에는 Shor가 더 치명적",
+   "해시 역상 공격에도 적용"
+  ],
+  "related": [
+   "shor-algorithm",
+   "quantum-computer",
+   "brute-force-attack"
+  ]
+ },
+ {
+  "id": "shor-algorithm",
+  "term": "Shor 알고리즘",
+  "term_en": "Shor's Algorithm",
+  "definition": "1994년 Peter Shor가 제안한 소인수분해와 이산대수 문제를 다항시간에 해결하는 양자 알고리즘.",
+  "features": [
+   "RSA·DH·ECC 등 현행 공개키 암호 무력화",
+   "양자내성암호 전환의 직접적 동인",
+   "수천 논리 큐비트 필요",
+   "대칭키·해시에는 영향 없음"
+  ],
+  "related": [
+   "grover-algorithm",
+   "quantum-computer",
+   "rsa",
+   "post-quantum-cryptography"
+  ]
+ },
+ {
+  "id": "post-quantum-cryptography",
+  "term": "양자내성암호",
+  "term_en": "Post-Quantum Cryptography (PQC)",
+  "definition": "양자컴퓨터 공격에도 안전하도록 격자·부호·해시 등 수학적 난제에 기반하여 설계된, 고전 컴퓨터에서 동작하는 공개키 암호.",
+  "features": [
+   "NIST FIPS 203(ML-KEM)·204(ML-DSA)·205(SLH-DSA)",
+   "국내 KpqC 공모 알고리즘",
+   "하이브리드 키 교환으로 단계적 전환",
+   "암호 민첩성 설계 필요"
+  ],
+  "related": [
+   "ml-kem",
+   "ml-dsa",
+   "lattice-based-cryptography",
+   "shor-algorithm",
+   "crypto-agility"
+  ]
+ },
+ {
+  "id": "moores-law",
+  "term": "무어의 법칙",
+  "term_en": "Moore's Law",
+  "definition": "집적회로의 트랜지스터 수가 약 2년마다 2배로 증가한다는 경험 법칙으로, 컴퓨팅 성능 향상에 따른 암호 키 길이 상향의 근거.",
+  "features": [
+   "연산 능력 증가로 전수조사 시간 단축",
+   "보안강도 안전 사용기간 산정에 반영",
+   "물리적 한계로 둔화 추세",
+   "양자컴퓨팅은 별도 위협"
+  ],
+  "related": [
+   "key-length",
+   "brute-force-attack"
+  ]
+ },
+ {
+  "id": "differential-cryptanalysis",
+  "term": "차분 분석",
+  "term_en": "Differential Cryptanalysis",
+  "definition": "입력 쌍의 차분이 출력 차분에 미치는 확률적 편향을 이용하여 블록 암호의 키를 복원하는 선택 평문 공격 기법.",
+  "features": [
+   "1990년 Biham·Shamir가 DES에 적용",
+   "S-box 설계·충분한 라운드 수로 대응",
+   "선택 평문 공격 모델",
+   "선형 분석과 함께 블록 암호 설계 기준"
+  ],
+  "related": [
+   "linear-cryptanalysis",
+   "chosen-plaintext-attack",
+   "block-cipher"
+  ]
+ },
+ {
+  "id": "linear-cryptanalysis",
+  "term": "선형 분석",
+  "term_en": "Linear Cryptanalysis",
+  "definition": "평문·암호문·키 비트 사이의 선형 근사식이 성립할 확률 편향을 이용하여 키 비트를 추정하는 알려진 평문 공격 기법.",
+  "features": [
+   "1993년 Matsui가 DES에 적용",
+   "비선형성 높은 S-box로 대응",
+   "알려진 평문 공격 모델",
+   "차분 분석과 함께 현대 블록 암호 안전성 기준"
+  ],
+  "related": [
+   "differential-cryptanalysis",
+   "known-plaintext-attack",
+   "block-cipher"
+  ]
+ },
+ {
+  "id": "diffie-hellman",
+  "term": "Diffie-Hellman 키 교환",
+  "term_en": "Diffie-Hellman Key Exchange",
+  "definition": "1976년 제안된, 이산대수 문제의 난해성을 이용해 공개 채널에서 두 당사자가 공유 비밀키를 안전하게 합의하는 프로토콜.",
+  "features": [
+   "g^ab mod p 공유, 최초의 공개키 개념",
+   "인증 없으면 중간자 공격에 취약",
+   "ECDHE로 전방향 안전성 제공",
+   "ElGamal·OpenID 연합 등의 기반"
+  ],
+  "related": [
+   "discrete-logarithm-problem",
+   "elgamal",
+   "man-in-the-middle-attack",
+   "elliptic-curve-cryptography"
+  ]
+ },
+ {
+  "id": "kcmvp",
+  "term": "암호모듈 검증제도",
+  "term_en": "Korea Cryptographic Module Validation Program (KCMVP)",
+  "definition": "국가·공공기관 정보통신망에서 사용하는 암호모듈의 안전성과 구현 적합성을 국가정보원이 검증하는 제도.",
+  "features": [
+   "검증 대상 알고리즘(SEED·ARIA·LEA·SHA-2 등) 지정",
+   "보안 수준 1~4 등급",
+   "공공기관 도입 제품 필수 요건",
+   "양자내성암호 반영 추진"
+  ],
+  "related": [
+   "seed",
+   "aria",
+   "lea",
+   "kcdsa"
+  ]
+ },
+ {
+  "id": "seed",
+  "term": "SEED",
+  "term_en": "SEED",
+  "definition": "1999년 KISA가 개발한 128비트 블록·128비트 키의 Feistel 구조 국내 표준 블록 암호.",
+  "features": [
+   "16라운드 Feistel 구조",
+   "ISO/IEC 18033-3, IETF RFC 표준",
+   "국내 금융·공공 분야에 광범위 적용",
+   "KCMVP 검증 대상 알고리즘"
+  ],
+  "related": [
+   "block-cipher",
+   "feistel-structure",
+   "aria",
+   "kcmvp"
+  ]
+ },
+ {
+  "id": "aria",
+  "term": "ARIA",
+  "term_en": "ARIA",
+  "definition": "2004년 국가보안기술연구소 주도로 개발된 128비트 블록, 128·192·256비트 키의 SPN 구조 국내 표준 블록 암호.",
+  "features": [
+   "AES와 유사한 involutional SPN 구조",
+   "KS X 1213 국가 표준",
+   "공공기관 권고 알고리즘",
+   "경량·고속 구현 가능"
+  ],
+  "related": [
+   "block-cipher",
+   "spn-structure",
+   "seed",
+   "kcmvp"
+  ]
+ },
+ {
+  "id": "lea",
+  "term": "LEA",
+  "term_en": "Lightweight Encryption Algorithm",
+  "definition": "2013년 국가보안기술연구소가 개발한 128비트 블록, 128·192·256비트 키의 ARX 구조 경량 블록 암호.",
+  "features": [
+   "덧셈·회전·XOR만 사용하여 SW 고속",
+   "IoT·모바일 등 자원 제약 환경 적합",
+   "ISO/IEC 29192-2 국제 표준",
+   "KCMVP 검증 대상"
+  ],
+  "related": [
+   "block-cipher",
+   "seed",
+   "aria",
+   "kcmvp"
+  ]
+ },
+ {
+  "id": "kcdsa",
+  "term": "KCDSA",
+  "term_en": "Korean Certificate-based Digital Signature Algorithm",
+  "definition": "ElGamal 서명 구조를 변형한 이산대수 기반 국내 전자서명 표준 알고리즘으로, 인증서 기반 서명에 사용.",
+  "features": [
+   "TTA 표준, EC-KCDSA로 타원곡선 확장",
+   "DSA와 유사한 부분군 기반 서명",
+   "KCMVP 검증 대상",
+   "2048비트 이상 권고"
+  ],
+  "related": [
+   "elgamal",
+   "digital-signature",
+   "digital-signature-algorithm",
+   "discrete-logarithm-problem"
+  ]
+ },
+ {
+  "id": "side-channel-attack",
+  "term": "부채널 공격",
+  "term_en": "Side-Channel Attack",
+  "definition": "암호 알고리즘의 수학적 취약점이 아닌 구현 과정에서 누출되는 전력 소모·실행 시간·전자파·소리 등 물리 정보를 분석하여 키를 추출하는 공격.",
+  "features": [
+   "시간·전력(SPA/DPA)·전자파·캐시 공격",
+   "상수 시간 구현·마스킹·셔플링으로 대응",
+   "PQC 구현에서도 주요 위협",
+   "보안강도와 별개의 구현 안전성 문제"
+  ],
+  "related": [
+   "cryptanalysis",
+   "post-quantum-cryptography"
+  ]
+ },
+ {
+  "id": "crypto-agility",
+  "term": "암호 민첩성",
+  "term_en": "Crypto-Agility",
+  "definition": "시스템 구조 변경 없이 암호 알고리즘·키 길이·프로토콜을 신속하게 교체할 수 있도록 설계하는 역량.",
+  "features": [
+   "알고리즘 하드코딩 금지, 추상화 계층",
+   "암호 인벤토리 관리가 전제",
+   "양자내성암호 전환의 핵심 요건",
+   "알고리즘 취약점 발견 시 신속 대응"
+  ],
+  "related": [
+   "post-quantum-cryptography",
+   "hybrid-key-exchange",
+   "key-length"
+  ]
+ },
+ {
+  "id": "confidentiality",
+  "term": "기밀성",
+  "term_en": "Confidentiality",
+  "definition": "인가된 주체만 정보에 접근할 수 있도록 보장하는 정보보호의 핵심 속성.",
+  "features": [
+   "암호화·접근통제로 구현",
+   "무결성·가용성과 함께 CIA 3요소",
+   "개인정보·영업비밀 보호의 기본",
+   "유출 시 피해 복구 불가"
+  ],
+  "related": [
+   "integrity",
+   "encryption",
+   "access-control"
+  ]
+ },
+ {
+  "id": "integrity",
+  "term": "무결성",
+  "term_en": "Integrity",
+  "definition": "정보가 인가되지 않은 방식으로 변경·삭제되지 않고 정확성·완전성을 유지하도록 보장하는 보안 속성.",
+  "features": [
+   "해시·MAC·전자서명으로 검증",
+   "WORM·접근통제로 보호",
+   "증거·로그의 법적 효력 전제",
+   "기밀성·가용성과 CIA 3요소"
+  ],
+  "related": [
+   "confidentiality",
+   "hash-function",
+   "message-authentication-code"
+  ]
+ },
+ {
+  "id": "non-repudiation",
+  "term": "부인방지",
+  "term_en": "Non-Repudiation",
+  "definition": "송신자나 수신자가 자신이 수행한 송신·수신 행위를 사후에 부인할 수 없도록 증거를 제공하는 보안 서비스.",
+  "features": [
+   "개인키 기반 전자서명으로 구현",
+   "대칭키·MAC으로는 제공 불가",
+   "PKI 인증서·타임스탬프와 결합",
+   "전자거래·전자문서의 법적 효력 기반"
+  ],
+  "related": [
+   "digital-signature",
+   "pki",
+   "accountability"
+  ]
+ },
+ {
+  "id": "block-cipher",
+  "term": "블록 암호",
+  "term_en": "Block Cipher",
+  "definition": "평문을 고정 길이 블록(64·128비트) 단위로 나누어 키에 의존하는 치환·전치 라운드를 반복 적용하여 암호화하는 대칭키 암호.",
+  "features": [
+   "Feistel(DES, SEED)·SPN(AES, ARIA) 구조",
+   "운영 모드(CBC·CTR·GCM)로 메시지 처리",
+   "패딩 필요, 확산 효과 우수",
+   "파일·DB·디스크 암호화에 적합"
+  ],
+  "related": [
+   "stream-cipher",
+   "block-cipher-mode-of-operation",
+   "aes",
+   "feistel-structure",
+   "spn-structure"
+  ]
+ },
+ {
+  "id": "des",
+  "term": "DES",
+  "term_en": "Data Encryption Standard",
+  "definition": "1977년 미국 표준으로 채택된 64비트 블록, 56비트 유효 키의 16라운드 Feistel 구조 블록 암호.",
+  "features": [
+   "짧은 키로 1999년 22시간 만에 전수조사 해독",
+   "3DES(2TDEA·3TDEA)로 연장 사용",
+   "현재 사용 금지, AES로 대체",
+   "차분·선형 분석 연구의 출발점"
+  ],
+  "related": [
+   "aes",
+   "feistel-structure",
+   "block-cipher"
+  ]
+ },
+ {
+  "id": "stream-cipher",
+  "term": "스트림 암호",
+  "term_en": "Stream Cipher",
+  "definition": "키로부터 생성한 키스트림을 평문과 비트·바이트 단위로 XOR하여 연속적으로 암호화하는 대칭키 암호.",
+  "features": [
+   "동기식·자기동기식, LFSR 기반 설계",
+   "고속·HW 구현 용이, 오류 전파 없음",
+   "키스트림 재사용 시 평문 노출(RC4·WEP 사고)",
+   "실시간 음성·영상·무선 통신에 적합"
+  ],
+  "related": [
+   "block-cipher",
+   "rc4",
+   "lfsr",
+   "one-time-pad"
+  ]
+ },
+ {
+  "id": "rc4",
+  "term": "RC4",
+  "term_en": "RC4",
+  "definition": "1987년 Ron Rivest가 설계한 바이트 단위 가변 키 길이 스트림 암호로, SSL·WEP에 널리 사용되었으나 키스트림 편향으로 사용 금지됨.",
+  "features": [
+   "간단한 KSA·PRGA 구조로 고속",
+   "WEP·TLS에서 통계적 공격 실증",
+   "RFC 7465로 TLS에서 사용 금지",
+   "ChaCha20으로 대체"
+  ],
+  "related": [
+   "stream-cipher",
+   "ciphertext-only-attack"
+  ]
+ },
+ {
+  "id": "one-time-pad",
+  "term": "일회용 패드",
+  "term_en": "One-Time Pad",
+  "definition": "평문과 같은 길이의 완전 난수 키를 한 번만 사용하여 XOR하는 암호로, 이론적으로 완전한 비밀성이 증명된 유일한 암호 방식.",
+  "features": [
+   "Shannon이 완전 비밀성 증명",
+   "키 길이·난수성·일회성 조건 충족 필요",
+   "키 분배·관리의 현실적 어려움",
+   "스트림 암호는 이를 근사한 방식"
+  ],
+  "related": [
+   "stream-cipher",
+   "key-distribution"
+  ]
+ },
+ {
+  "id": "elgamal",
+  "term": "ElGamal",
+  "term_en": "ElGamal",
+  "definition": "1985년 Taher ElGamal이 제안한 이산대수 문제 기반 확률적 공개키 암호·전자서명 알고리즘.",
+  "features": [
+   "암호문이 평문의 2배(c1, c2)",
+   "난수 k 재사용 시 개인키 노출",
+   "DSA·KCDSA 서명의 기반",
+   "승법 동형성, GnuPG에서 사용"
+  ],
+  "related": [
+   "discrete-logarithm-problem",
+   "diffie-hellman",
+   "digital-signature-algorithm",
+   "probabilistic-encryption"
+  ]
+ },
+ {
+  "id": "substitution-cipher",
+  "term": "치환 암호",
+  "term_en": "Substitution Cipher",
+  "definition": "평문의 문자를 규칙에 따라 다른 문자나 기호로 대체하여 암호화하는 고전 암호 방식.",
+  "features": [
+   "시저·단일 치환·비즈네르(다중 치환)",
+   "빈도 분석으로 해독 가능",
+   "혼돈(Confusion) 개념의 기원",
+   "현대 암호의 S-box로 계승"
+  ],
+  "related": [
+   "transposition-cipher",
+   "frequency-analysis",
+   "confusion-and-diffusion"
+  ]
+ },
+ {
+  "id": "transposition-cipher",
+  "term": "전치 암호",
+  "term_en": "Transposition Cipher",
+  "definition": "평문 문자 자체는 바꾸지 않고 위치만 규칙에 따라 재배열하여 암호화하는 고전 암호 방식.",
+  "features": [
+   "스키테일·레일펜스·열 전치",
+   "문자 빈도는 유지되어 치환과 결합 필요",
+   "확산(Diffusion) 개념의 기원",
+   "현대 암호의 P-box로 계승"
+  ],
+  "related": [
+   "substitution-cipher",
+   "confusion-and-diffusion"
+  ]
+ },
+ {
+  "id": "feistel-structure",
+  "term": "Feistel 구조",
+  "term_en": "Feistel Structure",
+  "definition": "블록을 좌우로 나누어 한쪽에 라운드 함수를 적용하고 다른 쪽과 XOR한 뒤 교환하는 과정을 반복하는 블록 암호 설계 구조.",
+  "features": [
+   "라운드 함수가 비가역이어도 복호화 가능",
+   "암·복호화 구조 동일",
+   "DES·SEED·Blowfish에 적용",
+   "SPN 대비 확산 속도 느려 라운드 수 많음"
+  ],
+  "related": [
+   "spn-structure",
+   "block-cipher",
+   "des",
+   "seed"
+  ]
+ },
+ {
+  "id": "spn-structure",
+  "term": "SPN 구조",
+  "term_en": "Substitution-Permutation Network",
+  "definition": "치환(S-box)과 순열(P-box)을 라운드마다 블록 전체에 적용하는 블록 암호 설계 구조.",
+  "features": [
+   "AES·ARIA·PRESENT에 적용",
+   "Feistel보다 라운드당 확산 효과 큼",
+   "복호화는 역함수 필요",
+   "병렬 처리에 유리"
+  ],
+  "related": [
+   "feistel-structure",
+   "aes",
+   "aria",
+   "confusion-and-diffusion"
+  ]
+ },
+ {
+  "id": "block-cipher-mode-of-operation",
+  "term": "블록 암호 운영 모드",
+  "term_en": "Block Cipher Mode of Operation",
+  "definition": "블록 암호로 블록 길이보다 긴 메시지를 안전하게 처리하기 위해 블록 간 연결·초기화 벡터 사용 방식을 정의한 규칙.",
+  "features": [
+   "ECB(사용 금지)·CBC·CFB·OFB·CTR",
+   "GCM·CCM은 인증 암호 모드",
+   "IV·논스 재사용 금지",
+   "모드 오용이 패딩 오라클 등 취약점 원인"
+  ],
+  "related": [
+   "block-cipher",
+   "initialization-vector",
+   "authenticated-encryption",
+   "padding-oracle-attack"
+  ]
+ },
+ {
+  "id": "hybrid-encryption",
+  "term": "하이브리드 암호",
+  "term_en": "Hybrid Encryption",
+  "definition": "공개키 암호로 세션키를 안전하게 교환하고 대칭키 암호로 실제 데이터를 암호화하여 두 방식의 장점을 결합한 암호 구조.",
+  "features": [
+   "TLS·PGP·S/MIME·디지털 봉투",
+   "속도와 키 분배 문제 동시 해결",
+   "KEM-DEM 구조로 일반화",
+   "PQC 하이브리드도 동일 원리"
+  ],
+  "related": [
+   "symmetric-key-cryptography",
+   "asymmetric-key-cryptography",
+   "session-key",
+   "ssl-tls"
+  ]
+ },
+ {
+  "id": "kerckhoffs-principle",
+  "term": "케르크호프스 원리",
+  "term_en": "Kerckhoffs's Principle",
+  "definition": "암호 시스템의 안전성은 알고리즘의 비밀이 아니라 키의 비밀에만 의존해야 한다는 현대 암호 설계의 기본 원칙.",
+  "features": [
+   "알고리즘 공개로 검증·표준화 가능",
+   "숨김에 의한 보안(Security through obscurity) 배격",
+   "공격 모델 정의의 전제",
+   "독자 개발 비공개 암호 사용 금지 근거"
+  ],
+  "related": [
+   "cryptanalysis",
+   "key-length"
+  ]
+ },
+ {
+  "id": "confusion-and-diffusion",
+  "term": "혼돈과 확산",
+  "term_en": "Confusion and Diffusion",
+  "definition": "Shannon이 제시한 암호 설계 원칙으로, 혼돈은 키와 암호문의 관계를 복잡하게, 확산은 평문 변화를 암호문 전체에 퍼뜨리는 성질.",
+  "features": [
+   "혼돈은 치환(S-box), 확산은 전치(P-box)로 구현",
+   "현대 블록 암호 라운드 구조의 기반",
+   "통계적 공격 저항성 확보",
+   "눈사태 효과(Avalanche)로 측정"
+  ],
+  "related": [
+   "substitution-cipher",
+   "transposition-cipher",
+   "spn-structure"
+  ]
+ },
+ {
+  "id": "key-distribution",
+  "term": "키 분배",
+  "term_en": "Key Distribution",
+  "definition": "암호 통신 당사자 간에 비밀키를 안전하게 전달·공유하는 문제와 그 해결 방법.",
+  "features": [
+   "대칭키 암호의 근본 과제",
+   "KDC·키 래핑·공개키 암호·DH로 해결",
+   "키 개수 n(n-1)/2 관리 부담",
+   "양자키분배는 물리 기반 해법"
+  ],
+  "related": [
+   "symmetric-key-cryptography",
+   "diffie-hellman",
+   "hybrid-encryption",
+   "quantum-key-distribution"
+  ]
+ },
+ {
+  "id": "lfsr",
+  "term": "선형 귀환 시프트 레지스터",
+  "term_en": "Linear Feedback Shift Register (LFSR)",
+  "definition": "레지스터 비트들의 선형 XOR 조합을 입력으로 되먹임하여 의사난수 비트열을 생성하는 회로로, 스트림 암호 키스트림 생성에 사용.",
+  "features": [
+   "HW 구현 간단·고속",
+   "단독 사용 시 Berlekamp-Massey로 복원 가능",
+   "비선형 결합·필터로 강화(A5/1, E0)",
+   "주기는 최대 2^n-1"
+  ],
+  "related": [
+   "stream-cipher",
+   "random-number-generator"
+  ]
+ },
+ {
+  "id": "discrete-logarithm-problem",
+  "term": "이산대수 문제",
+  "term_en": "Discrete Logarithm Problem (DLP)",
+  "definition": "유한 순환군에서 y = g^x를 만족하는 x를 g, y로부터 구하는 문제로, 군의 크기가 크면 계산적으로 불가능하여 공개키 암호의 기반이 됨.",
+  "features": [
+   "DH·ElGamal·DSA·KCDSA의 안전성 근거",
+   "타원곡선 군에서는 더 어려워 짧은 키 가능",
+   "GNFS·Pollard rho가 최선 고전 공격",
+   "Shor 알고리즘으로 양자 해결 가능"
+  ],
+  "related": [
+   "diffie-hellman",
+   "elgamal",
+   "elliptic-curve-cryptography",
+   "shor-algorithm"
+  ]
+ },
+ {
+  "id": "homomorphic-encryption",
+  "term": "동형암호",
+  "term_en": "Homomorphic Encryption",
+  "definition": "암호문 상태에서 연산한 결과를 복호화하면 평문에 같은 연산을 한 결과와 일치하는 성질을 갖는 암호.",
+  "features": [
+   "부분(RSA·ElGamal 승법)·완전 동형암호(격자 기반)",
+   "복호화 없이 클라우드·AI 연산 가능",
+   "프라이버시 보존 데이터 분석",
+   "연산 비용이 높아 실용화 진행 중"
+  ],
+  "related": [
+   "elgamal",
+   "lattice-based-cryptography",
+   "rsa"
+  ]
+ },
+ {
+  "id": "cryptanalysis",
+  "term": "암호해독",
+  "term_en": "Cryptanalysis",
+  "definition": "키를 모른 채 암호 시스템의 약점을 이용하여 평문이나 키를 복원하거나 암호의 안전성을 평가하는 학문·기술.",
+  "features": [
+   "공격자 능력에 따라 COA·KPA·CPA·CCA 모델",
+   "차분·선형·대수·부채널 분석 기법",
+   "암호 설계와 상호 발전",
+   "케르크호프스 원리에 따라 알고리즘 공개 가정"
+  ],
+  "related": [
+   "ciphertext-only-attack",
+   "chosen-ciphertext-attack",
+   "differential-cryptanalysis",
+   "kerckhoffs-principle"
+  ]
+ },
+ {
+  "id": "ciphertext-only-attack",
+  "term": "암호문 단독 공격",
+  "term_en": "Ciphertext-Only Attack (COA)",
+  "definition": "공격자가 암호문만 가지고 평문이나 키를 복원하려는 가장 약한 공격 모델.",
+  "features": [
+   "빈도 분석·전수조사가 대표 기법",
+   "고전 암호는 대부분 COA에 취약",
+   "현대 암호가 최소한 만족해야 할 조건",
+   "WEP RC4 통계 공격 사례"
+  ],
+  "related": [
+   "known-plaintext-attack",
+   "frequency-analysis",
+   "brute-force-attack"
+  ]
+ },
+ {
+  "id": "frequency-analysis",
+  "term": "빈도 분석",
+  "term_en": "Frequency Analysis",
+  "definition": "언어의 문자·단어 출현 빈도 통계를 암호문의 빈도와 비교하여 치환 암호를 해독하는 고전 암호해독 기법.",
+  "features": [
+   "9세기 알킨디가 체계화",
+   "단일 치환 암호에 효과적",
+   "다중 치환(비즈네르)은 카시스키 검사와 결합",
+   "현대 암호는 확산으로 빈도 특성 제거"
+  ],
+  "related": [
+   "substitution-cipher",
+   "ciphertext-only-attack"
+  ]
+ },
+ {
+  "id": "known-plaintext-attack",
+  "term": "알려진 평문 공격",
+  "term_en": "Known-Plaintext Attack (KPA)",
+  "definition": "공격자가 일부 평문과 그에 대응하는 암호문 쌍을 알고 있는 상태에서 키를 복원하려는 공격 모델.",
+  "features": [
+   "프로토콜 헤더·고정 포맷이 평문 제공",
+   "에니그마 crib 공격, 선형 분석",
+   "COA보다 강하고 CPA보다 약함",
+   "현대 암호는 KPA에 안전해야 함"
+  ],
+  "related": [
+   "ciphertext-only-attack",
+   "chosen-plaintext-attack",
+   "linear-cryptanalysis"
+  ]
+ },
+ {
+  "id": "chosen-plaintext-attack",
+  "term": "선택 평문 공격",
+  "term_en": "Chosen-Plaintext Attack (CPA)",
+  "definition": "공격자가 원하는 평문을 선택하여 그 암호문을 얻을 수 있는 능력을 가진 공격 모델.",
+  "features": [
+   "공개키 암호는 항상 CPA 환경",
+   "차분 분석이 대표 기법",
+   "IND-CPA 안전성은 확률적 암호화 요구",
+   "적응적 CPA(CPA2)로 강화"
+  ],
+  "related": [
+   "known-plaintext-attack",
+   "chosen-ciphertext-attack",
+   "differential-cryptanalysis",
+   "semantic-security"
+  ]
+ },
+ {
+  "id": "chosen-ciphertext-attack",
+  "term": "선택 암호문 공격",
+  "term_en": "Chosen-Ciphertext Attack (CCA)",
+  "definition": "공격자가 선택한 암호문에 대한 복호화 결과(복호화 오라클)를 얻을 수 있는 능력을 가진 강력한 공격 모델.",
+  "features": [
+   "RSA 승법적 성질·ElGamal 가변성 악용",
+   "Bleichenbacher·패딩 오라클 공격",
+   "IND-CCA2가 현대 암호의 표준 안전성",
+   "OAEP·인증 암호로 대응"
+  ],
+  "related": [
+   "chosen-plaintext-attack",
+   "adaptive-chosen-ciphertext-attack",
+   "padding-oracle-attack",
+   "oaep"
+  ]
+ },
+ {
+  "id": "padding-oracle-attack",
+  "term": "패딩 오라클 공격",
+  "term_en": "Padding Oracle Attack",
+  "definition": "서버가 복호화 시 패딩 오류 여부를 다르게 응답하는 것을 오라클로 이용하여 키 없이 CBC 암호문의 평문을 복원하는 적응적 선택 암호문 공격.",
+  "features": [
+   "2002년 Vaudenay 제안, POODLE·Lucky 13 사례",
+   "블록당 평균 128×16회 질의",
+   "Encrypt-then-MAC·AEAD(GCM)로 방어",
+   "오류 응답·시간 균일화 필요"
+  ],
+  "related": [
+   "chosen-ciphertext-attack",
+   "adaptive-chosen-ciphertext-attack",
+   "block-cipher-mode-of-operation",
+   "authenticated-encryption"
+  ]
+ },
+ {
+  "id": "semantic-security",
+  "term": "의미론적 안전성",
+  "term_en": "Semantic Security",
+  "definition": "암호문으로부터 평문에 관한 어떠한 부분 정보도 효율적으로 얻을 수 없다는 안전성 정의로, IND-CPA와 동치.",
+  "features": [
+   "Goldwasser·Micali가 제안",
+   "확률적 암호화가 필수 조건",
+   "ElGamal은 DDH 가정 하에 만족",
+   "결정적 암호(교과서 RSA)는 불만족"
+  ],
+  "related": [
+   "chosen-plaintext-attack",
+   "probabilistic-encryption",
+   "elgamal"
+  ]
+ },
+ {
+  "id": "man-in-the-middle-attack",
+  "term": "중간자 공격",
+  "term_en": "Man-in-the-Middle Attack",
+  "definition": "통신 당사자 사이에 개입하여 양측과 각각 키를 교환하거나 메시지를 가로채·변조하면서 정상 통신처럼 위장하는 공격.",
+  "features": [
+   "인증 없는 DH 키 교환의 근본 취약점",
+   "인증서 검증·상호 인증으로 방어",
+   "ARP 스푸핑·악성 AP 등 네트워크 계층 기법",
+   "HSTS·인증서 핀닝으로 TLS 보호"
+  ],
+  "related": [
+   "diffie-hellman",
+   "pki",
+   "replay-attack"
+  ]
+ },
+ {
+  "id": "initialization-vector",
+  "term": "초기화 벡터",
+  "term_en": "Initialization Vector (IV)",
+  "definition": "블록 암호 운영 모드에서 동일 평문·키로도 다른 암호문이 생성되도록 첫 블록에 적용하는 난수 값.",
+  "features": [
+   "CBC는 예측 불가 난수, CTR·GCM은 고유 논스 필요",
+   "재사용 시 평문 정보 노출",
+   "비밀이 아니므로 암호문과 함께 전송",
+   "확률적 암호화·IND-CPA의 구현 수단"
+  ],
+  "related": [
+   "block-cipher-mode-of-operation",
+   "probabilistic-encryption"
+  ]
+ },
+ {
+  "id": "oaep",
+  "term": "OAEP",
+  "term_en": "Optimal Asymmetric Encryption Padding",
+  "definition": "RSA 암호화 전에 메시지를 난수·해시로 변환하여 확률성과 IND-CCA2 안전성을 부여하는 패딩 기법(PKCS#1 v2).",
+  "features": [
+   "Bellare·Rogaway 제안",
+   "PKCS#1 v1.5 패딩의 Bleichenbacher 공격 대응",
+   "KISA·NIST 권고 RSAES-OAEP",
+   "서명용은 RSA-PSS"
+  ],
+  "related": [
+   "rsa",
+   "chosen-ciphertext-attack",
+   "padding-oracle-attack"
+  ]
+ },
+ {
+  "id": "authenticated-encryption",
+  "term": "인증 암호",
+  "term_en": "Authenticated Encryption",
+  "definition": "기밀성과 무결성·인증을 하나의 알고리즘으로 동시에 제공하여 변조된 암호문의 복호화를 거부하는 암호 방식.",
+  "features": [
+   "AES-GCM·CCM·ChaCha20-Poly1305(AEAD)",
+   "Encrypt-then-MAC 구성이 안전",
+   "패딩 오라클·CCA 공격 근본 차단",
+   "TLS 1.3 필수"
+  ],
+  "related": [
+   "message-authentication-code",
+   "block-cipher-mode-of-operation",
+   "padding-oracle-attack"
+  ]
+ },
+ {
+  "id": "adaptive-chosen-ciphertext-attack",
+  "term": "적응적 선택 암호문 공격",
+  "term_en": "Adaptive Chosen-Ciphertext Attack (CCA2)",
+  "definition": "공격자가 이전 복호화 질의 결과를 보고 다음 암호문을 적응적으로 선택할 수 있는 가장 강력한 공격 모델.",
+  "features": [
+   "IND-CCA2가 사실상 표준 안전성 기준",
+   "패딩 오라클 공격이 대표 사례",
+   "RSA-OAEP·Cramer-Shoup·AEAD가 만족",
+   "목표 암호문 자체 질의는 제외"
+  ],
+  "related": [
+   "chosen-ciphertext-attack",
+   "padding-oracle-attack",
+   "semantic-security"
+  ]
+ },
+ {
+  "id": "session-key",
+  "term": "세션키",
+  "term_en": "Session Key",
+  "definition": "하나의 통신 세션 동안만 사용하고 폐기하는 임시 대칭키.",
+  "features": [
+   "공개키 암호·DH로 교환",
+   "키 노출 피해를 세션으로 한정",
+   "ECDHE로 전방향 안전성 확보",
+   "하이브리드 암호의 핵심 요소"
+  ],
+  "related": [
+   "hybrid-encryption",
+   "key-distribution",
+   "ssl-tls"
+  ]
+ },
+ {
+  "id": "trapdoor-one-way-function",
+  "term": "트랩도어 일방향 함수",
+  "term_en": "Trapdoor One-Way Function",
+  "definition": "순방향 계산은 쉽지만 역방향은 비밀 정보(트랩도어) 없이는 계산적으로 불가능한 함수로, 공개키 암호의 수학적 기반.",
+  "features": [
+   "RSA는 소인수분해, ElGamal은 이산대수가 트랩도어",
+   "개인키가 트랩도어 역할",
+   "Diffie-Hellman이 개념 제시",
+   "양자내성암호는 격자 문제 기반 트랩도어"
+  ],
+  "related": [
+   "asymmetric-key-cryptography",
+   "rsa",
+   "discrete-logarithm-problem"
+  ]
+ },
+ {
+  "id": "harvest-now-decrypt-later",
+  "term": "선수집 후해독",
+  "term_en": "Harvest Now, Decrypt Later (HNDL)",
+  "definition": "현재 해독할 수 없는 암호 통신을 미리 수집·저장해 두었다가 양자컴퓨터가 실현되면 해독하려는 공격 전략.",
+  "features": [
+   "장기 보호가 필요한 정보는 현재 위협",
+   "양자내성암호 조기 전환의 핵심 근거",
+   "키 교환 알고리즘 전환이 최우선",
+   "전방향 안전성만으로는 방어 불가"
+  ],
+  "related": [
+   "post-quantum-cryptography",
+   "quantum-computer",
+   "shor-algorithm"
+  ]
+ },
+ {
+  "id": "lattice-based-cryptography",
+  "term": "격자 기반 암호",
+  "term_en": "Lattice-Based Cryptography",
+  "definition": "고차원 격자에서 최단 벡터·최근접 벡터 문제 및 LWE 문제의 난해성에 기반한 양자내성 공개키 암호 계열.",
+  "features": [
+   "ML-KEM·ML-DSA·FN-DSA·NTRU",
+   "키·암호문 크기와 속도의 균형 우수",
+   "완전 동형암호의 기반",
+   "NIST 표준의 주류"
+  ],
+  "related": [
+   "learning-with-errors",
+   "ml-kem",
+   "ml-dsa",
+   "post-quantum-cryptography"
+  ]
+ },
+ {
+  "id": "learning-with-errors",
+  "term": "오류 학습 문제",
+  "term_en": "Learning With Errors (LWE)",
+  "definition": "작은 오류가 더해진 선형 방정식 체계에서 비밀 벡터를 복원하는 것이 어렵다는 격자 기반 계산 난제.",
+  "features": [
+   "2005년 Regev 제안, 최악 경우 격자 문제로 환원",
+   "Module-LWE·Ring-LWE 변형으로 효율화",
+   "ML-KEM·ML-DSA의 안전성 근거",
+   "양자 알고리즘으로 효율적 해법 미발견"
+  ],
+  "related": [
+   "lattice-based-cryptography",
+   "ml-kem",
+   "ml-dsa"
+  ]
+ },
+ {
+  "id": "ml-kem",
+  "term": "ML-KEM",
+  "term_en": "Module-Lattice-Based Key-Encapsulation Mechanism",
+  "definition": "CRYSTALS-Kyber를 기반으로 NIST FIPS 203으로 표준화된 Module-LWE 기반 양자내성 키 캡슐화 메커니즘.",
+  "features": [
+   "ML-KEM-512/768/1024 보안 수준",
+   "공개키 1,184B·암호문 1,088B(768 기준)",
+   "TLS 하이브리드 X25519MLKEM768 적용",
+   "IND-CCA2 안전성"
+  ],
+  "related": [
+   "key-encapsulation-mechanism",
+   "lattice-based-cryptography",
+   "learning-with-errors",
+   "hybrid-key-exchange"
+  ]
+ },
+ {
+  "id": "ml-dsa",
+  "term": "ML-DSA",
+  "term_en": "Module-Lattice-Based Digital Signature Algorithm",
+  "definition": "CRYSTALS-Dilithium을 기반으로 NIST FIPS 204로 표준화된 Module-LWE 기반 양자내성 전자서명 알고리즘.",
+  "features": [
+   "ML-DSA-44/65/87 보안 수준",
+   "서명 약 3.3KB(65 기준)",
+   "인증서·코드 서명 전환 대상",
+   "Fiat-Shamir with Aborts 구조"
+  ],
+  "related": [
+   "lattice-based-cryptography",
+   "digital-signature",
+   "slh-dsa",
+   "post-quantum-cryptography"
+  ]
+ },
+ {
+  "id": "hash-based-signature",
+  "term": "해시 기반 서명",
+  "term_en": "Hash-Based Signature",
+  "definition": "해시함수의 일방향성·충돌저항성만을 가정하여 안전성을 보장하는 양자내성 전자서명 계열.",
+  "features": [
+   "SLH-DSA(SPHINCS+), XMSS, LMS",
+   "가장 보수적·검증된 안전성",
+   "서명 크기 크고 속도 느림",
+   "상태 유지형은 키 재사용 관리 필요"
+  ],
+  "related": [
+   "slh-dsa",
+   "hash-function",
+   "digital-signature"
+  ]
+ },
+ {
+  "id": "slh-dsa",
+  "term": "SLH-DSA",
+  "term_en": "Stateless Hash-Based Digital Signature Algorithm",
+  "definition": "SPHINCS+를 기반으로 NIST FIPS 205로 표준화된 상태 비저장 해시 기반 양자내성 전자서명 알고리즘.",
+  "features": [
+   "해시 안전성만 가정, 격자 가정 실패 시 대안",
+   "서명 8~50KB로 큼",
+   "펌웨어·장기 서명에 적합",
+   "상태 관리 불필요"
+  ],
+  "related": [
+   "hash-based-signature",
+   "ml-dsa",
+   "post-quantum-cryptography"
+  ]
+ },
+ {
+  "id": "code-based-cryptography",
+  "term": "부호 기반 암호",
+  "term_en": "Code-Based Cryptography",
+  "definition": "오류정정부호의 일반 복호(신드롬 디코딩) 문제의 난해성에 기반한 양자내성 공개키 암호 계열.",
+  "features": [
+   "1978년 McEliece 제안, 40년 이상 공격 내성",
+   "Classic McEliece·HQC·BIKE",
+   "공개키 매우 큼(수백 KB)",
+   "NIST 2025년 HQC 추가 선정"
+  ],
+  "related": [
+   "post-quantum-cryptography",
+   "lattice-based-cryptography"
+  ]
+ },
+ {
+  "id": "multivariate-cryptography",
+  "term": "다변수 다항식 암호",
+  "term_en": "Multivariate Cryptography",
+  "definition": "유한체 위 다변수 2차 연립방정식(MQ 문제) 풀이의 난해성에 기반한 양자내성 암호 계열로 주로 서명에 사용.",
+  "features": [
+   "서명 작고 빠름, 공개키 큼",
+   "Rainbow는 2022년 고전 공격으로 탈락",
+   "UOV·MAYO 등 후속 후보",
+   "NIST 추가 서명 공모 대상"
+  ],
+  "related": [
+   "post-quantum-cryptography",
+   "isogeny-based-cryptography"
+  ]
+ },
+ {
+  "id": "isogeny-based-cryptography",
+  "term": "아이소제니 기반 암호",
+  "term_en": "Isogeny-Based Cryptography",
+  "definition": "초특이 타원곡선 간 동형사상(아이소제니) 계산의 난해성에 기반한 양자내성 암호 계열.",
+  "features": [
+   "키 크기 최소",
+   "SIKE가 2022년 고전 컴퓨터 공격으로 탈락",
+   "SQIsign 등 서명 연구 지속",
+   "속도 느림"
+  ],
+  "related": [
+   "post-quantum-cryptography",
+   "elliptic-curve-cryptography",
+   "multivariate-cryptography"
+  ]
+ },
+ {
+  "id": "kpqc",
+  "term": "KpqC",
+  "term_en": "Korean Post-Quantum Cryptography Competition",
+  "definition": "국내 양자내성암호 표준 알고리즘을 선정하기 위해 2021년부터 진행된 공모전으로, 2024년 말 KEM 2종과 서명 2종을 최종 선정.",
+  "features": [
+   "KEM: SMAUG-T, NTRU+",
+   "서명: HAETAE, AIMer",
+   "KCMVP 검증 체계 반영 추진",
+   "국가 양자내성암호 전환 마스터플랜과 연계"
+  ],
+  "related": [
+   "post-quantum-cryptography",
+   "kcmvp",
+   "ml-kem"
+  ]
+ },
+ {
+  "id": "quantum-key-distribution",
+  "term": "양자키분배",
+  "term_en": "Quantum Key Distribution (QKD)",
+  "definition": "광자의 양자역학적 성질(불확정성·복제 불가)을 이용하여 도청 시도를 탐지하면서 두 당사자가 비밀키를 공유하는 물리 기반 키 분배 기술.",
+  "features": [
+   "BB84 프로토콜",
+   "전용 광섬유·위성 채널 필요, 거리 제한",
+   "PQC와 달리 SW 교체로 적용 불가",
+   "국방·금융 전용망에 시범 적용"
+  ],
+  "related": [
+   "post-quantum-cryptography",
+   "key-distribution",
+   "quantum-computer"
+  ]
+ },
+ {
+  "id": "hybrid-key-exchange",
+  "term": "하이브리드 키 교환",
+  "term_en": "Hybrid Key Exchange",
+  "definition": "고전 키 교환(ECDHE)과 양자내성 KEM(ML-KEM)의 공유 비밀을 결합하여 어느 한쪽이 깨져도 안전성을 유지하는 전환기 키 교환 방식.",
+  "features": [
+   "TLS 1.3 X25519MLKEM768",
+   "Chrome·Cloudflare·OpenSSH 기본 적용",
+   "PQC 신뢰 확보 전 보수적 접근",
+   "핸드셰이크 크기 증가"
+  ],
+  "related": [
+   "ml-kem",
+   "key-encapsulation-mechanism",
+   "ssl-tls",
+   "crypto-agility"
+  ]
+ },
+ {
+  "id": "key-encapsulation-mechanism",
+  "term": "키 캡슐화 메커니즘",
+  "term_en": "Key Encapsulation Mechanism (KEM)",
+  "definition": "공개키로 난수 기반 공유 비밀을 캡슐화하여 전달하고 개인키로 역캡슐화하는 키 교환 프리미티브.",
+  "features": [
+   "KeyGen·Encaps·Decaps 세 알고리즘",
+   "KEM-DEM 하이브리드 구조",
+   "ML-KEM이 대표 PQC KEM",
+   "공개키 암호화보다 단순·안전한 추상화"
+  ],
+  "related": [
+   "ml-kem",
+   "hybrid-encryption",
+   "hybrid-key-exchange"
+  ]
+ },
+ {
+  "id": "biometric-template",
+  "term": "생체 템플릿",
+  "term_en": "Biometric Template",
+  "definition": "생체 원본 영상에서 추출한 특징을 수치화하여 저장한 참조 데이터로, 인식 시 비교 대상이 됨.",
+  "features": [
+   "원본 복원 불가하도록 설계",
+   "암호화·분산 저장 의무",
+   "취소 가능 생체인식으로 재발급 가능",
+   "민감정보로 별도 동의·보호"
+  ],
+  "related": [
+   "template-protection",
+   "biometric-authentication",
+   "feature-extraction"
+  ]
+ },
+ {
+  "id": "face-detection",
+  "term": "얼굴 검출",
+  "term_en": "Face Detection",
+  "definition": "영상에서 얼굴의 존재 여부와 위치·크기를 찾아내는 얼굴 인식의 첫 단계.",
+  "features": [
+   "Viola-Jones(Haar Cascade), HOG+SVM",
+   "MTCNN·RetinaFace 등 딥러닝 기반",
+   "랜드마크 검출과 결합",
+   "인식(누구인지)과 구분"
+  ],
+  "related": [
+   "haar-cascade",
+   "convolutional-neural-network",
+   "feature-extraction"
+  ]
+ },
+ {
+  "id": "haar-cascade",
+  "term": "Haar Cascade",
+  "term_en": "Haar Cascade Classifier",
+  "definition": "Haar-like 특징과 AdaBoost로 학습한 약분류기를 단계적으로 연결하여 실시간 얼굴 검출을 수행하는 Viola-Jones 알고리즘.",
+  "features": [
+   "2001년 제안, 적분 영상으로 고속 계산",
+   "OpenCV 기본 검출기",
+   "정면 얼굴에 강하고 회전·가림에 약함",
+   "딥러닝 검출기로 대체 추세"
+  ],
+  "related": [
+   "face-detection",
+   "feature-extraction"
+  ]
+ },
+ {
+  "id": "feature-extraction",
+  "term": "특징 추출",
+  "term_en": "Feature Extraction",
+  "definition": "입력 영상에서 식별에 유용한 정보를 저차원 특징 벡터로 변환하는 패턴 인식 단계.",
+  "features": [
+   "PCA·LDA(전역), LBP·Gabor(지역)",
+   "CNN 임베딩으로 자동 학습",
+   "차원 축소로 연산·저장 효율",
+   "특징의 변별력이 인식 성능 결정"
+  ],
+  "related": [
+   "principal-component-analysis",
+   "linear-discriminant-analysis",
+   "local-binary-pattern",
+   "convolutional-neural-network"
+  ]
+ },
+ {
+  "id": "convolutional-neural-network",
+  "term": "합성곱 신경망",
+  "term_en": "Convolutional Neural Network (CNN)",
+  "definition": "합성곱·풀링 층으로 영상의 공간적 특징을 계층적으로 학습하는 딥러닝 신경망.",
+  "features": [
+   "영상 인식·얼굴 인식의 표준 구조",
+   "FaceNet·ArcFace 등 임베딩 학습",
+   "대규모 데이터·GPU 필요",
+   "전이학습으로 적용 범위 확대"
+  ],
+  "related": [
+   "facenet",
+   "arcface",
+   "feature-extraction",
+   "face-detection"
+  ]
+ },
+ {
+  "id": "eigenface",
+  "term": "Eigenface",
+  "term_en": "Eigenface",
+  "definition": "PCA로 얼굴 영상 집합의 주성분(고유얼굴)을 구하고 얼굴을 그 선형 결합 계수로 표현하여 인식하는 전역 특징 기반 알고리즘.",
+  "features": [
+   "1991년 Turk·Pentland 제안",
+   "구현 단순·고속, 저차원 표현",
+   "조명·표정·포즈 변화에 취약",
+   "Fisherface로 개선"
+  ],
+  "related": [
+   "principal-component-analysis",
+   "fisherface",
+   "feature-extraction"
+  ]
+ },
+ {
+  "id": "principal-component-analysis",
+  "term": "주성분 분석",
+  "term_en": "Principal Component Analysis (PCA)",
+  "definition": "데이터의 분산을 최대로 보존하는 직교 축(주성분)으로 투영하여 차원을 축소하는 통계 기법.",
+  "features": [
+   "비지도 학습, 공분산 행렬 고유벡터",
+   "Eigenface의 기반",
+   "클래스 정보 미사용으로 판별력 한계",
+   "노이즈 제거·시각화에도 활용"
+  ],
+  "related": [
+   "eigenface",
+   "linear-discriminant-analysis",
+   "feature-extraction"
+  ]
+ },
+ {
+  "id": "fisherface",
+  "term": "Fisherface",
+  "term_en": "Fisherface",
+  "definition": "LDA를 적용하여 같은 사람의 영상은 가깝고 다른 사람의 영상은 멀어지도록 투영 공간을 학습하는 얼굴 인식 알고리즘.",
+  "features": [
+   "1997년 Belhumeur 제안",
+   "조명·표정 변화에 Eigenface보다 강건",
+   "클래스별 다수 학습 영상 필요",
+   "소표본 문제는 PCA 전처리로 완화"
+  ],
+  "related": [
+   "linear-discriminant-analysis",
+   "eigenface",
+   "feature-extraction"
+  ]
+ },
+ {
+  "id": "linear-discriminant-analysis",
+  "term": "선형 판별 분석",
+  "term_en": "Linear Discriminant Analysis (LDA)",
+  "definition": "클래스 내 분산은 최소화하고 클래스 간 분산은 최대화하는 투영 축을 찾아 분류에 유리하게 차원을 축소하는 지도 학습 기법.",
+  "features": [
+   "Fisher 판별 기준",
+   "Fisherface의 기반",
+   "클래스 레이블 필요",
+   "PCA와 결합(PCA+LDA) 활용"
+  ],
+  "related": [
+   "fisherface",
+   "principal-component-analysis",
+   "feature-extraction"
+  ]
+ },
+ {
+  "id": "local-binary-pattern",
+  "term": "지역 이진 패턴",
+  "term_en": "Local Binary Pattern (LBP)",
+  "definition": "각 픽셀을 주변 픽셀과 밝기 비교하여 이진 코드로 표현하고 영역별 히스토그램을 특징으로 사용하는 질감 기술자.",
+  "features": [
+   "조명 변화에 강건, 계산 단순",
+   "비학습 방식으로 임베디드 적합",
+   "LBPH 얼굴 인식(OpenCV)",
+   "전역 구조 정보 부족"
+  ],
+  "related": [
+   "feature-extraction",
+   "eigenface"
+  ]
+ },
+ {
+  "id": "elastic-bunch-graph-matching",
+  "term": "탄성 번치 그래프 매칭",
+  "term_en": "Elastic Bunch Graph Matching (EBGM)",
+  "definition": "얼굴 랜드마크를 노드로 하고 각 노드에 Gabor 웨이블릿 응답(제트)을 부여한 탄성 그래프를 매칭하여 인식하는 지역 특징 기반 알고리즘.",
+  "features": [
+   "1997년 Wiskott 제안",
+   "포즈·표정 변화·부분 가림에 강건",
+   "랜드마크 검출 정확도에 의존",
+   "연산량 큼"
+  ],
+  "related": [
+   "feature-extraction",
+   "local-binary-pattern"
+  ]
+ },
+ {
+  "id": "facenet",
+  "term": "FaceNet",
+  "term_en": "FaceNet",
+  "definition": "2015년 Google이 제안한, Triplet Loss로 동일인 임베딩 거리는 최소화하고 타인 거리는 최대화하도록 학습하는 딥러닝 얼굴 인식 모델.",
+  "features": [
+   "128차원 임베딩, 유클리드 거리 비교",
+   "LFW 99.63% 달성",
+   "인증·식별·클러스터링 통합",
+   "대규모 학습 데이터 필요"
+  ],
+  "related": [
+   "convolutional-neural-network",
+   "arcface",
+   "deepfake"
+  ]
+ },
+ {
+  "id": "arcface",
+  "term": "ArcFace",
+  "term_en": "ArcFace",
+  "definition": "2019년 제안된 Additive Angular Margin Loss로 각도 공간에서 클래스 간 마진을 확대하여 판별력을 높인 딥러닝 얼굴 인식 모델.",
+  "features": [
+   "코사인 유사도 기반 임베딩",
+   "FaceNet 대비 학습 안정·정확도 향상",
+   "현재 상용 얼굴 인식의 주류 손실 함수",
+   "InsightFace 오픈소스"
+  ],
+  "related": [
+   "facenet",
+   "convolutional-neural-network"
+  ]
+ },
+ {
+  "id": "equal-error-rate",
+  "term": "동일오류율",
+  "term_en": "Equal Error Rate (EER)",
+  "definition": "생체인식 시스템에서 임계값을 조정할 때 오인식률(FAR)과 오거부률(FRR)이 같아지는 지점의 오류율로, 알고리즘 종합 성능 비교 지표.",
+  "features": [
+   "낮을수록 우수",
+   "ROC·DET 곡선으로 시각화",
+   "용도별 임계값은 EER과 다르게 설정",
+   "알고리즘 간 공정 비교 기준"
+  ],
+  "related": [
+   "false-acceptance-rate",
+   "false-rejection-rate",
+   "biometric-authentication"
+  ]
+ },
+ {
+  "id": "deepfake",
+  "term": "딥페이크",
+  "term_en": "Deepfake",
+  "definition": "딥러닝(GAN·확산 모델)으로 특정 인물의 얼굴·음성을 합성하여 실제처럼 보이는 가짜 영상·음성을 생성하는 기술.",
+  "features": [
+   "얼굴 인식·화상 본인확인 스푸핑에 악용",
+   "라이브니스 검출·딥페이크 탐지 모델로 대응",
+   "워터마크·출처 증명(C2PA)",
+   "정보통신망법·성폭력처벌법 규제"
+  ],
+  "related": [
+   "liveness-detection",
+   "facenet",
+   "biometric-authentication"
+  ]
+ },
+ {
+  "id": "liveness-detection",
+  "term": "라이브니스 검출",
+  "term_en": "Liveness Detection",
+  "definition": "생체인식 시 제시된 생체가 사진·영상·마스크 등 위조물이 아닌 살아 있는 실제 사람인지 판별하는 위변조 방지 기술.",
+  "features": [
+   "능동형(깜빡임·고개 돌리기)·수동형(텍스처·3D 깊이·IR)",
+   "ISO/IEC 30107 PAD 표준",
+   "딥페이크 대응 핵심",
+   "비대면 금융 본인확인 필수"
+  ],
+  "related": [
+   "deepfake",
+   "biometric-authentication",
+   "template-protection"
+  ]
+ },
+ {
+  "id": "template-protection",
+  "term": "생체 템플릿 보호",
+  "term_en": "Biometric Template Protection",
+  "definition": "저장된 생체 템플릿이 유출되어도 원본 복원·재사용이 불가능하도록 변환·암호화하는 기술.",
+  "features": [
+   "취소 가능 생체인식(Cancelable Biometrics)",
+   "바이오 해싱·퍼지 볼트·동형암호",
+   "ISO/IEC 24745 표준",
+   "유출 시 템플릿 재발급 가능"
+  ],
+  "related": [
+   "biometric-template",
+   "biometric-authentication",
+   "liveness-detection"
+  ]
+ },
+ {
+  "id": "probabilistic-encryption",
+  "term": "확률적 암호화",
+  "term_en": "Probabilistic Encryption",
+  "definition": "암호화 과정에 난수를 사용하여 같은 평문·키로도 매번 다른 암호문이 생성되도록 하는 암호화 방식.",
+  "features": [
+   "의미론적 안전성(IND-CPA)의 필수 조건",
+   "ElGamal·RSA-OAEP·난수 IV 모드",
+   "결정적 암호는 암호문 비교로 정보 누출",
+   "암호문 길이 증가 대가"
+  ],
+  "related": [
+   "semantic-security",
+   "elgamal",
+   "initialization-vector"
+  ]
+ },
+ {
+  "id": "cyclic-group",
+  "term": "순환군",
+  "term_en": "Cyclic Group",
+  "definition": "하나의 원소(생성원)의 거듭제곱으로 모든 원소를 생성할 수 있는 군으로, 이산대수 기반 암호의 연산 공간.",
+  "features": [
+   "Z_p*의 소수 차수 부분군 사용",
+   "타원곡선 점들의 군도 순환군",
+   "군의 차수가 보안강도 결정",
+   "안전 소수 p=2q+1로 소부분군 공격 방지"
+  ],
+  "related": [
+   "generator",
+   "discrete-logarithm-problem",
+   "elgamal"
+  ]
+ },
+ {
+  "id": "generator",
+  "term": "생성원",
+  "term_en": "Generator",
+  "definition": "순환군에서 거듭제곱을 통해 군의 모든 원소를 만들어내는 원소로, DH·ElGamal의 공개 파라미터 g.",
+  "features": [
+   "원시근(Primitive Root)이라고도 함",
+   "부분군 생성원 선택으로 효율·안전성 확보",
+   "공개 정보, 비밀 아님",
+   "타원곡선에서는 기저점 G"
+  ],
+  "related": [
+   "cyclic-group",
+   "discrete-logarithm-problem",
+   "diffie-hellman"
+  ]
+ },
+ {
+  "id": "digital-signature-algorithm",
+  "term": "DSA",
+  "term_en": "Digital Signature Algorithm",
+  "definition": "ElGamal 서명을 변형하여 소수 차수 부분군을 사용함으로써 서명 길이를 줄인 NIST 전자서명 표준(FIPS 186).",
+  "features": [
+   "이산대수 문제 기반",
+   "서명 (r, s) 각 160~256비트",
+   "ECDSA로 타원곡선 확장",
+   "난수 k 재사용 시 개인키 노출"
+  ],
+  "related": [
+   "elgamal",
+   "digital-signature",
+   "kcdsa",
+   "random-number-generator"
+  ]
+ },
+ {
+  "id": "random-number-generator",
+  "term": "난수생성기",
+  "term_en": "Random Number Generator",
+  "definition": "암호 키·IV·논스·서명 난수 등에 사용할 예측 불가능한 난수를 생성하는 장치나 알고리즘.",
+  "features": [
+   "진난수(TRNG)와 암호학적 안전 의사난수(CSPRNG)",
+   "예측 가능하면 암호 전체 붕괴(PS3 ECDSA 사고)",
+   "NIST SP 800-90 표준",
+   "HSM·OS 엔트로피 풀 활용"
+  ],
+  "related": [
+   "digital-signature-algorithm",
+   "elgamal",
+   "lfsr"
+  ]
+ },
+ {
+  "id": "schnorr-signature",
+  "term": "Schnorr 서명",
+  "term_en": "Schnorr Signature",
+  "definition": "이산대수 기반으로 영지식 증명 구조를 서명에 적용하여 간결하고 증명 가능한 안전성을 갖는 전자서명 방식.",
+  "features": [
+   "서명 짧고 선형성으로 다중 서명 집계 가능",
+   "EdDSA·비트코인 Taproot에 채택",
+   "특허 만료 후 확산",
+   "ElGamal·DSA와 같은 계열"
+  ],
+  "related": [
+   "elgamal",
+   "digital-signature",
+   "digital-signature-algorithm"
+  ]
+ },
+ {
+  "id": "discretionary-access-control",
+  "term": "임의적 접근통제",
+  "term_en": "Discretionary Access Control (DAC)",
+  "definition": "객체의 소유자가 자신의 판단에 따라 다른 주체에게 접근 권한을 부여·회수하는 접근통제 모델.",
+  "features": [
+   "ACL·권한 비트(UNIX)로 구현",
+   "유연하나 트로이목마에 취약",
+   "신원 기반 통제",
+   "대규모 조직에서 관리 복잡"
+  ],
+  "related": [
+   "mandatory-access-control",
+   "access-control-list",
+   "access-control",
+   "trojan-horse"
+  ]
+ },
+ {
+  "id": "mandatory-access-control",
+  "term": "강제적 접근통제",
+  "term_en": "Mandatory Access Control (MAC)",
+  "definition": "시스템이 주체와 객체에 부여한 보안 레이블(등급·범주)을 비교하여 정책에 따라 강제로 접근을 통제하는 모델.",
+  "features": [
+   "Bell-LaPadula(기밀성)·Biba(무결성) 모델",
+   "소유자도 정책 변경 불가",
+   "군·정부 다단계 보안",
+   "SELinux 등 상용 구현"
+  ],
+  "related": [
+   "discretionary-access-control",
+   "bell-lapadula-model",
+   "access-control"
+  ]
+ },
+ {
+  "id": "least-privilege",
+  "term": "최소 권한 원칙",
+  "term_en": "Principle of Least Privilege",
+  "definition": "주체에게 업무 수행에 필요한 최소한의 권한만을 필요한 기간 동안만 부여하는 보안 설계 원칙.",
+  "features": [
+   "RBAC 세션의 역할 활성화로 구현",
+   "권한 남용·오류 피해 범위 최소화",
+   "제로 트러스트의 핵심 원칙",
+   "주기적 권한 검토 필요"
+  ],
+  "related": [
+   "separation-of-duties",
+   "zero-trust",
+   "access-control"
+  ]
+ },
+ {
+  "id": "role-hierarchy",
+  "term": "역할 계층",
+  "term_en": "Role Hierarchy",
+  "definition": "상위 역할이 하위 역할의 권한을 상속하도록 역할 간 부분 순서를 정의한 RBAC 구성 요소.",
+  "features": [
+   "조직 직급 구조 반영",
+   "권한 중복 정의 감소",
+   "일반 계층(다중 상속)·제한 계층(트리)",
+   "상속 범위 과다 시 과잉 권한 주의"
+  ],
+  "related": [
+   "least-privilege",
+   "separation-of-duties",
+   "role-explosion"
+  ]
+ },
+ {
+  "id": "separation-of-duties",
+  "term": "직무 분리",
+  "term_en": "Separation of Duties (SoD)",
+  "definition": "부정·오류를 방지하기 위해 상충되는 업무(요청과 승인 등)를 한 사람이 동시에 수행하지 못하도록 분리하는 내부통제 원칙.",
+  "features": [
+   "정적 SoD(역할 할당 금지)·동적 SoD(동시 활성화 금지)",
+   "RBAC 제약으로 구현",
+   "SOX 등 규제 준수 요건",
+   "상충 역할 매트릭스 관리"
+  ],
+  "related": [
+   "least-privilege",
+   "role-hierarchy",
+   "access-control"
+  ]
+ },
+ {
+  "id": "attribute-based-access-control",
+  "term": "속성 기반 접근통제",
+  "term_en": "Attribute-Based Access Control (ABAC)",
+  "definition": "주체·객체·행위·환경의 속성과 정책 규칙을 평가하여 동적으로 접근을 결정하는 접근통제 모델.",
+  "features": [
+   "XACML 정책 언어, PDP/PEP 구조",
+   "시간·위치·기기 상태 등 상황 반영",
+   "RBAC의 역할 폭발 보완",
+   "정책 복잡도·성능 관리 필요"
+  ],
+  "related": [
+   "access-control",
+   "role-explosion",
+   "zero-trust"
+  ]
+ },
+ {
+  "id": "role-explosion",
+  "term": "역할 폭발",
+  "term_en": "Role Explosion",
+  "definition": "예외 상황·세분화 요구마다 역할을 추가하여 역할 수가 관리 불가능할 정도로 증가하는 RBAC 운영 문제.",
+  "features": [
+   "역할 공학·역할 마이닝으로 완화",
+   "ABAC 하이브리드로 보완",
+   "권한 검토 비용 급증",
+   "역할 표준화·통합 필요"
+  ],
+  "related": [
+   "role-mining",
+   "attribute-based-access-control",
+   "role-hierarchy"
+  ]
+ },
+ {
+  "id": "role-mining",
+  "term": "역할 마이닝",
+  "term_en": "Role Mining",
+  "definition": "기존 사용자-권한 할당 데이터를 분석하여 공통 권한 집합을 역할로 자동 도출하는 상향식 역할 공학 기법.",
+  "features": [
+   "클러스터링·행렬 분해 알고리즘",
+   "하향식 직무 분석과 병행",
+   "역할 폭발 정리에 활용",
+   "기존 과잉 권한을 답습할 위험"
+  ],
+  "related": [
+   "role-explosion",
+   "identity-and-access-management",
+   "least-privilege"
+  ]
+ },
+ {
+  "id": "access-control-list",
+  "term": "접근통제 목록",
+  "term_en": "Access Control List (ACL)",
+  "definition": "객체별로 접근 가능한 주체와 허용 연산을 나열한 목록으로 DAC의 대표 구현 메커니즘.",
+  "features": [
+   "파일 시스템·네트워크 장비·클라우드에 적용",
+   "객체 중심, 주체 중심은 능력 목록(Capability)",
+   "사용자 수 증가 시 관리 부담",
+   "RBAC은 역할로 ACL 단순화"
+  ],
+  "related": [
+   "discretionary-access-control",
+   "access-control"
+  ]
+ },
+ {
+  "id": "bell-lapadula-model",
+  "term": "Bell-LaPadula 모델",
+  "term_en": "Bell-LaPadula Model",
+  "definition": "기밀성 보장을 위해 '하위 읽기 금지 없음·상위 쓰기 금지 없음'(No Read Up, No Write Down) 규칙을 적용하는 강제적 접근통제 모델.",
+  "features": [
+   "단순 보안 속성·*-속성",
+   "군사 다단계 보안의 기초",
+   "무결성은 Biba 모델이 보완",
+   "MAC 구현의 이론적 기반"
+  ],
+  "related": [
+   "mandatory-access-control",
+   "confidentiality",
+   "access-control"
+  ]
+ },
+ {
+  "id": "identity-provider",
+  "term": "신원 제공자",
+  "term_en": "Identity Provider (IdP/OP)",
+  "definition": "사용자의 신원을 관리하고 인증을 수행하여 그 결과(어설션·토큰)를 서비스 제공자에게 전달하는 주체.",
+  "features": [
+   "OpenID의 OP, SAML의 IdP",
+   "SSO·연합 신원의 중심",
+   "단일 장애점·공격 지점",
+   "MFA·강한 인증 적용 필요"
+  ],
+  "related": [
+   "relying-party",
+   "single-sign-on",
+   "federated-identity",
+   "openid-connect"
+  ]
+ },
+ {
+  "id": "relying-party",
+  "term": "신뢰 당사자",
+  "term_en": "Relying Party (RP)",
+  "definition": "신원 제공자가 수행한 인증 결과를 신뢰하여 사용자에게 서비스를 제공하는 주체.",
+  "features": [
+   "OpenID RP, SAML SP, OAuth 클라이언트",
+   "응답 서명·논스 검증 책임",
+   "패스워드 미보관으로 위험 감소",
+   "여러 IdP 지원 가능"
+  ],
+  "related": [
+   "identity-provider",
+   "openid-connect",
+   "single-sign-on"
+  ]
+ },
+ {
+  "id": "authentication",
+  "term": "인증",
+  "term_en": "Authentication",
+  "definition": "주체가 주장하는 신원이 진정한지 크리덴셜을 검증하여 확인하는 과정.",
+  "features": [
+   "식별 이후, 인가 이전 단계",
+   "지식·소유·존재·행위 기반 4유형",
+   "MFA로 강도 향상",
+   "OpenID·SAML은 인증 연합 프로토콜"
+  ],
+  "related": [
+   "credential",
+   "authorization",
+   "multi-factor-authentication",
+   "access-control"
+  ]
+ },
+ {
+  "id": "hmac",
+  "term": "HMAC",
+  "term_en": "Hash-based Message Authentication Code",
+  "definition": "비밀키와 해시함수를 결합하여 메시지 인증 코드를 생성하는 표준 방식(RFC 2104).",
+  "features": [
+   "HMAC-SHA256 등, 길이 확장 공격 안전",
+   "OpenID 응답 서명·JWT HS256에 사용",
+   "키 길이 이상의 보안강도",
+   "부인방지 불가"
+  ],
+  "related": [
+   "message-authentication-code",
+   "hash-function",
+   "json-web-token"
+  ]
+ },
+ {
+  "id": "oauth",
+  "term": "OAuth",
+  "term_en": "OAuth 2.0",
+  "definition": "사용자가 패스워드를 공유하지 않고 제3자 애플리케이션에 자원 접근 권한을 위임하는 인가 프레임워크(RFC 6749).",
+  "features": [
+   "액세스 토큰·리프레시 토큰",
+   "Authorization Code(+PKCE) 등 승인 유형",
+   "인증이 아닌 인가 프로토콜",
+   "OpenID Connect의 기반"
+  ],
+  "related": [
+   "openid-connect",
+   "authorization",
+   "json-web-token"
+  ]
+ },
+ {
+  "id": "openid-connect",
+  "term": "OpenID Connect",
+  "term_en": "OpenID Connect (OIDC)",
+  "definition": "OAuth 2.0 위에 인증 계층을 추가하여 ID 토큰(JWT)으로 사용자 신원 정보를 전달하는 현대 SSO 인증 표준.",
+  "features": [
+   "2014년 OpenID 2.0 후속",
+   "ID 토큰·UserInfo 엔드포인트·디스커버리",
+   "소셜 로그인·모바일·API 표준",
+   "PKCE·논스로 보안 강화"
+  ],
+  "related": [
+   "oauth",
+   "json-web-token",
+   "single-sign-on",
+   "identity-provider"
+  ]
+ },
+ {
+  "id": "saml",
+  "term": "SAML",
+  "term_en": "Security Assertion Markup Language",
+  "definition": "XML 기반으로 IdP와 SP 간 인증·속성·권한 어설션을 교환하는 기업용 연합 SSO 표준.",
+  "features": [
+   "SAML 2.0(2005), XML 서명·암호화",
+   "브라우저 리다이렉트·POST 바인딩",
+   "엔터프라이즈 SSO의 주류",
+   "OIDC보다 무겁고 모바일에 부적합"
+  ],
+  "related": [
+   "single-sign-on",
+   "federated-identity",
+   "openid-connect"
+  ]
+ },
+ {
+  "id": "federated-identity",
+  "term": "연합 신원",
+  "term_en": "Federated Identity",
+  "definition": "서로 다른 조직·도메인 간에 신뢰 관계를 맺어 한 곳의 인증 결과를 다른 곳에서 인정하는 신원 관리 방식.",
+  "features": [
+   "SAML·OpenID Connect·WS-Federation",
+   "기업 간 협업·클라우드 서비스 접근",
+   "신뢰 체인·메타데이터 관리",
+   "DID는 탈중앙 대안"
+  ],
+  "related": [
+   "single-sign-on",
+   "saml",
+   "openid-connect",
+   "decentralized-identity"
+  ]
+ },
+ {
+  "id": "vulnerability",
+  "term": "취약점",
+  "term_en": "Vulnerability",
+  "definition": "위협에 의해 악용될 수 있는 자산·시스템·절차·대책의 약점.",
+  "features": [
+   "위험 = 자산 × 위협 × 취약점",
+   "기술·관리·물리 취약점으로 분류",
+   "스캐닝·모의해킹·점검으로 식별",
+   "패치·보호대책으로 제거·완화"
+  ],
+  "related": [
+   "threat",
+   "risk",
+   "asset",
+   "exploit"
+  ]
+ },
+ {
+  "id": "malware",
+  "term": "악성코드",
+  "term_en": "Malware",
+  "definition": "사용자 의사에 반하여 시스템에 침입·설치되어 정보 유출·파괴·자원 남용 등 악의적 기능을 수행하는 소프트웨어의 총칭.",
+  "features": [
+   "바이러스·웜·트로이목마·랜섬웨어·스파이웨어 등",
+   "정적·동적 분석으로 특징 파악",
+   "시그니처·휴리스틱·행위 기반 탐지",
+   "백신·EDR·샌드박스로 대응"
+  ],
+  "related": [
+   "computer-virus",
+   "worm",
+   "trojan-horse",
+   "ransomware"
+  ]
+ },
+ {
+  "id": "port-scanning",
+  "term": "포트 스캐닝",
+  "term_en": "Port Scanning",
+  "definition": "대상 호스트의 열린 포트와 실행 중인 서비스를 탐색하여 공격 가능한 지점을 찾는 정찰 기법.",
+  "features": [
+   "TCP SYN·Connect·UDP 스캔",
+   "웜의 전파 대상 탐색 단계",
+   "IDS에서 스캔 패턴으로 탐지",
+   "Nmap 등 도구"
+  ],
+  "related": [
+   "worm",
+   "intrusion-detection-system",
+   "anomaly-detection"
+  ]
+ },
+ {
+  "id": "patch-management",
+  "term": "패치 관리",
+  "term_en": "Patch Management",
+  "definition": "운영체제·소프트웨어의 보안 패치를 식별·평가·시험·배포·검증하는 체계적 관리 활동.",
+  "features": [
+   "웜·랜섬웨어 예방의 가장 효과적 대책",
+   "패치 불가 자산은 가상 패치·망 분리",
+   "PMS로 자동 배포",
+   "CVSS 기반 우선순위"
+  ],
+  "related": [
+   "vulnerability",
+   "worm",
+   "zero-day-attack"
+  ]
+ },
+ {
+  "id": "network-segmentation",
+  "term": "네트워크 분리",
+  "term_en": "Network Segmentation",
+  "definition": "네트워크를 VLAN·방화벽·물리 분리로 구역화하여 침해 발생 시 확산 범위를 제한하는 보안 설계.",
+  "features": [
+   "웜·랜섬웨어 측면 이동 차단",
+   "업무망·인터넷망 분리(망 분리)",
+   "마이크로 세그멘테이션으로 세분화",
+   "제로 트러스트의 구성 요소"
+  ],
+  "related": [
+   "zero-trust",
+   "worm",
+   "network-access-control"
+  ]
+ },
+ {
+  "id": "intrusion-detection-system",
+  "term": "침입 탐지 시스템",
+  "term_en": "Intrusion Detection System (IDS/IPS)",
+  "definition": "네트워크·호스트의 트래픽과 활동을 모니터링하여 침입 징후를 탐지(IDS)하고 차단(IPS)하는 보안 시스템.",
+  "features": [
+   "시그니처 기반·이상 탐지 기반",
+   "NIDS·HIDS",
+   "웜 스캔·익스플로잇 트래픽 탐지",
+   "IPS는 인라인 차단·가상 패치"
+  ],
+  "related": [
+   "anomaly-detection",
+   "signature-based-detection",
+   "port-scanning"
+  ]
+ },
+ {
+  "id": "anomaly-detection",
+  "term": "이상 탐지",
+  "term_en": "Anomaly Detection",
+  "definition": "정상 행위·트래픽의 기준선을 학습하고 이를 벗어나는 패턴을 침해 징후로 탐지하는 기법.",
+  "features": [
+   "알려지지 않은 공격·웜 확산 조기 탐지",
+   "통계·머신러닝 기반",
+   "오탐 관리와 기준선 갱신 필요",
+   "UEBA·SIEM에 적용"
+  ],
+  "related": [
+   "intrusion-detection-system",
+   "siem",
+   "behavior-based-detection"
+  ]
+ },
+ {
+  "id": "network-access-control",
+  "term": "네트워크 접근통제",
+  "term_en": "Network Access Control (NAC)",
+  "definition": "네트워크에 접속하는 단말의 인증·보안 상태(패치·백신)를 검사하여 접속 허용·격리를 결정하는 보안 솔루션.",
+  "features": [
+   "802.1X·에이전트 기반",
+   "감염 단말 자동 격리",
+   "비인가 단말 차단",
+   "제로 트러스트 단말 검증 요소"
+  ],
+  "related": [
+   "network-segmentation",
+   "zero-trust",
+   "patch-management"
+  ]
+ },
+ {
+  "id": "asset",
+  "term": "자산",
+  "term_en": "Asset",
+  "definition": "조직이 보호해야 할 가치를 지닌 정보·하드웨어·소프트웨어·인력·서비스·시설 등 모든 자원.",
+  "features": [
+   "위험분석의 출발점",
+   "기밀성·무결성·가용성 기준 가치 평가",
+   "자산 목록·책임자 지정",
+   "ISMS-P 1.2.1 정보자산 식별"
+  ],
+  "related": [
+   "threat",
+   "vulnerability",
+   "risk",
+   "risk-management"
+  ]
+ },
+ {
+  "id": "threat",
+  "term": "위협",
+  "term_en": "Threat",
+  "definition": "자산에 손실이나 피해를 초래할 수 있는 원하지 않는 사건의 잠재적 원인.",
+  "features": [
+   "인적(해킹·내부자)·기술적(악성코드)·환경적(재해)",
+   "발생 가능성(빈도)으로 평가",
+   "취약점을 통해 위험으로 실현",
+   "위협 인텔리전스로 최신화"
+  ],
+  "related": [
+   "vulnerability",
+   "risk",
+   "asset"
+  ]
+ },
+ {
+  "id": "risk",
+  "term": "위험",
+  "term_en": "Risk",
+  "definition": "위협이 취약점을 이용하여 자산에 손실을 입힐 가능성과 그 영향의 크기.",
+  "features": [
+   "위험 = f(자산가치, 위협, 취약점)",
+   "정량(ALE)·정성(등급)으로 표현",
+   "수용 가능 수준(DoA)과 비교",
+   "감소·회피·전가·수용으로 처리"
+  ],
+  "related": [
+   "asset",
+   "threat",
+   "vulnerability",
+   "residual-risk"
+  ]
+ },
+ {
+  "id": "risk-management",
+  "term": "위험관리",
+  "term_en": "Risk Management",
+  "definition": "조직의 정보자산에 대한 위험을 식별·분석·평가하고 수용 가능한 수준으로 처리·모니터링하는 지속적 관리 활동.",
+  "features": [
+   "위험분석 → 평가 → 처리 → 모니터링",
+   "ISO/IEC 27005·NIST SP 800-30",
+   "ISMS-P 1.2 위험관리 인증기준",
+   "경영진의 DoA 결정·잔여위험 승인"
+  ],
+  "related": [
+   "risk",
+   "isms-p",
+   "iso-iec-27001",
+   "residual-risk"
+  ]
+ },
+ {
+  "id": "iso-iec-27001",
+  "term": "ISO/IEC 27001",
+  "term_en": "ISO/IEC 27001",
+  "definition": "정보보안 관리체계(ISMS)의 수립·운영·유지·개선 요구사항을 규정한 국제 표준.",
+  "features": [
+   "2022년 개정, 93개 통제항목(부속서 A)",
+   "6.1.2 정보보안 위험평가 요구",
+   "PDCA 기반 지속 개선",
+   "ISO/IEC 27005가 위험관리 지침"
+  ],
+  "related": [
+   "isms-p",
+   "risk-management"
+  ]
+ },
+ {
+  "id": "annualized-loss-expectancy",
+  "term": "연간 예상 손실액",
+  "term_en": "Annualized Loss Expectancy (ALE)",
+  "definition": "특정 위협으로 인해 연간 발생할 것으로 예상되는 손실 금액으로, 단일 예상 손실액(SLE)에 연간 발생률(ARO)을 곱하여 산출.",
+  "features": [
+   "ALE = SLE × ARO",
+   "정량적 위험분석의 핵심 지표",
+   "대책 비용과 비교하여 투자 타당성 판단",
+   "자료 수집·추정의 어려움"
+  ],
+  "related": [
+   "single-loss-expectancy",
+   "annualized-rate-of-occurrence",
+   "quantitative-risk-analysis",
+   "cost-benefit-analysis"
+  ]
+ },
+ {
+  "id": "single-loss-expectancy",
+  "term": "단일 예상 손실액",
+  "term_en": "Single Loss Expectancy (SLE)",
+  "definition": "위협이 한 번 발생했을 때 예상되는 손실 금액으로, 자산가치(AV)에 노출계수(EF)를 곱하여 산출.",
+  "features": [
+   "SLE = AV × EF",
+   "ALE 계산의 기초",
+   "자산가치에 간접 손실 포함 여부 결정 필요",
+   "정량적 분석 지표"
+  ],
+  "related": [
+   "annualized-loss-expectancy",
+   "exposure-factor",
+   "quantitative-risk-analysis"
+  ]
+ },
+ {
+  "id": "annualized-rate-of-occurrence",
+  "term": "연간 발생률",
+  "term_en": "Annualized Rate of Occurrence (ARO)",
+  "definition": "특정 위협이 1년 동안 발생할 것으로 예상되는 횟수(확률).",
+  "features": [
+   "과거 통계·업계 자료·전문가 판단으로 추정",
+   "10년에 1회면 0.1",
+   "ALE = SLE × ARO",
+   "위협 분석 단계 산출물"
+  ],
+  "related": [
+   "annualized-loss-expectancy",
+   "single-loss-expectancy",
+   "threat"
+  ]
+ },
+ {
+  "id": "degree-of-assurance",
+  "term": "수용 가능 위험수준",
+  "term_en": "Degree of Assurance (DoA)",
+  "definition": "조직이 감내하기로 결정한 위험의 최대 수준으로, 이를 초과하는 위험에만 보호대책을 적용하는 기준.",
+  "features": [
+   "경영진이 결정·승인",
+   "비용 효과적 보안 투자의 기준선",
+   "ISMS-P 위험 평가 요구사항",
+   "초과 위험은 감소·회피·전가 처리"
+  ],
+  "related": [
+   "risk",
+   "residual-risk",
+   "risk-management"
+  ]
+ },
+ {
+  "id": "baseline-approach",
+  "term": "베이스라인 접근법",
+  "term_en": "Baseline Approach",
+  "definition": "표준·체크리스트에 기반한 공통 보호대책을 모든 시스템에 일괄 적용하는 위험분석 접근법.",
+  "features": [
+   "저비용·신속, 소규모 조직 적합",
+   "조직 특성 미반영으로 과다·과소 보호",
+   "ISO/IEC 27002 통제 목록 활용",
+   "복합 접근법에서 비핵심 자산에 적용"
+  ],
+  "related": [
+   "detailed-risk-analysis",
+   "combined-approach"
+  ]
+ },
+ {
+  "id": "detailed-risk-analysis",
+  "term": "상세 위험분석",
+  "term_en": "Detailed Risk Analysis",
+  "definition": "자산·위협·취약점을 정형화된 방법론으로 상세히 분석하여 조직 맞춤형 위험 수준과 대책을 도출하는 접근법.",
+  "features": [
+   "가장 정확하나 고비용·장기간",
+   "정량·정성 기법 적용",
+   "핵심 자산·고위험 영역에 적합",
+   "전문 인력 필요"
+  ],
+  "related": [
+   "baseline-approach",
+   "combined-approach",
+   "quantitative-risk-analysis",
+   "qualitative-risk-analysis"
+  ]
+ },
+ {
+  "id": "combined-approach",
+  "term": "복합 접근법",
+  "term_en": "Combined Approach",
+  "definition": "고위험 핵심 자산에는 상세 위험분석을, 나머지에는 베이스라인 접근법을 적용하여 비용과 정확성의 균형을 취하는 접근법.",
+  "features": [
+   "ISO/IEC 27005 권고, 가장 일반적",
+   "초기 고수준 분석으로 핵심 자산 선별",
+   "핵심 자산 선정 오류 시 누락 위험",
+   "실무 ISMS 구축에 주로 적용"
+  ],
+  "related": [
+   "baseline-approach",
+   "detailed-risk-analysis"
+  ]
+ },
+ {
+  "id": "quantitative-risk-analysis",
+  "term": "정량적 위험분석",
+  "term_en": "Quantitative Risk Analysis",
+  "definition": "자산가치·손실·발생 확률을 금액과 수치로 산정하여 위험을 계량화하는 분석 방법.",
+  "features": [
+   "ALE·SLE·ARO 산식",
+   "과거자료 분석·수학공식·확률분포·몬테카를로",
+   "객관적·비용편익 분석 용이",
+   "자료 수집 어려움·시간 소요"
+  ],
+  "related": [
+   "qualitative-risk-analysis",
+   "annualized-loss-expectancy",
+   "cost-benefit-analysis"
+  ]
+ },
+ {
+  "id": "qualitative-risk-analysis",
+  "term": "정성적 위험분석",
+  "term_en": "Qualitative Risk Analysis",
+  "definition": "위험을 금액 대신 등급(상·중·하)이나 서술로 평가하는 분석 방법.",
+  "features": [
+   "델파이·시나리오·순위결정·퍼지행렬법",
+   "신속·저비용, 수치화 어려운 자산 평가",
+   "주관적, 비용 분석 곤란",
+   "가능성×영향 위험 매트릭스"
+  ],
+  "related": [
+   "quantitative-risk-analysis",
+   "delphi-method",
+   "scenario-analysis"
+  ]
+ },
+ {
+  "id": "delphi-method",
+  "term": "델파이법",
+  "term_en": "Delphi Method",
+  "definition": "전문가 집단에게 익명 설문을 반복하여 의견을 수렴·합의하는 정성적 위험분석 기법.",
+  "features": [
+   "집단 사고·권위 영향 배제",
+   "신속하나 전문가 역량 의존",
+   "위협 발생 가능성 추정에 활용",
+   "정량 데이터 부족 시 유용"
+  ],
+  "related": [
+   "qualitative-risk-analysis",
+   "scenario-analysis"
+  ]
+ },
+ {
+  "id": "scenario-analysis",
+  "term": "시나리오법",
+  "term_en": "Scenario Analysis",
+  "definition": "특정 위협이 발생하는 상황을 시나리오로 구성하여 전개 과정과 영향을 분석하는 정성적 위험분석 기법.",
+  "features": [
+   "이해하기 쉽고 대책 도출에 유리",
+   "시나리오 선정의 주관성",
+   "BCP·모의훈련과 연계",
+   "발생 가능성 낮은 사건 분석에 적합"
+  ],
+  "related": [
+   "qualitative-risk-analysis",
+   "delphi-method",
+   "business-impact-analysis"
+  ]
+ },
+ {
+  "id": "residual-risk",
+  "term": "잔여위험",
+  "term_en": "Residual Risk",
+  "definition": "보호대책을 적용한 후에도 남아 있는 위험.",
+  "features": [
+   "완전 제거 불가, 수용 수준 이하로 관리",
+   "경영진의 명시적 승인 필요",
+   "주기적 재평가 대상",
+   "보험 등 전가 수단 검토"
+  ],
+  "related": [
+   "risk",
+   "degree-of-assurance",
+   "risk-management"
+  ]
+ },
+ {
+  "id": "business-impact-analysis",
+  "term": "업무 영향 분석",
+  "term_en": "Business Impact Analysis (BIA)",
+  "definition": "업무 중단 시 조직에 미치는 영향을 분석하여 핵심 업무의 우선순위와 복구 목표(RTO·RPO)를 도출하는 활동.",
+  "features": [
+   "BCP·DRP 수립의 기초",
+   "위험분석 결과와 연계",
+   "재무·운영·법적 영향 평가",
+   "복구 자원·전략 결정"
+  ],
+  "related": [
+   "risk-management",
+   "scenario-analysis",
+   "asset"
+  ]
+ },
+ {
+  "id": "cvss",
+  "term": "CVSS",
+  "term_en": "Common Vulnerability Scoring System",
+  "definition": "취약점의 심각도를 기본·시간·환경 지표로 0~10점 수치화하는 공개 표준 평가 체계.",
+  "features": [
+   "FIRST 관리, 현재 v4.0",
+   "공격 벡터·복잡도·영향 등 지표",
+   "패치 우선순위·위험 산정에 활용",
+   "CVE와 함께 NVD에서 제공"
+  ],
+  "related": [
+   "cve",
+   "vulnerability",
+   "patch-management"
+  ]
+ },
+ {
+  "id": "cost-benefit-analysis",
+  "term": "비용편익 분석",
+  "term_en": "Cost-Benefit Analysis",
+  "definition": "보호대책 도입 비용과 그로 인해 감소하는 손실(편익)을 비교하여 투자 타당성을 판단하는 기법.",
+  "features": [
+   "편익 = 대책 전 ALE - 대책 후 ALE",
+   "대책 비용이 편익보다 작아야 타당",
+   "ROSI(보안 투자수익률)로 표현",
+   "정량적 위험분석 결과 활용"
+  ],
+  "related": [
+   "annualized-loss-expectancy",
+   "quantitative-risk-analysis"
+  ]
+ },
+ {
+  "id": "exposure-factor",
+  "term": "노출계수",
+  "term_en": "Exposure Factor (EF)",
+  "definition": "특정 위협이 발생했을 때 자산가치 중 손실되는 비율(0~1).",
+  "features": [
+   "SLE = AV × EF",
+   "화재 시 50% 손실이면 EF 0.5",
+   "전문가 판단·과거 사고로 추정",
+   "정량적 분석 핵심 변수"
+  ],
+  "related": [
+   "single-loss-expectancy",
+   "annualized-loss-expectancy"
+  ]
+ }
+]

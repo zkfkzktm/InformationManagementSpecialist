@@ -1,0 +1,5 @@
+{
+  "merge": {"one-time-password": "otp", "two-factor-authentication": "multi-factor-authentication", "data-encryption": "encryption"},
+  "no_merge": [["mutual-authentication", "cross-certification"]],
+  "term_fix": {"sql-injection": "SQL 인젝션"}
+}

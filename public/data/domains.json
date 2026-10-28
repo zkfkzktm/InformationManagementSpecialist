@@ -1,0 +1,10 @@
+[
+  {"code":"SE","name":"SW공학","description":"개발방법론, 요구공학, 설계·아키텍처, 테스트, 품질, 프로젝트관리, 자료구조·알고리즘"},
+  {"code":"DB","name":"데이터베이스","description":"모델링, 정규화, 트랜잭션, 회복, 인덱스, 튜닝, NoSQL, DW/BI"},
+  {"code":"NW","name":"네트워크","description":"TCP/IP, 라우팅, 무선·이동통신, SDN, IoT 통신, 프로토콜"},
+  {"code":"SEC","name":"보안","description":"암호, 인증, 접근제어, 네트워크·시스템 보안, 악성코드, 포렌식, 관리체계, 개인정보보호 기술"},
+  {"code":"CA","name":"컴퓨터구조·OS","description":"CPU, 메모리, 프로세스, 파일시스템, 스토리지, 가상화, 임베디드"},
+  {"code":"MGT","name":"IT경영·전략","description":"ISP, 거버넌스, ITSM, SLA, 아웃소싱, 경영정보시스템, 감리, SW사업 제도"},
+  {"code":"NEW","name":"최신기술","description":"AI·머신러닝, 빅데이터·통계, 클라우드, 블록체인, 메타버스, 양자, 디지털트윈"},
+  {"code":"DS","name":"디지털서비스·법제도","description":"전자정부, 공공 정보화 제도, 개인정보보호법 등 법률, 디지털 플랫폼, 웹·모바일 서비스"}
+]

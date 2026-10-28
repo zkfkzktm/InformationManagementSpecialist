@@ -1,0 +1,8 @@
+node_modules
+dist
+.env
+.env.local
+scripts/out
+scripts/chunks
+*.log
+.DS_Store

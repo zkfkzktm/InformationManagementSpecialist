@@ -1,0 +1,99 @@
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { domainName, getData, topicQuestions } from '../lib/data'
+import type { Topic } from '../lib/types'
+import AnswerView from './AnswerView'
+import TopicActions from './TopicActions'
+
+type Tab = 'short' | 'long'
+
+/** 토픽 상세: 답안 탭(1교시형/서술형) · 키워드 · 기출 이력 · 학습 상태 */
+export default function TopicDetail({ topic, initialTab }: { topic: Topic; initialTab?: Tab }) {
+  const qs = topicQuestions(topic)
+  const hasShort = !!topic.answers?.short
+  const hasLong = !!topic.answers?.long
+  const [tab, setTab] = useState<Tab>(initialTab ?? 'short')
+  useEffect(() => {
+    if (initialTab) setTab(initialTab)
+  }, [initialTab, topic.id])
+  const md = tab === 'short' ? topic.answers?.short : topic.answers?.long
+  const { keywordById } = getData()
+  const kws = (topic.keywords ?? []).map((id) => keywordById.get(id)).filter((k) => !!k)
+
+  return (
+    <section className="flex flex-col gap-4">
+      <header>
+        <div className="text-sm text-ink-3">{domainName(topic.domain)}</div>
+        <h1 className="text-xl font-bold m-0 leading-snug">{topic.title}</h1>
+        {topic.title_en && topic.title_en !== topic.title && (
+          <div className="text-sm text-ink-2">{topic.title_en}</div>
+        )}
+      </header>
+
+      <TopicActions topicId={topic.id} />
+
+      <div className="border border-rule rounded-sm overflow-hidden">
+        <div className="flex border-b border-rule bg-paper text-sm">
+          <button
+            type="button"
+            onClick={() => setTab('short')}
+            aria-selected={tab === 'short'}
+            role="tab"
+            className={`px-4 py-2 ${tab === 'short' ? 'bg-sheet font-semibold text-ink' : 'text-ink-2'}`}
+          >
+            1교시형 · 10점
+          </button>
+          <button
+            type="button"
+            onClick={() => setTab('long')}
+            aria-selected={tab === 'long'}
+            role="tab"
+            className={`px-4 py-2 ${tab === 'long' ? 'bg-sheet font-semibold text-ink' : 'text-ink-2'}`}
+          >
+            서술형 · 25점
+          </button>
+        </div>
+        {md ? (
+          <div className="sheet px-4 py-[0.35rem]">
+            <AnswerView markdown={md} />
+          </div>
+        ) : (
+          <div className="px-4 py-8 text-center text-ink-3 text-sm bg-sheet">
+            {hasShort || hasLong ? '이 양식의 답안은 아직 없습니다.' : '답안 예시 준비 중인 토픽입니다.'}
+          </div>
+        )}
+      </div>
+
+      {kws.length > 0 && (
+        <div>
+          <h2 className="text-sm font-semibold text-ink-2 m-0 mb-1.5">키워드</h2>
+          <div className="flex flex-wrap gap-1.5">
+            {kws.map((k) => (
+              <Link
+                key={k.id}
+                to={`/wiki/${k.id}`}
+                className="px-2 py-0.5 rounded-md bg-pen-soft text-pen text-sm no-underline"
+              >
+                {k.term}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <div>
+        <h2 className="text-sm font-semibold text-ink-2 m-0 mb-1.5">기출 이력 · {qs.length}회</h2>
+        <ul className="m-0 p-0 list-none flex flex-col gap-1.5">
+          {qs.map((q) => (
+            <li key={q.id} className="bg-sheet border border-rule rounded-sm px-3 py-2">
+              <div className="text-xs text-ink-3">
+                제{q.round}회 {q.session}교시 {q.number}번 · {q.session === 1 ? 10 : 25}점
+              </div>
+              <div className="exam-text text-[0.95rem] leading-7">{q.text}</div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )
+}

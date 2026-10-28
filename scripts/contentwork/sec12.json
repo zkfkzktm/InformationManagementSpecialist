@@ -1,0 +1,147 @@
+[
+ {
+  "id": "t-eed4859a",
+  "title": "패치관리시스템(PMS)",
+  "title_en": "Patch Management System",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r74-s1-q13",
+    "round": 74,
+    "session": 1,
+    "text": "PMS(Patch Management System)"
+   }
+  ]
+ },
+ {
+  "id": "t-78b4750a",
+  "title": "퍼듀 모델(Purdue Model)",
+  "title_en": "Purdue Model",
+  "aliases": [],
+  "subs": [
+   "산업제어시스템 계층별 특징"
+  ],
+  "questions": [
+   {
+    "id": "r125-s4-q06",
+    "round": 125,
+    "session": 4,
+    "text": "산업제어시스템(Industrial Control System)의 퍼듀(Purdue) 모델에 대하여 다음을 설명하시오. 가. 퍼듀 모델의 개념 나. 퍼듀 모델의 계층과 계층별 특징"
+   }
+  ]
+ },
+ {
+  "id": "t-abce0ffe",
+  "title": "포맷 스트링 공격(Format String Attack)",
+  "title_en": "Format String Attack",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r116-s1-q12",
+    "round": 116,
+    "session": 1,
+    "text": "포맷 스트링 공격(Format String Attack)"
+   }
+  ]
+ },
+ {
+  "id": "t-7e29e3a1",
+  "title": "프라이버시 보존 데이터 마이닝(PPDM)",
+  "title_en": "Privacy Preserving Data Mining",
+  "aliases": [],
+  "subs": [
+   "기법"
+  ],
+  "questions": [
+   {
+    "id": "r113-s3-q04",
+    "round": 113,
+    "session": 3,
+    "text": "특정 개인의 프라이버시(privacy)를 보호하면서도 그 개인의 정보를 사용하기 위해 설계된 방법의 하나인 PPDM(Privacy Preserving Data Mining)을 정의하고, 그 기법에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-8f46840b",
+  "title": "프라이버시 중심 설계(Privacy by Design)",
+  "title_en": "Privacy by Design",
+  "aliases": [],
+  "subs": [
+   "7대 원칙·8대 전략"
+  ],
+  "questions": [
+   {
+    "id": "r133-s2-q05",
+    "round": 133,
+    "session": 2,
+    "text": "PbD(Privacy by Design)는 광범위한 네트워크 환경에서 발생할 수 있는 데이터 처리의 폐해를 방지하기 위해 캐나다 온타리오주의 정보 및 프라이버시 위원(Information and Privacy Commissioner)을 지낸 Ann Cavoukian이 처음 창안해 낸 개념이다. ICT분야의 프라이버시 보호를 위한 주요방법론으로서 다수의 국가에서 이를 정책에 반영하고 있다. 이와 관련하여 다음을 설명하시오. 가. Privacy by Design의 7대 원칙 나. Privacy by Design의 8대 전략 다. Privacy by Design의 8대 전략과 개인정보보호법 제3조 개인정보 보호 원칙과의 비교"
+   }
+  ]
+ },
+ {
+  "id": "t-98a6def3",
+  "title": "프롬프트 인젝션(Prompt Injection)",
+  "title_en": "Prompt Injection",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r138-s1-q12",
+    "round": 138,
+    "session": 1,
+    "text": "프롬프트 인젝션(Prompt Injection)"
+   }
+  ]
+ },
+ {
+  "id": "t-6914a2ba",
+  "title": "피싱(Phishing)",
+  "title_en": "Phishing",
+  "aliases": [],
+  "subs": [
+   "액티브 피싱"
+  ],
+  "questions": [
+   {
+    "id": "r101-s1-q06",
+    "round": 101,
+    "session": 1,
+    "text": "액티브 피싱(Active phishing)에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-80acfe4f",
+  "title": "해킹(Hacking)",
+  "title_en": "Hacking",
+  "aliases": [],
+  "subs": [
+   "피해분석 방법·대응 기술"
+  ],
+  "questions": [
+   {
+    "id": "r63-s2-q01",
+    "round": 63,
+    "session": 2,
+    "text": "해킹의 피해분석 방법과 대응 기술을 논하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-c8f17707",
+  "title": "허니팟(Honeypot)",
+  "title_en": "Honeypot",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r84-s1-q01",
+    "round": 84,
+    "session": 1,
+    "text": "허니팟(Honeypot)에 대하여 설명하시오."
+   }
+  ]
+ }
+]

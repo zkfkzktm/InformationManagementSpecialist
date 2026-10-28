@@ -1,0 +1,2260 @@
+[
+ {
+  "id": "access-control",
+  "term": "접근통제",
+  "term_en": "Access Control",
+  "definition": "주체가 객체에 접근하는 권한을 식별·인증·인가 절차로 통제하는 보안 메커니즘.",
+  "features": [
+   "식별·인증·인가·책임추적성 구성",
+   "DAC·MAC·RBAC 모델",
+   "최소권한·직무분리 원칙"
+  ],
+  "related": [
+   "role-based-access-control",
+   "least-privilege",
+   "multi-factor-authentication"
+  ]
+ },
+ {
+  "id": "accountability",
+  "term": "책임성",
+  "term_en": "Accountability",
+  "definition": "개인정보·시스템 처리에 대한 책임 소재를 명확히 하고 준수 사실을 입증할 수 있는 상태.",
+  "features": [
+   "처리 이력·감사 로그 유지",
+   "책임자 지정",
+   "준수 입증(Demonstrate)"
+  ],
+  "related": [
+   "data-protection-officer",
+   "privacy-by-design"
+  ]
+ },
+ {
+  "id": "address-space-layout-randomization",
+  "term": "주소공간 배치 난수화",
+  "term_en": "Address Space Layout Randomization",
+  "definition": "프로세스 메모리 영역의 시작 주소를 실행 시마다 무작위화하여 메모리 공격의 주소 예측을 어렵게 하는 보호기법.",
+  "features": [
+   "스택·힙·라이브러리 주소 난수화",
+   "메모리 변조 공격 완화",
+   "NX·스택 카나리와 병행"
+  ],
+  "related": [
+   "non-executable-stack",
+   "stack-canary",
+   "memory-corruption"
+  ]
+ },
+ {
+  "id": "advanced-persistent-threat",
+  "term": "지능형 지속 위협",
+  "term_en": "Advanced Persistent Threat",
+  "definition": "특정 대상을 장기간 은밀하게 침투·잠복하며 목표를 달성하는 지능적·지속적 표적 공격.",
+  "features": [
+   "표적형·장기 잠복",
+   "다단계 침투·측면 이동",
+   "국가·조직 배후"
+  ],
+  "related": [
+   "lateral-movement",
+   "command-and-control",
+   "threat-intelligence"
+  ]
+ },
+ {
+  "id": "adversary-in-the-middle",
+  "term": "중간자 공격",
+  "term_en": "Adversary-in-the-Middle",
+  "definition": "공격자가 통신 양측 사이에 개입해 트래픽을 중계·가로채는 공격으로, 실시간 피싱 프록시의 기반.",
+  "features": [
+   "실시간 트래픽 중계",
+   "자격증명·세션 탈취",
+   "MFA 우회 가능"
+  ],
+  "related": [
+   "phishing",
+   "session-hijacking",
+   "session-cookie"
+  ]
+ },
+ {
+  "id": "aggregation",
+  "term": "집계",
+  "term_en": "Aggregation",
+  "definition": "개별 데이터를 통계적으로 합산·요약하여 상세 식별성을 낮추는 프라이버시 보호 기법.",
+  "features": [
+   "개별 값 대신 통계 제공",
+   "상세도·정밀도 축소",
+   "재식별 위험 완화"
+  ],
+  "related": [
+   "anonymization",
+   "differential-privacy",
+   "data-minimization"
+  ]
+ },
+ {
+  "id": "ai-security",
+  "term": "AI 보안",
+  "term_en": "AI Security",
+  "definition": "인공지능 모델·데이터·서비스의 전 생애주기에 걸친 위협을 식별·대응하는 보안 분야.",
+  "features": [
+   "데이터·모델·추론 단계 보호",
+   "적대적 공격·오염 대응",
+   "OWASP LLM Top 10 등 프레임워크"
+  ],
+  "related": [
+   "owasp-llm-top-10",
+   "data-poisoning",
+   "large-language-model"
+  ]
+ },
+ {
+  "id": "anonymization",
+  "term": "익명화",
+  "term_en": "Anonymization",
+  "definition": "개인 식별이 불가능하도록 식별자를 제거·일반화·삭제하는 비식별 처리 기법.",
+  "features": [
+   "일반화·삭제·치환 적용",
+   "k-익명성 등 모델로 검증",
+   "동질성·배경지식 공격 주의"
+  ],
+  "related": [
+   "k-anonymity",
+   "l-diversity",
+   "generalization",
+   "de-identification"
+  ]
+ },
+ {
+  "id": "anti-phishing",
+  "term": "안티피싱",
+  "term_en": "Anti-Phishing",
+  "definition": "피싱 사이트·메일을 탐지·차단하고 이용자 접근을 보호하는 기술·서비스.",
+  "features": [
+   "URL 평판·블랙리스트",
+   "의심 메일·링크 필터링",
+   "유사 도메인 모니터링"
+  ],
+  "related": [
+   "phishing",
+   "dmarc",
+   "smishing"
+  ]
+ },
+ {
+  "id": "anti-virus",
+  "term": "백신",
+  "term_en": "Anti-Virus",
+  "definition": "악성코드를 탐지·치료·격리하는 엔드포인트 보안 소프트웨어.",
+  "features": [
+   "시그니처·휴리스틱 탐지",
+   "실시간 감시",
+   "EDR로 확장"
+  ],
+  "related": [
+   "malware",
+   "endpoint-detection-and-response"
+  ]
+ },
+ {
+  "id": "attack-surface-management",
+  "term": "공격표면 관리",
+  "term_en": "Attack Surface Management",
+  "definition": "조직의 외부·내부 노출 자산과 취약점을 식별·관리하여 공격 가능 지점을 축소하는 활동.",
+  "features": [
+   "자산·노출점 상시 식별",
+   "취약점 우선순위 관리",
+   "섀도 IT 발견"
+  ],
+  "related": [
+   "vulnerability",
+   "patch-management-system"
+  ]
+ },
+ {
+  "id": "big-data",
+  "term": "빅데이터",
+  "term_en": "Big Data",
+  "definition": "기존 방식으로 처리하기 어려운 대용량·다양·고속의 데이터와 그 분석 기술.",
+  "features": [
+   "Volume·Variety·Velocity",
+   "분산 저장·처리",
+   "프라이버시 이슈 수반"
+  ],
+  "related": [
+   "data-mining",
+   "machine-learning",
+   "differential-privacy"
+  ]
+ },
+ {
+  "id": "buffer-overflow",
+  "term": "버퍼 오버플로",
+  "term_en": "Buffer Overflow",
+  "definition": "경계 검사 없이 버퍼 용량을 초과해 데이터를 기록, 인접 메모리를 덮어써 흐름을 변조하는 취약점.",
+  "features": [
+   "스택·힙 영역 변조",
+   "리턴 주소 조작",
+   "ASLR·NX로 완화"
+  ],
+  "related": [
+   "memory-corruption",
+   "return-address",
+   "address-space-layout-randomization",
+   "secure-coding"
+  ]
+ },
+ {
+  "id": "chain-of-custody",
+  "term": "증거 보관 연속성",
+  "term_en": "Chain of Custody",
+  "definition": "디지털 증거의 수집부터 분석·보관·제출까지 이동·처리 이력을 입증 가능하게 관리하는 절차.",
+  "features": [
+   "증거 무결성 보장",
+   "수집·보관·이관 기록",
+   "법적 효력 확보"
+  ],
+  "related": [
+   "digital-forensics",
+   "hash-function"
+  ]
+ },
+ {
+  "id": "change-management",
+  "term": "변경관리",
+  "term_en": "Change Management",
+  "definition": "IT 환경의 변경을 통제된 절차로 승인·배포·검증하여 위험을 최소화하는 프로세스.",
+  "features": [
+   "변경 요청·영향평가·승인",
+   "테스트·롤백 계획",
+   "감사 이력 유지"
+  ],
+  "related": [
+   "patch-management-system",
+   "rollback"
+  ]
+ },
+ {
+  "id": "command-and-control",
+  "term": "명령·제어 서버",
+  "term_en": "Command and Control",
+  "definition": "감염 시스템에 명령을 전달하고 결과를 수집하는 공격자 제어 인프라.",
+  "features": [
+   "봇·악성코드 원격 조종",
+   "데이터 반출 경로",
+   "탐지·차단 대상 IoC"
+  ],
+  "related": [
+   "malware",
+   "indicator-of-compromise",
+   "advanced-persistent-threat"
+  ]
+ },
+ {
+  "id": "computer-security-incident-response-team",
+  "term": "침해사고대응팀",
+  "term_en": "Computer Security Incident Response Team",
+  "definition": "침해사고의 탐지·분석·대응·복구를 전담하는 조직.",
+  "features": [
+   "사고 대응 절차 수행",
+   "포렌식·복구 역할",
+   "유관기관 공조"
+  ],
+  "related": [
+   "incident-response",
+   "digital-forensics"
+  ]
+ },
+ {
+  "id": "content-filtering",
+  "term": "콘텐츠 필터링",
+  "term_en": "Content Filtering",
+  "definition": "유해·민감·악성 콘텐츠를 정책 기반으로 탐지·차단하는 기술.",
+  "features": [
+   "키워드·패턴·분류기 활용",
+   "유출·유해 콘텐츠 차단",
+   "LLM 출력 통제에 적용"
+  ],
+  "related": [
+   "data-loss-prevention",
+   "llm-guardrail"
+  ]
+ },
+ {
+  "id": "cve",
+  "term": "공개 취약점 식별자",
+  "term_en": "Common Vulnerabilities and Exposures",
+  "definition": "공개된 보안 취약점에 부여하는 국제 표준 식별 번호.",
+  "features": [
+   "취약점 고유 ID 부여",
+   "벤더·도구 간 공통 참조",
+   "CVSS와 연계"
+  ],
+  "related": [
+   "vulnerability",
+   "cvss",
+   "patch-management-system"
+  ]
+ },
+ {
+  "id": "cvss",
+  "term": "공통 취약점 점수체계",
+  "term_en": "Common Vulnerability Scoring System",
+  "definition": "취약점의 심각도를 0~10 점수로 정량화하는 표준 평가 체계.",
+  "features": [
+   "기본·시간·환경 메트릭",
+   "위험 우선순위 산정",
+   "패치 우선순위 기준"
+  ],
+  "related": [
+   "vulnerability",
+   "cve",
+   "patch-management-system"
+  ]
+ },
+ {
+  "id": "cwe",
+  "term": "공통 약점 목록",
+  "term_en": "Common Weakness Enumeration",
+  "definition": "소프트웨어·하드웨어의 보안 약점 유형을 분류한 커뮤니티 목록.",
+  "features": [
+   "약점 유형 분류 체계",
+   "CVE의 근본 원인 매핑",
+   "시큐어 코딩 참조"
+  ],
+  "related": [
+   "vulnerability",
+   "buffer-overflow",
+   "secure-coding"
+  ]
+ },
+ {
+  "id": "data-diode",
+  "term": "데이터 다이오드",
+  "term_en": "Data Diode",
+  "definition": "물리적으로 한 방향으로만 데이터가 흐르도록 보장하는 단방향 전송 장치.",
+  "features": [
+   "하드웨어 기반 단방향",
+   "역방향 트래픽 원천 차단",
+   "OT·망분리 경계 적용"
+  ],
+  "related": [
+   "demilitarized-zone",
+   "network-segmentation",
+   "operational-technology"
+  ]
+ },
+ {
+  "id": "data-historian",
+  "term": "데이터 히스토리안",
+  "term_en": "Data Historian",
+  "definition": "산업 제어시스템의 공정 데이터를 시계열로 수집·저장·조회하는 산업용 데이터베이스.",
+  "features": [
+   "공정 센서값 시계열 저장",
+   "운영 분석·품질 관리",
+   "Level 3 운영 영역 위치"
+  ],
+  "related": [
+   "scada",
+   "manufacturing-execution-system",
+   "industrial-control-system"
+  ]
+ },
+ {
+  "id": "data-lifecycle",
+  "term": "데이터 수명주기",
+  "term_en": "Data Lifecycle",
+  "definition": "데이터의 수집·저장·이용·제공·파기에 이르는 전 과정.",
+  "features": [
+   "단계별 보호 통제 적용",
+   "수집 최소화·적시 파기",
+   "End-to-End 프라이버시"
+  ],
+  "related": [
+   "privacy-by-design",
+   "data-minimization"
+  ]
+ },
+ {
+  "id": "data-loss-prevention",
+  "term": "데이터 유출 방지",
+  "term_en": "Data Loss Prevention",
+  "definition": "민감 데이터의 비인가 전송·유출을 탐지·차단하는 보안 기술.",
+  "features": [
+   "콘텐츠·패턴 기반 탐지",
+   "엔드포인트·네트워크·클라우드",
+   "정책 기반 차단"
+  ],
+  "related": [
+   "content-filtering",
+   "encryption",
+   "access-control"
+  ]
+ },
+ {
+  "id": "data-minimization",
+  "term": "데이터 최소화",
+  "term_en": "Data Minimisation",
+  "definition": "처리 목적 달성에 필요한 최소한의 개인정보만 수집·처리하는 원칙.",
+  "features": [
+   "최소 수집·보유",
+   "목적 외 처리 금지",
+   "PbD 데이터 지향 전략"
+  ],
+  "related": [
+   "privacy-by-design",
+   "data-lifecycle",
+   "aggregation"
+  ]
+ },
+ {
+  "id": "data-mining",
+  "term": "데이터 마이닝",
+  "term_en": "Data Mining",
+  "definition": "대규모 데이터에서 유용한 패턴·규칙·지식을 추출하는 분석 기법.",
+  "features": [
+   "분류·군집·연관분석",
+   "예측 모델링",
+   "프라이버시 보호와 결합"
+  ],
+  "related": [
+   "big-data",
+   "machine-learning",
+   "differential-privacy"
+  ]
+ },
+ {
+  "id": "data-perturbation",
+  "term": "데이터 섭동",
+  "term_en": "Data Perturbation",
+  "definition": "원본 값에 통계적 잡음·변형을 가해 개별 식별성을 낮추면서 집계 특성을 보존하는 기법.",
+  "features": [
+   "잡음·회전·치환 적용",
+   "집계·분포 보존",
+   "재구성 공격 주의"
+  ],
+  "related": [
+   "anonymization",
+   "differential-privacy",
+   "privacy-enhancing-technology"
+  ]
+ },
+ {
+  "id": "data-poisoning",
+  "term": "데이터 오염",
+  "term_en": "Data Poisoning",
+  "definition": "학습·참조 데이터에 악의적 데이터를 주입하여 모델·시스템의 판단을 왜곡하는 공격.",
+  "features": [
+   "학습 데이터 변조",
+   "모델 편향·백도어 유발",
+   "공급망 전파"
+  ],
+  "related": [
+   "ai-security",
+   "machine-learning",
+   "retrieval-augmented-generation"
+  ]
+ },
+ {
+  "id": "data-protection-officer",
+  "term": "개인정보보호책임자",
+  "term_en": "Data Protection Officer",
+  "definition": "조직의 개인정보 보호 업무를 총괄·감독하는 책임자(CPO/DPO).",
+  "features": [
+   "보호 정책 수립·감독",
+   "영향평가·교육 주관",
+   "규제기관 소통 창구"
+  ],
+  "related": [
+   "accountability",
+   "privacy-impact-assessment",
+   "personal-information-protection-act"
+  ]
+ },
+ {
+  "id": "de-identification",
+  "term": "비식별화",
+  "term_en": "De-identification",
+  "definition": "개인정보에서 특정 개인을 알아볼 수 없도록 처리하는 조치.",
+  "features": [
+   "가명·익명 처리",
+   "재식별 위험 관리",
+   "결합 시 재평가"
+  ],
+  "related": [
+   "anonymization",
+   "re-identification",
+   "k-anonymity"
+  ]
+ },
+ {
+  "id": "deception-technology",
+  "term": "기만 기술",
+  "term_en": "Deception Technology",
+  "definition": "가짜 자산·데이터를 네트워크 전반에 분산 배치해 공격자를 유인·탐지하는 능동 방어 기술.",
+  "features": [
+   "허니팟·허니토큰 확장",
+   "측면 이동 조기 탐지",
+   "낮은 오탐"
+  ],
+  "related": [
+   "honeynet",
+   "honeytoken",
+   "threat-intelligence"
+  ]
+ },
+ {
+  "id": "defense-in-depth",
+  "term": "심층 방어",
+  "term_en": "Defense in Depth",
+  "definition": "여러 계층의 보안 통제를 중첩 배치하여 단일 통제 실패 시에도 방어를 유지하는 전략.",
+  "features": [
+   "다계층 중첩 통제",
+   "단일 실패점 제거",
+   "예방·탐지·대응 조합"
+  ],
+  "related": [
+   "firewall",
+   "intrusion-detection-system",
+   "access-control"
+  ]
+ },
+ {
+  "id": "demilitarized-zone",
+  "term": "비무장지대",
+  "term_en": "Demilitarized Zone",
+  "definition": "신뢰 수준이 다른 네트워크 사이에 완충 구간을 두어 직접 통신을 차단하는 경계 영역.",
+  "features": [
+   "내·외부 직접 통신 차단",
+   "프록시·점프 서버 배치",
+   "산업용 DMZ(Level 3.5)"
+  ],
+  "related": [
+   "firewall",
+   "jump-server",
+   "network-segmentation"
+  ]
+ },
+ {
+  "id": "denial-of-service",
+  "term": "서비스 거부",
+  "term_en": "Denial of Service",
+  "definition": "시스템 자원을 고갈·마비시켜 정상 서비스 제공을 방해하는 공격.",
+  "features": [
+   "자원 고갈·마비 유발",
+   "가용성 침해",
+   "분산 공격(DDoS)으로 확대"
+  ],
+  "related": [
+   "vulnerability",
+   "firewall"
+  ]
+ },
+ {
+  "id": "differential-privacy",
+  "term": "차등 프라이버시",
+  "term_en": "Differential Privacy",
+  "definition": "질의 결과에 보정된 잡음을 추가해 특정 개인의 포함 여부를 식별할 수 없도록 수학적으로 보장하는 기법.",
+  "features": [
+   "ε로 보호 강도 조절",
+   "개인 포함 식별 불가 보장",
+   "효용-프라이버시 균형"
+  ],
+  "related": [
+   "privacy-enhancing-technology",
+   "aggregation",
+   "data-perturbation"
+  ]
+ },
+ {
+  "id": "digital-forensics",
+  "term": "디지털 포렌식",
+  "term_en": "Digital Forensics",
+  "definition": "디지털 증거를 수집·보존·분석하여 사고 원인과 행위를 규명하는 기술·절차.",
+  "features": [
+   "디스크·메모리·네트워크 분석",
+   "증거 무결성 유지",
+   "법적 효력 확보"
+  ],
+  "related": [
+   "chain-of-custody",
+   "incident-response",
+   "malware-analysis"
+  ]
+ },
+ {
+  "id": "distributed-control-system",
+  "term": "분산제어시스템",
+  "term_en": "Distributed Control System",
+  "definition": "공정 전반을 분산된 제어기로 통합 제어하는 산업 제어시스템.",
+  "features": [
+   "공정 연속 제어",
+   "분산 제어기·통합 감시",
+   "Level 1 기본 제어"
+  ],
+  "related": [
+   "programmable-logic-controller",
+   "scada",
+   "industrial-control-system"
+  ]
+ },
+ {
+  "id": "dkim",
+  "term": "도메인키 식별 메일",
+  "term_en": "DomainKeys Identified Mail",
+  "definition": "메일에 디지털 서명을 추가해 발신 도메인의 진위와 무결성을 검증하는 메일 인증 기술.",
+  "features": [
+   "서명 기반 무결성 검증",
+   "발신 도메인 인증",
+   "SPF·DMARC와 연계"
+  ],
+  "related": [
+   "dmarc",
+   "spf",
+   "anti-phishing"
+  ]
+ },
+ {
+  "id": "dmarc",
+  "term": "도메인 기반 메일 인증",
+  "term_en": "Domain-based Message Authentication, Reporting and Conformance",
+  "definition": "SPF·DKIM 결과를 기반으로 메일 인증 정책과 처리·보고를 정의하는 표준.",
+  "features": [
+   "SPF·DKIM 결과 종합",
+   "스푸핑 메일 처리 정책",
+   "리포팅 제공"
+  ],
+  "related": [
+   "spf",
+   "dkim",
+   "anti-phishing"
+  ]
+ },
+ {
+  "id": "encryption",
+  "term": "암호화",
+  "term_en": "Encryption",
+  "definition": "데이터를 키 없이는 해독할 수 없는 형태로 변환하여 기밀성을 보장하는 기술.",
+  "features": [
+   "대칭·비대칭 방식",
+   "저장·전송 데이터 보호",
+   "키 관리 필수"
+  ],
+  "related": [
+   "homomorphic-encryption",
+   "data-loss-prevention",
+   "hash-function"
+  ]
+ },
+ {
+  "id": "endpoint-detection-and-response",
+  "term": "엔드포인트 탐지·대응",
+  "term_en": "Endpoint Detection and Response",
+  "definition": "엔드포인트의 행위를 상시 수집·분석해 위협을 탐지하고 자동 대응하는 솔루션.",
+  "features": [
+   "행위 기반 탐지",
+   "위협 가시성·추적",
+   "격리·대응 자동화"
+  ],
+  "related": [
+   "anti-virus",
+   "siem",
+   "incident-response"
+  ]
+ },
+ {
+  "id": "enterprise-resource-planning",
+  "term": "전사적 자원관리",
+  "term_en": "Enterprise Resource Planning",
+  "definition": "재무·생산·물류 등 기업 자원을 통합 관리하는 정보시스템.",
+  "features": [
+   "업무 프로세스 통합",
+   "전사 데이터 일원화",
+   "Level 4 기업 영역"
+  ],
+  "related": [
+   "manufacturing-execution-system"
+  ]
+ },
+ {
+  "id": "exploit",
+  "term": "익스플로잇",
+  "term_en": "Exploit",
+  "definition": "취약점을 악용하여 비인가 동작을 유발하는 공격 코드·기법.",
+  "features": [
+   "취약점 악용 수단",
+   "제로데이·공개 익스플로잇",
+   "패치로 무력화"
+  ],
+  "related": [
+   "vulnerability",
+   "zero-day-attack",
+   "patch-management-system"
+  ]
+ },
+ {
+  "id": "federated-learning",
+  "term": "연합학습",
+  "term_en": "Federated Learning",
+  "definition": "데이터를 중앙에 모으지 않고 로컬에서 학습한 모델 파라미터만 공유·통합하는 분산 학습 기법.",
+  "features": [
+   "원본 데이터 비이동",
+   "파라미터만 교환",
+   "차등 프라이버시 결합"
+  ],
+  "related": [
+   "machine-learning",
+   "differential-privacy",
+   "privacy-enhancing-technology"
+  ]
+ },
+ {
+  "id": "fido2",
+  "term": "FIDO2",
+  "term_en": "FIDO2",
+  "definition": "공개키 기반의 비밀번호 없는 인증 표준으로, 도메인 바인딩으로 피싱에 저항하는 인증 방식.",
+  "features": [
+   "공개키 기반 인증",
+   "도메인 바인딩",
+   "피싱·중간자 저항"
+  ],
+  "related": [
+   "passkey",
+   "phishing-resistant-mfa",
+   "multi-factor-authentication"
+  ]
+ },
+ {
+  "id": "firewall",
+  "term": "방화벽",
+  "term_en": "Firewall",
+  "definition": "정책에 따라 네트워크 트래픽을 허용·차단하는 경계 보안 장비.",
+  "features": [
+   "정책 기반 트래픽 통제",
+   "경계·세그먼트 분리",
+   "차세대 방화벽(NGFW)"
+  ],
+  "related": [
+   "network-segmentation",
+   "demilitarized-zone",
+   "defense-in-depth"
+  ]
+ },
+ {
+  "id": "fortify-source",
+  "term": "FORTIFY_SOURCE",
+  "term_en": "FORTIFY_SOURCE",
+  "definition": "컴파일 시 버퍼·포맷 함수에 경계·검증 코드를 삽입해 메모리 오류를 완화하는 GCC/glibc 보호기법.",
+  "features": [
+   "컴파일러 보호 삽입",
+   "버퍼·포맷 함수 검증",
+   "런타임 오용 탐지"
+  ],
+  "related": [
+   "secure-coding",
+   "buffer-overflow",
+   "memory-corruption"
+  ]
+ },
+ {
+  "id": "fuzzing",
+  "term": "퍼징",
+  "term_en": "Fuzzing",
+  "definition": "무작위·변형 입력을 대량 주입하여 소프트웨어의 결함·취약점을 발견하는 동적 테스트 기법.",
+  "features": [
+   "비정상 입력 주입",
+   "크래시·결함 탐지",
+   "자동화 테스트"
+  ],
+  "related": [
+   "static-analysis",
+   "vulnerability",
+   "secure-coding"
+  ]
+ },
+ {
+  "id": "generalization",
+  "term": "일반화",
+  "term_en": "Generalization",
+  "definition": "데이터 값을 더 넓은 범주로 대체하여 식별성을 낮추는 익명화 기법.",
+  "features": [
+   "구체 값→범주 대체",
+   "k-익명성 달성 수단",
+   "정보손실 발생"
+  ],
+  "related": [
+   "anonymization",
+   "suppression",
+   "k-anonymity"
+  ]
+ },
+ {
+  "id": "generative-ai",
+  "term": "생성형 AI",
+  "term_en": "Generative AI",
+  "definition": "학습한 패턴을 바탕으로 텍스트·이미지 등 새로운 콘텐츠를 생성하는 인공지능.",
+  "features": [
+   "콘텐츠 생성 능력",
+   "LLM·확산모델 기반",
+   "프롬프트 인젝션 위협"
+  ],
+  "related": [
+   "large-language-model",
+   "llm-agent",
+   "ai-security"
+  ]
+ },
+ {
+  "id": "global-offset-table",
+  "term": "전역 오프셋 테이블",
+  "term_en": "Global Offset Table",
+  "definition": "동적 링크된 함수·변수의 실제 주소를 담는 테이블로, 메모리 공격의 변조 표적이 됨.",
+  "features": [
+   "동적 심볼 주소 저장",
+   "변조 시 흐름 탈취",
+   "RELRO로 보호"
+  ],
+  "related": [
+   "return-address",
+   "relocation-read-only",
+   "memory-corruption"
+  ]
+ },
+ {
+  "id": "hash-function",
+  "term": "해시 함수",
+  "term_en": "Hash Function",
+  "definition": "임의 길이 입력을 고정 길이 값으로 변환하는 일방향 함수로, 무결성 검증에 활용.",
+  "features": [
+   "일방향성·충돌 저항",
+   "무결성 검증",
+   "전자서명·저장 활용"
+  ],
+  "related": [
+   "encryption",
+   "chain-of-custody"
+  ]
+ },
+ {
+  "id": "homomorphic-encryption",
+  "term": "동형암호",
+  "term_en": "Homomorphic Encryption",
+  "definition": "암호문 상태에서 복호화 없이 연산을 수행할 수 있는 암호 기술.",
+  "features": [
+   "암호문 연산 지원",
+   "복호화 없는 분석",
+   "성능 오버헤드"
+  ],
+  "related": [
+   "encryption",
+   "secure-multiparty-computation",
+   "privacy-enhancing-technology"
+  ]
+ },
+ {
+  "id": "honeynet",
+  "term": "허니넷",
+  "term_en": "Honeynet",
+  "definition": "다수의 허니팟과 통제 장치로 구성한 미끼 네트워크.",
+  "features": [
+   "여러 허니팟 결합",
+   "실제 유사 환경 제공",
+   "공격 전모 관찰"
+  ],
+  "related": [
+   "honeytoken",
+   "deception-technology",
+   "intrusion-detection-system"
+  ]
+ },
+ {
+  "id": "honeytoken",
+  "term": "허니토큰",
+  "term_en": "Honeytoken",
+  "definition": "접근 시 경보를 발생시키는 가짜 계정·파일·데이터 레코드.",
+  "features": [
+   "미끼 데이터·계정",
+   "접근 시 즉시 경보",
+   "측면 이동 탐지"
+  ],
+  "related": [
+   "honeynet",
+   "deception-technology"
+  ]
+ },
+ {
+  "id": "human-in-the-loop",
+  "term": "사람 개입 승인",
+  "term_en": "Human-in-the-Loop",
+  "definition": "자동화 과정에서 민감한 결정을 사람이 검토·승인하도록 하는 통제 방식.",
+  "features": [
+   "민감 작업 사람 승인",
+   "오작동·오남용 차단",
+   "AI 에이전트 통제"
+  ],
+  "related": [
+   "llm-agent",
+   "least-privilege",
+   "llm-guardrail"
+  ]
+ },
+ {
+  "id": "human-machine-interface",
+  "term": "휴먼 머신 인터페이스",
+  "term_en": "Human-Machine Interface",
+  "definition": "운전원이 제어시스템을 감시·조작하는 화면·인터페이스.",
+  "features": [
+   "공정 감시·조작",
+   "SCADA와 연동",
+   "Level 2 감시 제어"
+  ],
+  "related": [
+   "scada",
+   "programmable-logic-controller",
+   "industrial-control-system"
+  ]
+ },
+ {
+  "id": "iec-62443",
+  "term": "IEC 62443",
+  "term_en": "IEC 62443",
+  "definition": "산업 자동화 및 제어시스템(IACS)의 보안을 규정한 국제 표준.",
+  "features": [
+   "Zone·Conduit 분리",
+   "보안 수준(SL) 정의",
+   "OT 보안 체계 기준"
+  ],
+  "related": [
+   "industrial-control-system",
+   "network-segmentation",
+   "operational-technology"
+  ]
+ },
+ {
+  "id": "immutable-backup",
+  "term": "불변 백업",
+  "term_en": "Immutable Backup",
+  "definition": "한 번 저장하면 수정·삭제할 수 없도록 보장하는 백업으로, 랜섬웨어 대응에 유효.",
+  "features": [
+   "변경·삭제 불가(WORM)",
+   "랜섬웨어 복구 보장",
+   "오프라인·격리 보관"
+  ],
+  "related": [
+   "incident-response"
+  ]
+ },
+ {
+  "id": "incident-response",
+  "term": "침해사고 대응",
+  "term_en": "Incident Response",
+  "definition": "침해사고를 준비·탐지·분석·억제·근절·복구·교훈의 절차로 처리하는 활동.",
+  "features": [
+   "표준 대응 절차 수행",
+   "피해 확산 차단",
+   "재발 방지 환류"
+  ],
+  "related": [
+   "computer-security-incident-response-team",
+   "digital-forensics",
+   "siem"
+  ]
+ },
+ {
+  "id": "indicator-of-compromise",
+  "term": "침해지표",
+  "term_en": "Indicator of Compromise",
+  "definition": "침해 발생을 나타내는 관찰 가능한 흔적(IP·해시·도메인 등).",
+  "features": [
+   "악성 IP·해시·도메인",
+   "탐지 룰·차단 활용",
+   "위협 인텔리전스 공유"
+  ],
+  "related": [
+   "threat-intelligence",
+   "command-and-control",
+   "malware-analysis"
+  ]
+ },
+ {
+  "id": "industrial-control-system",
+  "term": "산업제어시스템",
+  "term_en": "Industrial Control System",
+  "definition": "생산·공정 설비를 감시·제어하는 시스템의 총칭(SCADA·DCS·PLC 포함).",
+  "features": [
+   "물리 공정 제어",
+   "가용성·안전 최우선",
+   "퍼듀 모델로 계층화"
+  ],
+  "related": [
+   "scada",
+   "distributed-control-system",
+   "programmable-logic-controller",
+   "operational-technology"
+  ]
+ },
+ {
+  "id": "industrial-iot",
+  "term": "산업용 사물인터넷",
+  "term_en": "Industrial IoT",
+  "definition": "산업 현장의 센서·설비를 네트워크로 연결해 데이터를 수집·활용하는 기술.",
+  "features": [
+   "설비 센서 연결",
+   "클라우드 분석 연계",
+   "제어망 공격표면 증가"
+  ],
+  "related": [
+   "operational-technology",
+   "industrial-control-system",
+   "zero-trust"
+  ]
+ },
+ {
+  "id": "information-disclosure",
+  "term": "정보 노출",
+  "term_en": "Information Disclosure",
+  "definition": "민감 정보가 비인가 주체에게 노출되는 보안 약점.",
+  "features": [
+   "기밀성 침해",
+   "메모리·오류 메시지 노출",
+   "후속 공격 발판"
+  ],
+  "related": [
+   "memory-corruption",
+   "vulnerability"
+  ]
+ },
+ {
+  "id": "input-validation",
+  "term": "입력값 검증",
+  "term_en": "Input Validation",
+  "definition": "외부 입력의 형식·범위·내용을 검증하여 악의적 입력을 차단하는 보안 기법.",
+  "features": [
+   "화이트리스트 검증",
+   "경계·형식 확인",
+   "인젝션 공격 예방"
+  ],
+  "related": [
+   "secure-coding",
+   "buffer-overflow",
+   "memory-corruption"
+  ]
+ },
+ {
+  "id": "intrusion-detection-system",
+  "term": "침입탐지시스템",
+  "term_en": "Intrusion Detection System",
+  "definition": "네트워크·호스트 트래픽을 분석해 침입 징후를 탐지·경보하는 시스템.",
+  "features": [
+   "시그니처·이상 탐지",
+   "경보 생성",
+   "IPS로 차단 확장"
+  ],
+  "related": [
+   "firewall",
+   "siem",
+   "defense-in-depth"
+  ]
+ },
+ {
+  "id": "isa-95",
+  "term": "ISA-95",
+  "term_en": "ISA-95",
+  "definition": "기업 시스템과 제어 시스템의 통합을 위한 국제 표준으로 기능 계층을 정의.",
+  "features": [
+   "기업-제어 통합 모델",
+   "기능 계층 정의",
+   "퍼듀 모델 기반"
+  ],
+  "related": [
+   "industrial-control-system",
+   "manufacturing-execution-system"
+  ]
+ },
+ {
+  "id": "isms-p",
+  "term": "정보보호 및 개인정보보호 관리체계",
+  "term_en": "ISMS-P",
+  "definition": "정보보호와 개인정보보호 관리 수준을 인증하는 국내 통합 인증제도.",
+  "features": [
+   "관리·보호대책·개인정보 영역",
+   "인증 심사·사후관리",
+   "법적 준거성 확보"
+  ],
+  "related": [
+   "personal-information-protection-act",
+   "incident-response"
+  ]
+ },
+ {
+  "id": "it-ot-convergence",
+  "term": "IT·OT 융합",
+  "term_en": "IT/OT Convergence",
+  "definition": "정보기술(IT)과 운영기술(OT)이 연결·통합되는 추세와 그에 따른 보안 과제.",
+  "features": [
+   "제어망-기업망 연결",
+   "데이터 통합 활용",
+   "보안 위협 확대"
+  ],
+  "related": [
+   "operational-technology",
+   "industrial-control-system",
+   "zero-trust"
+  ]
+ },
+ {
+  "id": "jailbreak",
+  "term": "탈옥",
+  "term_en": "Jailbreak",
+  "definition": "LLM의 안전 정책·제약을 우회하도록 유도하는 프롬프트 조작 기법.",
+  "features": [
+   "안전장치 우회 유도",
+   "정책 위반 응답 유발",
+   "프롬프트 인젝션의 일종"
+  ],
+  "related": [
+   "large-language-model",
+   "llm-guardrail",
+   "owasp-llm-top-10"
+  ]
+ },
+ {
+  "id": "jump-server",
+  "term": "점프 서버",
+  "term_en": "Jump Server",
+  "definition": "내부 자원 접근을 중계·통제하는 경유 서버로, 접근 통로를 단일화·감시.",
+  "features": [
+   "접근 단일 경유점",
+   "세션 녹화·통제",
+   "DMZ 배치"
+  ],
+  "related": [
+   "demilitarized-zone",
+   "privileged-access-management",
+   "access-control"
+  ]
+ },
+ {
+  "id": "k-anonymity",
+  "term": "k-익명성",
+  "term_en": "k-Anonymity",
+  "definition": "동일한 준식별자 조합을 가진 레코드가 최소 k개 존재하도록 보장하는 익명성 모델.",
+  "features": [
+   "준식별자 그룹화",
+   "개인 구별 불가 보장",
+   "동질성 공격에 취약"
+  ],
+  "related": [
+   "anonymization",
+   "l-diversity",
+   "generalization",
+   "de-identification"
+  ]
+ },
+ {
+  "id": "l-diversity",
+  "term": "l-다양성",
+  "term_en": "l-Diversity",
+  "definition": "각 동질 그룹의 민감 속성이 최소 l개 이상 다양하도록 보장하는 익명성 강화 모델.",
+  "features": [
+   "민감속성 다양성 확보",
+   "동질성 공격 보완",
+   "k-익명성 확장"
+  ],
+  "related": [
+   "k-anonymity",
+   "anonymization"
+  ]
+ },
+ {
+  "id": "large-language-model",
+  "term": "거대언어모델",
+  "term_en": "Large Language Model",
+  "definition": "방대한 텍스트로 학습해 자연어를 이해·생성하는 대규모 신경망 모델.",
+  "features": [
+   "대규모 파라미터",
+   "자연어 생성·이해",
+   "프롬프트 인젝션 취약"
+  ],
+  "related": [
+   "generative-ai",
+   "llm-agent",
+   "owasp-llm-top-10"
+  ]
+ },
+ {
+  "id": "lateral-movement",
+  "term": "측면 이동",
+  "term_en": "Lateral Movement",
+  "definition": "침투한 공격자가 내부 네트워크에서 다른 시스템으로 권한·접근을 확장하는 행위.",
+  "features": [
+   "내부 확산·권한 상승",
+   "자격증명 재사용",
+   "세그먼테이션으로 억제"
+  ],
+  "related": [
+   "advanced-persistent-threat",
+   "network-segmentation",
+   "privileged-access-management"
+  ]
+ },
+ {
+  "id": "least-privilege",
+  "term": "최소권한",
+  "term_en": "Least Privilege",
+  "definition": "주체에게 업무 수행에 필요한 최소한의 권한만 부여하는 보안 원칙.",
+  "features": [
+   "필요 최소 권한 부여",
+   "권한 오남용 축소",
+   "직무분리와 결합"
+  ],
+  "related": [
+   "access-control",
+   "privileged-access-management",
+   "role-based-access-control"
+  ]
+ },
+ {
+  "id": "llm-agent",
+  "term": "LLM 에이전트",
+  "term_en": "LLM Agent",
+  "definition": "LLM이 도구·API를 호출해 자율적으로 작업을 수행하는 에이전트 시스템.",
+  "features": [
+   "도구·API 연동",
+   "자율 작업 수행",
+   "권한 오남용 위험"
+  ],
+  "related": [
+   "large-language-model",
+   "human-in-the-loop",
+   "least-privilege"
+  ]
+ },
+ {
+  "id": "llm-guardrail",
+  "term": "LLM 가드레일",
+  "term_en": "LLM Guardrail",
+  "definition": "LLM의 입력·출력을 정책에 따라 검증·필터링해 안전성을 확보하는 통제 장치.",
+  "features": [
+   "입출력 정책 검증",
+   "유해·위반 응답 차단",
+   "분류기·룰 기반"
+  ],
+  "related": [
+   "content-filtering",
+   "owasp-llm-top-10",
+   "human-in-the-loop"
+  ]
+ },
+ {
+  "id": "machine-learning",
+  "term": "기계학습",
+  "term_en": "Machine Learning",
+  "definition": "데이터로부터 패턴을 학습하여 예측·분류를 수행하는 인공지능 기법.",
+  "features": [
+   "데이터 기반 학습",
+   "지도·비지도·강화",
+   "데이터 품질 의존"
+  ],
+  "related": [
+   "data-mining",
+   "federated-learning",
+   "big-data"
+  ]
+ },
+ {
+  "id": "malware",
+  "term": "악성코드",
+  "term_en": "Malware",
+  "definition": "시스템을 침해·손상시킬 목적으로 제작된 악의적 소프트웨어.",
+  "features": [
+   "바이러스·웜·트로이·랜섬웨어",
+   "감염·확산·파괴",
+   "탐지·분석 대상"
+  ],
+  "related": [
+   "malware-analysis",
+   "anti-virus",
+   "command-and-control"
+  ]
+ },
+ {
+  "id": "malware-analysis",
+  "term": "악성코드 분석",
+  "term_en": "Malware Analysis",
+  "definition": "악성코드의 구조·행위·영향을 정적·동적으로 분석하는 기술.",
+  "features": [
+   "정적·동적 분석",
+   "기능·C2·IoC 도출",
+   "샌드박스 활용"
+  ],
+  "related": [
+   "malware",
+   "sandbox",
+   "indicator-of-compromise"
+  ]
+ },
+ {
+  "id": "manufacturing-execution-system",
+  "term": "제조실행시스템",
+  "term_en": "Manufacturing Execution System",
+  "definition": "생산 현장의 작업 지시·실적·품질을 실시간 관리하는 시스템.",
+  "features": [
+   "생산 실행·추적",
+   "품질·실적 관리",
+   "Level 3 운영 영역"
+  ],
+  "related": [
+   "enterprise-resource-planning",
+   "data-historian",
+   "industrial-control-system"
+  ]
+ },
+ {
+  "id": "memory-corruption",
+  "term": "메모리 변조",
+  "term_en": "Memory Corruption",
+  "definition": "프로그램 메모리가 의도치 않게 변경되어 오작동·흐름 탈취를 유발하는 취약점.",
+  "features": [
+   "버퍼·포맷·UAF 등 원인",
+   "흐름 탈취·코드 실행",
+   "보호기법으로 완화"
+  ],
+  "related": [
+   "buffer-overflow",
+   "return-address",
+   "address-space-layout-randomization"
+  ]
+ },
+ {
+  "id": "mfa-fatigue",
+  "term": "MFA 피로 공격",
+  "term_en": "MFA Fatigue",
+  "definition": "반복적인 인증 승인 요청을 보내 피해자가 무심코 승인하도록 유도하는 공격.",
+  "features": [
+   "반복 푸시 알림",
+   "피로·실수 유도",
+   "번호 매칭으로 완화"
+  ],
+  "related": [
+   "multi-factor-authentication",
+   "phishing"
+  ]
+ },
+ {
+  "id": "mitre-attack",
+  "term": "MITRE ATT&CK",
+  "term_en": "MITRE ATT&CK",
+  "definition": "실제 공격자의 전술·기법을 체계화한 지식 베이스.",
+  "features": [
+   "전술·기법 매트릭스",
+   "공격 행위 매핑",
+   "탐지·방어 설계 활용"
+  ],
+  "related": [
+   "threat-intelligence",
+   "indicator-of-compromise",
+   "advanced-persistent-threat"
+  ]
+ },
+ {
+  "id": "modbus",
+  "term": "모드버스",
+  "term_en": "Modbus",
+  "definition": "산업 제어에서 널리 쓰이는 평문 기반 통신 프로토콜.",
+  "features": [
+   "단순·개방 프로토콜",
+   "인증·암호화 부재",
+   "명령 변조에 취약"
+  ],
+  "related": [
+   "scada",
+   "programmable-logic-controller",
+   "industrial-control-system"
+  ]
+ },
+ {
+  "id": "multi-factor-authentication",
+  "term": "다중 인증",
+  "term_en": "Multi-Factor Authentication",
+  "definition": "지식·소유·존재 등 둘 이상의 인증 요소를 결합해 신원을 확인하는 인증 방식.",
+  "features": [
+   "둘 이상 인증 요소",
+   "자격증명 탈취 보완",
+   "피싱 저항 방식 권장"
+  ],
+  "related": [
+   "one-time-password",
+   "fido2",
+   "phishing-resistant-mfa"
+  ]
+ },
+ {
+  "id": "network-access-control",
+  "term": "네트워크 접근통제",
+  "term_en": "Network Access Control",
+  "definition": "단말의 보안 상태·권한을 점검해 네트워크 접속을 통제하는 솔루션.",
+  "features": [
+   "단말 인증·상태 점검",
+   "비인가·미패치 단말 격리",
+   "정책 기반 접근"
+  ],
+  "related": [
+   "access-control",
+   "patch-management-system",
+   "network-segmentation"
+  ]
+ },
+ {
+  "id": "network-segmentation",
+  "term": "네트워크 분할",
+  "term_en": "Network Segmentation",
+  "definition": "네트워크를 보안 수준에 따라 분리하여 위협 확산을 억제하는 설계 기법.",
+  "features": [
+   "세그먼트·존 분리",
+   "측면 이동 차단",
+   "마이크로 세그먼테이션"
+  ],
+  "related": [
+   "firewall",
+   "lateral-movement",
+   "demilitarized-zone"
+  ]
+ },
+ {
+  "id": "non-executable-stack",
+  "term": "스택 실행 방지",
+  "term_en": "Non-Executable Stack",
+  "definition": "스택 등 데이터 영역의 코드 실행을 금지하여 주입 코드 실행을 차단하는 보호기법.",
+  "features": [
+   "데이터 영역 실행 금지(NX/DEP)",
+   "쉘코드 실행 차단",
+   "ASLR과 병행"
+  ],
+  "related": [
+   "address-space-layout-randomization",
+   "memory-corruption",
+   "buffer-overflow"
+  ]
+ },
+ {
+  "id": "one-time-password",
+  "term": "일회용 비밀번호",
+  "term_en": "One-Time Password",
+  "definition": "한 번만 사용 가능한 동적 비밀번호로 재사용·탈취 위험을 줄이는 인증 수단.",
+  "features": [
+   "일회성·시간 기반",
+   "재사용 방지",
+   "실시간 피싱엔 취약"
+  ],
+  "related": [
+   "multi-factor-authentication",
+   "phishing-resistant-mfa"
+  ]
+ },
+ {
+  "id": "operational-technology",
+  "term": "운영기술",
+  "term_en": "Operational Technology",
+  "definition": "물리 장치·공정을 감시·제어하는 하드웨어·소프트웨어 기술.",
+  "features": [
+   "물리 공정 제어",
+   "가용성·안전 우선",
+   "장기 수명주기"
+  ],
+  "related": [
+   "industrial-control-system",
+   "it-ot-convergence",
+   "iec-62443"
+  ]
+ },
+ {
+  "id": "owasp-llm-top-10",
+  "term": "OWASP LLM Top 10",
+  "term_en": "OWASP Top 10 for LLM Applications",
+  "definition": "LLM 애플리케이션의 주요 보안 위협 10가지를 정리한 OWASP 가이드.",
+  "features": [
+   "LLM 위협 분류",
+   "프롬프트 인젝션 등 포함",
+   "대응 가이드 제공"
+  ],
+  "related": [
+   "large-language-model",
+   "ai-security",
+   "llm-guardrail"
+  ]
+ },
+ {
+  "id": "passkey",
+  "term": "패스키",
+  "term_en": "Passkey",
+  "definition": "FIDO 기반의 비밀번호 없는 인증 자격증명으로, 기기에 안전하게 저장·동기화되는 공개키 방식.",
+  "features": [
+   "비밀번호 대체",
+   "공개키 기반",
+   "피싱 저항"
+  ],
+  "related": [
+   "fido2",
+   "phishing-resistant-mfa",
+   "multi-factor-authentication"
+  ]
+ },
+ {
+  "id": "patch",
+  "term": "패치",
+  "term_en": "Patch",
+  "definition": "소프트웨어의 결함·취약점을 수정하기 위한 갱신 코드.",
+  "features": [
+   "보안·기능 결함 수정",
+   "취약점 제거",
+   "무결성 검증 필요"
+  ],
+  "related": [
+   "patch-management-system",
+   "vulnerability",
+   "exploit"
+  ]
+ },
+ {
+  "id": "patch-management-system",
+  "term": "패치관리시스템",
+  "term_en": "Patch Management System",
+  "definition": "패치를 중앙에서 수집·검증·배포·추적하는 보안 관리 시스템.",
+  "features": [
+   "중앙집중 배포",
+   "적용 이력 추적",
+   "취약점 노출 최소화"
+  ],
+  "related": [
+   "patch",
+   "vulnerability",
+   "change-management"
+  ]
+ },
+ {
+  "id": "personal-information-protection-act",
+  "term": "개인정보보호법",
+  "term_en": "Personal Information Protection Act",
+  "definition": "개인정보의 수집·이용·보호에 관한 국내 기본법.",
+  "features": [
+   "처리 원칙·동의 규정",
+   "정보주체 권리 보장",
+   "가명정보 특례"
+  ],
+  "related": [
+   "isms-p",
+   "privacy-by-design",
+   "data-protection-officer"
+  ]
+ },
+ {
+  "id": "pharming",
+  "term": "파밍",
+  "term_en": "Pharming",
+  "definition": "DNS·호스트 변조로 정상 주소 접속을 가짜 사이트로 유도하는 공격.",
+  "features": [
+   "DNS·호스트 변조",
+   "정상 URL에도 피해",
+   "자격증명 탈취"
+  ],
+  "related": [
+   "phishing",
+   "smishing"
+  ]
+ },
+ {
+  "id": "phishing",
+  "term": "피싱",
+  "term_en": "Phishing",
+  "definition": "신뢰 기관을 사칭해 이용자를 속여 자격증명·민감정보를 탈취하는 사회공학 공격.",
+  "features": [
+   "사칭·심리 조작",
+   "가짜 사이트·메일",
+   "자격증명 탈취"
+  ],
+  "related": [
+   "spear-phishing",
+   "smishing",
+   "anti-phishing"
+  ]
+ },
+ {
+  "id": "phishing-resistant-mfa",
+  "term": "피싱 저항 인증",
+  "term_en": "Phishing-Resistant MFA",
+  "definition": "도메인 바인딩 등으로 중간자·피싱에 의해 우회되지 않는 다중 인증.",
+  "features": [
+   "도메인 바인딩",
+   "중간자 저항",
+   "FIDO2·패스키 기반"
+  ],
+  "related": [
+   "fido2",
+   "passkey",
+   "multi-factor-authentication"
+  ]
+ },
+ {
+  "id": "pivoting",
+  "term": "피버팅",
+  "term_en": "Pivoting",
+  "definition": "장악한 시스템을 경유지로 삼아 접근이 제한된 다른 네트워크로 침투하는 기법.",
+  "features": [
+   "경유지 악용",
+   "내부망 확산",
+   "허니팟 격리 실패 위험"
+  ],
+  "related": [
+   "lateral-movement",
+   "network-segmentation"
+  ]
+ },
+ {
+  "id": "privacy-by-default",
+  "term": "프라이버시 기본값",
+  "term_en": "Privacy by Default",
+  "definition": "이용자의 별도 조치 없이도 기본 설정에서 최대 수준의 프라이버시가 보장되는 원칙.",
+  "features": [
+   "기본 설정 최대 보호",
+   "불필요 공개 차단",
+   "PbD 핵심 원칙"
+  ],
+  "related": [
+   "privacy-by-design",
+   "data-minimization"
+  ]
+ },
+ {
+  "id": "privacy-by-design",
+  "term": "프라이버시 중심 설계",
+  "term_en": "Privacy by Design",
+  "definition": "설계 단계부터 프라이버시 보호를 내재화하는 설계 원칙.",
+  "features": [
+   "선제적·기본값 보호",
+   "전 생애주기 보호",
+   "7대 원칙·8대 전략"
+  ],
+  "related": [
+   "privacy-by-default",
+   "privacy-enhancing-technology",
+   "privacy-impact-assessment"
+  ]
+ },
+ {
+  "id": "privacy-enhancing-technology",
+  "term": "프라이버시 강화기술",
+  "term_en": "Privacy-Enhancing Technology",
+  "definition": "개인정보 노출을 최소화하면서 데이터 활용을 가능케 하는 기술의 총칭.",
+  "features": [
+   "비식별·암호 기반 기술",
+   "데이터 활용-보호 균형",
+   "차등 프라이버시·동형암호 등"
+  ],
+  "related": [
+   "differential-privacy",
+   "homomorphic-encryption",
+   "de-identification"
+  ]
+ },
+ {
+  "id": "privacy-impact-assessment",
+  "term": "개인정보 영향평가",
+  "term_en": "Privacy Impact Assessment",
+  "definition": "개인정보 처리 시스템의 프라이버시 위험을 사전에 분석·평가·개선하는 제도.",
+  "features": [
+   "사전 위험 식별",
+   "통제 방안 도출",
+   "설계 단계 검증"
+  ],
+  "related": [
+   "privacy-by-design",
+   "data-protection-officer",
+   "personal-information-protection-act"
+  ]
+ },
+ {
+  "id": "privileged-access-management",
+  "term": "특권계정관리",
+  "term_en": "Privileged Access Management",
+  "definition": "관리자 등 특권 계정의 접근을 통제·감시·기록하는 보안 솔루션.",
+  "features": [
+   "특권 계정 통제",
+   "세션 기록·감시",
+   "자격증명 금고"
+  ],
+  "related": [
+   "access-control",
+   "least-privilege",
+   "jump-server"
+  ]
+ },
+ {
+  "id": "programmable-logic-controller",
+  "term": "프로그래머블 로직 컨트롤러",
+  "term_en": "Programmable Logic Controller",
+  "definition": "센서 입력에 따라 제어 로직을 실행해 설비를 제어하는 산업용 제어기.",
+  "features": [
+   "실시간 제어 로직",
+   "래더 프로그래밍",
+   "Level 1 기본 제어"
+  ],
+  "related": [
+   "distributed-control-system",
+   "scada",
+   "industrial-control-system"
+  ]
+ },
+ {
+  "id": "qr-phishing",
+  "term": "큐싱",
+  "term_en": "QR Phishing",
+  "definition": "QR코드를 악용해 피싱 사이트 접속·악성 앱 설치를 유도하는 공격.",
+  "features": [
+   "QR코드 미끼",
+   "피싱 URL 은닉",
+   "모바일 표적"
+  ],
+  "related": [
+   "phishing",
+   "smishing"
+  ]
+ },
+ {
+  "id": "re-identification",
+  "term": "재식별",
+  "term_en": "Re-identification",
+  "definition": "비식별 데이터를 다른 데이터와 결합해 특정 개인을 다시 식별하는 행위.",
+  "features": [
+   "외부 데이터 결합",
+   "비식별 무력화",
+   "결합 시 위험 재평가"
+  ],
+  "related": [
+   "de-identification",
+   "anonymization",
+   "k-anonymity"
+  ]
+ },
+ {
+  "id": "relocation-read-only",
+  "term": "재배치 읽기 전용",
+  "term_en": "Relocation Read-Only",
+  "definition": "GOT 등 재배치 영역을 로드 후 읽기 전용으로 만들어 변조를 막는 보호기법.",
+  "features": [
+   "GOT 읽기 전용화",
+   "재배치 변조 차단",
+   "Full/Partial RELRO"
+  ],
+  "related": [
+   "global-offset-table",
+   "memory-corruption",
+   "non-executable-stack"
+  ]
+ },
+ {
+  "id": "remote-terminal-unit",
+  "term": "원격 단말장치",
+  "term_en": "Remote Terminal Unit",
+  "definition": "원격 현장의 센서·장비를 제어·감시하고 중앙에 전송하는 제어 단말.",
+  "features": [
+   "원격 데이터 수집",
+   "현장 제어",
+   "SCADA 연동"
+  ],
+  "related": [
+   "scada",
+   "programmable-logic-controller",
+   "industrial-control-system"
+  ]
+ },
+ {
+  "id": "retrieval-augmented-generation",
+  "term": "검색증강생성",
+  "term_en": "Retrieval-Augmented Generation",
+  "definition": "외부 지식을 검색해 LLM의 생성에 활용하는 기법으로, 간접 프롬프트 인젝션 경로가 될 수 있음.",
+  "features": [
+   "외부 지식 검색·주입",
+   "응답 정확도 향상",
+   "간접 인젝션 위험"
+  ],
+  "related": [
+   "large-language-model",
+   "generative-ai",
+   "data-poisoning"
+  ]
+ },
+ {
+  "id": "return-address",
+  "term": "리턴 주소",
+  "term_en": "Return Address",
+  "definition": "함수 종료 후 복귀할 주소로, 변조 시 실행 흐름을 탈취당하는 메모리 공격 표적.",
+  "features": [
+   "함수 복귀 주소",
+   "스택에 저장",
+   "변조 시 흐름 탈취"
+  ],
+  "related": [
+   "buffer-overflow",
+   "memory-corruption",
+   "global-offset-table"
+  ]
+ },
+ {
+  "id": "risk-based-authentication",
+  "term": "위험기반 인증",
+  "term_en": "Risk-Based Authentication",
+  "definition": "접속 상황의 위험도를 평가해 인증 강도를 동적으로 조정하는 적응형 인증.",
+  "features": [
+   "상황·위험 평가",
+   "위험 시 추가 인증",
+   "이상 접속 탐지"
+  ],
+  "related": [
+   "multi-factor-authentication",
+   "user-and-entity-behavior-analytics"
+  ]
+ },
+ {
+  "id": "role-based-access-control",
+  "term": "역할기반 접근통제",
+  "term_en": "Role-Based Access Control",
+  "definition": "사용자의 역할에 권한을 부여하여 접근을 관리하는 모델.",
+  "features": [
+   "역할 단위 권한 부여",
+   "관리 효율성",
+   "최소권한 적용"
+  ],
+  "related": [
+   "access-control",
+   "least-privilege"
+  ]
+ },
+ {
+  "id": "rollback",
+  "term": "롤백",
+  "term_en": "Rollback",
+  "definition": "변경·패치 적용 후 문제가 발생하면 이전 상태로 되돌리는 복구 조치.",
+  "features": [
+   "이전 상태 복원",
+   "장애 영향 최소화",
+   "변경관리 필수 계획"
+  ],
+  "related": [
+   "change-management",
+   "patch-management-system"
+  ]
+ },
+ {
+  "id": "safety-instrumented-system",
+  "term": "안전계장시스템",
+  "term_en": "Safety Instrumented System",
+  "definition": "위험 상황 시 공정을 안전 상태로 전환하는 독립된 안전 제어 시스템.",
+  "features": [
+   "독립 안전 기능",
+   "비상 정지 수행",
+   "제어망과 분리"
+  ],
+  "related": [
+   "industrial-control-system",
+   "programmable-logic-controller",
+   "operational-technology"
+  ]
+ },
+ {
+  "id": "sandbox",
+  "term": "샌드박스",
+  "term_en": "Sandbox",
+  "definition": "격리된 환경에서 코드·파일을 실행·분석하여 실자산 영향을 차단하는 기술.",
+  "features": [
+   "격리 실행 환경",
+   "악성 행위 관찰",
+   "전파 차단"
+  ],
+  "related": [
+   "malware-analysis",
+   "deception-technology"
+  ]
+ },
+ {
+  "id": "scada",
+  "term": "스카다",
+  "term_en": "SCADA",
+  "definition": "분산된 산업 설비를 원격 감시·제어하는 감시제어 데이터수집 시스템.",
+  "features": [
+   "원격 감시·제어",
+   "데이터 수집·표출",
+   "Level 2 감시 제어"
+  ],
+  "related": [
+   "industrial-control-system",
+   "human-machine-interface",
+   "remote-terminal-unit"
+  ]
+ },
+ {
+  "id": "secure-coding",
+  "term": "시큐어 코딩",
+  "term_en": "Secure Coding",
+  "definition": "개발 단계에서 보안 취약점을 예방하는 안전한 코딩 기법.",
+  "features": [
+   "취약점 예방 코딩",
+   "입력 검증·안전 함수",
+   "개발보안 가이드 준수"
+  ],
+  "related": [
+   "input-validation",
+   "buffer-overflow",
+   "static-analysis"
+  ]
+ },
+ {
+  "id": "secure-multiparty-computation",
+  "term": "다자간 비밀 계산",
+  "term_en": "Secure Multiparty Computation",
+  "definition": "여러 참여자가 각자의 입력을 비공개한 채 공동 함수를 계산하는 암호 기법.",
+  "features": [
+   "입력 비공개 공동 연산",
+   "결과만 공유",
+   "통신·연산 비용 높음"
+  ],
+  "related": [
+   "homomorphic-encryption",
+   "privacy-enhancing-technology",
+   "federated-learning"
+  ]
+ },
+ {
+  "id": "security-orchestration-automation-response",
+  "term": "보안 오케스트레이션·자동화·대응",
+  "term_en": "Security Orchestration, Automation and Response",
+  "definition": "보안 운영을 자동화·오케스트레이션하여 대응을 신속화하는 솔루션.",
+  "features": [
+   "플레이북 자동화",
+   "도구 연계 오케스트레이션",
+   "대응시간 단축"
+  ],
+  "related": [
+   "siem",
+   "incident-response",
+   "endpoint-detection-and-response"
+  ]
+ },
+ {
+  "id": "session-cookie",
+  "term": "세션 쿠키",
+  "term_en": "Session Cookie",
+  "definition": "인증된 세션을 식별하는 쿠키로, 탈취 시 재인증 없이 계정 접근이 가능.",
+  "features": [
+   "세션 식별 토큰",
+   "탈취 시 세션 탈취",
+   "디바이스 바인딩 권장"
+  ],
+  "related": [
+   "session-hijacking",
+   "adversary-in-the-middle"
+  ]
+ },
+ {
+  "id": "session-hijacking",
+  "term": "세션 하이재킹",
+  "term_en": "Session Hijacking",
+  "definition": "유효한 세션 식별자를 탈취·재사용하여 사용자 세션을 가로채는 공격.",
+  "features": [
+   "세션 토큰 탈취",
+   "재인증 없이 접근",
+   "MFA 우회"
+  ],
+  "related": [
+   "session-cookie",
+   "adversary-in-the-middle",
+   "phishing"
+  ]
+ },
+ {
+  "id": "siem",
+  "term": "보안정보·이벤트관리",
+  "term_en": "Security Information and Event Management",
+  "definition": "보안 로그·이벤트를 통합 수집·상관분석해 위협을 탐지하는 시스템.",
+  "features": [
+   "로그 통합·상관분석",
+   "실시간 위협 탐지",
+   "SOAR 연계"
+  ],
+  "related": [
+   "intrusion-detection-system",
+   "security-orchestration-automation-response",
+   "incident-response"
+  ]
+ },
+ {
+  "id": "smishing",
+  "term": "스미싱",
+  "term_en": "Smishing",
+  "definition": "문자메시지(SMS)를 이용해 악성 링크·앱 설치를 유도하는 피싱 공격.",
+  "features": [
+   "문자 기반 미끼",
+   "악성 URL·앱",
+   "모바일 표적"
+  ],
+  "related": [
+   "phishing",
+   "qr-phishing",
+   "pharming"
+  ]
+ },
+ {
+  "id": "software-agent",
+  "term": "소프트웨어 에이전트",
+  "term_en": "Software Agent",
+  "definition": "단말에 상주하며 자산 수집·정책 수행·보고를 담당하는 경량 프로그램.",
+  "features": [
+   "상주 서비스",
+   "정책 수행·보고",
+   "자산 인벤토리 수집"
+  ],
+  "related": [
+   "patch-management-system",
+   "endpoint-detection-and-response"
+  ]
+ },
+ {
+  "id": "software-composition-analysis",
+  "term": "소프트웨어 구성 분석",
+  "term_en": "Software Composition Analysis",
+  "definition": "오픈소스·서드파티 구성요소의 취약점·라이선스를 분석하는 기법.",
+  "features": [
+   "오픈소스 식별",
+   "취약점·라이선스 점검",
+   "공급망 보안"
+  ],
+  "related": [
+   "vulnerability",
+   "patch-management-system"
+  ]
+ },
+ {
+  "id": "spear-phishing",
+  "term": "스피어 피싱",
+  "term_en": "Spear Phishing",
+  "definition": "특정 개인·조직을 표적으로 맞춤 정보를 활용하는 정밀 피싱 공격.",
+  "features": [
+   "표적 맞춤형",
+   "사전 정보 활용",
+   "성공률 높음"
+  ],
+  "related": [
+   "phishing",
+   "advanced-persistent-threat"
+  ]
+ },
+ {
+  "id": "spf",
+  "term": "발신자 정책 프레임워크",
+  "term_en": "Sender Policy Framework",
+  "definition": "허가된 발신 서버를 DNS로 공표해 메일 발신지를 검증하는 인증 기술.",
+  "features": [
+   "발신 IP 검증",
+   "스푸핑 완화",
+   "DKIM·DMARC와 연계"
+  ],
+  "related": [
+   "dmarc",
+   "dkim",
+   "anti-phishing"
+  ]
+ },
+ {
+  "id": "stack-canary",
+  "term": "스택 카나리",
+  "term_en": "Stack Canary",
+  "definition": "스택에 삽입한 검증값의 변조 여부로 버퍼 오버플로를 탐지하는 보호기법.",
+  "features": [
+   "검증값 변조 탐지",
+   "리턴 주소 보호",
+   "ASLR과 병행"
+  ],
+  "related": [
+   "buffer-overflow",
+   "return-address",
+   "address-space-layout-randomization"
+  ]
+ },
+ {
+  "id": "static-analysis",
+  "term": "정적 분석",
+  "term_en": "Static Analysis",
+  "definition": "코드를 실행하지 않고 구조·패턴을 분석해 취약점을 찾는 기법.",
+  "features": [
+   "비실행 코드 분석",
+   "취약 패턴 탐지",
+   "개발 단계 적용"
+  ],
+  "related": [
+   "secure-coding",
+   "fuzzing",
+   "vulnerability"
+  ]
+ },
+ {
+  "id": "suppression",
+  "term": "삭제",
+  "term_en": "Suppression",
+  "definition": "식별 위험이 높은 값을 삭제·마스킹하여 비식별화하는 기법.",
+  "features": [
+   "위험 값 삭제·마스킹",
+   "k-익명성 보완",
+   "정보손실 발생"
+  ],
+  "related": [
+   "anonymization",
+   "generalization",
+   "de-identification"
+  ]
+ },
+ {
+  "id": "threat-intelligence",
+  "term": "위협 인텔리전스",
+  "term_en": "Threat Intelligence",
+  "definition": "위협 행위자·기법·지표를 수집·분석해 방어에 활용하는 정보.",
+  "features": [
+   "IoC·전술 정보",
+   "수집·분석·공유",
+   "선제적 방어 활용"
+  ],
+  "related": [
+   "indicator-of-compromise",
+   "mitre-attack",
+   "deception-technology"
+  ]
+ },
+ {
+  "id": "user-and-entity-behavior-analytics",
+  "term": "사용자·개체 행위분석",
+  "term_en": "User and Entity Behavior Analytics",
+  "definition": "사용자·개체의 정상 행위 기준을 학습해 이상 행위를 탐지하는 기법.",
+  "features": [
+   "행위 기준 학습",
+   "이상징후 탐지",
+   "내부자 위협 대응"
+  ],
+  "related": [
+   "siem",
+   "risk-based-authentication",
+   "incident-response"
+  ]
+ },
+ {
+  "id": "variadic-function",
+  "term": "가변 인자 함수",
+  "term_en": "Variadic Function",
+  "definition": "인자 개수가 가변적인 함수로, 포맷 문자열 처리의 구조적 특성을 가짐.",
+  "features": [
+   "가변 인자 처리",
+   "printf 계열",
+   "포맷 취약점 연관"
+  ],
+  "related": [
+   "secure-coding",
+   "input-validation"
+  ]
+ },
+ {
+  "id": "virtual-patching",
+  "term": "가상패치",
+  "term_en": "Virtual Patching",
+  "definition": "실제 패치 대신 IPS·WAF 등으로 취약점 악용을 차단하는 보상통제.",
+  "features": [
+   "IPS·WAF 시그니처",
+   "패치 불가 시 보완",
+   "임시 완화 조치"
+  ],
+  "related": [
+   "patch-management-system",
+   "waf",
+   "network-segmentation"
+  ]
+ },
+ {
+  "id": "vulnerability",
+  "term": "취약점",
+  "term_en": "Vulnerability",
+  "definition": "공격자가 악용할 수 있는 시스템·소프트웨어의 결함·약점.",
+  "features": [
+   "악용 가능 결함",
+   "CVE·CVSS로 관리",
+   "패치로 제거"
+  ],
+  "related": [
+   "cve",
+   "cvss",
+   "patch-management-system",
+   "exploit"
+  ]
+ },
+ {
+  "id": "waf",
+  "term": "웹 방화벽",
+  "term_en": "Web Application Firewall",
+  "definition": "웹 애플리케이션 계층의 공격을 탐지·차단하는 보안 장비.",
+  "features": [
+   "웹 공격 탐지·차단",
+   "시그니처·행위 기반",
+   "가상패치 수단"
+  ],
+  "related": [
+   "firewall",
+   "virtual-patching",
+   "defense-in-depth"
+  ]
+ },
+ {
+  "id": "windows-server-update-services",
+  "term": "윈도우 서버 업데이트 서비스",
+  "term_en": "Windows Server Update Services",
+  "definition": "마이크로소프트 패치를 중앙에서 배포·관리하는 윈도우 업데이트 서비스.",
+  "features": [
+   "MS 패치 중앙 배포",
+   "승인·일정 관리",
+   "PMS와 연계"
+  ],
+  "related": [
+   "patch-management-system",
+   "patch"
+  ]
+ },
+ {
+  "id": "zero-day-attack",
+  "term": "제로데이 공격",
+  "term_en": "Zero-Day Attack",
+  "definition": "패치가 공개되기 전의 알려지지 않은 취약점을 악용하는 공격.",
+  "features": [
+   "미공개 취약점 악용",
+   "탐지·방어 곤란",
+   "가상패치로 완화"
+  ],
+  "related": [
+   "exploit",
+   "vulnerability",
+   "virtual-patching"
+  ]
+ },
+ {
+  "id": "zero-trust",
+  "term": "제로 트러스트",
+  "term_en": "Zero Trust",
+  "definition": "어떤 접근도 기본 신뢰하지 않고 지속적으로 검증하는 보안 모델.",
+  "features": [
+   "암묵적 신뢰 제거",
+   "지속 검증·최소권한",
+   "신원·상황 기반 통제"
+  ],
+  "related": [
+   "least-privilege",
+   "network-segmentation",
+   "multi-factor-authentication"
+  ]
+ }
+]

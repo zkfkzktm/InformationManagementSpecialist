@@ -1,0 +1,39 @@
+{
+  "id": "t-0b5c7d80",
+  "answers": {
+    "short": "## 1. 공격 표면(Attack Surface)의 개요\n- 정의: 공격자가 시스템에 진입하거나 데이터를 탈취하기 위해 접근·악용할 수 있는 모든 지점(노출 포트·API·계정·사람·물리 장치)의 총합이며, [[attack-vector|공격 벡터]]는 그 지점을 실제로 공략하는 경로·방법\n- 필요성: 클라우드·원격근무·IoT·[[shadow-it|섀도 IT]]로 자산 경계가 사라져 표면이 급증 → 표면 축소와 [[attack-surface-management|공격 표면 관리(ASM)]]가 방어의 출발점\n\n## 2. 공격 표면·벡터 개념도 및 구성요소\n```mermaid\nflowchart LR\n  AT[공격자] -->|\"공격 벡터: 피싱, 취약점 익스플로잇, 자격증명 탈취\"| AS[\"공격 표면: 디지털 · 물리 · 인적\"]\n  AS --> IN[\"초기 침투\"] --> LM[\"측면 이동\"] --> OBJ[\"목표 달성(유출·파괴)\"]\n```\n| 구성요소 | 역할 |\n|---|---|\n| 디지털 표면 | 공개 서비스·API·클라우드 설정·웹앱·VPN·오픈소스 의존성 |\n| 물리 표면 | 단말·USB·네트워크 포트·서버실 |\n| 인적 표면 | 임직원·협력사·[[social-engineering|사회공학]] 대상 |\n| 공격 벡터 | [[phishing|피싱]], 미패치 취약점, 약한 자격증명, 설정 오류, [[supply-chain-attack|공급망]] |\n\n## 3. 측면 이동(Lateral Movement) 단계별 메커니즘\n| 단계 | 메커니즘·주요 기법 |\n|---|---|\n| 내부 정찰 | [[active-directory|AD]] 열거(BloodHound), 네트워크 스캔, 공유 폴더·세션 탐색 |\n| 자격증명 수집 | [[credential-dumping|자격증명 덤핑]](LSASS·Mimikatz), [[kerberoasting|Kerberoasting]], 메모리 내 토큰 탈취 |\n| 권한 상승·이동 | [[pass-the-hash|Pass-the-Hash]]·[[pass-the-ticket|Pass-the-Ticket]], [[remote-desktop-protocol|RDP]]·PsExec·[[windows-management-instrumentation|WMI]]·WinRM 원격 실행, [[living-off-the-land|정상 도구 악용]] |\n| 거점 확보 | 지속성(스케줄 작업·서비스), 다중 호스트 백도어, [[command-and-control|C2]] 유지 |\n\n## 4. 대응 고려사항\n- 표면 축소: 외부 노출 자산 지속 탐지(EASM), 불필요 서비스·계정 제거, [[vulnerability-management|취약점 관리]]\n- 이동 차단: [[network-segmentation|망 분할]]·[[micro-segmentation|마이크로 세그멘테이션]], [[least-privilege|최소 권한]]·관리자 계정 계층화(Tiering), [[multi-factor-authentication|MFA]], [[endpoint-detection-and-response|EDR]]·[[honeypot|허니팟]]으로 이상 이동 탐지, [[zero-trust|제로 트러스트]] 전환",
+    "long": "## 1. 공격 표면(Attack Surface)의 개요\n### 가. 정의\n- 공격 표면: 조직의 정보시스템·네트워크·클라우드·단말·인력 중 공격자가 접근하거나 악용할 수 있는 모든 진입점과 취약 지점의 총합으로, 디지털·물리·인적 표면으로 구분\n- [[attack-vector|공격 벡터]](Attack Vector): 공격자가 공격 표면의 특정 지점을 통해 시스템에 침투하거나 피해를 일으키는 구체적 경로·수단(피싱 메일, 취약점 익스플로잇, 탈취 자격증명 등)\n- [[lateral-movement|측면 이동]](Lateral Movement): 초기 침투 후 내부 네트워크에서 다른 호스트·계정으로 권한을 확장·이동하며 목표 자산에 접근하는 공격 단계([[mitre-attack-framework|MITRE ATT&CK]] TA0008)\n\n### 나. 등장배경 및 필요성\n- 클라우드·SaaS·원격근무·IoT·OT 연결로 경계가 소멸하고 [[shadow-it|섀도 IT]]·미관리 자산이 늘어 공격 표면이 기하급수적으로 확대\n- 랜섬웨어·[[advanced-persistent-threat|APT]]는 단말 1대 감염 후 수일 내 측면 이동으로 도메인 전체를 장악 → 침투 차단(표면 축소)과 침투 후 확산 차단(이동 통제)의 병행 필요\n\n### 다. 핵심 개념\n| 구분 | 공격 표면 | 공격 벡터 |\n|---|---|---|\n| 성격 | 공격 가능한 지점의 집합(정적·구조적) | 지점을 공략하는 경로·방법(동적·행위적) |\n| 관리 주체 관점 | 방어자가 축소·가시화하는 대상 | 공격자가 선택하는 수단, 방어자는 차단·탐지 |\n| 예시 | 외부 노출 RDP 포트, 미패치 VPN 장비, 과다 권한 계정 | RDP 무차별 대입, VPN 취약점 익스플로잇, 자격증명 재사용 |\n| 관계 | 표면이 클수록 선택 가능한 벡터 증가 | 벡터 성공 시 표면 내부로 진입 → 측면 이동 |\n\n## 2. 공격 표면·벡터·측면 이동의 구조 및 구성요소\n### 가. 구조도\n```mermaid\nflowchart TB\n  subgraph SURF[\"공격 표면\"]\n    D[\"디지털: 웹·API·클라우드 설정·VPN·오픈소스 의존성·DNS\"]\n    P[\"물리: 단말·USB·네트워크 포트·서버실·폐기 장비\"]\n    H[\"인적: 임직원·협력사·관리자·소셜미디어 정보\"]\n  end\n  ATK[공격자] -->|\"벡터1: 피싱·악성 첨부\"| H\n  ATK -->|\"벡터2: 취약점 익스플로잇·설정 오류\"| D\n  ATK -->|\"벡터3: 분실 단말·악성 USB\"| P\n  SURF --> INIT[\"초기 침투(거점 호스트)\"]\n  INIT --> R[\"내부 정찰\"] --> C[\"자격증명 수집\"] --> E[\"권한 상승\"] --> M[\"원격 실행·이동\"] --> PERS[\"지속성·거점 확대\"]\n  PERS --> GOAL[\"목표: 도메인 컨트롤러·DB·백업 서버 → 유출·암호화\"]\n  M -->|\"반복\"| R\n```\n\n### 나. 구성요소\n| 구분 | 구성요소 | 내용 | 관련 기법·기술 |\n|---|---|---|---|\n| 공격 표면 | 디지털 표면 | 인터넷 노출 서비스, 클라우드 스토리지 공개 설정, 미관리 서브도메인, 서드파티 라이브러리 | 포트 스캔, 인증서 투명성 로그, [[software-bill-of-materials|SBOM]] |\n| | 물리 표면 | 단말·매체·네트워크 접점·서버실 | 매체제어, 출입통제, 802.1X |\n| | 인적 표면 | 임직원의 공개 정보, 권한 보유자, 협력사 계정 | [[social-engineering|사회공학]] 대상, 보안 인식 |\n| 공격 벡터 | 기망 | [[phishing|피싱]]·스피어피싱·스미싱 | 초기 침투 최다 벡터 |\n| | 취약점 | 미패치 CVE, 제로데이, 설정 오류 | [[vulnerability-management|취약점 관리]], 가상 패치 |\n| | 자격증명 | 유출 비밀번호 재사용, [[credential-stuffing|크리덴셜 스터핑]], 기본 계정 | [[multi-factor-authentication|MFA]], 비밀번호 정책 |\n| | 공급망 | 소프트웨어 업데이트·협력사 경유 | [[supply-chain-attack|공급망 공격]] |\n| 측면 이동 | 내부 정찰 | 네트워크·AD·공유자원 열거 | [[active-directory|AD]] 쿼리, BloodHound, nmap |\n| | 자격증명 수집 | 메모리·레지스트리·브라우저 저장 자격증명 추출 | [[credential-dumping|자격증명 덤핑]], Mimikatz |\n| | 인증 악용 | 해시·티켓 재사용 | [[pass-the-hash|PtH]], [[pass-the-ticket|PtT]], [[kerberoasting|Kerberoasting]] |\n| | 원격 실행 | 정상 관리 도구로 원격 코드 실행 | [[remote-desktop-protocol|RDP]], PsExec, [[windows-management-instrumentation|WMI]], WinRM, SSH |\n\n### 다. 측면 이동 단계별 메커니즘\n1. 초기 거점 확보: 피싱·취약점으로 일반 사용자 단말 장악, 로컬 권한 획득\n2. 내부 정찰: 도메인 사용자·그룹·관리자 세션·신뢰 관계 열거, 접근 가능한 공유·서비스 식별, 공격 경로(Attack Path) 산출\n3. 자격증명 수집: LSASS 메모리 덤프로 NTLM 해시·Kerberos 티켓 획득, 그룹 정책·스크립트 내 저장 비밀번호, 브라우저·RDP 저장 자격증명 추출\n4. 권한 상승: 로컬 취약점·토큰 탈취로 로컬 관리자 획득 → 관리자 세션이 남은 호스트에서 도메인 관리자 자격증명 확보\n5. 인증 우회 이동: PtH·PtT·Overpass-the-Hash로 비밀번호 없이 타 호스트 인증, 도메인 컨트롤러에서 [[golden-ticket|골든 티켓]]·DCSync로 전체 장악\n6. 원격 실행·확산: RDP·SMB(PsExec)·WMI·WinRM·PowerShell Remoting으로 코드 실행, [[living-off-the-land|정상 도구 악용(LotL)]]으로 탐지 회피\n7. 지속성·C2 유지: 서비스·스케줄 작업·WMI 구독 등록, 다중 거점에 백도어, [[command-and-control|C2]] 채널 유지 후 데이터 수집·유출·랜섬웨어 배포\n\n## 3. 공격 표면·측면 이동 상세 분석\n### 가. 측면 이동 주요 기법 비교\n| 기법 | 원리 | 전제 조건 | 탐지 지표 |\n|---|---|---|---|\n| Pass-the-Hash | NTLM 해시로 직접 인증(비밀번호 불필요) | 로컬 관리자 권한, NTLM 허용 | 로그온 유형 3·9, 비정상 호스트 간 NTLM |\n| Pass-the-Ticket | 탈취한 Kerberos TGT·TGS 재사용 | 메모리 내 티켓 접근 | 티켓 수명·발급 호스트 불일치(이벤트 4768·4769) |\n| Kerberoasting | 서비스 계정 TGS 요청 후 오프라인 크래킹 | 도메인 사용자 권한, 약한 서비스 비밀번호 | RC4 암호화 TGS 대량 요청 |\n| RDP·PsExec·WMI | 정상 원격 관리 프로토콜로 명령 실행 | 유효 자격증명, 포트 개방(3389·445·135) | 비업무시간 관리자 로그온, 서비스 생성(7045) |\n| LotL | PowerShell·certutil·rundll32 등 내장 도구 활용 | 실행 정책 미제한 | 스크립트 블록 로깅, 인코딩 명령줄 |\n\n### 나. 공격 표면 관리(ASM)와 전통적 취약점 관리 비교\n| 구분 | 전통적 취약점 관리 | [[attack-surface-management|공격 표면 관리(ASM)]] |\n|---|---|---|\n| 범위 | 알려진 자산의 CVE 스캔 | 미관리·섀도·클라우드·서드파티 자산까지 외부 관점 지속 발견 |\n| 주기 | 정기(월·분기) | 상시(Continuous) |\n| 관점 | 내부자(인벤토리 기준) | 공격자(인터넷에서 보이는 것) |\n| 산출물 | 취약점 목록·패치 | 자산 지도, 노출 위험 우선순위, 공격 경로 |\n\n### 다. 방어 매핑\n| 공격 단계 | 방어 통제 |\n|---|---|\n| 표면 축소 | 불필요 포트·서비스·계정 제거, 클라우드 설정 점검(CSPM), EASM, 취약점 관리, 공급망 SBOM |\n| 초기 침투 차단 | 메일 보안·보안 인식 교육, MFA, 패치·가상 패치 |\n| 정찰·자격증명 보호 | LSASS 보호(Credential Guard·PPL), LAPS로 로컬 관리자 비밀번호 무작위화, 관리자 계층화(Tier 0/1/2), 특권 접근 워크스테이션 |\n| 이동 차단 | [[network-segmentation|망 분할]]·[[micro-segmentation|마이크로 세그멘테이션]], 호스트 방화벽으로 SMB·RDP 수평 통신 차단, NTLM 제한·Kerberos AES 강제, [[least-privilege|최소 권한]] |\n| 탐지·대응 | [[endpoint-detection-and-response|EDR]]·NDR의 이상 인증·원격 실행 탐지, [[honeypot|허니팟]]·허니토큰, [[siem|SIEM]] 상관분석, 침해 격리 플레이북 |\n\n## 4. 적용 시 고려사항 및 발전방향\n| 구분 | 고려사항 |\n|---|---|\n| 자산 가시성 | 표면은 \"모르는 자산\"에서 발생 → 자산 인벤토리 자동화, 클라우드·SaaS·협력사 접점 포함 |\n| 운영 영향 | 세그멘테이션·NTLM 차단은 레거시 호환 문제 → 단계적 적용, 감사 모드 선행 |\n| 특권 관리 | 도메인 관리자 상시 사용 금지, JIT(Just-in-Time) 권한, 세션 기록 |\n| 공격 경로 중심 | 개별 취약점 수보다 도메인 관리자까지의 경로(Choke Point) 제거 우선 |\n| 발전방향 | [[zero-trust|제로 트러스트]] 아키텍처(ID·장치 상태 기반 세션별 검증)로 암묵적 내부 신뢰 제거, CTEM(지속 위협 노출 관리), AI 기반 공격 경로 시뮬레이션·자동 대응 |\n\n## 5. 결론\n- 공격 표면 축소는 벡터 선택지를 줄여 침투 확률을 낮추고, 세그멘테이션·특권 관리·EDR 탐지는 침투 후 측면 이동을 차단해 피해를 국소화하므로, 외부 관점의 지속적 표면 관리와 내부 신뢰를 제거하는 제로 트러스트를 결합한 다층 전략이 IT 인프라 확장기의 핵심 대응"
+  },
+  "keywords": [
+    "active-directory",
+    "advanced-persistent-threat",
+    "attack-surface-management",
+    "attack-vector",
+    "command-and-control",
+    "credential-dumping",
+    "credential-stuffing",
+    "endpoint-detection-and-response",
+    "golden-ticket",
+    "honeypot",
+    "kerberoasting",
+    "lateral-movement",
+    "least-privilege",
+    "living-off-the-land",
+    "micro-segmentation",
+    "mitre-attack-framework",
+    "multi-factor-authentication",
+    "network-segmentation",
+    "pass-the-hash",
+    "pass-the-ticket",
+    "phishing",
+    "remote-desktop-protocol",
+    "shadow-it",
+    "siem",
+    "social-engineering",
+    "software-bill-of-materials",
+    "supply-chain-attack",
+    "vulnerability-management",
+    "windows-management-instrumentation",
+    "zero-trust"
+  ]
+}

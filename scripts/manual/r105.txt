@@ -1,0 +1,39 @@
+기술사 제 105 회 제 1 교시
+※ 다음 문제 중 10문제를 선택하여 설명하시오. (각10점)
+1. 크라우드소싱 테스트(Crowdsourcing Test)를 설명하시오.
+2. 기계학습(Machine Learning)을 정의하고 알고리즘 유형을 설명하시오.
+3. 핀테크(FinTech)를 정의하고 보안측면의 이슈와 해결방안을 설명하시오.
+4. 빅데이터 분석방법인 Bagging과 Boosting 기법을 비교하여 설명하시오.
+5. 반복점증적 개발방법과 폭포수형 개발방법을 비교하여 설명하시오.
+6. 소프트웨어의 회귀시험(Regression Test)에 대하여 설명하시오.
+7. 분산컴퓨팅(Distributed Computing) 및 분산처리(Distributed Processing)를 각각 정의하고 투명성(Transparency)에 대하여 설명하시오.
+8. 데이터베이스의 체크포인트(Checkpoint) 회복기법에 대하여 설명하시오.
+9. B-Tree와 비트맵(Bitmap) 인덱스를 비교 설명하시오.
+10. DOI(Digital Object Identifier)에 대하여 설명하시오.
+11. 정보보호를 위한 해시함수(Hash Function) 종류에 대하여 설명하시오.
+12. 데이터베이스 튜닝(Tuning)의 3단계와 튜닝의 기대효과에 대하여 설명하시오.
+13. Agile의 Scrum과 Kanban 방법의 차이점과 보완점을 설명하시오.
+기술사 제 105 회 제 2 교시
+※ 다음 문제 중 4문제를 선택하여 설명하시오. (각25점)
+1. 빅데이터 분산처리시스템인 하둡 MapReduce의 한계점을 중심으로 Apache Spark와 Apache Storm을 비교하여 설명하시오.
+2. 오픈소스 하드웨어(Open Source Hardware)의 개념과 구성요소를 설명하고 아두이노(Arduino)와 라즈베리파이(Raspberry Pi)를 비교하여 설명하시오.
+3. 학사관리시스템에서 아래 스키마(Schema)를 이용할 때, 키(Key or Candidate Key), 주키(Primary Key), 외부키(Foreign Key), 슈퍼키(Super Key)를 정의하고 추출하는 과정 및 방법을 설명하시오. "학생" 스키마(학번, 주민등록번호, 이름, 전공, 성별, 학과번호) / "학과" 스키마(학과번호, 학과명, 설립연도)
+4. 자동차에 탑재되는 소프트웨어의 기능안전 국제규격인 ISO26262에 대한 정의, 배경, 규격 및 기술기준을 설명하시오.
+5. 정보통신망법을 기준으로 개인정보의 기술적 보호조치 기준과 관리적 보호조치 기준의 상세규정내용을 각각 5가지 이상 설명하시오.
+6. 기능점수(Function Point) 산출방법에 대하여 설명하고, 간이법을 적용하여 아래의 이벤트(Event) 리스트와 "ISBSG(International Software Benchmark Standard Group) 평균복잡도"를 근거로 기능점수를 산출하시오. <이벤트 리스트> 가. 담당자는 고객주문을 입력, 수정, 삭제한다.(고객DB) 나. 인사담당자는 사원목록을 부서단위로 조회한다.(사원DB, 부서DB) 다. 인사담당자는 사원목록을 단순 출력한다.(사원DB) 라. 인사담당자는 일정 금액 이상의 급여 수령자 사원목록을 검색한다.(사원DB, 급여DB) 마. 원화에 대한 미국 달러(USD) 가치를 찾기 위해 A은행 외환DB에서 환율을 검색한다.(외환DB) 바. 인사담당자는 5년 경력 이상이고, 해당 직무 수행경험이 있는 사원목록을 추출한다.(사원DB) 사. 인사담당자는 신입/경력사원 입사 시 사원 파일을 갱신한다.(사원DB) 아. 인사담당자는 외국 사원 입사 시 사원의 급여를 결정하기 위해 H연합회 통화정보를 참조한다.(사원DB, 급여DB, 통화DB) 자. 회계시스템은 전표번호(부서번호 중 앞자리 2+년도+일련번호)를 자동 채번한다.(전표DB) 차. 인사담당자는 사원 현황을 엑셀 파일로 업로드 시킨다.(사원DB) <ISBSG 평균복잡도> EI 4.3, EO 5.4, EQ 3.8, ILF 7.4, EIF 5.5
+기술사 제 105 회 제 3 교시
+※ 다음 문제 중 4문제를 선택하여 설명하시오. (각25점)
+1. 아래의 스키마(Schema)와 함수종속성(FD : Functional Dependency)을 이용하여 함수종속도표(Functional Dependency Diagram)를 작성한 뒤, 키(Key)를 찾아내는 과정을 설명하고, BCNF(Boyce-Codd Normal Form)의 정의를 기술하고 조건을 만족시키는 테이블을 설계하시오. 대출 스키마(지점명, 자산, 장소, 대출번호, 고객명, 금액) FD : 지점명 -> 자산, 지점명 -> 장소, 대출번호 -> 지점명, 대출번호 -> 금액
+2. 귀하는 차세대시스템 구축팀의 아키텍트(Architect)로서 상세화단계(Elaboration Phase)에서 작성해야하는 SAD(Software Architecture Document) 문서의 목차를 작성하시오.
+3. 데이터 마이닝에서 데이터를 분류(Classification)하는 의사결정나무(Decision Tree)를 설명하고 의사결정나무의 형성과정과 장단점에 대하여 설명하시오.
+4. 최근 APT(Advanced Persistent Threats)공격과 변종 악성코드 공격이 늘어나고 있다. APT 공격기법과 악성코드(Malicious codes)에 대하여 설명하시오.
+5. 소프트웨어 개발 프로젝트 품질보증(Quality Assurance)을 위한 정보시스템 감리 절차에 대하여 설명하시오.
+6. NAT(Network Address Translation)의 IP Masquerading, Port Forwarding, Load Balancing에 대하여 설명하시오.
+기술사 제 105 회 제 4 교시
+※ 다음 문제 중 4문제를 선택하여 설명하시오. (각25점)
+1. 충분한 데이터가 확보되지 않은 상황에서 데이터 분석을 수행할 경우 통계적 신뢰도를 높이기 위하여 사용하는 Cross Validation 방법을 3가지 이상 예를 들어 설명하시오.
+2. 차세대시스템 구축 프로젝트에서 기존시스템(AS-IS) 데이터를 차세대시스템(TO-BE)으로 이관작업 하는 절차 및 유의사항에 대하여 설명하시오.
+3. 반복수행계획서(Iteration Software Development Plan)와 회차 종료 전에 작성되어져야 하는 반복수행평가서(Iteration Assessment)의 목차를 작성하시오.
+4. 데이터베이스에 저장된 값과 현실 세계를 표현하는 실제값이 일치하는가에 대해 정확성을 의미하는 데이터 무결성 제약(Integrity Constraint)의 유형으로 도메인 무결성 제약과 릴레이션 무결성 제약이 있다. 이 두가지에 대하여 설명하시오.
+5. 최근 IT와 법률의 융합서비스 분야의 디지털포렌식 기술이 수사기관에서 기업의 감사영역으로 확대되고 있다. 기업에서 활용 가능한 디지털포렌식 기술을 설명하고 기업에서 적용 가능한 분야를 설명하시오.
+6. Quick Sort 알고리즘에 대하여 설명하고 아래의 C언어 소스 코드에서 필요시 함수 등을 추가하여 완성하시오. (단, Sort 순서는 오름차순) (소스: void QuickSort(int *data, int n) { } void main() { char data[8] = {'B','I','D','O','Z','L','H'}; puts(data); QuickSort(data, 7); puts(data); })

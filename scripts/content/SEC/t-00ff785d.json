@@ -1,0 +1,32 @@
+{
+ "id": "t-00ff785d",
+ "answers": {
+  "short": "## 1. JWT(JSON Web Token)의 개요\n- 정의: 당사자 간 클레임(Claim)을 JSON으로 표현하고 [[digital-signature|서명]] 또는 암호화하여 URL-safe [[base64|Base64URL]] 문자열로 전달하는 자가수용(Self-contained) 토큰 표준(RFC 7519)\n- 필요성: 서버 세션 저장소 없이 [[stateless-authentication|무상태 인증]]이 필요한 [[restful-api|REST API]]·[[microservices|MSA]]·모바일 환경, [[oauth|OAuth 2.0]]/[[openid-connect|OIDC]] 토큰 포맷\n\n## 2. JWT의 구성 및 인증 메커니즘\n```mermaid\nflowchart LR\n  C[클라이언트] -->|1 ID/PW 로그인| S[인증 서버]\n  S -->|2 JWT 발급| C\n  C -->|\"3 Authorization: Bearer JWT\"| R[리소스 서버]\n  R -->|4 서명 검증 후 응답| C\n```\n| 구성요소 | 역할 |\n|---|---|\n| Header | 토큰 타입(typ)·서명 알고리즘(alg: [[hmac|HS256]], [[rsa|RS256]], ES256) |\n| Payload | 등록 클레임(iss, sub, aud, exp, iat, jti)·공개·비공개 클레임 |\n| Signature | Header.Payload를 비밀키·개인키로 서명, 무결성·발급자 검증 |\n| [[jws|JWS]] / [[jwe|JWE]] | 서명 토큰 / 암호화 토큰 형식 |\n\n## 3. JWT의 장단점\n| 구분 | 내용 |\n|---|---|\n| 장점 | 무상태·수평 확장 용이, 서버 간 공유 간편, 자가수용으로 DB 조회 불필요, 다양한 플랫폼 지원 |\n| 단점 | 페이로드 Base64 인코딩으로 노출(기밀성 없음), 발급 후 강제 만료 어려움, 토큰 길이로 헤더 증가, 탈취 시 만료까지 악용 |\n| 활용 | API 인증, [[single-sign-on|SSO]], OIDC ID Token, 서비스 간 인증, 이메일 검증 링크 |\n\n## 4. 고려사항\n- alg:none·알고리즘 혼동 공격 방지(서버에서 알고리즘 고정), 비밀키 강도·[[key-rotation|키 교체]](JWKS kid 활용)\n- 짧은 exp + [[refresh-token|Refresh Token]], 블랙리스트(jti)로 폐기, HttpOnly·Secure 쿠키 또는 메모리 저장으로 [[xss|XSS]] 대비, 민감정보는 JWE 또는 미포함",
+  "long": "## 1. JWT(JSON Web Token)의 개요\n### 가. 정의\n- 두 당사자 간 전달할 클레임(Claim) 집합을 JSON 객체로 표현하고, [[jws|JWS]](서명) 또는 [[jwe|JWE]](암호화) 구조로 보호하여 [[base64|Base64URL]] 인코딩된 점(.) 구분 문자열로 전달하는 컴팩트·자가수용(Self-contained) 토큰 표준(RFC 7519, IETF JOSE 워킹그룹)\n\n### 나. 등장배경 / 필요성\n- 전통 세션 인증은 서버 측 세션 저장소 의존 → 수평 확장·[[microservices|MSA]]·다중 도메인 환경에서 세션 공유 부담\n- [[restful-api|REST API]]·모바일·SPA는 쿠키 기반 세션보다 토큰 기반 [[stateless-authentication|무상태 인증]]이 적합\n- [[oauth|OAuth 2.0]] Access Token·[[openid-connect|OIDC]] ID Token의 표준 포맷 필요\n\n### 다. 핵심 개념\n| 구분 | 내용 |\n|---|---|\n| 클레임 | 주체에 대한 주장(키-값), 등록·공개·비공개 클레임으로 구분 |\n| 자가수용 | 토큰 자체에 검증에 필요한 정보 포함, 별도 저장소 조회 불필요 |\n| 무결성 | 서명으로 변조 탐지, 발급자 확인 |\n\n## 2. JWT의 구성과 인증 메커니즘\n### 가. 토큰 구조\n```mermaid\nflowchart LR\n  H[\"Header {alg, typ, kid}\"] --> E1[Base64URL]\n  P[\"Payload {iss, sub, aud, exp, iat, jti, roles}\"] --> E2[Base64URL]\n  E1 --> J[\"header.payload\"]\n  E2 --> J\n  J --> SG[\"서명 = HMAC 또는 RSA/ECDSA(header.payload, key)\"]\n  SG --> T[\"JWT = header.payload.signature\"]\n```\n### 나. 구성요소\n| 구성요소 | 역할 | 핵심기술 |\n|---|---|---|\n| Header | 토큰 타입(typ: JWT), 서명 알고리즘(alg), 키 식별자(kid) | JOSE 헤더 |\n| Payload | 등록 클레임(iss 발급자, sub 주체, aud 대상, exp 만료, nbf 유효시작, iat 발급시각, jti 토큰ID), 공개·비공개 클레임 | JSON |\n| Signature | HMACSHA256(base64url(header) + \".\" + base64url(payload), secret) | [[hmac|HMAC]](대칭), [[rsa|RSA]]·ECDSA(비대칭) |\n| [[jwk|JWK]]/JWKS | 서명 검증용 공개키 집합 배포 | JSON Web Key Set |\n\n### 다. 인증 메커니즘(동작 절차)\n```mermaid\nsequenceDiagram\n  participant C as 클라이언트\n  participant A as 인증 서버\n  participant R as 리소스 서버\n  C->>A: 1. 로그인(ID/PW, MFA)\n  A->>A: 2. 인증 후 클레임 구성, 서명\n  A->>C: 3. Access Token(JWT) + Refresh Token\n  C->>R: 4. Authorization: Bearer JWT\n  R->>R: 5. 서명·exp·iss·aud 검증, 클레임으로 인가\n  R->>C: 6. 자원 응답\n  C->>A: 7. 만료 시 Refresh Token으로 재발급\n```\n1. 클라이언트가 자격증명으로 인증 서버에 로그인\n2. 인증 서버가 사용자 정보·권한을 클레임으로 구성, 비밀키(HS256) 또는 개인키(RS256/ES256)로 서명하여 발급\n3. 클라이언트가 토큰을 저장(메모리·HttpOnly 쿠키)하고 요청 시 Bearer 헤더로 전송\n4. 리소스 서버가 공유 비밀키 또는 JWKS 공개키로 서명 검증, 만료·발급자·대상 확인 후 [[authorization|인가]] 수행\n5. 만료 시 [[refresh-token|Refresh Token]]으로 재발급, 로그아웃·탈취 시 폐기 목록 처리\n\n## 3. JWT의 장단점과 활용방안\n### 가. 장단점\n| 구분 | 내용 |\n|---|---|\n| 장점 | 무상태로 서버 확장 용이, 세션 저장소 불필요, 서비스 간 토큰 전달로 분산 인증 간편, URL·헤더 전달 가능한 컴팩트 포맷, 다언어 라이브러리 풍부 |\n| 단점 | 페이로드 미암호화로 정보 노출(기밀성 없음), 발급 후 서버가 즉시 무효화하기 어려움, 클레임 증가 시 토큰 비대화, 탈취 시 만료 전까지 재사용, 알고리즘·키 관리 실수 시 치명적 |\n\n### 나. 세션 기반 인증과의 비교\n| 구분 | 세션·쿠키 | JWT |\n|---|---|---|\n| 상태 저장 | 서버 세션 저장소 | 토큰 자체(무상태) |\n| 확장성 | 세션 공유 필요(Sticky, Redis) | 서명키만 공유 |\n| 강제 로그아웃 | 세션 삭제로 즉시 | 블랙리스트·짧은 만료 필요 |\n| 전송 | 쿠키 자동 전송([[cross-site-request-forgery|CSRF]] 주의) | 헤더 명시 전송([[xss|XSS]] 주의) |\n| 적합 환경 | 단일 웹 애플리케이션 | API·MSA·모바일·SSO |\n\n### 다. 보안 위협과 대응\n| 위협 | 내용 | 대응 |\n|---|---|---|\n| alg:none 공격 | 서명 없음을 허용하는 라이브러리 악용 | 서버에서 허용 알고리즘 화이트리스트 고정 |\n| 알고리즘 혼동 | RS256 공개키를 HS256 비밀키로 사용하게 유도 | 키 타입·alg 일치 검증 |\n| 비밀키 추측 | 약한 HS256 비밀키 [[brute-force-attack|무차별 대입]] | 256비트 이상 난수 키, 비대칭 서명 선호 |\n| 토큰 탈취 | XSS·로그·URL 노출 | HttpOnly·Secure·SameSite 쿠키, URL 전달 금지, [[https|HTTPS]] |\n| [[replay-attack|재전송]] | 탈취 토큰 재사용 | 짧은 exp, jti 중복 검사, Sender-Constrained(DPoP, mTLS) |\n\n### 라. 활용방안\n| 활용 | 내용 |\n|---|---|\n| API 인증 | 게이트웨이에서 1회 검증 후 내부 서비스에 클레임 전달 |\n| [[single-sign-on|SSO]] | OIDC ID Token으로 다수 서비스 로그인 |\n| 서비스 간 인증 | MSA에서 서비스 ID·권한을 JWT로 전달(Client Credentials) |\n| 일회성 링크 | 이메일 인증·비밀번호 재설정 토큰 |\n| 정보 교환 | 서명된 클레임으로 파트너 간 데이터 전달 |\n\n## 4. JWT 적용 시 고려사항 및 발전방향\n| 구분 | 고려사항 |\n|---|---|\n| 수명 | Access Token 수분~1시간, Refresh Token 회전(Rotation)·재사용 탐지 |\n| 폐기 | jti 블랙리스트 또는 버전 클레임으로 강제 만료, 로그아웃 처리 |\n| 키 관리 | kid 기반 [[key-rotation|키 교체]], JWKS 캐시·갱신, 비밀키 [[hsm|HSM]]·비밀관리 저장 |\n| 클레임 | 민감정보 미포함 또는 JWE, 최소 클레임, aud·iss 필수 검증 |\n| 저장 | 브라우저 localStorage 지양, 메모리 또는 HttpOnly 쿠키 |\n| 발전방향 | DPoP·mTLS 바인딩 토큰, PASETO·Biscuit 등 대안 토큰, [[verifiable-credential|검증가능 자격증명]](VC-JWT) |\n\n## 5. 결론\n- JWT는 무상태·자가수용 토큰으로 분산 환경 인증을 단순화하지만 기밀성 부재와 폐기 어려움이 있으므로, 짧은 만료·키 관리·알고리즘 고정·안전한 저장을 전제로 API·MSA·SSO 인증의 표준 수단으로 활용"
+ },
+ "keywords": [
+  "authorization",
+  "base64",
+  "brute-force-attack",
+  "cross-site-request-forgery",
+  "digital-signature",
+  "hmac",
+  "hsm",
+  "https",
+  "jwe",
+  "jwk",
+  "jws",
+  "key-rotation",
+  "microservices",
+  "oauth",
+  "openid-connect",
+  "refresh-token",
+  "replay-attack",
+  "restful-api",
+  "rsa",
+  "single-sign-on",
+  "stateless-authentication",
+  "verifiable-credential",
+  "xss"
+ ]
+}

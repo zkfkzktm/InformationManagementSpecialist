@@ -1,0 +1,6019 @@
+[
+ {
+  "id": "access-control",
+  "term": "접근통제",
+  "term_en": "Access Control",
+  "definition": "주체가 객체(정보·시스템)에 접근하는 것을 식별·인증·인가 절차로 허용·제한하는 보안 메커니즘.",
+  "features": [
+   "식별·인증·인가·책임추적성으로 구성",
+   "DAC·MAC·RBAC 등 접근통제 모델",
+   "최소 권한·직무 분리 원칙 적용",
+   "ISMS-P 보호대책 요구사항의 핵심 분야"
+  ],
+  "related": [
+   "least-privilege",
+   "multi-factor-authentication",
+   "isms-p"
+  ]
+ },
+ {
+  "id": "advanced-persistent-threat",
+  "term": "지능형 지속 위협",
+  "term_en": "Advanced Persistent Threat",
+  "definition": "자원이 풍부한 공격자가 특정 조직을 표적으로 제로데이·사회공학 등을 결합해 장기간 은밀히 침투·잠복하며 정보 탈취·파괴를 수행하는 공격.",
+  "features": [
+   "표적성·지능성·지속성·은밀성",
+   "킬체인 단계별 공격(정찰~유출)",
+   "스피어 피싱·워터링홀·공급망 침투",
+   "침해 전제 탐지·대응(EDR·SIEM·제로 트러스트)"
+  ],
+  "related": [
+   "cyber-kill-chain",
+   "spear-phishing",
+   "zero-day-attack",
+   "lateral-movement",
+   "endpoint-detection-and-response",
+   "mitre-attack"
+  ]
+ },
+ {
+  "id": "aes",
+  "term": "AES",
+  "term_en": "Advanced Encryption Standard",
+  "definition": "NIST가 2001년 표준화한 128비트 블록 대칭키 암호 알고리즘으로 128·192·256비트 키를 지원.",
+  "features": [
+   "Rijndael 알고리즘 기반 SPN 구조",
+   "10·12·14 라운드 연산",
+   "GCM 모드로 기밀성과 무결성 동시 제공",
+   "하드웨어 가속(AES-NI)으로 고속 처리"
+  ],
+  "related": [
+   "hybrid-encryption",
+   "ipsec",
+   "ssl-tls",
+   "one-time-pad"
+  ]
+ },
+ {
+  "id": "amplification-attack",
+  "term": "증폭 공격",
+  "term_en": "Amplification Attack",
+  "definition": "출발지 IP를 표적으로 위조한 소량 요청을 DNS·NTP·Memcached 등 반사 서버에 보내 수십~수만 배 큰 응답을 표적에 집중시키는 DDoS 기법.",
+  "features": [
+   "반사(Reflection)와 증폭(Amplification) 결합",
+   "UDP 기반 비연결 프로토콜 악용",
+   "Memcached 증폭률 최대 5만 배",
+   "출발지 주소 검증(BCP38)과 반사 서버 응답 제한으로 대응"
+  ],
+  "related": [
+   "ddos",
+   "udp-flooding",
+   "ingress-filtering",
+   "botnet"
+  ]
+ },
+ {
+  "id": "anomaly-detection",
+  "term": "이상 탐지",
+  "term_en": "Anomaly Detection",
+  "definition": "정상 행위 프로파일을 학습한 뒤 이로부터 벗어나는 편차를 침입으로 판단하는 행위 기반 탐지 방식.",
+  "features": [
+   "통계·데이터 마이닝·기계학습 기법 활용",
+   "알려지지 않은 제로데이 공격 탐지 가능",
+   "오탐(False Positive) 비율이 높고 학습 기간 필요",
+   "환경 변화 시 프로파일 재학습 필요"
+  ],
+  "related": [
+   "misuse-detection",
+   "intrusion-detection-system",
+   "false-positive",
+   "zero-day-attack"
+  ]
+ },
+ {
+  "id": "anonymization",
+  "term": "익명처리",
+  "term_en": "Anonymization",
+  "definition": "개인정보에서 식별 요소를 영구적으로 제거·변형하여 추가 정보와 결합하여도 개인을 다시 알아볼 수 없도록 하는 처리.",
+  "features": [
+   "복원 불가능한 비식별 조치",
+   "익명정보는 개인정보보호법 적용 제외",
+   "k-익명성 등 프라이버시 모델로 수준 검증",
+   "가명처리와 달리 추가정보로 재식별 불가"
+  ],
+  "related": [
+   "pseudonymization",
+   "k-anonymity",
+   "de-identification",
+   "re-identification"
+  ]
+ },
+ {
+  "id": "anti-forensics",
+  "term": "안티 포렌식",
+  "term_en": "Anti-Forensics",
+  "definition": "디지털 포렌식 조사를 방해·회피하기 위해 증거를 삭제·은닉·변조하거나 분석 도구를 무력화하는 기법.",
+  "features": [
+   "데이터 완전삭제(와이핑), 암호화, 스테가노그래피",
+   "타임스탬프 조작, 로그 삭제",
+   "파일 시그니처 변조, 디스크 암호화",
+   "포렌식 도구 자체 취약점 공격"
+  ],
+  "related": [
+   "digital-forensics",
+   "steganography",
+   "timeline-analysis"
+  ]
+ },
+ {
+  "id": "anycast",
+  "term": "애니캐스트",
+  "term_en": "Anycast",
+  "definition": "동일 IP 주소를 여러 지리적 위치의 노드에 광고하여 라우팅상 가장 가까운 노드가 요청을 처리하게 하는 주소 지정 방식.",
+  "features": [
+   "BGP 라우팅으로 최근접 노드 선택",
+   "DDoS 트래픽을 전 세계 노드로 자연 분산",
+   "CDN·루트 DNS 서버에 널리 적용",
+   "노드 장애 시 자동으로 다른 노드로 우회"
+  ],
+  "related": [
+   "content-delivery-network",
+   "ddos",
+   "scrubbing-center"
+  ]
+ },
+ {
+  "id": "application-whitelisting",
+  "term": "응용프로그램 화이트리스트",
+  "term_en": "Application Whitelisting",
+  "definition": "사전에 승인된 실행 파일·스크립트만 실행을 허용하고 그 외 모든 프로그램을 차단하는 엔드포인트 보안 기법.",
+  "features": [
+   "블랙리스트(시그니처) 방식의 한계 보완",
+   "알려지지 않은 악성코드·랜섬웨어 실행 차단",
+   "해시·인증서·경로 기반 정책 구성",
+   "관리 부담 및 업무 유연성 저하 고려 필요"
+  ],
+  "related": [
+   "ransomware",
+   "advanced-persistent-threat",
+   "endpoint-detection-and-response"
+  ]
+ },
+ {
+  "id": "argon2",
+  "term": "Argon2",
+  "term_en": "Argon2",
+  "definition": "2015년 Password Hashing Competition 우승 알고리즘으로, 메모리·시간·병렬도를 조절하는 메모리 하드 키 유도 함수.",
+  "features": [
+   "Argon2d·Argon2i·Argon2id 세 변형",
+   "GPU·ASIC 병렬 공격에 강한 메모리 하드 설계",
+   "OWASP 패스워드 저장 1순위 권고",
+   "솔트와 비밀키·추가 데이터 지원"
+  ],
+  "related": [
+   "key-stretching",
+   "hash-salt",
+   "bcrypt",
+   "scrypt",
+   "pbkdf2"
+  ]
+ },
+ {
+  "id": "attack-signature",
+  "term": "공격 시그니처",
+  "term_en": "Attack Signature",
+  "definition": "알려진 공격의 패킷·페이로드·행위 패턴을 규칙으로 정의한 것으로 오용 탐지 IDS·IPS가 비교하는 기준.",
+  "features": [
+   "문자열·정규식·프로토콜 필드 조건으로 기술",
+   "Snort 룰 형식이 사실상 표준",
+   "신규 공격 대응을 위해 지속 업데이트 필요",
+   "회피 기법(인코딩·단편화)에 취약"
+  ],
+  "related": [
+   "misuse-detection",
+   "intrusion-detection-system",
+   "snort"
+  ]
+ },
+ {
+  "id": "attestation",
+  "term": "어테스테이션",
+  "term_en": "Attestation",
+  "definition": "인증장치가 자신의 모델·보안 특성을 제조사 키로 서명하여 증명함으로써 서버가 장치의 신뢰성을 검증하는 절차.",
+  "features": [
+   "FIDO 등록 시 공개키와 함께 전송",
+   "제조사 어테스테이션 인증서 체인 검증",
+   "메타데이터 서비스로 장치 보안 등급 확인",
+   "프라이버시를 위해 배치 단위 키 사용"
+  ],
+  "related": [
+   "fido",
+   "authenticator",
+   "relying-party",
+   "webauthn"
+  ]
+ },
+ {
+  "id": "authentication-header",
+  "term": "AH",
+  "term_en": "Authentication Header",
+  "definition": "IPSec에서 IP 패킷의 무결성과 출처 인증을 제공하는 프로토콜(IP 프로토콜 번호 51)로 암호화는 수행하지 않음.",
+  "features": [
+   "패킷 전체(불변 헤더 포함)에 대한 HMAC 인증",
+   "재전송 공격 방지 시퀀스 번호",
+   "NAT 환경에서 주소 변경으로 검증 실패",
+   "기밀성 필요 시 ESP 사용"
+  ],
+  "related": [
+   "ipsec",
+   "encapsulating-security-payload",
+   "hmac"
+  ]
+ },
+ {
+  "id": "authenticator",
+  "term": "인증장치",
+  "term_en": "Authenticator",
+  "definition": "FIDO에서 사용자의 로컬 인증(생체·PIN)을 수행하고 서비스별 키쌍을 생성·보관하며 챌린지에 서명하는 하드웨어·소프트웨어 구성요소.",
+  "features": [
+   "플랫폼 인증장치(내장)와 로밍 인증장치(보안키)",
+   "개인키는 TEE·SE 등 안전 영역에 보관",
+   "서비스별 고유 키쌍으로 연결불가성 보장",
+   "서명 카운터로 복제 탐지"
+  ],
+  "related": [
+   "fido",
+   "attestation",
+   "trusted-execution-environment",
+   "secure-element"
+  ]
+ },
+ {
+  "id": "authenticator-specific-module",
+  "term": "ASM",
+  "term_en": "Authenticator-Specific Module",
+  "definition": "FIDO UAF에서 인증장치별 하드웨어·구현 차이를 추상화하여 FIDO 클라이언트에 표준 인터페이스를 제공하는 소프트웨어 계층.",
+  "features": [
+   "UAF 11개 기술표준 중 ASM API 규격",
+   "클라이언트-인증장치 간 명령 변환",
+   "인증장치 제조사가 제공",
+   "FIDO2에서는 CTAP이 유사 역할"
+  ],
+  "related": [
+   "universal-authentication-framework",
+   "authenticator",
+   "fido"
+  ]
+ },
+ {
+  "id": "authorized-domain",
+  "term": "인가 도메인",
+  "term_en": "Authorized Domain",
+  "definition": "가정 등 신뢰 단위에 속한 기기들을 하나의 도메인으로 등록하여 도메인 내에서는 콘텐츠를 자유롭게 이용하되 외부 유출은 차단하는 DRM 구조.",
+  "features": [
+   "도메인 키로 콘텐츠 재암호화, 등록 기기만 복호화",
+   "기기 등록 수 제한과 근접성 검증",
+   "DVB-CPCM·Marlin·OMA DRM 2.0 도메인 개념",
+   "홈 네트워크 Seamless Access와 저작권 보호 양립"
+  ],
+  "related": [
+   "digital-transmission-content-protection",
+   "hdcp"
+  ]
+ },
+ {
+  "id": "autopsy",
+  "term": "Autopsy",
+  "term_en": "Autopsy",
+  "definition": "The Sleuth Kit 기반의 오픈소스 디지털 포렌식 GUI 플랫폼으로 디스크 이미지 분석·파일 복구·타임라인 분석 지원.",
+  "features": [
+   "무료 오픈소스, Windows·Linux 지원",
+   "키워드 검색·해시셋 필터링·웹 아티팩트 분석",
+   "모듈 플러그인으로 기능 확장",
+   "교육·수사기관에서 널리 사용"
+  ],
+  "related": [
+   "sleuth-kit",
+   "digital-forensics",
+   "encase",
+   "ftk"
+  ]
+ },
+ {
+  "id": "avalanche-effect",
+  "term": "쇄도 효과",
+  "term_en": "Avalanche Effect",
+  "definition": "입력의 1비트만 변경되어도 출력의 약 절반 비트가 바뀌는 암호 알고리즘의 성질.",
+  "features": [
+   "해시 함수·블록 암호의 안전성 요건",
+   "입력-출력 간 통계적 상관관계 제거",
+   "유사 입력으로 해시값 추론 불가",
+   "엄격한 쇄도 기준(SAC)으로 평가"
+  ],
+  "related": [
+   "hash-function",
+   "collision-resistance"
+  ]
+ },
+ {
+  "id": "backdoor",
+  "term": "백도어",
+  "term_en": "Backdoor",
+  "definition": "정상 인증 절차를 우회하여 시스템에 비밀리에 접근할 수 있도록 설치된 통로 또는 프로그램.",
+  "features": [
+   "APT 공격자의 지속적 접근 거점",
+   "RAT(원격 접근 트로이목마) 형태로 C&C 연결",
+   "개발자가 남긴 디버그 계정도 백도어로 악용",
+   "무결성 검증·행위 탐지로 발견"
+  ],
+  "related": [
+   "advanced-persistent-threat",
+   "rootkit",
+   "trojan-horse",
+   "command-and-control"
+  ]
+ },
+ {
+  "id": "background-knowledge-attack",
+  "term": "배경지식 공격",
+  "term_en": "Background Knowledge Attack",
+  "definition": "공격자가 보유한 외부 지식을 비식별 데이터와 결합하여 민감정보를 추론하는 공격으로 k-익명성의 한계를 보여줌.",
+  "features": [
+   "동질집합 내 민감값 분포와 배경지식 결합",
+   "l-다양성으로 부분 대응",
+   "t-근접성은 분포 유사성까지 요구",
+   "비식별 적정성 평가 시 고려"
+  ],
+  "related": [
+   "k-anonymity",
+   "l-diversity",
+   "homogeneity-attack",
+   "t-closeness"
+  ]
+ },
+ {
+  "id": "bb84-protocol",
+  "term": "BB84 프로토콜",
+  "term_en": "BB84 Protocol",
+  "definition": "1984년 Bennett과 Brassard가 제안한 최초의 양자키분배 프로토콜로 단일 광자의 편광 상태 4가지와 2개 기저를 이용.",
+  "features": [
+   "직선·대각 기저를 무작위 선택하여 비트 부호화",
+   "기저 공개 비교로 일치 비트만 키로 사용(Sifting)",
+   "도청 시 오류율(QBER) 증가로 탐지",
+   "상용 QKD 장비의 기본 프로토콜"
+  ],
+  "related": [
+   "quantum-key-distribution",
+   "e91-protocol",
+   "decoy-state",
+   "single-photon-source"
+  ]
+ },
+ {
+  "id": "bcrypt",
+  "term": "bcrypt",
+  "term_en": "bcrypt",
+  "definition": "Blowfish 암호의 키 확장 단계를 반복하는 패스워드 해시 함수로 cost 파라미터로 연산 횟수를 조절.",
+  "features": [
+   "솔트 내장 및 cost(work factor) 설정",
+   "1999년 OpenBSD에서 도입",
+   "GPU 공격에 비교적 강함",
+   "입력 72바이트 제한"
+  ],
+  "related": [
+   "key-stretching",
+   "hash-salt",
+   "argon2",
+   "pbkdf2"
+  ]
+ },
+ {
+  "id": "biometric-authentication",
+  "term": "생체인증",
+  "term_en": "Biometric Authentication",
+  "definition": "지문·얼굴·홍채·정맥 등 개인의 생체 특성을 이용해 본인을 확인하는 인증 방식.",
+  "features": [
+   "분실·도용 위험이 낮고 사용 편리",
+   "FAR·FRR 등 정확도 지표로 평가",
+   "위조(프레젠테이션 공격) 탐지 필요",
+   "FIDO에서는 단말 내 로컬 인증으로만 사용"
+  ],
+  "related": [
+   "fido",
+   "multi-factor-authentication",
+   "authenticator"
+  ]
+ },
+ {
+  "id": "birthday-attack",
+  "term": "생일 공격",
+  "term_en": "Birthday Attack",
+  "definition": "생일 역설에 따라 n비트 해시 함수의 충돌을 약 2^(n/2)번 시도로 찾을 수 있다는 확률적 공격.",
+  "features": [
+   "충돌 저항성의 실질 안전성을 출력 길이의 절반으로 제한",
+   "128비트 MD5는 2^64 수준으로 취약",
+   "SHA-256은 128비트 충돌 안전성",
+   "전자서명 위조에 악용 가능"
+  ],
+  "related": [
+   "collision-resistance",
+   "hash-function",
+   "md5",
+   "sha-2"
+  ]
+ },
+ {
+  "id": "blockchain",
+  "term": "블록체인",
+  "term_en": "Blockchain",
+  "definition": "거래 기록을 블록 단위로 묶어 해시로 연결하고 P2P 네트워크 참여자가 합의로 공유·검증하는 분산원장 기술.",
+  "features": [
+   "해시 체인·머클 트리로 위변조 저항성",
+   "합의 알고리즘(PoW·PoS·PBFT)으로 중앙기관 없이 신뢰",
+   "퍼블릭·프라이빗·컨소시엄(허가형) 유형",
+   "스마트 컨트랙트로 자동 계약 실행"
+  ],
+  "related": [
+   "merkle-tree",
+   "smart-contract",
+   "proof-of-work",
+   "hash-function",
+   "permissioned-blockchain"
+  ]
+ },
+ {
+  "id": "botnet",
+  "term": "봇넷",
+  "term_en": "Botnet",
+  "definition": "악성코드에 감염되어 공격자의 C&C 서버 명령에 따라 원격 조종되는 다수의 좀비 컴퓨터·IoT 기기 네트워크.",
+  "features": [
+   "DDoS·스팸·암호화폐 채굴 등에 동원",
+   "IoT 봇넷 Mirai로 Tbps급 공격",
+   "IRC·HTTP·P2P 기반 명령 전달",
+   "싱크홀·좀비 PC 치료로 무력화"
+  ],
+  "related": [
+   "ddos",
+   "command-and-control",
+   "malware",
+   "sinkhole"
+  ]
+ },
+ {
+  "id": "brute-force-attack",
+  "term": "무차별 대입 공격",
+  "term_en": "Brute Force Attack",
+  "definition": "가능한 모든 키·패스워드 조합을 순차적으로 시도하여 정답을 찾아내는 공격.",
+  "features": [
+   "키 길이·패스워드 복잡도에 비례해 비용 증가",
+   "GPU·클라우드로 속도 급증",
+   "키 스트레칭·계정 잠금·MFA로 대응",
+   "RDP·SSH 무차별 대입이 랜섬웨어 침투 경로"
+  ],
+  "related": [
+   "dictionary-attack",
+   "rainbow-table",
+   "key-stretching",
+   "multi-factor-authentication"
+  ]
+ },
+ {
+  "id": "business-continuity-management",
+  "term": "업무연속성관리",
+  "term_en": "Business Continuity Management",
+  "definition": "업무 중단 위협을 식별하고 BCP를 수립·운영·훈련·개선하는 전사적 관리체계(ISO 22301).",
+  "features": [
+   "BCP·DRP를 포괄하는 거버넌스 체계",
+   "경영진 책임과 PDCA 기반 지속 개선",
+   "BIA·위험평가·복구전략·훈련으로 구성",
+   "ISO 22301 인증 가능"
+  ],
+  "related": [
+   "business-continuity-planning",
+   "iso-22301",
+   "business-impact-analysis",
+   "plan-do-check-act"
+  ]
+ },
+ {
+  "id": "business-continuity-planning",
+  "term": "업무연속성계획",
+  "term_en": "Business Continuity Planning",
+  "definition": "재해·사이버 공격 등 비상 상황에서 핵심 업무를 지속·복구하기 위해 예방·대응·복구·유지보수 활동을 사전 정의한 종합 계획.",
+  "features": [
+   "BIA로 RTO·RPO·MTPD 도출",
+   "재해예방·대응복구·유지보수·모의훈련 계획",
+   "DRS 유형(미러·핫·웜·콜드) 선정",
+   "정기 검사로 실효성 검증"
+  ],
+  "related": [
+   "business-impact-analysis",
+   "recovery-time-objective",
+   "recovery-point-objective",
+   "disaster-recovery-system",
+   "business-continuity-management"
+  ]
+ },
+ {
+  "id": "business-impact-analysis",
+  "term": "업무영향분석",
+  "term_en": "Business Impact Analysis",
+  "definition": "업무 프로세스 중단 시 재무·운영·법적 영향을 평가하여 핵심 업무 우선순위와 RTO·RPO·MTPD를 도출하는 BCP 핵심 활동.",
+  "features": [
+   "핵심 업무와 의존 자원 식별",
+   "중단 시간에 따른 손실 정량화",
+   "복구 우선순위와 목표 지표 산출",
+   "복구전략 수립의 입력 자료"
+  ],
+  "related": [
+   "business-continuity-planning",
+   "recovery-time-objective",
+   "recovery-point-objective",
+   "maximum-tolerable-period-of-disruption"
+  ]
+ },
+ {
+  "id": "cellebrite",
+  "term": "Cellebrite UFED",
+  "term_en": "Cellebrite UFED",
+  "definition": "스마트폰·태블릿 등 모바일 기기의 논리·물리 데이터를 추출·분석하는 대표적인 상용 모바일 포렌식 도구.",
+  "features": [
+   "잠금 해제·칩오프 등 다양한 추출 방식",
+   "통화·메시지·앱 데이터·위치정보 복원",
+   "수사기관에서 널리 사용",
+   "Physical Analyzer로 분석·보고"
+  ],
+  "related": [
+   "mobile-forensics",
+   "digital-forensics"
+  ]
+ },
+ {
+  "id": "certificate-authority",
+  "term": "인증기관",
+  "term_en": "Certificate Authority",
+  "definition": "PKI에서 사용자·서버의 공개키와 신원을 확인하고 자신의 개인키로 서명한 인증서를 발급·갱신·폐지하는 신뢰기관.",
+  "features": [
+   "인증서 정책(CP)·인증업무준칙(CPS) 운영",
+   "CRL·OCSP로 폐지 정보 제공",
+   "Root CA와 하위 CA의 계층 구조",
+   "CA 개인키는 HSM으로 보호"
+  ],
+  "related": [
+   "public-key-infrastructure",
+   "digital-certificate",
+   "registration-authority",
+   "certificate-revocation-list",
+   "hardware-security-module"
+  ]
+ },
+ {
+  "id": "certificate-chain",
+  "term": "인증서 체인",
+  "term_en": "Certificate Chain",
+  "definition": "최종 개체 인증서에서 중간 CA를 거쳐 신뢰된 Root CA까지 서명을 순차 검증하는 신뢰 경로.",
+  "features": [
+   "각 인증서는 상위 CA 공개키로 서명 검증",
+   "Root CA는 자체 서명, 신뢰 저장소에 사전 등록",
+   "경로 상 모든 인증서의 유효기간·폐지 확인",
+   "TLS 서버는 중간 인증서 함께 전송"
+  ],
+  "related": [
+   "certificate-authority",
+   "digital-certificate",
+   "public-key-infrastructure",
+   "x-509"
+  ]
+ },
+ {
+  "id": "certificate-revocation-list",
+  "term": "인증서 폐지 목록",
+  "term_en": "Certificate Revocation List",
+  "definition": "CA가 유효기간 전에 폐지한 인증서의 일련번호를 서명하여 주기적으로 게시하는 목록.",
+  "features": [
+   "개인키 유출·퇴직 등 사유로 폐지",
+   "디렉터리(LDAP)·HTTP로 배포",
+   "크기 증가와 갱신 지연이 단점",
+   "OCSP가 실시간 조회로 보완"
+  ],
+  "related": [
+   "ocsp",
+   "certificate-authority",
+   "ldap",
+   "public-key-infrastructure"
+  ]
+ },
+ {
+  "id": "chain-of-custody",
+  "term": "증거 보관 연속성",
+  "term_en": "Chain of Custody",
+  "definition": "디지털 증거의 수집부터 법정 제출까지 누가·언제·어떻게 취급했는지를 빠짐없이 기록하여 증거의 동일성·무결성을 입증하는 절차.",
+  "features": [
+   "디지털 포렌식 5대 원칙 중 연계보관성",
+   "인수인계 시 담당자·시각·목적 기록",
+   "해시값으로 각 단계 무결성 검증",
+   "기록 누락 시 증거능력 상실 위험"
+  ],
+  "related": [
+   "digital-forensics",
+   "digital-evidence",
+   "hash-function"
+  ]
+ },
+ {
+  "id": "challenge-response-authentication",
+  "term": "시도-응답 인증",
+  "term_en": "Challenge-Response Authentication",
+  "definition": "검증자가 임의의 챌린지를 보내면 증명자가 비밀키로 계산한 응답을 반환하여 비밀 자체를 노출하지 않고 인증하는 방식.",
+  "features": [
+   "재전송 공격 방지를 위한 일회성 난수",
+   "FIDO는 개인키 서명으로 응답",
+   "HMAC·공개키 서명 등으로 구현",
+   "패스워드 평문 전송 불필요"
+  ],
+  "related": [
+   "fido",
+   "public-key-cryptography",
+   "hmac",
+   "digital-signature"
+  ]
+ },
+ {
+  "id": "chief-information-security-officer",
+  "term": "정보보호 최고책임자",
+  "term_en": "Chief Information Security Officer",
+  "definition": "조직의 정보보호 업무를 총괄하는 임원급 책임자로 정보통신망법 제45조의3에 따라 일정 규모 이상 기업은 지정·신고 의무.",
+  "features": [
+   "정보보호 정책·계획 수립, 침해사고 대응 총괄",
+   "ISMS-P 인증기준 1.1에서 지정 요구",
+   "겸직 제한 대상 기업 존재",
+   "CPO(개인정보 보호책임자)와 구분"
+  ],
+  "related": [
+   "information-security-management-system",
+   "isms-p",
+   "information-and-communications-network-act"
+  ]
+ },
+ {
+  "id": "clearing-house",
+  "term": "클리어링 하우스",
+  "term_en": "Clearing House",
+  "definition": "DRM에서 사용자·기기를 인증하고 콘텐츠 키와 사용 권한을 담은 라이선스를 발급하며 결제·사용 이력을 정산하는 서버.",
+  "features": [
+   "라이선스 서버 역할, 키 관리 담당",
+   "기기 공개키로 라이선스 암호화 전달",
+   "사용 규칙(기간·횟수·기기) 강제의 출발점",
+   "PKI·인증서 기반 신뢰"
+  ],
+  "related": [
+   "packager",
+   "public-key-infrastructure"
+  ]
+ },
+ {
+  "id": "client-to-authenticator-protocol",
+  "term": "CTAP",
+  "term_en": "Client to Authenticator Protocol",
+  "definition": "FIDO2에서 브라우저·OS(클라이언트)와 외부 인증장치(보안키·스마트폰) 간 USB·NFC·BLE 통신 규격.",
+  "features": [
+   "CTAP1은 U2F 호환, CTAP2는 WebAuthn 지원",
+   "PIN·생체로 인증장치 사용자 확인",
+   "로밍 인증장치 연결의 핵심 프로토콜",
+   "WebAuthn과 함께 FIDO2 구성"
+  ],
+  "related": [
+   "webauthn",
+   "fido",
+   "universal-second-factor",
+   "authenticator"
+  ]
+ },
+ {
+  "id": "cloud-forensics",
+  "term": "클라우드 포렌식",
+  "term_en": "Cloud Forensics",
+  "definition": "클라우드 환경에서 VM 이미지·스냅샷·감사 로그 등 분산·가상화된 증거를 CSP 협조 하에 수집·분석하는 디지털 포렌식 분야.",
+  "features": [
+   "멀티테넌시로 물리적 압수 불가, 논리적 수집",
+   "관할권·데이터 소재지 문제",
+   "SLA에 포렌식 협조 조항 필요",
+   "하이퍼바이저 수준 메모리 덤프 활용"
+  ],
+  "related": [
+   "digital-forensics",
+   "multi-tenancy",
+   "cloud-service-provider",
+   "snapshot",
+   "hypervisor"
+  ]
+ },
+ {
+  "id": "cloud-security-assurance-program",
+  "term": "클라우드 보안인증",
+  "term_en": "Cloud Security Assurance Program",
+  "definition": "공공기관에 클라우드 서비스를 제공하려는 사업자의 보안 수준을 KISA가 평가·인증하는 국내 제도.",
+  "features": [
+   "클라우드컴퓨팅법 기반",
+   "상·중·하 등급제로 개편(2023)",
+   "ISMS 인증과 중복 항목 상호 인정",
+   "공공 클라우드 도입 전제 조건"
+  ],
+  "related": [
+   "information-security-management-system",
+   "isms-p",
+   "korea-internet-and-security-agency"
+  ]
+ },
+ {
+  "id": "cloud-service-provider",
+  "term": "클라우드 서비스 제공자",
+  "term_en": "Cloud Service Provider",
+  "definition": "IaaS·PaaS·SaaS 형태로 컴퓨팅 자원을 네트워크로 제공하는 사업자(AWS·Azure·GCP·네이버클라우드 등).",
+  "features": [
+   "공동 책임 모델로 보안 책임 분담",
+   "포렌식·감사 시 로그·스냅샷 제공 협조 필요",
+   "멀티테넌시 기반 자원 공유",
+   "SLA로 가용성·보안 수준 약정"
+  ],
+  "related": [
+   "cloud-forensics",
+   "multi-tenancy",
+   "service-level-agreement"
+  ]
+ },
+ {
+  "id": "code-based-cryptography",
+  "term": "코드 기반 암호",
+  "term_en": "Code-based Cryptography",
+  "definition": "오류정정 부호의 일반 복호 문제가 어렵다는 점에 기반한 양자내성 공개키 암호 계열.",
+  "features": [
+   "1978년 McEliece 암호가 원조",
+   "수십 년간 해독되지 않은 보수적 설계",
+   "공개키 크기가 매우 큼(수백 KB)",
+   "NIST 4라운드 Classic McEliece, HQC 선정"
+  ],
+  "related": [
+   "post-quantum-cryptography",
+   "lattice-based-cryptography"
+  ]
+ },
+ {
+  "id": "cold-site",
+  "term": "콜드 사이트",
+  "term_en": "Cold Site",
+  "definition": "전원·공간·통신 등 기본 설비만 확보하고 장비는 재해 발생 후 반입·설치하여 복구하는 저비용 재해복구 사이트.",
+  "features": [
+   "복구 시간 수주~수개월",
+   "구축·유지 비용 최저",
+   "데이터는 외부 보관 백업으로 복원",
+   "비핵심 업무에 적합"
+  ],
+  "related": [
+   "disaster-recovery-system",
+   "hot-site",
+   "warm-site",
+   "mirror-site"
+  ]
+ },
+ {
+  "id": "cold-wallet",
+  "term": "콜드월렛",
+  "term_en": "Cold Wallet",
+  "definition": "인터넷에 연결되지 않은 하드웨어·종이 등에 개인키를 보관하는 암호화폐 지갑으로 온라인 해킹 위험을 차단.",
+  "features": [
+   "핫월렛 대비 보안성 높으나 편의성 낮음",
+   "거래소는 자산 대부분을 콜드월렛 보관 의무",
+   "하드웨어 지갑(Ledger·Trezor)이 대표적",
+   "물리적 분실·시드 백업 관리 필요"
+  ],
+  "related": [
+   "key-management",
+   "hardware-security-module",
+   "multi-signature"
+  ]
+ },
+ {
+  "id": "collision-resistance",
+  "term": "충돌 저항성",
+  "term_en": "Collision Resistance",
+  "definition": "동일한 해시값을 갖는 서로 다른 두 입력을 찾는 것이 계산적으로 불가능해야 한다는 해시 함수의 성질.",
+  "features": [
+   "생일 공격으로 안전성은 출력 길이의 절반",
+   "MD5·SHA-1은 충돌 저항성 붕괴",
+   "전자서명 위조 방지에 필수",
+   "역상·제2역상 저항성보다 강한 조건"
+  ],
+  "related": [
+   "hash-function",
+   "birthday-attack",
+   "preimage-resistance",
+   "second-preimage-resistance"
+  ]
+ },
+ {
+  "id": "command-and-control",
+  "term": "명령제어 서버",
+  "term_en": "Command and Control",
+  "definition": "공격자가 감염된 시스템·봇넷에 명령을 내리고 탈취 정보를 수신하기 위해 운영하는 서버 및 통신 채널.",
+  "features": [
+   "HTTPS·DNS 터널링·클라우드 서비스로 위장",
+   "도메인 생성 알고리즘(DGA)으로 차단 회피",
+   "Tor 등 익명 네트워크 활용",
+   "싱크홀·평판 기반 차단으로 대응"
+  ],
+  "related": [
+   "botnet",
+   "advanced-persistent-threat",
+   "ransomware",
+   "sinkhole",
+   "tor"
+  ]
+ },
+ {
+  "id": "conditional-access-system",
+  "term": "수신제한시스템",
+  "term_en": "Conditional Access System",
+  "definition": "유료 방송에서 콘텐츠를 스크램블링하고 정당한 가입자만 스마트카드·키로 복호화할 수 있도록 통제하는 시스템.",
+  "features": [
+   "제어어(CW)·ECM·EMM 계층적 키 구조",
+   "스마트카드 기반 가입자 인증",
+   "위성·케이블·IPTV에 적용",
+   "DRM과 결합하여 홈 네트워크 보호"
+  ],
+  "related": [
+   "copy-protection"
+  ]
+ },
+ {
+  "id": "content-delivery-network",
+  "term": "콘텐츠 전송 네트워크",
+  "term_en": "Content Delivery Network",
+  "definition": "전 세계에 분산 배치된 엣지 서버가 콘텐츠를 캐싱·전달하여 응답 속도를 높이고 원본 서버 부하를 줄이는 네트워크.",
+  "features": [
+   "애니캐스트·GSLB로 최근접 노드 연결",
+   "DDoS 트래픽을 엣지에서 흡수·필터링",
+   "TLS 종단으로 HTTPS L7 공격 방어 가능",
+   "원본 IP 은닉 필요, 웹 서비스 중심"
+  ],
+  "related": [
+   "anycast",
+   "ddos",
+   "scrubbing-center",
+   "waf"
+  ]
+ },
+ {
+  "id": "content-filtering",
+  "term": "콘텐츠 필터링",
+  "term_en": "Content Filtering",
+  "definition": "웹·메일 등의 콘텐츠를 규칙·패턴에 따라 검사하여 유해·개인정보 포함·추적 요소를 차단하는 기술.",
+  "features": [
+   "URL·키워드·패턴 기반 필터",
+   "추적 쿠키·광고 차단으로 프라이버시 보호",
+   "DLP의 개인정보 패턴 검출과 연계",
+   "초기 PET 분류의 필터링 기술"
+  ],
+  "related": [
+   "privacy-enhancing-technology",
+   "data-loss-prevention"
+  ]
+ },
+ {
+  "id": "copy-protection",
+  "term": "복제 방지",
+  "term_en": "Copy Protection",
+  "definition": "저장매체·전송 구간에서 디지털 콘텐츠의 비인가 복제를 기술적으로 차단하는 보호 수단.",
+  "features": [
+   "DVD CSS, 블루레이 AACS",
+   "전송 구간 DTCP, 출력 구간 HDCP",
+   "복제제어정보(CCI)로 복제 허용 횟수 지정",
+   "아날로그 홀은 워터마킹으로 보완"
+  ],
+  "related": [
+   "digital-transmission-content-protection",
+   "hdcp",
+   "digital-watermarking"
+  ]
+ },
+ {
+  "id": "cross-certification",
+  "term": "상호인증",
+  "term_en": "Cross-Certification",
+  "definition": "서로 다른 PKI 도메인의 CA가 상대 CA의 인증서를 발급하여 양 도메인 사용자가 상호 신뢰할 수 있게 하는 방식.",
+  "features": [
+   "네트워크형 신뢰 모델의 기반",
+   "브리지 CA로 다수 도메인 연결",
+   "인증서 경로 탐색 복잡성 증가",
+   "국가·조직 간 PKI 연동에 활용"
+  ],
+  "related": [
+   "public-key-infrastructure",
+   "certificate-authority",
+   "certificate-chain"
+  ]
+ },
+ {
+  "id": "crypto-agility",
+  "term": "암호 민첩성",
+  "term_en": "Crypto Agility",
+  "definition": "사용 중인 암호 알고리즘·키 길이·프로토콜을 시스템 재설계 없이 신속히 교체할 수 있도록 설계하는 원칙.",
+  "features": [
+   "PQC 전환의 핵심 전제",
+   "알고리즘 하드코딩 금지, 추상화 계층",
+   "암호 자산 인벤토리 관리",
+   "하이브리드 모드로 점진 전환"
+  ],
+  "related": [
+   "post-quantum-cryptography",
+   "quantum-computer",
+   "hash-function"
+  ]
+ },
+ {
+  "id": "cyber-kill-chain",
+  "term": "사이버 킬체인",
+  "term_en": "Cyber Kill Chain",
+  "definition": "록히드마틴이 제시한 사이버 공격의 7단계 모델(정찰-무기화-전달-익스플로잇-설치-C&C-목표 수행)로 단계별 방어 전략 수립에 활용.",
+  "features": [
+   "APT 공격 분석의 표준 프레임워크",
+   "한 단계라도 차단하면 공격 실패",
+   "단계별 탐지·차단 통제 매핑",
+   "MITRE ATT&CK이 세부 기법으로 보완"
+  ],
+  "related": [
+   "advanced-persistent-threat",
+   "mitre-attack",
+   "command-and-control"
+  ]
+ },
+ {
+  "id": "cyber-shelter",
+  "term": "사이버 대피소",
+  "term_en": "Cyber Shelter",
+  "definition": "KISA가 중소기업·비영리기관을 대상으로 DDoS 공격 트래픽을 대신 받아 정화한 뒤 정상 트래픽만 전달해 주는 무료 방어 서비스.",
+  "features": [
+   "DNS 변경으로 대피소 경유",
+   "자체 방어 장비 없는 기관 지원",
+   "공격 시 긴급 신청 가능",
+   "스크러빙 센터와 유사한 구조"
+  ],
+  "related": [
+   "ddos",
+   "scrubbing-center",
+   "korea-internet-and-security-agency"
+  ]
+ },
+ {
+  "id": "dark-web",
+  "term": "다크웹",
+  "term_en": "Dark Web",
+  "definition": "Tor 등 익명 네트워크를 통해서만 접근 가능한 숨겨진 웹 영역으로 .onion 도메인을 사용.",
+  "features": [
+   "검색엔진에 색인되지 않음",
+   "RaaS·유출 데이터·해킹 도구 거래",
+   "익명 제보·검열 우회 등 순기능도 존재",
+   "위협 인텔리전스 수집 대상"
+  ],
+  "related": [
+   "tor",
+   "onion-routing",
+   "ransomware-as-a-service",
+   "threat-intelligence"
+  ]
+ },
+ {
+  "id": "data-aggregation",
+  "term": "총계처리",
+  "term_en": "Data Aggregation",
+  "definition": "개별 데이터 값을 총합·평균 등 통계값으로 대체하여 개인을 식별할 수 없게 하는 비식별 기법.",
+  "features": [
+   "총계처리·부분총계·라운딩·재배열 세부기술",
+   "개별 값 노출 없이 통계적 유용성 유지",
+   "소수 집단은 총계로도 추론 가능",
+   "비식별 조치 가이드라인 5대 기법 중 하나"
+  ],
+  "related": [
+   "de-identification",
+   "data-suppression",
+   "data-categorization",
+   "data-masking"
+  ]
+ },
+ {
+  "id": "data-categorization",
+  "term": "데이터 범주화",
+  "term_en": "Data Categorization",
+  "definition": "개별 값을 범위·범주로 일반화하여 정확한 값을 숨기는 비식별 기법(예: 35세 → 30대).",
+  "features": [
+   "감추기·랜덤 라운딩·범위 방법·제어 라운딩",
+   "k-익명성 달성의 주요 수단",
+   "일반화 수준에 따라 유용성 손실",
+   "준식별자에 주로 적용"
+  ],
+  "related": [
+   "de-identification",
+   "k-anonymity",
+   "quasi-identifier"
+  ]
+ },
+ {
+  "id": "data-loss-prevention",
+  "term": "데이터 유출 방지",
+  "term_en": "Data Loss Prevention",
+  "definition": "엔드포인트·네트워크·저장소에서 민감 데이터의 흐름을 모니터링하고 정책 위반 전송·복사를 차단하는 보안 솔루션.",
+  "features": [
+   "패턴·지문·분류 기반 민감정보 식별",
+   "메일·USB·웹 업로드 통제",
+   "APT 정보 유출 단계 대응",
+   "개인정보·영업비밀 보호 규제 준수"
+  ],
+  "related": [
+   "advanced-persistent-threat",
+   "content-filtering",
+   "network-segmentation"
+  ]
+ },
+ {
+  "id": "data-masking",
+  "term": "데이터 마스킹",
+  "term_en": "Data Masking",
+  "definition": "데이터의 일부를 공백·대체 문자로 가리거나 임의 잡음을 추가하여 식별을 어렵게 하는 비식별 기법.",
+  "features": [
+   "임의 잡음 추가, 공백과 대체 세부기술",
+   "홍길동 → 홍○○ 형태",
+   "원본 형식 유지로 테스트 데이터에 적합",
+   "단독으로는 재식별 위험 잔존"
+  ],
+  "related": [
+   "de-identification",
+   "data-suppression",
+   "pseudonymization"
+  ]
+ },
+ {
+  "id": "data-replication",
+  "term": "데이터 복제",
+  "term_en": "Data Replication",
+  "definition": "주 시스템의 데이터를 재해복구 센터 등 다른 위치의 시스템에 실시간 또는 주기적으로 복사·동기화하는 기술.",
+  "features": [
+   "동기 복제는 RPO 0, 거리 제한",
+   "비동기 복제는 장거리 가능, 데이터 손실 일부",
+   "스토리지·DB·호스트 계층 복제",
+   "DRS 유형과 RPO 결정 요소"
+  ],
+  "related": [
+   "disaster-recovery-system",
+   "recovery-point-objective",
+   "mirror-site",
+   "hot-site"
+  ]
+ },
+ {
+  "id": "data-suppression",
+  "term": "데이터 삭제",
+  "term_en": "Data Suppression",
+  "definition": "식별자·민감 항목 또는 특이 레코드 자체를 제거하는 가장 직접적인 비식별 기법.",
+  "features": [
+   "식별자 삭제·부분삭제·레코드 삭제·식별요소 전부삭제",
+   "이름·주민번호 등 식별자는 원칙적 삭제",
+   "이상치 레코드 삭제로 k-익명성 확보",
+   "삭제 범위가 넓을수록 유용성 감소"
+  ],
+  "related": [
+   "de-identification",
+   "identifier",
+   "data-aggregation"
+  ]
+ },
+ {
+  "id": "ddos",
+  "term": "분산 서비스 거부 공격",
+  "term_en": "Distributed Denial of Service",
+  "definition": "다수의 감염 호스트(봇넷)로 표적에 대량 트래픽·요청을 동시에 발생시켜 정상 서비스를 불가능하게 하는 공격.",
+  "features": [
+   "대역폭 소진·자원 소진·애플리케이션 계층 유형",
+   "반사·증폭으로 Tbps급 대규모화",
+   "전용 장비·스크러빙 센터·CDN 다층 방어",
+   "봇넷 근절·출발지 검증이 중장기 대책"
+  ],
+  "related": [
+   "botnet",
+   "denial-of-service",
+   "amplification-attack",
+   "scrubbing-center",
+   "content-delivery-network"
+  ]
+ },
+ {
+  "id": "de-identification",
+  "term": "개인정보 비식별 조치",
+  "term_en": "De-identification",
+  "definition": "정보 집합물에서 개인 식별 요소를 삭제·대체하여 특정 개인을 알아볼 수 없도록 하는 가명·익명처리 포괄 조치.",
+  "features": [
+   "사전검토·비식별 조치·적정성 평가·사후관리 절차",
+   "가명처리·총계처리·삭제·범주화·마스킹 5대 기법",
+   "k-익명성 등 프라이버시 모델로 평가",
+   "데이터 3법 이후 가명정보 법제로 발전"
+  ],
+  "related": [
+   "pseudonymization",
+   "anonymization",
+   "k-anonymity",
+   "re-identification",
+   "privacy-enhancing-technology"
+  ]
+ },
+ {
+  "id": "decentralized-identity",
+  "term": "분산 신원",
+  "term_en": "Decentralized Identity",
+  "definition": "중앙 기관 없이 사용자가 블록체인 등 분산원장에 등록된 식별자(DID)와 검증가능 자격증명(VC)으로 신원을 스스로 관리·증명하는 모델.",
+  "features": [
+   "W3C DID·VC 표준",
+   "자기주권 신원(SSI) 개념",
+   "선택적 공개로 프라이버시 강화",
+   "PKI·FIDO와 상호 보완"
+  ],
+  "related": [
+   "public-key-infrastructure",
+   "fido",
+   "blockchain",
+   "zero-knowledge-proof"
+  ]
+ },
+ {
+  "id": "decoy-state",
+  "term": "디코이 상태",
+  "term_en": "Decoy State",
+  "definition": "QKD에서 세기가 다른 유인 광펄스를 섞어 보내 다광자 펄스를 이용한 광자수 분할 공격을 탐지·무력화하는 기법.",
+  "features": [
+   "감쇄 레이저 광원의 한계 보완",
+   "신호·디코이 펄스 검출률 비교로 도청 판별",
+   "상용 BB84 시스템의 표준 구성",
+   "키 생성률·전송 거리 향상"
+  ],
+  "related": [
+   "quantum-key-distribution",
+   "photon-number-splitting-attack",
+   "bb84-protocol",
+   "single-photon-source"
+  ]
+ },
+ {
+  "id": "deep-packet-inspection",
+  "term": "심층 패킷 검사",
+  "term_en": "Deep Packet Inspection",
+  "definition": "패킷 헤더뿐 아니라 페이로드 내용까지 분석하여 애플리케이션·공격 패턴을 식별하는 기술.",
+  "features": [
+   "IDS·IPS·NGFW의 핵심 분석 기술",
+   "암호화 트래픽은 복호화 없이는 제한",
+   "성능 부하와 프라이버시 쟁점",
+   "프로토콜 디코딩·시그니처 매칭"
+  ],
+  "related": [
+   "intrusion-detection-system",
+   "intrusion-prevention-system",
+   "attack-signature"
+  ]
+ },
+ {
+  "id": "denial-of-service",
+  "term": "서비스 거부 공격",
+  "term_en": "Denial of Service",
+  "definition": "시스템·네트워크 자원을 고갈시키거나 취약점을 악용하여 정상 사용자의 서비스 이용을 방해하는 공격.",
+  "features": [
+   "가용성을 침해하는 대표 공격",
+   "단일 출발지 공격, 분산되면 DDoS",
+   "Flooding·프로토콜 악용·애플리케이션 공격 유형",
+   "임계치·필터링·이중화로 대응"
+  ],
+  "related": [
+   "ddos",
+   "syn-flooding",
+   "udp-flooding",
+   "botnet"
+  ]
+ },
+ {
+  "id": "detector-blinding-attack",
+  "term": "검출기 블라인딩 공격",
+  "term_en": "Detector Blinding Attack",
+  "definition": "강한 연속광으로 QKD 수신기의 단일 광자 검출기를 선형 모드로 전환시켜 공격자가 측정 결과를 통제하는 구현 취약점 공격.",
+  "features": [
+   "2010년 상용 QKD 장비에서 실증",
+   "프로토콜이 아닌 하드웨어 구현 결함 악용",
+   "검출기 감시·MDI-QKD로 대응",
+   "양자 해킹(Quantum Hacking) 대표 사례"
+  ],
+  "related": [
+   "quantum-key-distribution",
+   "single-photon-detector",
+   "measurement-device-independent-qkd"
+  ]
+ },
+ {
+  "id": "dictionary-attack",
+  "term": "사전 공격",
+  "term_en": "Dictionary Attack",
+  "definition": "자주 쓰이는 단어·패스워드 목록(사전)을 순서대로 대입하여 패스워드·암호키를 찾는 공격.",
+  "features": [
+   "무차별 대입보다 효율적",
+   "유출 패스워드 목록 활용",
+   "솔트·키 스트레칭·복잡도 정책으로 대응",
+   "포렌식에서 보호 파일 해제에도 활용"
+  ],
+  "related": [
+   "brute-force-attack",
+   "rainbow-table",
+   "hash-salt",
+   "key-stretching"
+  ]
+ },
+ {
+  "id": "differential-privacy",
+  "term": "차분 프라이버시",
+  "term_en": "Differential Privacy",
+  "definition": "질의 결과에 수학적으로 보정된 잡음을 추가하여 특정 개인의 포함 여부가 결과에 미치는 영향을 ε 이내로 제한하는 프라이버시 보호 모델.",
+  "features": [
+   "ε(엡실론)으로 보호 수준 정량화",
+   "라플라스·가우시안 메커니즘",
+   "프라이버시 예산 누적 관리 필요",
+   "애플·구글·미국 인구조사에 적용"
+  ],
+  "related": [
+   "privacy-enhancing-technology",
+   "laplace-mechanism",
+   "privacy-budget",
+   "synthetic-data",
+   "federated-learning"
+  ]
+ },
+ {
+  "id": "diffie-hellman-key-exchange",
+  "term": "디피-헬만 키 교환",
+  "term_en": "Diffie-Hellman Key Exchange",
+  "definition": "이산대수 문제의 어려움에 기반하여 안전하지 않은 채널에서 두 당사자가 공유 비밀키를 생성하는 키 합의 프로토콜.",
+  "features": [
+   "1976년 공개키 개념의 출발점",
+   "IKE·TLS의 키 교환 기반(ECDHE)",
+   "인증 없이는 중간자 공격에 취약",
+   "완전 순방향 비밀성(PFS) 제공"
+  ],
+  "related": [
+   "internet-key-exchange",
+   "ipsec",
+   "ssl-tls",
+   "man-in-the-middle-attack",
+   "public-key-cryptography"
+  ]
+ },
+ {
+  "id": "digital-certificate",
+  "term": "전자인증서",
+  "term_en": "Digital Certificate",
+  "definition": "공개키와 소유자 신원을 결합하고 CA가 전자서명하여 공개키의 진위를 보증하는 전자 문서(X.509).",
+  "features": [
+   "버전·일련번호·발급자·유효기간·주체·공개키·확장 필드",
+   "CA 서명으로 위변조 탐지",
+   "TLS·전자서명·VPN 인증에 사용",
+   "폐지 여부는 CRL·OCSP로 확인"
+  ],
+  "related": [
+   "x-509",
+   "certificate-authority",
+   "public-key-infrastructure",
+   "certificate-revocation-list",
+   "ocsp"
+  ]
+ },
+ {
+  "id": "digital-envelope",
+  "term": "전자봉투",
+  "term_en": "Digital Envelope",
+  "definition": "메시지는 대칭키로 암호화하고 그 대칭키를 수신자 공개키로 암호화하여 함께 전송하는 하이브리드 암호 방식.",
+  "features": [
+   "대칭키의 속도와 공개키의 키 분배 장점 결합",
+   "수신자만 개인키로 대칭키 복원",
+   "S/MIME·PGP·전자입찰 암호화에 활용",
+   "PKI 기반 기밀성 서비스"
+  ],
+  "related": [
+   "hybrid-encryption",
+   "public-key-infrastructure",
+   "public-key-cryptography",
+   "aes"
+  ]
+ },
+ {
+  "id": "digital-evidence",
+  "term": "디지털 증거",
+  "term_en": "Digital Evidence",
+  "definition": "컴퓨터·네트워크·저장매체에 전자적으로 저장·전송된 정보 중 법적 증명력을 가지는 자료.",
+  "features": [
+   "복제 용이·변조 쉬움으로 무결성 입증 필수",
+   "원본과 사본의 해시 동일성으로 증명",
+   "적법 절차·보관 연속성 요구",
+   "휘발성·비휘발성 증거로 구분"
+  ],
+  "related": [
+   "digital-forensics",
+   "chain-of-custody",
+   "volatile-data",
+   "hash-function"
+  ]
+ },
+ {
+  "id": "digital-fingerprinting",
+  "term": "디지털 핑거프린팅",
+  "term_en": "Digital Fingerprinting",
+  "definition": "콘텐츠 구매자별로 고유한 식별 정보를 삽입하여 불법 유출 시 유포자를 추적할 수 있게 하는 기술.",
+  "features": [
+   "워터마킹과 달리 사용자마다 다른 정보 삽입",
+   "공모 공격(여러 사본 비교)에 대한 내성 필요",
+   "사후 추적형 저작권 보호",
+   "포렌식 워터마킹으로 발전"
+  ],
+  "related": [
+   "digital-watermarking",
+   "forensic-watermarking"
+  ]
+ },
+ {
+  "id": "digital-forensics",
+  "term": "디지털 포렌식",
+  "term_en": "Digital Forensics",
+  "definition": "디지털 기기·저장매체·네트워크에서 법적 증거능력을 갖춘 디지털 증거를 수집·보존·분석·제출하는 과학수사 기법.",
+  "features": [
+   "정당성·재현성·신속성·연계보관성·무결성 5대 원칙",
+   "디스크·메모리·네트워크·모바일·클라우드 분야",
+   "수사기관에서 기업 감사·사고 대응으로 확대",
+   "안티 포렌식 대응 기술 병행"
+  ],
+  "related": [
+   "digital-evidence",
+   "chain-of-custody",
+   "incident-response",
+   "e-discovery",
+   "anti-forensics"
+  ]
+ },
+ {
+  "id": "digital-signature",
+  "term": "전자서명",
+  "term_en": "Digital Signature",
+  "definition": "메시지 해시를 서명자의 개인키로 암호화하여 생성하며 공개키로 검증함으로써 무결성·인증·부인방지를 제공하는 기술.",
+  "features": [
+   "해시 함수와 공개키 암호의 결합",
+   "개인키 소유자만 생성, 누구나 검증",
+   "PKI 인증서로 공개키 신뢰 확보",
+   "RSA·ECDSA·EdDSA, 양자내성 ML-DSA"
+  ],
+  "related": [
+   "hash-function",
+   "public-key-cryptography",
+   "public-key-infrastructure",
+   "non-repudiation",
+   "timestamp-authority"
+  ]
+ },
+ {
+  "id": "digital-transmission-content-protection",
+  "term": "DTCP",
+  "term_en": "Digital Transmission Content Protection",
+  "definition": "홈 네트워크 기기 간 IEEE 1394·IP 전송 구간에서 콘텐츠를 암호화하고 복제제어정보를 전달하는 링크 보호 기술.",
+  "features": [
+   "5C 컨소시엄 개발, DTCP-IP로 네트워크 확장",
+   "기기 인증 후 세션키로 암호화",
+   "Copy Never·Copy Once 등 CCI 적용",
+   "인가 도메인 내 콘텐츠 이동 보호"
+  ],
+  "related": [
+   "authorized-domain",
+   "hdcp",
+   "copy-protection"
+  ]
+ },
+ {
+  "id": "digital-watermarking",
+  "term": "디지털 워터마킹",
+  "term_en": "Digital Watermarking",
+  "definition": "이미지·음성·영상 등에 저작권 정보를 지각할 수 없게 삽입하여 소유권 증명과 불법 복제 추적에 활용하는 기술.",
+  "features": [
+   "비가시성·강인성·보안성 요구",
+   "압축·변환 후에도 생존하는 강인한 워터마크",
+   "변조 탐지용 연약한(Fragile) 워터마크",
+   "스테가노그래피와 달리 저작권 보호 목적"
+  ],
+  "related": [
+   "digital-fingerprinting",
+   "forensic-watermarking",
+   "steganography"
+  ]
+ },
+ {
+  "id": "disaster-recovery-plan",
+  "term": "재해복구계획",
+  "term_en": "Disaster Recovery Plan",
+  "definition": "재해 발생 시 IT 시스템·데이터를 목표 시간 내 복구하기 위한 절차·자원·역할을 정의한 계획으로 BCP의 IT 부문.",
+  "features": [
+   "RTO·RPO 기반 복구 절차",
+   "DRS 전환·복귀 절차 포함",
+   "BCP의 하위 계획",
+   "정기 훈련으로 실효성 검증"
+  ],
+  "related": [
+   "business-continuity-planning",
+   "disaster-recovery-system",
+   "recovery-time-objective",
+   "recovery-point-objective"
+  ]
+ },
+ {
+  "id": "disaster-recovery-system",
+  "term": "재해복구시스템",
+  "term_en": "Disaster Recovery System",
+  "definition": "주 센터 재해 시 업무를 대신 수행할 수 있도록 원격지에 구축한 대체 시스템·센터.",
+  "features": [
+   "미러·핫·웜·콜드 사이트 유형",
+   "RTO·RPO와 비용의 트레이드오프",
+   "복제 방식·거리·전환 절차가 핵심 고려사항",
+   "금융권은 전자금융감독규정으로 구축 의무"
+  ],
+  "related": [
+   "mirror-site",
+   "hot-site",
+   "warm-site",
+   "cold-site",
+   "data-replication",
+   "failover"
+  ]
+ },
+ {
+  "id": "disk-imaging",
+  "term": "디스크 이미징",
+  "term_en": "Disk Imaging",
+  "definition": "저장매체의 모든 섹터를 비트 단위로 복제하여 비할당 영역·슬랙까지 포함한 완전한 사본을 만드는 증거 수집 기술.",
+  "features": [
+   "원본 보존을 위해 사본으로 분석",
+   "쓰기 방지 장치와 함께 사용",
+   "해시값으로 원본-사본 동일성 검증",
+   "dd·EnCase·FTK Imager 등 도구"
+  ],
+  "related": [
+   "write-blocker",
+   "digital-forensics",
+   "hash-function",
+   "unallocated-space",
+   "slack-space"
+  ]
+ },
+ {
+  "id": "dns-spoofing",
+  "term": "DNS 스푸핑",
+  "term_en": "DNS Spoofing",
+  "definition": "DNS 응답을 위조하거나 캐시를 오염시켜 사용자를 공격자가 지정한 IP로 유도하는 공격.",
+  "features": [
+   "파밍의 주요 수단",
+   "DNS 캐시 포이즈닝과 응답 위조",
+   "DNSSEC으로 응답 무결성 검증",
+   "hosts 파일 변조와 함께 사용"
+  ],
+  "related": [
+   "pharming",
+   "hosts-file",
+   "man-in-the-middle-attack"
+  ]
+ },
+ {
+  "id": "double-extortion",
+  "term": "이중 갈취",
+  "term_en": "Double Extortion",
+  "definition": "랜섬웨어 공격자가 파일 암호화 전 데이터를 탈취한 뒤 복호화 대가와 유출 비공개 대가를 함께 요구하는 수법.",
+  "features": [
+   "백업으로 복구해도 유출 협박 지속",
+   "유출 사이트에 샘플 공개로 압박",
+   "DDoS·고객 협박을 더한 삼중 갈취로 진화",
+   "데이터 유출 탐지(DLP)·암호화가 대응책"
+  ],
+  "related": [
+   "ransomware",
+   "ransomware-as-a-service",
+   "data-loss-prevention"
+  ]
+ },
+ {
+  "id": "double-spending",
+  "term": "이중지불",
+  "term_en": "Double Spending",
+  "definition": "동일한 디지털 자산을 두 번 이상 사용하는 문제로 블록체인은 합의와 체인 확정으로 이를 방지.",
+  "features": [
+   "51% 공격으로 거래 되돌려 이중지불 가능",
+   "확정 블록 수(컨펌) 대기로 위험 감소",
+   "PoW는 확률적, BFT는 즉시 확정",
+   "소규모 체인에서 실제 피해 사례"
+  ],
+  "related": [
+   "fifty-one-percent-attack",
+   "blockchain",
+   "proof-of-work"
+  ]
+ },
+ {
+  "id": "drive-by-download",
+  "term": "드라이브 바이 다운로드",
+  "term_en": "Drive-by Download",
+  "definition": "취약한 브라우저·플러그인으로 악성 웹페이지를 방문하기만 해도 사용자 모르게 악성코드가 다운로드·실행되는 공격.",
+  "features": [
+   "익스플로잇 킷·악성 광고로 유포",
+   "랜섬웨어·APT 초기 침투 경로",
+   "브라우저·플러그인 패치로 예방",
+   "웹 필터링·샌드박스로 차단"
+  ],
+  "related": [
+   "exploit-kit",
+   "malvertising",
+   "ransomware",
+   "patch-management"
+  ]
+ },
+ {
+  "id": "drive-slack",
+  "term": "드라이브 슬랙",
+  "term_en": "Drive Slack",
+  "definition": "파일이 차지한 마지막 섹터 이후부터 클러스터 끝까지의 영역으로 이전 파일의 데이터 조각이 남아 있을 수 있는 공간.",
+  "features": [
+   "클러스터 크기와 파일 크기 차이에서 발생",
+   "삭제된 이전 파일 잔존 데이터 복원 가능",
+   "RAM 슬랙과 함께 슬랙 공간 구성",
+   "안티 포렌식의 데이터 은닉 장소"
+  ],
+  "related": [
+   "slack-space",
+   "ram-slack",
+   "file-system",
+   "unallocated-space"
+  ]
+ },
+ {
+  "id": "e-discovery",
+  "term": "전자증거개시",
+  "term_en": "Electronic Discovery",
+  "definition": "소송 절차에서 이메일·문서 등 전자적으로 저장된 정보(ESI)를 식별·보존·수집·검토·제출하는 절차.",
+  "features": [
+   "미국 연방민사소송규칙(FRCP) 기반",
+   "EDRM 참조 모델(식별~제출)",
+   "기업 디지털 포렌식 수요의 주요 원천",
+   "법적 보존 통지(Legal Hold) 의무"
+  ],
+  "related": [
+   "digital-forensics",
+   "digital-evidence"
+  ]
+ },
+ {
+  "id": "e91-protocol",
+  "term": "E91 프로토콜",
+  "term_en": "E91 Protocol",
+  "definition": "1991년 Ekert가 제안한 얽힌 광자쌍의 벨 부등식 위배를 이용하는 양자키분배 프로토콜.",
+  "features": [
+   "양자 얽힘 기반, 광원을 제3자가 제공 가능",
+   "벨 부등식 검사로 도청 탐지",
+   "장치 독립 QKD의 이론적 기초",
+   "BB84와 함께 대표 QKD 프로토콜"
+  ],
+  "related": [
+   "quantum-key-distribution",
+   "quantum-entanglement",
+   "bb84-protocol"
+  ]
+ },
+ {
+  "id": "eclipse-attack",
+  "term": "이클립스 공격",
+  "term_en": "Eclipse Attack",
+  "definition": "표적 노드의 모든 피어 연결을 공격자 노드로 독점하여 네트워크에서 고립시키고 거짓 원장·거래 정보를 제공하는 블록체인 네트워크 공격.",
+  "features": [
+   "시빌 노드 대량 생성이 선행",
+   "이중지불·채굴력 낭비 유도",
+   "피어 선택 무작위화·연결 다중화로 대응",
+   "노드 IP 다양성 확보 필요"
+  ],
+  "related": [
+   "sybil-attack",
+   "double-spending"
+  ]
+ },
+ {
+  "id": "elliptic-curve-cryptography",
+  "term": "타원곡선 암호",
+  "term_en": "Elliptic Curve Cryptography",
+  "definition": "타원곡선 위 이산대수 문제에 기반한 공개키 암호로 RSA보다 짧은 키로 동등한 안전성을 제공.",
+  "features": [
+   "256비트 ECC ≈ 3072비트 RSA 안전성",
+   "ECDSA·ECDH·EdDSA로 서명·키교환",
+   "블록체인 지갑 주소·거래 서명에 사용",
+   "양자컴퓨터 Shor 알고리즘에 취약"
+  ],
+  "related": [
+   "public-key-cryptography",
+   "rsa",
+   "shor-algorithm",
+   "blockchain"
+  ]
+ },
+ {
+  "id": "encapsulating-security-payload",
+  "term": "ESP",
+  "term_en": "Encapsulating Security Payload",
+  "definition": "IPSec에서 페이로드 암호화로 기밀성을 제공하고 선택적으로 인증·무결성을 함께 제공하는 프로토콜(IP 프로토콜 번호 50).",
+  "features": [
+   "AES 등 대칭키 암호화",
+   "전송 모드와 터널 모드 지원",
+   "NAT-T로 NAT 환경 통과",
+   "AH와 달리 IP 헤더는 인증 제외"
+  ],
+  "related": [
+   "ipsec",
+   "authentication-header",
+   "tunnel-mode",
+   "transport-mode",
+   "nat-traversal"
+  ]
+ },
+ {
+  "id": "encase",
+  "term": "EnCase",
+  "term_en": "EnCase",
+  "definition": "OpenText(구 Guidance Software)의 상용 디지털 포렌식 통합 도구로 이미징·분석·보고를 지원하며 법정 증거능력이 널리 인정됨.",
+  "features": [
+   "E01 증거 파일 포맷(해시·압축 내장)",
+   "EnScript로 분석 자동화",
+   "기업 e-Discovery·엔드포인트 조사 제품군",
+   "FTK와 함께 양대 상용 도구"
+  ],
+  "related": [
+   "digital-forensics",
+   "ftk",
+   "disk-imaging"
+  ]
+ },
+ {
+  "id": "end-to-end-encryption",
+  "term": "종단간 암호화",
+  "term_en": "End-to-End Encryption",
+  "definition": "송신자 단말에서 암호화하여 수신자 단말에서만 복호화함으로써 중간 서버·사업자도 내용을 볼 수 없게 하는 암호화 방식.",
+  "features": [
+   "메신저(Signal·WhatsApp)에 적용",
+   "서비스 제공자도 복호화 불가",
+   "키는 단말에서만 생성·보관",
+   "초기 PET 암호화 기술 분류"
+  ],
+  "related": [
+   "privacy-enhancing-technology",
+   "public-key-cryptography",
+   "ssl-tls"
+  ]
+ },
+ {
+  "id": "endpoint-detection-and-response",
+  "term": "EDR",
+  "term_en": "Endpoint Detection and Response",
+  "definition": "엔드포인트의 프로세스·파일·네트워크 행위를 지속 수집·분석하여 위협을 탐지하고 격리·복구 등 대응을 수행하는 보안 솔루션.",
+  "features": [
+   "시그니처 기반 안티바이러스의 한계 보완",
+   "행위 분석·위협 헌팅·사고 조사 지원",
+   "랜섬웨어·APT 탐지 핵심 수단",
+   "XDR로 네트워크·클라우드까지 확장"
+  ],
+  "related": [
+   "extended-detection-and-response",
+   "advanced-persistent-threat",
+   "ransomware",
+   "siem"
+  ]
+ },
+ {
+  "id": "exploit-kit",
+  "term": "익스플로잇 킷",
+  "term_en": "Exploit Kit",
+  "definition": "웹 브라우저·플러그인의 취약점을 자동으로 탐지하고 악용하여 악성코드를 설치하는 공격 도구 패키지.",
+  "features": [
+   "드라이브 바이 다운로드의 핵심 도구",
+   "Angler·RIG 등 다크웹에서 임대",
+   "방문자 환경 식별 후 적합한 익스플로잇 선택",
+   "패치 관리로 효과 감소"
+  ],
+  "related": [
+   "drive-by-download",
+   "ransomware",
+   "patch-management"
+  ]
+ },
+ {
+  "id": "extended-detection-and-response",
+  "term": "XDR",
+  "term_en": "Extended Detection and Response",
+  "definition": "엔드포인트·네트워크·클라우드·이메일 등 여러 보안 계층의 데이터를 통합 분석하여 위협을 탐지·대응하는 플랫폼.",
+  "features": [
+   "EDR의 범위를 전 계층으로 확장",
+   "상관분석으로 공격 전체 흐름 가시화",
+   "SIEM·SOAR 기능 일부 흡수",
+   "탐지·대응 시간(MTTD·MTTR) 단축"
+  ],
+  "related": [
+   "endpoint-detection-and-response",
+   "network-detection-and-response",
+   "siem",
+   "security-orchestration-automation-response"
+  ]
+ },
+ {
+  "id": "failover",
+  "term": "페일오버",
+  "term_en": "Failover",
+  "definition": "주 시스템 장애 시 대기 시스템으로 서비스를 자동 또는 수동 전환하는 절차·기능.",
+  "features": [
+   "DRS 전환의 핵심 동작",
+   "DNS·GSLB·클러스터로 구현",
+   "복귀(Failback) 절차도 함께 정의",
+   "정기 전환 훈련으로 검증"
+  ],
+  "related": [
+   "disaster-recovery-system",
+   "hot-site",
+   "business-continuity-planning"
+  ]
+ },
+ {
+  "id": "false-negative",
+  "term": "미탐",
+  "term_en": "False Negative",
+  "definition": "실제 공격·침입이 발생했음에도 탐지 시스템이 이를 정상으로 판단하여 놓치는 오류.",
+  "features": [
+   "오용 탐지는 알려지지 않은 공격에 미탐 발생",
+   "보안상 오탐보다 위험",
+   "시그니처 갱신·행위 분석으로 감소",
+   "탐지율(Recall)과 반비례"
+  ],
+  "related": [
+   "false-positive",
+   "misuse-detection",
+   "intrusion-detection-system"
+  ]
+ },
+ {
+  "id": "false-positive",
+  "term": "오탐",
+  "term_en": "False Positive",
+  "definition": "정상 행위를 탐지 시스템이 공격으로 잘못 판단하는 오류.",
+  "features": [
+   "이상 탐지 방식에서 많이 발생",
+   "IPS에서는 정상 서비스 차단으로 이어짐",
+   "경보 피로(Alert Fatigue) 유발",
+   "임계치·화이트리스트 튜닝으로 감소"
+  ],
+  "related": [
+   "false-negative",
+   "anomaly-detection",
+   "intrusion-prevention-system"
+  ]
+ },
+ {
+  "id": "federated-learning",
+  "term": "연합학습",
+  "term_en": "Federated Learning",
+  "definition": "원본 데이터를 각 참여자 단말·기관에 두고 모델 파라미터만 중앙에서 집계하여 학습하는 분산 기계학습 방식.",
+  "features": [
+   "데이터 이동 없이 공동 모델 학습",
+   "파라미터로부터 데이터 추론 위험 → 차분 프라이버시 결합",
+   "모바일 키보드·의료 공동 연구 적용",
+   "통신 비용·참여자 이질성 과제"
+  ],
+  "related": [
+   "privacy-enhancing-technology",
+   "differential-privacy",
+   "secure-multiparty-computation"
+  ]
+ },
+ {
+  "id": "fido",
+  "term": "FIDO",
+  "term_en": "Fast Identity Online",
+  "definition": "패스워드를 대체하기 위해 로컬 인증과 공개키 기반 시도-응답을 결합한 FIDO Alliance의 개방형 온라인 인증 표준.",
+  "features": [
+   "생체정보 비전송·비저장",
+   "UAF·U2F(FIDO 1.0), WebAuthn·CTAP(FIDO2)",
+   "피싱 내성, 서비스별 키쌍",
+   "패스키로 보편화"
+  ],
+  "related": [
+   "universal-authentication-framework",
+   "universal-second-factor",
+   "webauthn",
+   "passkey",
+   "authenticator"
+  ]
+ },
+ {
+  "id": "fifty-one-percent-attack",
+  "term": "51% 공격",
+  "term_en": "51% Attack",
+  "definition": "공격자가 네트워크 해시파워 또는 지분의 과반을 장악하여 블록 생성을 통제하고 거래 취소·이중지불을 수행하는 합의 공격.",
+  "features": [
+   "소규모 PoW 체인에서 실제 발생(ETC 등)",
+   "거래 검열·이중지불 가능, 자산 탈취는 불가",
+   "해시파워 분산·확정 블록 수 상향으로 대응",
+   "허가형은 노드 인증으로 방지"
+  ],
+  "related": [
+   "double-spending",
+   "proof-of-work",
+   "selfish-mining"
+  ]
+ },
+ {
+  "id": "file-carving",
+  "term": "파일 카빙",
+  "term_en": "File Carving",
+  "definition": "파일시스템 메타데이터 없이 데이터 영역에서 파일 헤더·푸터 시그니처를 검색하여 삭제·손상 파일을 복원하는 기술.",
+  "features": [
+   "비할당 영역·포맷된 디스크에서 복구",
+   "시그니처 기반·구조 기반 카빙",
+   "단편화 파일 복원이 과제",
+   "Foremost·Scalpel·PhotoRec 도구"
+  ],
+  "related": [
+   "file-signature",
+   "unallocated-space",
+   "digital-forensics",
+   "file-system"
+  ]
+ },
+ {
+  "id": "file-signature",
+  "term": "파일 시그니처",
+  "term_en": "File Signature",
+  "definition": "파일 형식을 식별하기 위해 파일 시작·끝에 위치하는 고유 바이트 패턴(매직 넘버).",
+  "features": [
+   "JPEG FF D8 FF, PDF %PDF 등",
+   "확장자 변조 탐지에 활용",
+   "파일 카빙의 검색 기준",
+   "스테가노그래피 은닉 파일 탐지 단서"
+  ],
+  "related": [
+   "file-carving",
+   "steganalysis",
+   "digital-forensics"
+  ]
+ },
+ {
+  "id": "file-system",
+  "term": "파일시스템",
+  "term_en": "File System",
+  "definition": "저장매체에 파일을 조직·저장·관리하는 방식으로 메타데이터 구조에 포렌식 단서가 남음.",
+  "features": [
+   "NTFS·FAT·ext4·APFS 등",
+   "MFT·inode에 생성·수정·접근 시각 기록",
+   "삭제 파일은 메타데이터만 해제되어 복구 가능",
+   "클러스터 할당 단위에서 슬랙 발생"
+  ],
+  "related": [
+   "slack-space",
+   "unallocated-space",
+   "file-carving",
+   "digital-forensics"
+  ]
+ },
+ {
+  "id": "fileless-malware",
+  "term": "파일리스 악성코드",
+  "term_en": "Fileless Malware",
+  "definition": "디스크에 실행 파일을 남기지 않고 메모리·레지스트리·PowerShell·WMI 등 정상 시스템 도구만으로 동작하는 악성코드.",
+  "features": [
+   "파일 기반 안티바이러스 탐지 회피",
+   "APT의 Living off the Land 기법",
+   "메모리 포렌식·행위 기반 EDR로 탐지",
+   "재부팅 시 소멸되나 지속성 기법 결합"
+  ],
+  "related": [
+   "advanced-persistent-threat",
+   "memory-forensics",
+   "endpoint-detection-and-response",
+   "polymorphic-malware"
+  ]
+ },
+ {
+  "id": "firewall",
+  "term": "방화벽",
+  "term_en": "Firewall",
+  "definition": "네트워크 경계에서 사전 정의된 정책에 따라 패킷·세션을 허용·차단하는 접근통제 장비.",
+  "features": [
+   "패킷 필터링·상태 검사·애플리케이션 게이트웨이",
+   "허용된 포트 내부 공격은 탐지 불가 → IDS 보완",
+   "NGFW는 DPI·IPS·앱 식별 통합",
+   "DMZ 구성의 기본 요소"
+  ],
+  "related": [
+   "intrusion-detection-system",
+   "intrusion-prevention-system",
+   "waf",
+   "unified-threat-management"
+  ]
+ },
+ {
+  "id": "flash-loan-attack",
+  "term": "플래시론 공격",
+  "term_en": "Flash Loan Attack",
+  "definition": "담보 없이 단일 트랜잭션 내에서 대출·상환하는 플래시론을 이용해 가격 오라클을 조작하고 DeFi 프로토콜의 자산을 탈취하는 공격.",
+  "features": [
+   "단일 블록 내 차입-조작-차익-상환 완료",
+   "오라클 단일 소스 의존이 취약점",
+   "분산 오라클·시간가중평균가격(TWAP)으로 대응",
+   "DeFi 해킹 피해의 주요 유형"
+  ],
+  "related": [
+   "oracle-problem",
+   "smart-contract"
+  ]
+ },
+ {
+  "id": "forensic-watermarking",
+  "term": "포렌식 워터마킹",
+  "term_en": "Forensic Watermarking",
+  "definition": "스트리밍 세션·사용자별로 고유 워터마크를 실시간 삽입하여 불법 녹화·유출된 영상의 출처를 추적하는 기술.",
+  "features": [
+   "OTT·프리미엄 콘텐츠 보호 표준 요구",
+   "서버 측·클라이언트 측 삽입 방식",
+   "화면 녹화 등 아날로그 홀 대응",
+   "핑거프린팅의 영상 서비스 적용"
+  ],
+  "related": [
+   "digital-fingerprinting",
+   "digital-watermarking"
+  ]
+ },
+ {
+  "id": "formal-verification",
+  "term": "정형 검증",
+  "term_en": "Formal Verification",
+  "definition": "수학적 모델과 논리로 프로그램·스마트 컨트랙트가 명세를 만족함을 엄밀히 증명하는 검증 기법.",
+  "features": [
+   "테스트로 찾기 어려운 논리 결함 발견",
+   "스마트 컨트랙트는 불변성 때문에 사전 검증 중요",
+   "모델 검사·정리 증명 방식",
+   "비용이 높아 핵심 코드에 선별 적용"
+  ],
+  "related": [
+   "smart-contract",
+   "reentrancy-attack"
+  ]
+ },
+ {
+  "id": "ftk",
+  "term": "FTK",
+  "term_en": "Forensic Toolkit",
+  "definition": "Exterro(구 AccessData)의 상용 디지털 포렌식 도구로 이미징(FTK Imager)·인덱싱 기반 고속 검색·분석을 제공.",
+  "features": [
+   "FTK Imager는 무료 이미징·메모리 덤프 도구",
+   "전체 인덱싱으로 키워드 검색 빠름",
+   "Registry Viewer·PRTK(암호 복구) 연계",
+   "EnCase와 함께 대표 상용 도구"
+  ],
+  "related": [
+   "encase",
+   "digital-forensics",
+   "disk-imaging"
+  ]
+ },
+ {
+  "id": "fully-homomorphic-encryption",
+  "term": "완전 동형암호",
+  "term_en": "Fully Homomorphic Encryption",
+  "definition": "암호문 상태에서 덧셈과 곱셈을 횟수 제한 없이 수행할 수 있는 동형암호로 임의의 연산을 지원.",
+  "features": [
+   "2009년 Gentry가 격자 기반으로 최초 구성",
+   "부트스트래핑으로 잡음 제거",
+   "BFV·BGV·CKKS·TFHE 스킴",
+   "연산 비용이 평문 대비 수천 배"
+  ],
+  "related": [
+   "homomorphic-encryption",
+   "lattice-based-cryptography",
+   "privacy-enhancing-technology"
+  ]
+ },
+ {
+  "id": "g-isms",
+  "term": "G-ISMS",
+  "term_en": "Government Information Security Management System",
+  "definition": "전자정부 서비스를 제공하는 공공기관을 대상으로 행정안전부가 운영하던 정보보호 관리체계 인증으로 2013년 ISMS에 통합.",
+  "features": [
+   "전자정부법·행안부 고시 기반",
+   "공공기관 특성 반영 인증기준",
+   "임의 인증, 기관 평가 가점",
+   "ISMS 통합 후 폐지"
+  ],
+  "related": [
+   "information-security-management-system",
+   "isms-p",
+   "pims",
+   "pipl"
+  ]
+ },
+ {
+  "id": "garbled-circuit",
+  "term": "가블드 서킷",
+  "term_en": "Garbled Circuit",
+  "definition": "논리 회로의 각 게이트를 암호화하여 입력을 공개하지 않고 두 당사자가 함수를 공동 계산하는 안전한 다자간 계산 기법.",
+  "features": [
+   "Yao의 백만장자 문제 해법",
+   "불확정 전송(OT)과 결합",
+   "2자간 MPC의 기본 구성",
+   "회로 크기에 비례한 통신 비용"
+  ],
+  "related": [
+   "secure-multiparty-computation",
+   "secret-sharing",
+   "privacy-enhancing-technology"
+  ]
+ },
+ {
+  "id": "generative-adversarial-network",
+  "term": "생성적 적대 신경망",
+  "term_en": "Generative Adversarial Network",
+  "definition": "생성자와 판별자가 경쟁하며 학습하여 실제와 유사한 데이터를 생성하는 딥러닝 모델.",
+  "features": [
+   "합성데이터 생성의 핵심 기술",
+   "표 형식·이미지·시계열 데이터 합성",
+   "원본 기억화로 프라이버시 유출 위험",
+   "차분 프라이버시 결합(DP-GAN)"
+  ],
+  "related": [
+   "synthetic-data",
+   "privacy-enhancing-technology",
+   "differential-privacy"
+  ]
+ },
+ {
+  "id": "gre",
+  "term": "GRE",
+  "term_en": "Generic Routing Encapsulation",
+  "definition": "임의의 네트워크 계층 프로토콜을 IP 패킷에 캡슐화하는 터널링 프로토콜(IP 프로토콜 번호 47).",
+  "features": [
+   "암호화 없음, IPSec과 결합하여 보안 터널 구성",
+   "멀티캐스트·비IP 프로토콜 전달 가능",
+   "스크러빙 센터에서 정화 트래픽 회송에 사용",
+   "Cisco 개발, RFC 2784"
+  ],
+  "related": [
+   "tunneling",
+   "ipsec",
+   "scrubbing-center"
+  ]
+ },
+ {
+  "id": "grover-algorithm",
+  "term": "그로버 알고리즘",
+  "term_en": "Grover's Algorithm",
+  "definition": "정렬되지 않은 N개 항목 탐색을 √N 번의 연산으로 수행하는 양자 알고리즘으로 대칭키·해시의 안전성을 절반으로 감소시킴.",
+  "features": [
+   "AES-128은 64비트 수준으로 약화",
+   "AES-256·SHA-384 이상 사용 권고",
+   "Shor와 달리 지수적 가속은 아님",
+   "대칭키는 키 길이 2배로 대응"
+  ],
+  "related": [
+   "quantum-computer",
+   "shor-algorithm",
+   "aes",
+   "hash-function"
+  ]
+ },
+ {
+  "id": "hardware-security-module",
+  "term": "HSM",
+  "term_en": "Hardware Security Module",
+  "definition": "암호키를 변조 방지 하드웨어 내부에서 생성·저장·사용하여 키가 외부로 노출되지 않도록 하는 전용 보안 장치.",
+  "features": [
+   "FIPS 140-2/3 인증 등급",
+   "CA 개인키·블록체인 키 보호",
+   "네트워크·PCIe·클라우드 HSM 형태",
+   "키 분할 관리(M of N) 지원"
+  ],
+  "related": [
+   "certificate-authority",
+   "public-key-infrastructure",
+   "key-management",
+   "cold-wallet"
+  ]
+ },
+ {
+  "id": "harvest-now-decrypt-later",
+  "term": "선 수집 후 해독",
+  "term_en": "Harvest Now, Decrypt Later",
+  "definition": "현재 암호화된 통신을 가로채 저장해 두었다가 미래 양자컴퓨터로 해독하려는 공격 전략.",
+  "features": [
+   "장기 기밀 데이터가 주요 표적",
+   "PQC 조기 전환의 핵심 근거",
+   "QKD·PQC 하이브리드로 대응",
+   "국가·금융 기관의 위협 모델"
+  ],
+  "related": [
+   "post-quantum-cryptography",
+   "quantum-computer",
+   "quantum-key-distribution"
+  ]
+ },
+ {
+  "id": "hash-based-signature",
+  "term": "해시 기반 서명",
+  "term_en": "Hash-based Signature",
+  "definition": "해시 함수의 일방향성에만 안전성을 의존하는 양자내성 전자서명 방식.",
+  "features": [
+   "SLH-DSA(SPHINCS+), XMSS·LMS",
+   "수학적 가정 최소로 보수적 안전성",
+   "서명 크기가 크고 속도 느림",
+   "상태 유지형(XMSS)과 무상태형(SPHINCS+)"
+  ],
+  "related": [
+   "slh-dsa",
+   "post-quantum-cryptography",
+   "hash-function"
+  ]
+ },
+ {
+  "id": "hash-function",
+  "term": "해시 함수",
+  "term_en": "Hash Function",
+  "definition": "임의 길이의 입력을 고정 길이의 해시값으로 변환하는 일방향 함수로 무결성 검증·전자서명·패스워드 저장에 사용.",
+  "features": [
+   "역상·제2역상·충돌 저항성 요구",
+   "MD5·SHA-1은 취약, SHA-2·SHA-3 권고",
+   "솔트·키 스트레칭으로 패스워드 보호",
+   "블록체인·HMAC·포렌식 무결성의 기반"
+  ],
+  "related": [
+   "message-digest",
+   "collision-resistance",
+   "sha-2",
+   "sha-3",
+   "hmac",
+   "digital-signature"
+  ]
+ },
+ {
+  "id": "hash-salt",
+  "term": "솔트",
+  "term_en": "Salt",
+  "definition": "패스워드 해시 생성 시 사용자별로 추가하는 임의의 값으로 동일 패스워드도 다른 해시를 갖게 하여 사전 계산 공격을 무력화.",
+  "features": [
+   "레인보우 테이블 공격 방지",
+   "해시값과 함께 평문 저장 가능",
+   "충분한 길이(16바이트 이상)의 난수",
+   "키 스트레칭과 결합 사용"
+  ],
+  "related": [
+   "rainbow-table",
+   "key-stretching",
+   "hash-function",
+   "pbkdf2",
+   "bcrypt"
+  ]
+ },
+ {
+  "id": "hdcp",
+  "term": "HDCP",
+  "term_en": "High-bandwidth Digital Content Protection",
+  "definition": "HDMI·DisplayPort 등 디지털 디스플레이 인터페이스 구간에서 콘텐츠를 암호화하여 출력 단계 복제를 방지하는 기술.",
+  "features": [
+   "Intel 개발, 송·수신 기기 인증 후 암호화",
+   "HDCP 2.x는 4K·스트리밍 지원",
+   "DRM 클라이언트의 출력 보호 요건",
+   "마스터키 유출로 1.x 무력화 사례"
+  ],
+  "related": [
+   "copy-protection",
+   "digital-transmission-content-protection"
+  ]
+ },
+ {
+  "id": "heisenberg-uncertainty-principle",
+  "term": "불확정성 원리",
+  "term_en": "Heisenberg Uncertainty Principle",
+  "definition": "서로 짝을 이루는 물리량을 동시에 정확히 측정할 수 없다는 양자역학 원리로 QKD에서 도청 측정이 상태를 교란하는 근거.",
+  "features": [
+   "서로 다른 기저 측정은 원 상태 파괴",
+   "도청자의 측정이 오류율 증가로 드러남",
+   "BB84 안전성의 물리적 기초",
+   "복제 불가 정리와 함께 QKD 근간"
+  ],
+  "related": [
+   "quantum-key-distribution",
+   "no-cloning-theorem",
+   "bb84-protocol"
+  ]
+ },
+ {
+  "id": "hmac",
+  "term": "HMAC",
+  "term_en": "Hash-based Message Authentication Code",
+  "definition": "비밀키와 해시 함수를 결합하여 메시지의 무결성과 출처 인증을 제공하는 메시지 인증 코드(RFC 2104).",
+  "features": [
+   "H((K⊕opad) ∥ H((K⊕ipad) ∥ M)) 구조",
+   "길이 확장 공격에 안전",
+   "IPSec·TLS·PBKDF2의 기본 요소",
+   "키 없는 해시와 달리 인증 제공"
+  ],
+  "related": [
+   "message-authentication-code",
+   "hash-function",
+   "ipsec",
+   "pbkdf2"
+  ]
+ },
+ {
+  "id": "homogeneity-attack",
+  "term": "동질성 공격",
+  "term_en": "Homogeneity Attack",
+  "definition": "k-익명성을 만족하는 동질집합의 민감정보가 모두 동일할 때 개인의 민감정보가 그대로 드러나는 공격.",
+  "features": [
+   "k-익명성의 대표적 한계",
+   "l-다양성으로 대응",
+   "배경지식 공격과 함께 논의",
+   "비식별 적정성 평가 시 점검"
+  ],
+  "related": [
+   "k-anonymity",
+   "l-diversity",
+   "background-knowledge-attack"
+  ]
+ },
+ {
+  "id": "homomorphic-encryption",
+  "term": "동형암호",
+  "term_en": "Homomorphic Encryption",
+  "definition": "암호문 상태에서 연산한 결과를 복호화하면 평문 연산 결과와 같아지는 암호 기술로 데이터를 노출하지 않고 위탁 연산 가능.",
+  "features": [
+   "부분(PHE)·다소(SHE)·완전(FHE) 동형암호",
+   "격자 기반, 양자내성 겸비",
+   "CKKS는 실수 근사 연산으로 ML에 적합",
+   "연산 비용·암호문 크기가 과제"
+  ],
+  "related": [
+   "fully-homomorphic-encryption",
+   "privacy-enhancing-technology",
+   "lattice-based-cryptography",
+   "secure-multiparty-computation"
+  ]
+ },
+ {
+  "id": "honeypot",
+  "term": "허니팟",
+  "term_en": "Honeypot",
+  "definition": "공격자를 유인하기 위해 의도적으로 취약하게 구성한 미끼 시스템으로 공격 기법 수집·조기 경보에 활용.",
+  "features": [
+   "정상 트래픽이 없어 접근 자체가 공격 징후",
+   "저상호작용·고상호작용 유형",
+   "네트워크 포렌식·위협 인텔리전스 수집",
+   "허니넷·허니토큰으로 확장"
+  ],
+  "related": [
+   "intrusion-detection-system",
+   "network-forensics",
+   "threat-intelligence"
+  ]
+ },
+ {
+  "id": "host-based-intrusion-detection",
+  "term": "HIDS",
+  "term_en": "Host-based Intrusion Detection System",
+  "definition": "개별 호스트에 설치되어 시스템 로그·프로세스·파일 무결성·레지스트리 변화를 분석하여 침입을 탐지하는 IDS.",
+  "features": [
+   "암호화 해제 후 내용 분석 가능",
+   "호스트 내부 행위 정밀 탐지",
+   "호스트 자원 소모·설치 관리 부담",
+   "OSSEC·Tripwire·Wazuh"
+  ],
+  "related": [
+   "network-based-intrusion-detection",
+   "intrusion-detection-system",
+   "endpoint-detection-and-response"
+  ]
+ },
+ {
+  "id": "hosts-file",
+  "term": "hosts 파일",
+  "term_en": "Hosts File",
+  "definition": "운영체제가 DNS 조회 전에 참조하는 도메인-IP 매핑 로컬 파일로, 변조 시 정상 URL 입력에도 가짜 사이트로 연결됨.",
+  "features": [
+   "파밍 악성코드의 주요 변조 대상",
+   "Windows System32\\drivers\\etc\\hosts",
+   "무결성 검사·쓰기 보호로 대응",
+   "DNS 스푸핑과 함께 파밍 수단"
+  ],
+  "related": [
+   "pharming",
+   "dns-spoofing"
+  ]
+ },
+ {
+  "id": "hot-site",
+  "term": "핫 사이트",
+  "term_en": "Hot Site",
+  "definition": "주 센터와 동일한 시스템을 대기 상태로 운영하며 실시간·준실시간 복제로 수 시간 내 전환 가능한 재해복구 사이트.",
+  "features": [
+   "Active-Standby 구성",
+   "RTO 수 시간, RPO 거의 0",
+   "미러 사이트 다음으로 고비용",
+   "금융권 핵심 업무에 적용"
+  ],
+  "related": [
+   "disaster-recovery-system",
+   "mirror-site",
+   "warm-site",
+   "data-replication"
+  ]
+ },
+ {
+  "id": "http-flooding",
+  "term": "HTTP 플러딩",
+  "term_en": "HTTP Flooding",
+  "definition": "정상 HTTP GET·POST 요청을 대량으로 발생시켜 웹 서버·애플리케이션 자원을 고갈시키는 7계층 DDoS 공격.",
+  "features": [
+   "정상 트래픽 모방으로 탐지 어려움",
+   "Cache-Control 헤더로 캐시 우회(CC 공격)",
+   "소량 트래픽으로도 효과",
+   "세션별 요청 제한·챌린지 인증으로 대응"
+  ],
+  "related": [
+   "ddos",
+   "slowloris",
+   "waf",
+   "rate-limiting"
+  ]
+ },
+ {
+  "id": "hybrid-encryption",
+  "term": "하이브리드 암호화",
+  "term_en": "Hybrid Encryption",
+  "definition": "데이터는 빠른 대칭키로 암호화하고 대칭키는 공개키로 암호화하여 두 방식의 장점을 결합한 암호화 방식.",
+  "features": [
+   "전자봉투·TLS·PGP의 기본 구조",
+   "랜섬웨어도 AES+RSA 하이브리드 사용",
+   "키 분배 문제와 성능 문제 동시 해결",
+   "PQC 전환 시 ML-KEM 적용 대상"
+  ],
+  "related": [
+   "digital-envelope",
+   "aes",
+   "rsa",
+   "public-key-cryptography",
+   "ransomware"
+  ]
+ },
+ {
+  "id": "hypervisor",
+  "term": "하이퍼바이저",
+  "term_en": "Hypervisor",
+  "definition": "물리 서버 위에서 여러 가상머신을 생성·실행·관리하는 가상화 소프트웨어 계층.",
+  "features": [
+   "Type 1(베어메탈)·Type 2(호스티드)",
+   "VM 메모리·디스크를 호스트에서 덤프 가능",
+   "클라우드 포렌식의 증거 수집 지점",
+   "하이퍼바이저 취약점은 전체 VM 위협"
+  ],
+  "related": [
+   "virtual-machine",
+   "cloud-forensics",
+   "snapshot"
+  ]
+ },
+ {
+  "id": "icmp-flooding",
+  "term": "ICMP 플러딩",
+  "term_en": "ICMP Flooding",
+  "definition": "대량의 ICMP Echo 요청(핑)을 보내 표적의 대역폭과 처리 자원을 소진시키는 DDoS 공격.",
+  "features": [
+   "출발지 위조·반사(Smurf)와 결합",
+   "Ping of Death 등 변형",
+   "ICMP 임계치 제한·불필요 ICMP 차단",
+   "UDP 플러딩과 함께 대역폭 소진형"
+  ],
+  "related": [
+   "ddos",
+   "smurf-attack",
+   "udp-flooding"
+  ]
+ },
+ {
+  "id": "identifier",
+  "term": "식별자",
+  "term_en": "Identifier",
+  "definition": "이름·주민등록번호·전화번호 등 단독으로 특정 개인을 직접 식별할 수 있는 정보 항목.",
+  "features": [
+   "비식별 조치 시 원칙적으로 삭제",
+   "준식별자(속성자)와 구분",
+   "가명처리 시 대체값으로 변환",
+   "개인정보 해당 여부 판단의 1차 기준"
+  ],
+  "related": [
+   "quasi-identifier",
+   "de-identification",
+   "data-suppression"
+  ]
+ },
+ {
+  "id": "incident-response",
+  "term": "침해사고 대응",
+  "term_en": "Incident Response",
+  "definition": "보안 사고 발생 시 탐지·분석·봉쇄·제거·복구·사후 검토 절차에 따라 피해를 최소화하고 재발을 방지하는 활동.",
+  "features": [
+   "NIST SP 800-61 생명주기",
+   "CERT·CSIRT 조직 운영",
+   "디지털 포렌식으로 원인·범위 규명",
+   "정보통신망법상 침해사고 신고 의무"
+  ],
+  "related": [
+   "digital-forensics",
+   "ransomware",
+   "advanced-persistent-threat"
+  ]
+ },
+ {
+  "id": "information-and-communications-network-act",
+  "term": "정보통신망법",
+  "term_en": "Act on Promotion of Information and Communications Network Utilization and Information Protection",
+  "definition": "정보통신망의 이용 촉진과 정보보호를 규율하는 법률로 ISMS 인증(제47조), CISO 지정, 침해사고 대응 등을 규정.",
+  "features": [
+   "제47조 정보보호 관리체계 인증 및 의무대상",
+   "제45조의3 정보보호 최고책임자 지정",
+   "제48조 침해행위 금지, 제48조의3 침해사고 신고",
+   "2020년 개인정보 조항은 개인정보보호법으로 이관"
+  ],
+  "related": [
+   "information-security-management-system",
+   "isms-p",
+   "chief-information-security-officer",
+   "personal-information-protection-act"
+  ]
+ },
+ {
+  "id": "information-asset",
+  "term": "정보자산",
+  "term_en": "Information Asset",
+  "definition": "조직이 보호해야 할 가치 있는 정보와 이를 처리·저장·전송하는 시스템·네트워크·시설·인력 등.",
+  "features": [
+   "ISMS 위험관리의 식별 대상",
+   "기밀성·무결성·가용성 기준 중요도 평가",
+   "자산 목록·책임자·보안 등급 관리",
+   "위험평가의 입력 자료"
+  ],
+  "related": [
+   "information-security-management-system",
+   "risk-assessment",
+   "risk-management"
+  ]
+ },
+ {
+  "id": "information-security-management-system",
+  "term": "정보보호 관리체계",
+  "term_en": "Information Security Management System",
+  "definition": "조직의 정보자산을 보호하기 위해 정책·조직·위험관리·보호대책·점검 활동을 체계화하고 지속 운영하는 종합 관리체계.",
+  "features": [
+   "ISO/IEC 27001 PDCA 모델 기반",
+   "국내 ISMS·ISMS-P 인증제도(정보통신망법 제47조)",
+   "의무대상 미인증 시 과태료",
+   "간편인증으로 중소기업 확대"
+  ],
+  "related": [
+   "isms-p",
+   "iso-iec-27001",
+   "plan-do-check-act",
+   "risk-management",
+   "information-and-communications-network-act"
+  ]
+ },
+ {
+  "id": "ingress-filtering",
+  "term": "출발지 주소 필터링",
+  "term_en": "Ingress Filtering",
+  "definition": "ISP·네트워크 경계에서 출발지 IP가 해당 네트워크에서 올 수 없는 패킷을 차단하여 IP 스푸핑을 방지하는 기법(BCP38).",
+  "features": [
+   "반사·증폭 DDoS의 근본 대책",
+   "RFC 2827/BCP38, uRPF로 구현",
+   "전 세계 ISP 참여가 필요",
+   "DDoS 중장기 대책의 핵심"
+  ],
+  "related": [
+   "ddos",
+   "amplification-attack",
+   "denial-of-service"
+  ]
+ },
+ {
+  "id": "internal-audit",
+  "term": "내부감사",
+  "term_en": "Internal Audit",
+  "definition": "조직 내부에서 관리체계·통제가 정책과 기준에 따라 운영되는지 독립적으로 점검·평가하는 활동.",
+  "features": [
+   "ISMS-P 1.4 관리체계 점검 및 개선 요구",
+   "독립성 확보된 인력이 연 1회 이상 수행",
+   "결함 도출 → 개선 조치 → 경영진 보고",
+   "인증 심사 전 자체 점검 수단"
+  ],
+  "related": [
+   "information-security-management-system",
+   "isms-p",
+   "plan-do-check-act"
+  ]
+ },
+ {
+  "id": "internet-data-center",
+  "term": "집적정보통신시설",
+  "term_en": "Internet Data Center",
+  "definition": "다수 고객의 서버·네트워크 장비를 집적하여 운영·관리하는 시설로 정보통신망법상 ISMS 인증 의무대상.",
+  "features": [
+   "전력·냉각·보안·네트워크 인프라 제공",
+   "정보통신망법 제46조 보호조치 의무",
+   "ISMS 의무대상(집적정보통신시설 사업자)",
+   "클라우드 서비스의 물리적 기반"
+  ],
+  "related": [
+   "information-security-management-system",
+   "information-and-communications-network-act"
+  ]
+ },
+ {
+  "id": "internet-key-exchange",
+  "term": "IKE",
+  "term_en": "Internet Key Exchange",
+  "definition": "IPSec 통신 당사자가 상호 인증하고 보안 연관(SA)과 세션키를 협상·갱신하는 키 관리 프로토콜.",
+  "features": [
+   "IKEv2(RFC 7296)가 현행 표준",
+   "Diffie-Hellman 키 교환, 인증서·PSK 인증",
+   "IKE SA와 Child SA(IPSec SA) 생성",
+   "NAT-T·MOBIKE 지원"
+  ],
+  "related": [
+   "ipsec",
+   "diffie-hellman-key-exchange",
+   "security-association",
+   "digital-certificate"
+  ]
+ },
+ {
+  "id": "intrusion-detection-system",
+  "term": "침입탐지시스템",
+  "term_en": "Intrusion Detection System",
+  "definition": "네트워크 트래픽·시스템 로그를 분석하여 침입 징후를 탐지하고 경보하는 보안 시스템.",
+  "features": [
+   "NIDS·HIDS, 오용 탐지·이상 탐지",
+   "방화벽이 놓치는 허용 포트 내 공격 탐지",
+   "미러링 기반 수동 탐지, IPS는 인라인 차단",
+   "SIEM·EDR과 연계하여 대응"
+  ],
+  "related": [
+   "intrusion-prevention-system",
+   "misuse-detection",
+   "anomaly-detection",
+   "network-based-intrusion-detection",
+   "host-based-intrusion-detection"
+  ]
+ },
+ {
+  "id": "intrusion-prevention-system",
+  "term": "침입방지시스템",
+  "term_en": "Intrusion Prevention System",
+  "definition": "트래픽 경로상(인라인)에 배치되어 침입을 탐지함과 동시에 패킷 차단·세션 종료로 실시간 방어하는 시스템.",
+  "features": [
+   "IDS의 탐지 기능 + 능동 차단",
+   "오탐 시 정상 서비스 차단 위험",
+   "장애 대비 Fail-open·바이패스 설계",
+   "NGFW·UTM에 통합되는 추세"
+  ],
+  "related": [
+   "intrusion-detection-system",
+   "firewall",
+   "false-positive",
+   "unified-threat-management"
+  ]
+ },
+ {
+  "id": "ipsec",
+  "term": "IPSec",
+  "term_en": "Internet Protocol Security",
+  "definition": "IP 계층에서 AH·ESP 프로토콜과 IKE 키 관리로 패킷의 인증·무결성·기밀성을 제공하는 보안 프로토콜 집합.",
+  "features": [
+   "전송 모드·터널 모드",
+   "사이트 간 VPN의 표준 기술",
+   "보안 연관(SA)·SPI로 세션 식별",
+   "IPv6 기본 내장, IPv4 선택"
+  ],
+  "related": [
+   "authentication-header",
+   "encapsulating-security-payload",
+   "internet-key-exchange",
+   "tunnel-mode",
+   "transport-mode",
+   "security-association"
+  ]
+ },
+ {
+  "id": "isms-p",
+  "term": "ISMS-P",
+  "term_en": "Personal Information & Information Security Management System",
+  "definition": "정보보호 관리체계(ISMS)와 개인정보보호 관리체계(PIMS)를 2018년 통합한 국내 인증제도로 101개 인증기준으로 구성.",
+  "features": [
+   "관리체계 16 + 보호대책 64 + 개인정보 21개 항목",
+   "정보통신망법 제47조·개인정보보호법 제32조의2 근거",
+   "과기정통부·개인정보위 공동 고시",
+   "ISMS(80개)는 의무, ISMS-P는 임의"
+  ],
+  "related": [
+   "information-security-management-system",
+   "isms-p-simplified-certification",
+   "personal-information-protection-act",
+   "pims"
+  ]
+ },
+ {
+  "id": "isms-p-simplified-certification",
+  "term": "ISMS-P 간편인증",
+  "term_en": "ISMS-P Simplified Certification",
+  "definition": "ICT 서비스 매출 300억원 미만 중소기업의 인증 부담을 줄이기 위해 인증기준과 수수료를 약 절반으로 축소한 제도(2024.7 시행).",
+  "features": [
+   "ISMS 80→40여개, ISMS-P 101→60여개 항목",
+   "수수료 40~50% 인하",
+   "주요 ISP·IDC·금융사·가상자산사업자 제외",
+   "보안 사각지대 해소 목적"
+  ],
+  "related": [
+   "isms-p",
+   "information-security-management-system"
+  ]
+ },
+ {
+  "id": "iso-22301",
+  "term": "ISO 22301",
+  "term_en": "ISO 22301",
+  "definition": "업무연속성관리체계(BCMS)의 요구사항을 정의한 국제표준으로 BCP 수립·운영·인증의 기준.",
+  "features": [
+   "2012년 제정, 2019년 개정",
+   "PDCA 기반 관리체계 요구",
+   "BIA·위험평가·연속성 전략·훈련 요구",
+   "제3자 인증 가능"
+  ],
+  "related": [
+   "business-continuity-management",
+   "business-continuity-planning",
+   "plan-do-check-act"
+  ]
+ },
+ {
+  "id": "iso-iec-27001",
+  "term": "ISO/IEC 27001",
+  "term_en": "ISO/IEC 27001",
+  "definition": "정보보호 관리체계(ISMS) 수립·운영·인증의 국제표준으로 2022년 개정판은 93개 통제항목(부속서 A)을 4개 영역으로 재편.",
+  "features": [
+   "PDCA 기반 관리체계 요구사항",
+   "부속서 A 통제: 조직·인적·물리·기술",
+   "국내 ISMS-P 인증기준의 참조 표준",
+   "제3자 인증으로 국제 신뢰 확보"
+  ],
+  "related": [
+   "information-security-management-system",
+   "plan-do-check-act",
+   "isms-p"
+  ]
+ },
+ {
+  "id": "isogeny-based-cryptography",
+  "term": "아이소제니 기반 암호",
+  "term_en": "Isogeny-based Cryptography",
+  "definition": "초특이 타원곡선 간 동형사상(아이소제니) 탐색 난제에 기반한 양자내성 암호 계열.",
+  "features": [
+   "키 크기가 매우 작은 장점",
+   "SIKE가 2022년 고전 컴퓨터로 해독됨",
+   "NIST 표준화에서 탈락",
+   "후속 연구(CSIDH·SQIsign) 진행 중"
+  ],
+  "related": [
+   "post-quantum-cryptography",
+   "elliptic-curve-cryptography"
+  ]
+ },
+ {
+  "id": "k-anonymity",
+  "term": "k-익명성",
+  "term_en": "k-Anonymity",
+  "definition": "준식별자 조합이 동일한 레코드가 최소 k개 이상 존재하도록 하여 특정 개인을 k분의 1 이하 확률로만 식별 가능하게 하는 프라이버시 모델.",
+  "features": [
+   "비식별 적정성 평가의 필수 기준",
+   "연결 공격 방어",
+   "동질성·배경지식 공격에 취약 → l-다양성·t-근접성 보완",
+   "일반화·삭제로 달성"
+  ],
+  "related": [
+   "l-diversity",
+   "t-closeness",
+   "quasi-identifier",
+   "linkage-attack",
+   "de-identification"
+  ]
+ },
+ {
+  "id": "key-management",
+  "term": "키 관리",
+  "term_en": "Key Management",
+  "definition": "암호키의 생성·배포·저장·사용·갱신·폐기 전 생애주기를 안전하게 관리하는 활동.",
+  "features": [
+   "블록체인은 개인키 분실 시 자산 복구 불가",
+   "HSM·콜드월렛·멀티시그로 보호",
+   "NIST SP 800-57 권고",
+   "키 백업·복구·폐기 절차 필수"
+  ],
+  "related": [
+   "hardware-security-module",
+   "cold-wallet",
+   "multi-signature"
+  ]
+ },
+ {
+  "id": "key-stretching",
+  "term": "키 스트레칭",
+  "term_en": "Key Stretching",
+  "definition": "해시 연산을 수천~수십만 회 반복하거나 메모리 집약 연산을 수행하여 패스워드 검증 시간을 늘림으로써 무차별 대입 비용을 높이는 기법.",
+  "features": [
+   "PBKDF2·bcrypt·scrypt·Argon2",
+   "반복 횟수는 하드웨어 발전에 따라 상향",
+   "솔트와 함께 적용",
+   "단일 로그인은 수십 ms 지연으로 체감 미미"
+  ],
+  "related": [
+   "pbkdf2",
+   "bcrypt",
+   "scrypt",
+   "argon2",
+   "hash-salt",
+   "brute-force-attack"
+  ]
+ },
+ {
+  "id": "korea-internet-and-security-agency",
+  "term": "한국인터넷진흥원",
+  "term_en": "Korea Internet & Security Agency",
+  "definition": "정보보호·인터넷 진흥을 담당하는 과기정통부 산하 공공기관으로 ISMS-P 인증, 침해사고 대응(KrCERT), 사이버 대피소 등을 운영.",
+  "features": [
+   "ISMS-P 인증기관",
+   "보호나라·118 침해사고 신고 접수",
+   "랜섬웨어 대응·복호화 도구 제공",
+   "개인정보 보호 기술 지원"
+  ],
+  "related": [
+   "isms-p",
+   "cyber-shelter",
+   "incident-response"
+  ]
+ },
+ {
+  "id": "l-diversity",
+  "term": "l-다양성",
+  "term_en": "l-Diversity",
+  "definition": "각 동질집합 내 민감정보 값이 최소 l개 이상 서로 다르게 분포하도록 하여 동질성 공격을 방어하는 프라이버시 모델.",
+  "features": [
+   "k-익명성의 보완 모델",
+   "민감정보 쏠림은 여전히 취약 → t-근접성",
+   "비식별 적정성 평가 추가 기준",
+   "엔트로피·재귀적 l-다양성 변형"
+  ],
+  "related": [
+   "k-anonymity",
+   "t-closeness",
+   "homogeneity-attack"
+  ]
+ },
+ {
+  "id": "l2tp",
+  "term": "L2TP",
+  "term_en": "Layer 2 Tunneling Protocol",
+  "definition": "PPP 프레임을 IP 네트워크 위로 터널링하는 2계층 VPN 프로토콜로 자체 암호화가 없어 IPSec과 결합(L2TP/IPSec)하여 사용.",
+  "features": [
+   "PPTP와 Cisco L2F 통합(RFC 2661)",
+   "UDP 1701 사용",
+   "IPSec ESP로 기밀성 보완",
+   "원격접속 VPN에 널리 지원"
+  ],
+  "related": [
+   "tunneling",
+   "ipsec",
+   "pptp",
+   "remote-access-vpn"
+  ]
+ },
+ {
+  "id": "land-attack",
+  "term": "LAND 공격",
+  "term_en": "LAND Attack",
+  "definition": "출발지와 목적지 IP·포트를 동일하게 위조한 패킷을 보내 시스템이 자기 자신에게 응답하며 자원을 소모하게 하는 DoS 공격.",
+  "features": [
+   "구형 TCP/IP 스택 취약점",
+   "출발지=목적지 패킷 필터링으로 차단",
+   "Teardrop과 함께 프로토콜 악용형",
+   "현대 OS는 대부분 패치됨"
+  ],
+  "related": [
+   "denial-of-service",
+   "teardrop-attack",
+   "syn-flooding"
+  ]
+ },
+ {
+  "id": "laplace-mechanism",
+  "term": "라플라스 메커니즘",
+  "term_en": "Laplace Mechanism",
+  "definition": "질의 결과에 민감도/ε 규모의 라플라스 분포 잡음을 더하여 ε-차분 프라이버시를 달성하는 기본 메커니즘.",
+  "features": [
+   "수치형 질의(합·평균)에 적용",
+   "민감도(Sensitivity)가 잡음 크기 결정",
+   "가우시안 메커니즘은 (ε,δ)-DP",
+   "차분 프라이버시 구현의 출발점"
+  ],
+  "related": [
+   "differential-privacy",
+   "privacy-budget"
+  ]
+ },
+ {
+  "id": "lateral-movement",
+  "term": "측면 이동",
+  "term_en": "Lateral Movement",
+  "definition": "최초 침투한 호스트에서 내부 네트워크의 다른 시스템으로 권한·접근 범위를 확장해 가는 공격 단계.",
+  "features": [
+   "Pass-the-Hash·RDP·SMB·PsExec 악용",
+   "APT·랜섬웨어 확산의 핵심 단계",
+   "망 분리·세분화·MFA로 억제",
+   "내부 트래픽 모니터링·허니토큰으로 탐지"
+  ],
+  "related": [
+   "advanced-persistent-threat",
+   "privilege-escalation",
+   "network-segmentation",
+   "ransomware"
+  ]
+ },
+ {
+  "id": "lattice-based-cryptography",
+  "term": "격자 기반 암호",
+  "term_en": "Lattice-based Cryptography",
+  "definition": "고차원 격자에서 최단 벡터 문제(SVP)·LWE 등 난제에 기반한 양자내성 암호 계열로 PQC 표준의 주류.",
+  "features": [
+   "ML-KEM·ML-DSA·Falcon 표준화",
+   "동형암호의 기반 기술",
+   "키·서명 크기와 속도 균형 우수",
+   "최악 사례-평균 사례 안전성 환원"
+  ],
+  "related": [
+   "post-quantum-cryptography",
+   "ml-kem",
+   "ml-dsa",
+   "homomorphic-encryption"
+  ]
+ },
+ {
+  "id": "ldap",
+  "term": "LDAP",
+  "term_en": "Lightweight Directory Access Protocol",
+  "definition": "디렉터리 서비스에 접근·조회하기 위한 경량 프로토콜로 PKI에서 인증서·CRL 저장소로 활용.",
+  "features": [
+   "X.500 디렉터리의 경량화",
+   "계층적 DN 구조",
+   "Active Directory의 기반 프로토콜",
+   "인증서 배포·조회 표준 인터페이스"
+  ],
+  "related": [
+   "public-key-infrastructure",
+   "certificate-revocation-list",
+   "digital-certificate"
+  ]
+ },
+ {
+  "id": "least-privilege",
+  "term": "최소 권한",
+  "term_en": "Least Privilege",
+  "definition": "사용자·프로세스에 업무 수행에 필요한 최소한의 권한만 부여하는 보안 원칙.",
+  "features": [
+   "권한 오남용·내부자 위협 감소",
+   "랜섬웨어·APT 확산 범위 축소",
+   "특권계정 분리·주기적 권한 검토",
+   "제로 트러스트의 기본 원칙"
+  ],
+  "related": [
+   "access-control",
+   "zero-trust",
+   "privilege-escalation",
+   "ransomware"
+  ]
+ },
+ {
+  "id": "least-significant-bit",
+  "term": "LSB",
+  "term_en": "Least Significant Bit",
+  "definition": "픽셀·샘플 값의 최하위 비트로, 변경해도 지각 차이가 거의 없어 스테가노그래피 정보 은닉에 주로 사용되는 비트.",
+  "features": [
+   "이미지·음성 LSB 치환 은닉",
+   "통계적 편차(카이제곱 분석)로 탐지",
+   "압축·변환에 취약",
+   "스테그어낼리시스의 1차 분석 대상"
+  ],
+  "related": [
+   "steganography",
+   "steganalysis"
+  ]
+ },
+ {
+  "id": "linkage-attack",
+  "term": "연결 공격",
+  "term_en": "Linkage Attack",
+  "definition": "비식별 데이터의 준식별자를 외부 공개 데이터와 결합하여 개인을 재식별하는 공격.",
+  "features": [
+   "1997년 매사추세츠 주지사 의료기록 재식별 사례",
+   "k-익명성이 직접 대응하는 공격",
+   "우편번호·생년월일·성별 조합으로 대다수 식별",
+   "재식별 위험 평가의 기본 시나리오"
+  ],
+  "related": [
+   "k-anonymity",
+   "re-identification",
+   "quasi-identifier"
+  ]
+ },
+ {
+  "id": "live-forensics",
+  "term": "라이브 포렌식",
+  "term_en": "Live Forensics",
+  "definition": "전원이 켜진 상태의 시스템에서 메모리·프로세스·네트워크 연결 등 휘발성 정보를 우선 수집하는 포렌식 기법.",
+  "features": [
+   "전원 차단 시 소실되는 증거 확보",
+   "암호화 디스크의 복호화 키 메모리 확보",
+   "수집 행위 자체가 시스템 변화 유발 → 최소화·기록",
+   "휘발성 순서(RFC 3227) 준수"
+  ],
+  "related": [
+   "volatile-data",
+   "memory-forensics",
+   "digital-forensics"
+  ]
+ },
+ {
+  "id": "lsh",
+  "term": "LSH",
+  "term_en": "Lightweight Secure Hash",
+  "definition": "국가보안기술연구소가 개발한 국산 해시 함수로 224~512비트 출력을 지원하며 SHA-2 대비 고속.",
+  "features": [
+   "KS X 3262 국가표준",
+   "Wide-pipe Merkle-Damgård 구조",
+   "KCMVP 검증 대상 알고리즘",
+   "LSH-256·LSH-512 두 계열"
+  ],
+  "related": [
+   "hash-function",
+   "sha-2",
+   "sha-3"
+  ]
+ },
+ {
+  "id": "malvertising",
+  "term": "악성 광고",
+  "term_en": "Malvertising",
+  "definition": "정상 광고 네트워크에 악성 스크립트를 삽입한 광고를 게재하여 방문자를 익스플로잇 킷·악성 사이트로 유도하는 공격.",
+  "features": [
+   "신뢰 사이트에서도 감염 발생",
+   "드라이브 바이 다운로드 유포 경로",
+   "광고 차단·스크립트 제한으로 완화",
+   "랜섬웨어 유포 사례 다수"
+  ],
+  "related": [
+   "drive-by-download",
+   "exploit-kit",
+   "ransomware"
+  ]
+ },
+ {
+  "id": "malware",
+  "term": "악성코드",
+  "term_en": "Malware",
+  "definition": "시스템·사용자에게 해를 끼칠 목적으로 제작된 소프트웨어의 총칭으로 바이러스·웜·트로이목마·랜섬웨어·스파이웨어 등을 포함.",
+  "features": [
+   "감염·전파·은닉·목적 수행 기능",
+   "시그니처·행위 기반 탐지",
+   "APT는 맞춤형·변종 악성코드 사용",
+   "샌드박스 분석으로 행위 파악"
+  ],
+  "related": [
+   "ransomware",
+   "trojan-horse",
+   "worm",
+   "rootkit",
+   "backdoor"
+  ]
+ },
+ {
+  "id": "man-in-the-middle-attack",
+  "term": "중간자 공격",
+  "term_en": "Man-in-the-Middle Attack",
+  "definition": "통신 당사자 사이에 공격자가 개입하여 양측 통신을 가로채고 도청·변조하면서 정상 통신처럼 위장하는 공격.",
+  "features": [
+   "공개키 교체로 키 교환 가로채기",
+   "PKI 인증서·상호 인증으로 방지",
+   "QKD 공개 채널에도 인증 필요",
+   "ARP·DNS 스푸핑으로 구현"
+  ],
+  "related": [
+   "public-key-infrastructure",
+   "diffie-hellman-key-exchange",
+   "digital-certificate",
+   "dns-spoofing"
+  ]
+ },
+ {
+  "id": "master-boot-record",
+  "term": "MBR",
+  "term_en": "Master Boot Record",
+  "definition": "디스크 첫 섹터에 위치하여 파티션 테이블과 부트 코드를 담는 영역으로 변조 시 시스템 부팅 자체가 불가능해짐.",
+  "features": [
+   "Petya 랜섬웨어의 MBR 암호화",
+   "부트킷(루트킷) 은닉 위치",
+   "UEFI·GPT에서는 Secure Boot로 보호",
+   "포렌식에서 파티션 구조 분석 출발점"
+  ],
+  "related": [
+   "ransomware",
+   "rootkit"
+  ]
+ },
+ {
+  "id": "maximum-tolerable-period-of-disruption",
+  "term": "최대 허용 중단 기간",
+  "term_en": "Maximum Tolerable Period of Disruption",
+  "definition": "업무 중단이 조직에 치명적·회복 불가능한 피해를 주기까지 허용되는 최대 기간으로 RTO의 상한.",
+  "features": [
+   "BIA에서 업무별로 산정",
+   "RTO + WRT ≤ MTPD 관계",
+   "MTD(Maximum Tolerable Downtime)와 동의",
+   "업무 우선순위·복구 순서 결정 근거"
+  ],
+  "related": [
+   "recovery-time-objective",
+   "business-impact-analysis",
+   "business-continuity-planning"
+  ]
+ },
+ {
+  "id": "md5",
+  "term": "MD5",
+  "term_en": "Message Digest 5",
+  "definition": "1991년 Rivest가 설계한 128비트 해시 함수로 충돌 공격이 실용화되어 보안 용도로는 사용 금지.",
+  "features": [
+   "Merkle-Damgård 구조, 64라운드",
+   "2004년 충돌 공격 공개",
+   "인증서 위조(Flame 악성코드) 사례",
+   "체크섬 등 비보안 용도만 잔존"
+  ],
+  "related": [
+   "hash-function",
+   "sha-1",
+   "collision-resistance",
+   "merkle-damgard-construction"
+  ]
+ },
+ {
+  "id": "measurement-device-independent-qkd",
+  "term": "MDI-QKD",
+  "term_en": "Measurement-Device-Independent QKD",
+  "definition": "송신자 양측이 광자를 제3의 측정 노드로 보내 벨 상태 측정을 수행함으로써 검출기 측 모든 취약점을 제거한 QKD 방식.",
+  "features": [
+   "검출기 블라인딩 등 양자 해킹 원천 차단",
+   "측정 노드가 신뢰되지 않아도 안전",
+   "전송 거리 확장에 유리",
+   "Twin-Field QKD로 발전"
+  ],
+  "related": [
+   "quantum-key-distribution",
+   "detector-blinding-attack",
+   "single-photon-detector"
+  ]
+ },
+ {
+  "id": "memory-forensics",
+  "term": "메모리 포렌식",
+  "term_en": "Memory Forensics",
+  "definition": "물리 메모리(RAM) 덤프에서 실행 프로세스·네트워크 연결·암호키·악성코드 등 휘발성 증거를 분석하는 포렌식 분야.",
+  "features": [
+   "파일리스 악성코드 탐지의 핵심",
+   "Volatility·Rekall 프레임워크",
+   "라이브 포렌식으로 덤프 획득",
+   "디스크 암호화 키 추출 가능"
+  ],
+  "related": [
+   "volatility",
+   "live-forensics",
+   "volatile-data",
+   "fileless-malware"
+  ]
+ },
+ {
+  "id": "merkle-damgard-construction",
+  "term": "머클-담고르 구조",
+  "term_en": "Merkle-Damgård Construction",
+  "definition": "메시지를 블록으로 나누어 압축 함수를 반복 적용하며 이전 출력을 다음 입력으로 연결하는 해시 함수 설계 구조.",
+  "features": [
+   "MD5·SHA-1·SHA-2의 기반 구조",
+   "압축 함수가 충돌 저항이면 전체도 충돌 저항",
+   "길이 확장 공격에 취약 → HMAC 사용",
+   "SHA-3는 스펀지 구조로 대체"
+  ],
+  "related": [
+   "hash-function",
+   "sponge-construction",
+   "sha-2",
+   "hmac"
+  ]
+ },
+ {
+  "id": "merkle-tree",
+  "term": "머클 트리",
+  "term_en": "Merkle Tree",
+  "definition": "리프 노드의 해시를 쌍으로 결합해 상위 해시를 만들며 루트 해시 하나로 전체 데이터의 무결성을 검증하는 트리 구조.",
+  "features": [
+   "블록 헤더에 머클 루트 저장",
+   "특정 거래 포함 여부를 log n 해시로 검증(SPV)",
+   "대용량 데이터 무결성 검증",
+   "Git·IPFS·인증서 투명성에도 활용"
+  ],
+  "related": [
+   "hash-function",
+   "blockchain"
+  ]
+ },
+ {
+  "id": "message-authentication-code",
+  "term": "메시지 인증 코드",
+  "term_en": "Message Authentication Code",
+  "definition": "비밀키를 공유한 당사자 간 메시지의 무결성과 출처를 검증하기 위해 생성하는 고정 길이 인증 태그.",
+  "features": [
+   "HMAC(해시 기반), CMAC(블록 암호 기반)",
+   "부인방지는 제공하지 않음(키 공유)",
+   "TLS·IPSec 무결성 보장",
+   "AEAD 모드에 통합"
+  ],
+  "related": [
+   "hmac",
+   "hash-function",
+   "digital-signature"
+  ]
+ },
+ {
+  "id": "message-digest",
+  "term": "메시지 다이제스트",
+  "term_en": "Message Digest",
+  "definition": "해시 함수가 메시지로부터 생성한 고정 길이의 출력값으로 메시지의 지문 역할.",
+  "features": [
+   "SHA-256은 256비트(64자리 16진수)",
+   "메시지 변경 시 완전히 다른 값",
+   "전자서명은 다이제스트에 서명",
+   "무결성 검증의 비교 기준"
+  ],
+  "related": [
+   "hash-function",
+   "digital-signature"
+  ]
+ },
+ {
+  "id": "mirror-site",
+  "term": "미러 사이트",
+  "term_en": "Mirror Site",
+  "definition": "주 센터와 재해복구 센터를 동시에 운영(Active-Active)하며 실시간 동기 복제로 즉시 전환 가능한 최고 수준의 재해복구 사이트.",
+  "features": [
+   "RTO·RPO 0에 근접",
+   "구축·운영 비용 최고",
+   "동기 복제로 거리 제한",
+   "부하 분산 효과 병행"
+  ],
+  "related": [
+   "disaster-recovery-system",
+   "hot-site",
+   "data-replication"
+  ]
+ },
+ {
+  "id": "misuse-detection",
+  "term": "오용 탐지",
+  "term_en": "Misuse Detection",
+  "definition": "알려진 공격 패턴·시그니처와 비교하여 일치하면 침입으로 판단하는 지식 기반 탐지 방식.",
+  "features": [
+   "오탐 낮고 탐지 근거 명확",
+   "알려지지 않은 공격은 미탐",
+   "시그니처 지속 업데이트 필요",
+   "패턴 매칭·상태 전이·전문가 시스템"
+  ],
+  "related": [
+   "anomaly-detection",
+   "attack-signature",
+   "intrusion-detection-system",
+   "false-negative"
+  ]
+ },
+ {
+  "id": "mitre-attack",
+  "term": "MITRE ATT&CK",
+  "term_en": "MITRE ATT&CK",
+  "definition": "실제 관측된 공격자의 전술(Tactics)·기법(Techniques)·절차를 체계화한 지식 베이스로 위협 모델링·탐지 커버리지 평가에 활용.",
+  "features": [
+   "14개 전술, 200여 기법 매트릭스",
+   "킬체인보다 세분화된 침투 후 행위 기술",
+   "EDR·SIEM 탐지 룰 매핑 기준",
+   "위협 헌팅·레드팀 시나리오 설계"
+  ],
+  "related": [
+   "cyber-kill-chain",
+   "advanced-persistent-threat",
+   "threat-intelligence"
+  ]
+ },
+ {
+  "id": "ml-dsa",
+  "term": "ML-DSA",
+  "term_en": "Module-Lattice-Based Digital Signature Algorithm",
+  "definition": "NIST FIPS 204로 표준화된 격자 기반 양자내성 전자서명 알고리즘(CRYSTALS-Dilithium 기반).",
+  "features": [
+   "2024년 8월 최종 표준",
+   "PQC 인증서·코드서명 1순위",
+   "서명 크기 2.4~4.6KB",
+   "ML-KEM과 함께 주력 표준"
+  ],
+  "related": [
+   "post-quantum-cryptography",
+   "lattice-based-cryptography",
+   "ml-kem",
+   "digital-signature"
+  ]
+ },
+ {
+  "id": "ml-kem",
+  "term": "ML-KEM",
+  "term_en": "Module-Lattice-Based Key-Encapsulation Mechanism",
+  "definition": "NIST FIPS 203으로 표준화된 격자 기반 양자내성 키 캡슐화 메커니즘(CRYSTALS-Kyber 기반).",
+  "features": [
+   "2024년 8월 최종 표준",
+   "TLS 하이브리드 키 교환(X25519+ML-KEM)에 적용",
+   "키 크기 약 1KB, 고속",
+   "대칭키 분배 용도"
+  ],
+  "related": [
+   "post-quantum-cryptography",
+   "lattice-based-cryptography",
+   "ml-dsa",
+   "hybrid-encryption"
+  ]
+ },
+ {
+  "id": "mobile-forensics",
+  "term": "모바일 포렌식",
+  "term_en": "Mobile Forensics",
+  "definition": "스마트폰·태블릿에서 통화·메시지·앱 데이터·위치정보 등을 논리·물리적으로 추출·분석하는 포렌식 분야.",
+  "features": [
+   "잠금·암호화·클라우드 동기화가 장애 요소",
+   "논리 추출·파일시스템 추출·물리(칩오프) 추출",
+   "Cellebrite UFED·Oxygen Forensic",
+   "페러데이 백으로 원격 삭제 방지"
+  ],
+  "related": [
+   "cellebrite",
+   "digital-forensics"
+  ]
+ },
+ {
+  "id": "mpls",
+  "term": "MPLS",
+  "term_en": "Multiprotocol Label Switching",
+  "definition": "패킷에 라벨을 부착하여 라벨 기반으로 고속 전달하는 기술로 통신사 백본에서 VPN·QoS 서비스에 활용.",
+  "features": [
+   "MPLS VPN은 라벨로 고객 트래픽 논리 분리",
+   "암호화 없음, 통신사 망 신뢰 전제",
+   "QoS·트래픽 엔지니어링 가능",
+   "SD-WAN으로 대체 추세"
+  ],
+  "related": [
+   "vpn",
+   "site-to-site-vpn",
+   "tunneling"
+  ]
+ },
+ {
+  "id": "multi-factor-authentication",
+  "term": "다중 인증",
+  "term_en": "Multi-Factor Authentication",
+  "definition": "지식(패스워드)·소유(OTP·보안키)·속성(생체) 중 둘 이상의 서로 다른 요소를 결합하여 인증하는 방식.",
+  "features": [
+   "패스워드 유출 시에도 계정 보호",
+   "RDP·VPN·특권계정에 필수 권고",
+   "피싱 내성 MFA(FIDO)가 최선",
+   "SMS OTP는 SIM 스와핑에 취약"
+  ],
+  "related": [
+   "fido",
+   "biometric-authentication",
+   "ransomware",
+   "zero-trust"
+  ]
+ },
+ {
+  "id": "multi-signature",
+  "term": "멀티시그",
+  "term_en": "Multi-Signature",
+  "definition": "거래 실행에 N개 키 중 M개 이상의 서명을 요구하는 방식으로 단일 키 유출·분실 위험을 분산.",
+  "features": [
+   "2-of-3 등 임계 구성",
+   "거래소·DAO 자금 관리에 적용",
+   "임계 서명(TSS·MPC)으로 온체인 흔적 없이 구현",
+   "키 보관자 분리로 내부자 통제"
+  ],
+  "related": [
+   "key-management",
+   "cold-wallet",
+   "secret-sharing"
+  ]
+ },
+ {
+  "id": "multi-tenancy",
+  "term": "멀티테넌시",
+  "term_en": "Multi-Tenancy",
+  "definition": "하나의 물리 인프라·소프트웨어 인스턴스를 여러 고객(테넌트)이 논리적으로 분리하여 공유하는 클라우드 아키텍처.",
+  "features": [
+   "자원 효율성·비용 절감",
+   "테넌트 간 격리 실패 시 정보 유출",
+   "포렌식 시 타 테넌트 데이터 보호 필요",
+   "물리 압수 불가 → 논리적 수집"
+  ],
+  "related": [
+   "cloud-forensics",
+   "cloud-service-provider",
+   "hypervisor"
+  ]
+ },
+ {
+  "id": "multivariate-cryptography",
+  "term": "다변수 다항식 암호",
+  "term_en": "Multivariate Cryptography",
+  "definition": "유한체 위 다변수 2차 방정식계 풀이의 어려움(MQ 문제)에 기반한 양자내성 암호 계열.",
+  "features": [
+   "서명이 짧고 검증 빠름",
+   "Rainbow가 2022년 해독되어 NIST 탈락",
+   "UOV 등 후속 후보 연구",
+   "공개키 크기가 큼"
+  ],
+  "related": [
+   "post-quantum-cryptography",
+   "lattice-based-cryptography"
+  ]
+ },
+ {
+  "id": "nat-traversal",
+  "term": "NAT 통과",
+  "term_en": "NAT Traversal",
+  "definition": "NAT 장비가 IP 헤더를 변경하여 IPSec 등 종단 간 프로토콜이 깨지는 문제를 UDP 캡슐화 등으로 해결하는 기법.",
+  "features": [
+   "IPSec NAT-T는 UDP 4500 캡슐화",
+   "AH는 NAT 환경에서 사용 불가",
+   "SSL VPN은 TCP 443으로 문제 없음",
+   "IKE에서 NAT 존재 자동 탐지"
+  ],
+  "related": [
+   "ipsec",
+   "encapsulating-security-payload",
+   "internet-key-exchange"
+  ]
+ },
+ {
+  "id": "netflow",
+  "term": "NetFlow",
+  "term_en": "NetFlow",
+  "definition": "라우터·스위치가 통과 트래픽을 흐름(Flow) 단위로 요약하여 내보내는 기록으로 네트워크 포렌식·이상 탐지에 활용.",
+  "features": [
+   "출발지·목적지·포트·바이트·시간 요약",
+   "전체 패킷 캡처보다 저장 효율적",
+   "DDoS·내부 유출 흐름 분석",
+   "IPFIX·sFlow 등 유사 표준"
+  ],
+  "related": [
+   "network-forensics",
+   "packet-capture",
+   "ddos"
+  ]
+ },
+ {
+  "id": "network-access-control",
+  "term": "네트워크 접근통제",
+  "term_en": "Network Access Control",
+  "definition": "단말이 네트워크에 접속할 때 인증과 보안 상태(패치·백신)를 검사하여 접속 허용·격리를 결정하는 기술.",
+  "features": [
+   "802.1X 기반 인증",
+   "비인가 단말·비정상 단말 격리",
+   "VPN·무선 접속 시 단말 점검 연계",
+   "APT 확산 억제 수단"
+  ],
+  "related": [
+   "advanced-persistent-threat",
+   "vpn",
+   "network-segmentation"
+  ]
+ },
+ {
+  "id": "network-based-intrusion-detection",
+  "term": "NIDS",
+  "term_en": "Network-based Intrusion Detection System",
+  "definition": "네트워크 구간의 패킷을 미러링·TAP으로 수집·분석하여 침입을 탐지하는 IDS.",
+  "features": [
+   "다수 호스트 동시 감시, 호스트 성능 무영향",
+   "암호화 트래픽 분석 불가",
+   "고속망 패킷 유실 가능",
+   "Snort·Suricata·Zeek"
+  ],
+  "related": [
+   "host-based-intrusion-detection",
+   "intrusion-detection-system",
+   "port-mirroring",
+   "network-tap",
+   "snort"
+  ]
+ },
+ {
+  "id": "network-detection-and-response",
+  "term": "NDR",
+  "term_en": "Network Detection and Response",
+  "definition": "네트워크 트래픽을 행위·AI 기반으로 분석하여 위협을 탐지하고 대응을 자동화하는 솔루션으로 NIDS의 발전형.",
+  "features": [
+   "암호화 트래픽 메타데이터 분석",
+   "측면 이동·C&C 통신 탐지",
+   "EDR과 함께 XDR 구성",
+   "SOC 가시성 확보"
+  ],
+  "related": [
+   "intrusion-detection-system",
+   "extended-detection-and-response",
+   "endpoint-detection-and-response"
+  ]
+ },
+ {
+  "id": "network-forensics",
+  "term": "네트워크 포렌식",
+  "term_en": "Network Forensics",
+  "definition": "패킷 캡처·NetFlow·방화벽·IDS 로그 등 네트워크 증거를 수집·분석하여 침입 경로·유출 데이터를 규명하는 포렌식 분야.",
+  "features": [
+   "해킹사고 분석의 핵심 분야",
+   "시각 동기화 기반 타임라인 재구성",
+   "Wireshark·NetworkMiner·Zeek 활용",
+   "실시간 수집 체계 사전 구축 필요"
+  ],
+  "related": [
+   "packet-capture",
+   "netflow",
+   "wireshark",
+   "digital-forensics",
+   "timeline-analysis"
+  ]
+ },
+ {
+  "id": "network-segmentation",
+  "term": "망 분리·세분화",
+  "term_en": "Network Segmentation",
+  "definition": "네트워크를 업무·보안 등급별로 분리하여 침해 발생 시 확산 범위를 제한하는 기법.",
+  "features": [
+   "업무망-인터넷망 물리·논리 분리",
+   "마이크로 세그멘테이션으로 세밀 통제",
+   "랜섬웨어·APT 측면 이동 억제",
+   "금융·공공 망분리 규제"
+  ],
+  "related": [
+   "lateral-movement",
+   "ransomware",
+   "advanced-persistent-threat",
+   "zero-trust"
+  ]
+ },
+ {
+  "id": "network-tap",
+  "term": "네트워크 TAP",
+  "term_en": "Network TAP",
+  "definition": "회선에 물리적으로 삽입되어 통과 트래픽의 복사본을 손실 없이 분석 장비로 전달하는 장치.",
+  "features": [
+   "포트 미러링보다 패킷 유실 적음",
+   "장애 시에도 회선 통신 유지(수동형)",
+   "NIDS·포렌식 수집 지점",
+   "양방향 트래픽 분리 출력"
+  ],
+  "related": [
+   "port-mirroring",
+   "network-based-intrusion-detection",
+   "packet-capture"
+  ]
+ },
+ {
+  "id": "no-cloning-theorem",
+  "term": "복제 불가 정리",
+  "term_en": "No-Cloning Theorem",
+  "definition": "임의의 미지 양자상태를 완벽하게 복제하는 것이 불가능하다는 양자역학 정리로 도청자가 양자 신호를 복사해 두는 공격을 원리적으로 차단.",
+  "features": [
+   "1982년 Wootters·Zurek 증명",
+   "QKD 안전성의 핵심 근거",
+   "양자 중계기 설계의 제약 요인",
+   "고전 신호 증폭 방식 적용 불가"
+  ],
+  "related": [
+   "quantum-key-distribution",
+   "heisenberg-uncertainty-principle",
+   "quantum-repeater"
+  ]
+ },
+ {
+  "id": "non-repudiation",
+  "term": "부인방지",
+  "term_en": "Non-Repudiation",
+  "definition": "메시지의 송신·수신·내용·시점을 당사자가 사후에 부인할 수 없도록 증거를 확보하는 보안 서비스.",
+  "features": [
+   "전자서명 + 타임스탬프로 구현",
+   "발신·수신·내용·시점 부인 유형",
+   "MAC은 키 공유로 부인방지 불가",
+   "전자입찰·전자계약의 법적 효력 기반"
+  ],
+  "related": [
+   "digital-signature",
+   "public-key-infrastructure",
+   "timestamp-authority"
+  ]
+ },
+ {
+  "id": "ocsp",
+  "term": "OCSP",
+  "term_en": "Online Certificate Status Protocol",
+  "definition": "특정 인증서의 폐지 여부를 OCSP 응답 서버에 실시간 질의하여 확인하는 프로토콜(RFC 6960).",
+  "features": [
+   "CRL의 크기·지연 문제 해결",
+   "OCSP Stapling으로 서버가 응답 첨부",
+   "응답 서버 가용성·프라이버시 쟁점",
+   "브라우저 TLS 검증에 활용"
+  ],
+  "related": [
+   "certificate-revocation-list",
+   "digital-certificate",
+   "certificate-authority",
+   "public-key-infrastructure"
+  ]
+ },
+ {
+  "id": "one-time-pad",
+  "term": "일회용 패드",
+  "term_en": "One-Time Pad",
+  "definition": "메시지와 같은 길이의 진정 난수 키를 한 번만 사용하여 XOR 암호화하는 방식으로 정보이론적으로 완전한 안전성을 제공.",
+  "features": [
+   "Shannon이 완전 비밀성 증명",
+   "키 분배·관리 부담이 실용화 장벽",
+   "QKD로 분배한 키와 결합 시 이론적 완전 보안",
+   "키 재사용 시 즉시 붕괴"
+  ],
+  "related": [
+   "quantum-key-distribution",
+   "aes",
+   "quantum-random-number-generator"
+  ]
+ },
+ {
+  "id": "one-way-function",
+  "term": "일방향 함수",
+  "term_en": "One-Way Function",
+  "definition": "계산은 쉽지만 출력으로부터 입력을 역산하는 것은 계산적으로 불가능한 함수.",
+  "features": [
+   "해시 함수의 기본 성질",
+   "공개키 암호의 트랩도어 일방향 함수",
+   "존재가 P≠NP와 연관된 미해결 문제",
+   "패스워드 저장·커밋먼트의 기반"
+  ],
+  "related": [
+   "hash-function",
+   "preimage-resistance",
+   "public-key-cryptography"
+  ]
+ },
+ {
+  "id": "onion-routing",
+  "term": "어니언 라우팅",
+  "term_en": "Onion Routing",
+  "definition": "메시지를 여러 중계 노드의 공개키로 계층적으로 암호화하여 각 노드가 자신의 계층만 벗겨 다음 홉만 알게 함으로써 익명성을 보장하는 기법.",
+  "features": [
+   "Tor 네트워크의 핵심 기술",
+   "진입·중간·출구 노드 3홉 기본",
+   "어떤 노드도 출발지·목적지 동시 인지 불가",
+   "출구 노드 도청·트래픽 상관분석 한계"
+  ],
+  "related": [
+   "tor",
+   "dark-web",
+   "vpn"
+  ]
+ },
+ {
+  "id": "oracle-problem",
+  "term": "오라클 문제",
+  "term_en": "Oracle Problem",
+  "definition": "블록체인이 외부 데이터(가격·날씨 등)를 직접 가져올 수 없어 외부 데이터 공급자(오라클)에 의존하며 그 신뢰성·조작 가능성이 보안 취약점이 되는 문제.",
+  "features": [
+   "단일 오라클 조작 → DeFi 청산·플래시론 공격",
+   "분산 오라클·다중 소스·중위값으로 완화",
+   "Chainlink 등 분산 오라클 네트워크",
+   "스마트 컨트랙트 신뢰 경계의 한계"
+  ],
+  "related": [
+   "smart-contract",
+   "flash-loan-attack"
+  ]
+ },
+ {
+  "id": "p3p",
+  "term": "P3P",
+  "term_en": "Platform for Privacy Preferences",
+  "definition": "웹사이트의 개인정보 처리방침을 기계가독 형식(XML)으로 기술하여 브라우저가 이용자 선호와 자동 비교·협상하도록 한 W3C 표준.",
+  "features": [
+   "초기 PET의 정책협상 기술",
+   "쿠키 수용 여부 자동 결정",
+   "2018년 W3C 작업 종료, 실사용 미미",
+   "현재는 쿠키 동의 관리(CMP)로 대체"
+  ],
+  "related": [
+   "privacy-enhancing-technology",
+   "privacy-by-design"
+  ]
+ },
+ {
+  "id": "packager",
+  "term": "패키저",
+  "term_en": "Packager",
+  "definition": "DRM에서 원본 콘텐츠를 암호화하고 메타데이터·콘텐츠 식별자·사용규칙을 결합하여 보안 컨테이너로 만드는 구성요소.",
+  "features": [
+   "AES 등으로 콘텐츠 암호화",
+   "콘텐츠 키를 클리어링 하우스에 등록",
+   "CENC로 멀티 DRM 공통 패키징",
+   "DASH·HLS 스트리밍 포맷 생성"
+  ],
+  "related": [
+   "clearing-house",
+   "secure-container",
+   "aes"
+  ]
+ },
+ {
+  "id": "packet-capture",
+  "term": "패킷 캡처",
+  "term_en": "Packet Capture",
+  "definition": "네트워크를 통과하는 패킷 전체를 복사·저장하여 사후 분석에 활용하는 네트워크 포렌식 기본 기술.",
+  "features": [
+   "pcap 형식, tcpdump·Wireshark",
+   "전체 내용 보존으로 정밀 분석 가능",
+   "저장 용량 부담, 암호화 페이로드 한계",
+   "TAP·포트 미러링으로 수집"
+  ],
+  "related": [
+   "network-forensics",
+   "wireshark",
+   "netflow",
+   "network-tap"
+  ]
+ },
+ {
+  "id": "passkey",
+  "term": "패스키",
+  "term_en": "Passkey",
+  "definition": "FIDO2·WebAuthn 기반의 공개키 자격증명을 사용자 친화적으로 부른 것으로 클라우드 계정을 통해 여러 기기에 동기화되는 패스워드리스 인증 수단.",
+  "features": [
+   "Apple·Google·Microsoft 플랫폼 지원",
+   "생체·PIN으로 사용, 피싱 내성",
+   "동기화 패스키와 기기 바인딩 패스키",
+   "QR·BLE 하이브리드로 타 기기 로그인"
+  ],
+  "related": [
+   "fido",
+   "webauthn",
+   "authenticator"
+  ]
+ },
+ {
+  "id": "patch-management",
+  "term": "패치 관리",
+  "term_en": "Patch Management",
+  "definition": "OS·소프트웨어의 보안 취약점을 수정하는 패치를 식별·테스트·배포·검증하는 체계적 활동.",
+  "features": [
+   "랜섬웨어·APT 침투 경로의 대부분이 미패치 취약점",
+   "WannaCry는 패치 공개 후 2개월 뒤 확산",
+   "우선순위(CVSS·악용 여부) 기반 배포",
+   "자동화 도구·가상 패치로 공백 보완"
+  ],
+  "related": [
+   "ransomware",
+   "advanced-persistent-threat",
+   "zero-day-attack",
+   "exploit-kit"
+  ]
+ },
+ {
+  "id": "pbkdf2",
+  "term": "PBKDF2",
+  "term_en": "Password-Based Key Derivation Function 2",
+  "definition": "패스워드와 솔트에 HMAC을 지정 횟수 반복 적용하여 키·해시를 유도하는 표준 키 스트레칭 함수(RFC 8018).",
+  "features": [
+   "NIST·FIPS 호환으로 규제 환경에 적합",
+   "반복 횟수 60만 회 이상 권고(OWASP)",
+   "메모리 하드가 아니어서 GPU 공격에 상대적 취약",
+   "WPA2·암호화 컨테이너 키 유도에 사용"
+  ],
+  "related": [
+   "key-stretching",
+   "hmac",
+   "hash-salt",
+   "bcrypt",
+   "argon2"
+  ]
+ },
+ {
+  "id": "permissioned-blockchain",
+  "term": "허가형 블록체인",
+  "term_en": "Permissioned Blockchain",
+  "definition": "사전에 인증·승인된 참여자만 노드로 참여하고 거래를 검증할 수 있는 블록체인으로 기업·금융권 도입의 주류 형태.",
+  "features": [
+   "Hyperledger Fabric·R3 Corda 대표",
+   "노드 신원 인증(MSP·PKI)으로 시빌·51% 공격 억제",
+   "PBFT·Raft 등 빠른 확정 합의",
+   "채널·프라이빗 데이터로 기밀성 확보"
+  ],
+  "related": [
+   "blockchain",
+   "practical-byzantine-fault-tolerance",
+   "public-key-infrastructure"
+  ]
+ },
+ {
+  "id": "personal-information-protection-act",
+  "term": "개인정보보호법",
+  "term_en": "Personal Information Protection Act",
+  "definition": "개인정보의 수집·이용·제공·파기 전 과정의 처리 원칙과 정보주체 권리를 규정한 국내 일반법으로 2020년 데이터 3법 개정으로 가명정보 개념 도입.",
+  "features": [
+   "제28조의2 가명정보 처리 특례",
+   "제29조 안전조치의무",
+   "제32조의2 ISMS-P 인증 근거",
+   "개인정보보호위원회 소관, 과징금 체계 강화"
+  ],
+  "related": [
+   "pseudonymous-information",
+   "isms-p",
+   "de-identification",
+   "right-to-be-forgotten"
+  ]
+ },
+ {
+  "id": "pharming",
+  "term": "파밍",
+  "term_en": "Pharming",
+  "definition": "DNS 변조·hosts 파일 조작으로 사용자가 정상 URL을 입력해도 가짜 사이트로 유도하여 금융정보 등을 탈취하는 공격.",
+  "features": [
+   "피싱과 달리 사용자 실수 없이 발생",
+   "악성코드로 hosts 파일 변조",
+   "DNS 캐시 포이즈닝 활용",
+   "DNSSEC·인증서 확인·백신으로 대응"
+  ],
+  "related": [
+   "dns-spoofing",
+   "hosts-file",
+   "phishing"
+  ]
+ },
+ {
+  "id": "phishing",
+  "term": "피싱",
+  "term_en": "Phishing",
+  "definition": "신뢰할 수 있는 기관을 사칭한 이메일·메시지·웹사이트로 사용자를 속여 계정정보·금융정보를 탈취하거나 악성코드를 실행시키는 사회공학 공격.",
+  "features": [
+   "랜섬웨어·APT의 최다 초기 침투 경로",
+   "스피어 피싱은 특정 표적 맞춤형",
+   "SPF·DKIM·DMARC 메일 인증으로 완화",
+   "FIDO는 오리진 바인딩으로 피싱 내성"
+  ],
+  "related": [
+   "spear-phishing",
+   "social-engineering",
+   "ransomware",
+   "pharming"
+  ]
+ },
+ {
+  "id": "photon-number-splitting-attack",
+  "term": "광자수 분할 공격",
+  "term_en": "Photon Number Splitting Attack",
+  "definition": "감쇄 레이저가 가끔 방출하는 다광자 펄스에서 광자 하나를 가로채 보관하고 나머지를 전달하여 기저 공개 후 측정하는 QKD 공격.",
+  "features": [
+   "완벽한 단일 광자 광원 부재가 원인",
+   "도청 흔적 없이 키 정보 획득 가능",
+   "디코이 상태 프로토콜로 탐지",
+   "QKD 구현 취약점의 대표 사례"
+  ],
+  "related": [
+   "quantum-key-distribution",
+   "decoy-state",
+   "single-photon-source"
+  ]
+ },
+ {
+  "id": "pims",
+  "term": "PIMS",
+  "term_en": "Personal Information Management System",
+  "definition": "정보통신서비스 제공자의 개인정보보호 관리체계를 방송통신위원회·KISA가 인증하던 제도로 2018년 ISMS와 통합되어 ISMS-P로 전환.",
+  "features": [
+   "정보통신망법 제47조의3 근거",
+   "2016년 PIPL 흡수 통합",
+   "개인정보 생명주기 보호대책 평가",
+   "과징금·과태료 감경 혜택"
+  ],
+  "related": [
+   "isms-p",
+   "pipl",
+   "information-security-management-system",
+   "g-isms"
+  ]
+ },
+ {
+  "id": "pipl",
+  "term": "PIPL",
+  "term_en": "Personal Information Protection Level",
+  "definition": "개인정보보호법에 근거하여 행정안전부·NIA가 공공·민간 개인정보처리자의 보호조치 이행 수준을 인증하던 제도로 2016년 PIMS로 통합.",
+  "features": [
+   "개인정보보호법 기반 임의 인증",
+   "공공기관·민간 모두 대상",
+   "과태료 감경 혜택",
+   "PIMS 통합 후 폐지"
+  ],
+  "related": [
+   "pims",
+   "isms-p",
+   "personal-information-protection-act"
+  ]
+ },
+ {
+  "id": "plan-do-check-act",
+  "term": "PDCA",
+  "term_en": "Plan-Do-Check-Act",
+  "definition": "계획·실행·점검·개선을 반복하여 관리체계를 지속 개선하는 순환 모델로 ISO 27001·ISMS-P·BCM의 기본 구조.",
+  "features": [
+   "Deming 사이클",
+   "ISMS 관리과정(기반 마련·위험관리·운영·점검 개선)에 대응",
+   "형식적 인증 지양, 일상 운영과 연계",
+   "BCP 유지보수·훈련에도 적용"
+  ],
+  "related": [
+   "information-security-management-system",
+   "iso-iec-27001",
+   "iso-22301",
+   "internal-audit"
+  ]
+ },
+ {
+  "id": "polymorphic-malware",
+  "term": "다형성 악성코드",
+  "term_en": "Polymorphic Malware",
+  "definition": "실행마다 암호화·패킹·코드 변형으로 외형을 바꾸어 시그니처 기반 탐지를 회피하는 악성코드.",
+  "features": [
+   "변종 대량 생산으로 백신 우회",
+   "행위 기반·휴리스틱·샌드박스로 탐지",
+   "APT 맞춤형 악성코드에 활용",
+   "메타모픽은 코드 자체를 재작성"
+  ],
+  "related": [
+   "malware",
+   "advanced-persistent-threat",
+   "sandbox",
+   "fileless-malware"
+  ]
+ },
+ {
+  "id": "port-mirroring",
+  "term": "포트 미러링",
+  "term_en": "Port Mirroring",
+  "definition": "스위치의 특정 포트·VLAN 트래픽을 복사하여 분석 장비가 연결된 포트로 전달하는 기능(SPAN).",
+  "features": [
+   "NIDS·패킷 캡처의 수집 수단",
+   "추가 장비 없이 구성 가능",
+   "스위치 부하 시 패킷 유실",
+   "TAP이 무손실 대안"
+  ],
+  "related": [
+   "network-tap",
+   "network-based-intrusion-detection",
+   "packet-capture"
+  ]
+ },
+ {
+  "id": "post-quantum-cryptography",
+  "term": "양자내성암호",
+  "term_en": "Post-Quantum Cryptography",
+  "definition": "양자컴퓨터로도 효율적으로 풀 수 없는 수학 난제에 기반하여 기존 컴퓨터·네트워크에서 소프트웨어로 동작하는 공개키 암호.",
+  "features": [
+   "격자·코드·해시·다변수·아이소제니 계열",
+   "NIST FIPS 203(ML-KEM)·204(ML-DSA)·205(SLH-DSA)",
+   "TLS·VPN·인증서 하이브리드 적용",
+   "국내 KpqC 공모로 HAETAE·AIMer 등 선정"
+  ],
+  "related": [
+   "ml-kem",
+   "ml-dsa",
+   "slh-dsa",
+   "lattice-based-cryptography",
+   "quantum-key-distribution",
+   "crypto-agility"
+  ]
+ },
+ {
+  "id": "pptp",
+  "term": "PPTP",
+  "term_en": "Point-to-Point Tunneling Protocol",
+  "definition": "Microsoft가 주도한 초기 2계층 VPN 프로토콜로 PPP를 GRE로 캡슐화하며 MPPE 암호화를 사용.",
+  "features": [
+   "TCP 1723 제어 + GRE 데이터",
+   "MS-CHAP 인증 취약점으로 안전하지 않음",
+   "설정 간편하여 과거 널리 사용",
+   "L2TP/IPSec·IKEv2·WireGuard로 대체"
+  ],
+  "related": [
+   "tunneling",
+   "l2tp",
+   "gre",
+   "vpn"
+  ]
+ },
+ {
+  "id": "practical-byzantine-fault-tolerance",
+  "term": "PBFT",
+  "term_en": "Practical Byzantine Fault Tolerance",
+  "definition": "전체 노드 중 1/3 미만의 악의적 노드가 있어도 3단계 메시지 교환으로 합의에 도달하는 비잔틴 장애 허용 알고리즘.",
+  "features": [
+   "즉시 확정(Finality), 포크 없음",
+   "노드 수 증가 시 통신량 O(n²)",
+   "허가형 블록체인(Fabric·Tendermint)에 적용",
+   "금융권 결제 완결성 요구에 적합"
+  ],
+  "related": [
+   "permissioned-blockchain",
+   "proof-of-work",
+   "blockchain"
+  ]
+ },
+ {
+  "id": "preimage-resistance",
+  "term": "역상 저항성",
+  "term_en": "Preimage Resistance",
+  "definition": "해시값 h가 주어졌을 때 H(M)=h인 입력 M을 찾는 것이 계산적으로 불가능해야 한다는 해시 함수의 일방향성 성질.",
+  "features": [
+   "n비트 출력에 2^n 공격 비용",
+   "패스워드 해시 저장의 안전성 근거",
+   "제2역상 저항성·충돌 저항성과 함께 3대 성질",
+   "레인보우 테이블은 사전 계산으로 우회 시도"
+  ],
+  "related": [
+   "second-preimage-resistance",
+   "collision-resistance",
+   "hash-function",
+   "one-way-function"
+  ]
+ },
+ {
+  "id": "privacy-budget",
+  "term": "프라이버시 예산",
+  "term_en": "Privacy Budget",
+  "definition": "차분 프라이버시에서 여러 질의에 걸쳐 누적 허용되는 총 ε 값으로, 소진되면 추가 질의가 프라이버시 보장을 깨뜨리게 됨.",
+  "features": [
+   "질의마다 ε 소모, 합성 정리로 누적",
+   "예산 관리 거버넌스 필요",
+   "반복 질의 공격 방어의 핵심",
+   "ε 해석·설정 기준이 실무 난제"
+  ],
+  "related": [
+   "differential-privacy",
+   "laplace-mechanism"
+  ]
+ },
+ {
+  "id": "privacy-by-design",
+  "term": "프라이버시 바이 디자인",
+  "term_en": "Privacy by Design",
+  "definition": "시스템·서비스 설계 단계부터 프라이버시 보호를 기본 원칙으로 내재화하는 접근법으로 GDPR 제25조가 요구.",
+  "features": [
+   "Cavoukian의 7대 원칙",
+   "사후 대응이 아닌 사전 예방",
+   "기본 설정은 가장 보호적으로(Privacy by Default)",
+   "PET 적용의 설계 원칙"
+  ],
+  "related": [
+   "privacy-enhancing-technology",
+   "personal-information-protection-act"
+  ]
+ },
+ {
+  "id": "privacy-enhancing-technology",
+  "term": "개인정보 보호 강화기술",
+  "term_en": "Privacy Enhancing Technology",
+  "definition": "개인정보 노출을 최소화하면서 데이터 활용성을 유지하도록 설계된 기술 집합으로 동형암호·차분 프라이버시·합성데이터·연합학습·MPC 등을 포함.",
+  "features": [
+   "데이터 변형·암호 기반·아키텍처 기반 분류",
+   "보호 수준과 유용성 트레이드오프",
+   "AI 학습 데이터 활용의 전제 기술",
+   "ISO/IEC 20889 등 표준화 진행"
+  ],
+  "related": [
+   "homomorphic-encryption",
+   "differential-privacy",
+   "synthetic-data",
+   "federated-learning",
+   "secure-multiparty-computation",
+   "de-identification"
+  ]
+ },
+ {
+  "id": "privilege-escalation",
+  "term": "권한 상승",
+  "term_en": "Privilege Escalation",
+  "definition": "일반 사용자 권한으로 침투한 공격자가 취약점·설정 오류를 악용하여 관리자·시스템 권한을 획득하는 공격 단계.",
+  "features": [
+   "수직(관리자 획득)·수평(동급 타 계정) 상승",
+   "크리덴셜 덤프(Mimikatz)·커널 취약점 악용",
+   "최소 권한·패치·특권계정 관리로 억제",
+   "측면 이동과 연계"
+  ],
+  "related": [
+   "lateral-movement",
+   "advanced-persistent-threat",
+   "least-privilege"
+  ]
+ },
+ {
+  "id": "proof-of-work",
+  "term": "작업증명",
+  "term_en": "Proof of Work",
+  "definition": "해시 퍼즐을 가장 먼저 푼 노드가 블록 생성 권한을 얻는 합의 알고리즘으로 비트코인이 채택.",
+  "features": [
+   "난이도 조절로 블록 생성 주기 유지",
+   "51% 해시파워 장악 시 공격 가능",
+   "막대한 전력 소비",
+   "PoS로 전환 추세(이더리움 2022)"
+  ],
+  "related": [
+   "blockchain",
+   "fifty-one-percent-attack",
+   "selfish-mining",
+   "hash-function"
+  ]
+ },
+ {
+  "id": "pseudonymization",
+  "term": "가명처리",
+  "term_en": "Pseudonymization",
+  "definition": "개인정보의 일부를 삭제·대체하여 추가정보 없이는 특정 개인을 알아볼 수 없게 하되, 추가정보 결합 시 복원 가능한 처리.",
+  "features": [
+   "익명처리와 달리 가역적",
+   "개인정보보호법상 가명정보는 여전히 개인정보",
+   "추가정보는 분리 보관·접근통제",
+   "휴리스틱 가명화·암호화·교환 세부기술"
+  ],
+  "related": [
+   "pseudonymous-information",
+   "anonymization",
+   "de-identification",
+   "personal-information-protection-act"
+  ]
+ },
+ {
+  "id": "pseudonymous-information",
+  "term": "가명정보",
+  "term_en": "Pseudonymous Information",
+  "definition": "가명처리를 거쳐 추가정보 없이는 개인을 식별할 수 없는 정보로 통계작성·과학적 연구·공익적 기록보존 목적에 동의 없이 처리 가능.",
+  "features": [
+   "개인정보보호법 제28조의2~7(2020 데이터 3법)",
+   "결합은 지정 결합전문기관에서만",
+   "재식별 금지·시도 시 과징금",
+   "개인정보위 가명정보 처리 가이드라인"
+  ],
+  "related": [
+   "pseudonymization",
+   "personal-information-protection-act",
+   "de-identification"
+  ]
+ },
+ {
+  "id": "public-key-cryptography",
+  "term": "공개키 암호",
+  "term_en": "Public Key Cryptography",
+  "definition": "수학적으로 연결된 공개키·개인키 쌍을 사용하여 키 분배 문제를 해결하고 암호화·전자서명을 가능케 하는 비대칭 암호 방식.",
+  "features": [
+   "RSA·ECC·Diffie-Hellman",
+   "공개키로 암호화, 개인키로 복호화",
+   "개인키 서명, 공개키 검증",
+   "양자컴퓨터 위협으로 PQC 전환"
+  ],
+  "related": [
+   "rsa",
+   "elliptic-curve-cryptography",
+   "digital-signature",
+   "public-key-infrastructure",
+   "hybrid-encryption"
+  ]
+ },
+ {
+  "id": "public-key-infrastructure",
+  "term": "공개키 기반구조",
+  "term_en": "Public Key Infrastructure",
+  "definition": "공개키와 소유자 신원을 인증기관이 인증서로 보증하고 인증서의 발급·배포·폐지·검증을 관리하는 정책·기관·기술의 종합 체계.",
+  "features": [
+   "CA·RA·디렉터리·OCSP·사용자 구성",
+   "X.509 인증서, CRL·OCSP 폐지 관리",
+   "인증·기밀성·무결성·부인방지 제공",
+   "PQC 인증서로 전환 준비"
+  ],
+  "related": [
+   "certificate-authority",
+   "registration-authority",
+   "digital-certificate",
+   "digital-signature",
+   "x-509"
+  ]
+ },
+ {
+  "id": "quantum-computer",
+  "term": "양자컴퓨터",
+  "term_en": "Quantum Computer",
+  "definition": "큐비트의 중첩·얽힘을 이용하여 특정 문제를 고전 컴퓨터보다 지수적으로 빠르게 푸는 컴퓨터로 현행 공개키 암호를 위협.",
+  "features": [
+   "Shor 알고리즘으로 RSA·ECC 해독",
+   "Grover 알고리즘으로 대칭키 안전성 절반",
+   "오류 보정된 대규모 양자컴퓨터는 아직 미실현",
+   "선 수집 후 해독 위협으로 조기 대비 필요"
+  ],
+  "related": [
+   "qubit",
+   "shor-algorithm",
+   "grover-algorithm",
+   "post-quantum-cryptography"
+  ]
+ },
+ {
+  "id": "quantum-entanglement",
+  "term": "양자 얽힘",
+  "term_en": "Quantum Entanglement",
+  "definition": "두 양자 입자가 거리와 무관하게 측정 결과가 상관되는 상태로 E91 QKD·양자 중계·양자 인터넷의 기반.",
+  "features": [
+   "벨 부등식 위배로 검증",
+   "E91 프로토콜의 키 생성 원리",
+   "양자 텔레포테이션·중계기 핵심",
+   "얽힘 분배 거리가 기술 과제"
+  ],
+  "related": [
+   "e91-protocol",
+   "quantum-repeater",
+   "quantum-key-distribution"
+  ]
+ },
+ {
+  "id": "quantum-key-distribution",
+  "term": "양자키분배",
+  "term_en": "Quantum Key Distribution",
+  "definition": "단일 광자의 양자상태로 비밀키를 전송하여 도청 시도를 물리적으로 탐지하면서 두 당사자가 안전한 대칭키를 공유하는 기술.",
+  "features": [
+   "BB84·E91 등 프로토콜",
+   "정보이론적 안전성, 인증은 별도 필요",
+   "광섬유 약 100~200km 거리 제한",
+   "PQC와 하이브리드 운영 추세"
+  ],
+  "related": [
+   "bb84-protocol",
+   "post-quantum-cryptography",
+   "single-photon-source",
+   "single-photon-detector",
+   "quantum-repeater"
+  ]
+ },
+ {
+  "id": "quantum-random-number-generator",
+  "term": "양자 난수생성기",
+  "term_en": "Quantum Random Number Generator",
+  "definition": "광자의 경로 분기·진공 요동 등 양자 현상의 본질적 무작위성을 측정하여 예측 불가능한 진성 난수를 생성하는 장치.",
+  "features": [
+   "QKD의 비트·기저 선택에 필수",
+   "알고리즘 의사난수와 달리 결정론적 패턴 없음",
+   "칩 형태 소형화로 스마트폰 탑재",
+   "암호키·OTP 생성에 활용"
+  ],
+  "related": [
+   "quantum-key-distribution",
+   "one-time-pad",
+   "qubit"
+  ]
+ },
+ {
+  "id": "quantum-repeater",
+  "term": "양자 중계기",
+  "term_en": "Quantum Repeater",
+  "definition": "얽힘 교환·양자 메모리를 이용하여 복제 불가 정리의 제약 속에서도 양자 신호를 장거리로 전달하는 중계 장치.",
+  "features": [
+   "고전 증폭기 사용 불가 문제 해결",
+   "신뢰 중계 노드의 보안 취약점 대체",
+   "양자 인터넷 구현의 핵심 기술",
+   "양자 메모리 수명이 과제"
+  ],
+  "related": [
+   "quantum-key-distribution",
+   "no-cloning-theorem",
+   "quantum-entanglement"
+  ]
+ },
+ {
+  "id": "quasi-identifier",
+  "term": "준식별자",
+  "term_en": "Quasi-Identifier",
+  "definition": "단독으로는 개인을 식별하지 못하나 성별·나이·지역 등 조합되면 식별 가능해지는 속성 정보.",
+  "features": [
+   "비식별 조치 가이드라인의 속성자",
+   "k-익명성 산정의 기준 속성",
+   "연결 공격의 결합 키",
+   "범주화·총계처리로 보호"
+  ],
+  "related": [
+   "identifier",
+   "k-anonymity",
+   "linkage-attack",
+   "data-categorization"
+  ]
+ },
+ {
+  "id": "qubit",
+  "term": "큐비트",
+  "term_en": "Qubit",
+  "definition": "0과 1의 중첩 상태를 가질 수 있는 양자 정보의 기본 단위로 광자 편광·전자 스핀 등으로 구현.",
+  "features": [
+   "측정 시 하나의 값으로 붕괴",
+   "QKD에서 광자 편광으로 부호화",
+   "얽힘으로 큐비트 간 상관",
+   "양자컴퓨터 연산의 기본 단위"
+  ],
+  "related": [
+   "quantum-computer",
+   "quantum-key-distribution",
+   "quantum-entanglement"
+  ]
+ },
+ {
+  "id": "rainbow-table",
+  "term": "레인보우 테이블",
+  "term_en": "Rainbow Table",
+  "definition": "해시-환원 함수를 반복한 체인의 시작값·끝값만 저장하여 메모리를 절약하면서 해시값으로부터 평문을 빠르게 역조회하는 사전 계산 공격 기법.",
+  "features": [
+   "시간-메모리 트레이드오프",
+   "솔트 미적용 해시에 치명적",
+   "환원 함수를 체인 위치별로 달리해 충돌 완화",
+   "솔트·키 스트레칭으로 무력화"
+  ],
+  "related": [
+   "hash-salt",
+   "key-stretching",
+   "dictionary-attack",
+   "brute-force-attack",
+   "hash-function"
+  ]
+ },
+ {
+  "id": "ram-slack",
+  "term": "RAM 슬랙",
+  "term_en": "RAM Slack",
+  "definition": "파일 끝에서 해당 섹터 끝까지의 영역으로 과거 OS가 메모리 내용을 채우던 공간이며 드라이브 슬랙과 함께 슬랙 공간을 구성.",
+  "features": [
+   "섹터 단위(512B) 패딩 영역",
+   "구형 시스템에서 메모리 잔존 데이터 복원 가능",
+   "현대 OS는 0으로 채움",
+   "슬랙 공간 분석 대상"
+  ],
+  "related": [
+   "slack-space",
+   "drive-slack",
+   "file-system"
+  ]
+ },
+ {
+  "id": "ransomware",
+  "term": "랜섬웨어",
+  "term_en": "Ransomware",
+  "definition": "시스템에 침투하여 파일을 암호화하거나 접근을 차단한 뒤 복구 대가로 금전(암호화폐)을 요구하는 악성코드.",
+  "features": [
+   "AES+RSA 하이브리드 암호화",
+   "피싱·RDP·취약점으로 감염",
+   "RaaS로 산업화, 이중 갈취 진화",
+   "3-2-1 백업·패치·EDR·인식교육이 대응 핵심"
+  ],
+  "related": [
+   "ransomware-as-a-service",
+   "double-extortion",
+   "hybrid-encryption",
+   "three-two-one-backup-rule",
+   "phishing"
+  ]
+ },
+ {
+  "id": "ransomware-as-a-service",
+  "term": "RaaS",
+  "term_en": "Ransomware as a Service",
+  "definition": "랜섬웨어 개발자가 악성코드·인프라·협상 포털을 제휴자에게 임대하고 수익을 배분하는 범죄 비즈니스 모델.",
+  "features": [
+   "운영자-제휴자 분업 구조",
+   "구독·수익 배분(운영자 20~30%)",
+   "비전문가도 공격 가능하여 피해 급증",
+   "LockBit·Conti·BlackCat 등"
+  ],
+  "related": [
+   "ransomware",
+   "dark-web",
+   "double-extortion"
+  ]
+ },
+ {
+  "id": "rate-limiting",
+  "term": "임계치 기반 제한",
+  "term_en": "Rate Limiting",
+  "definition": "단위 시간당 요청·패킷 수가 임계치를 초과하면 초과분을 지연·차단하여 자원 고갈을 막는 트래픽 제어 기법.",
+  "features": [
+   "DDoS 1차 방어 수단",
+   "IP·세션·URL 단위 적용",
+   "정상 급증 트래픽 오차단 주의",
+   "DNS 응답 제한(RRL)·API 제한에도 활용"
+  ],
+  "related": [
+   "ddos",
+   "http-flooding",
+   "denial-of-service"
+  ]
+ },
+ {
+  "id": "re-identification",
+  "term": "재식별",
+  "term_en": "Re-identification",
+  "definition": "비식별 처리된 데이터를 다른 정보와 결합·분석하여 특정 개인을 다시 알아내는 것.",
+  "features": [
+   "연결·동질성·배경지식 공격으로 발생",
+   "Netflix·AOL 데이터 공개 사례",
+   "재식별 시 처리 중단·파기 의무",
+   "주기적 재식별 위험 재평가 필요"
+  ],
+  "related": [
+   "de-identification",
+   "linkage-attack",
+   "k-anonymity",
+   "pseudonymous-information"
+  ]
+ },
+ {
+  "id": "recovery-level-objective",
+  "term": "복구 수준 목표",
+  "term_en": "Recovery Level Objective",
+  "definition": "재해 복구 시 제공해야 할 서비스의 최소 수준(성능·기능·사용자 비율)을 정의한 지표.",
+  "features": [
+   "축소 운영 기준 설정",
+   "RTO·RPO와 함께 BCP 3대 지표",
+   "핵심 기능 우선 복구 범위 결정",
+   "단계적 완전 복구 계획의 기준"
+  ],
+  "related": [
+   "recovery-time-objective",
+   "recovery-point-objective",
+   "business-continuity-planning"
+  ]
+ },
+ {
+  "id": "recovery-point-objective",
+  "term": "복구 시점 목표",
+  "term_en": "Recovery Point Objective",
+  "definition": "재해 발생 시 허용 가능한 데이터 손실량을 시간으로 표현한 지표로 최종 백업·복제 시점과 장애 시점 간 간격.",
+  "features": [
+   "백업 주기·복제 방식 결정 요소",
+   "RPO 0은 동기 복제 필요",
+   "BIA에서 업무별 산정",
+   "RTO와 함께 DRS 유형 선정 기준"
+  ],
+  "related": [
+   "recovery-time-objective",
+   "data-replication",
+   "business-impact-analysis",
+   "disaster-recovery-system"
+  ]
+ },
+ {
+  "id": "recovery-time-objective",
+  "term": "복구 시간 목표",
+  "term_en": "Recovery Time Objective",
+  "definition": "업무 중단 시점부터 서비스가 재개되기까지 허용되는 최대 시간 지표.",
+  "features": [
+   "DRS 유형(미러·핫·웜·콜드) 결정 기준",
+   "RTO ≤ MTPD 관계",
+   "짧을수록 비용 급증",
+   "BIA에서 업무 영향 기반 산정"
+  ],
+  "related": [
+   "recovery-point-objective",
+   "maximum-tolerable-period-of-disruption",
+   "business-impact-analysis",
+   "disaster-recovery-system"
+  ]
+ },
+ {
+  "id": "reentrancy-attack",
+  "term": "재진입 공격",
+  "term_en": "Reentrancy Attack",
+  "definition": "스마트 컨트랙트가 잔액 갱신 전 외부 컨트랙트를 호출할 때 공격자의 fallback 함수가 원 함수를 재귀 호출하여 반복 인출하는 공격.",
+  "features": [
+   "2016년 The DAO 해킹(360만 ETH)",
+   "Checks-Effects-Interactions 패턴으로 방지",
+   "ReentrancyGuard(뮤텍스) 적용",
+   "정적 분석·정형 검증으로 사전 탐지"
+  ],
+  "related": [
+   "smart-contract",
+   "formal-verification"
+  ]
+ },
+ {
+  "id": "registration-authority",
+  "term": "등록기관",
+  "term_en": "Registration Authority",
+  "definition": "PKI에서 인증서 신청자의 신원을 확인하고 등록·폐지 요청을 접수·승인하여 CA에 전달하는 기관.",
+  "features": [
+   "CA의 신원확인 업무 위임",
+   "대면·비대면 신원확인 절차",
+   "인증서 발급 자체는 CA 수행",
+   "은행·통신사 등이 RA 역할 수행"
+  ],
+  "related": [
+   "certificate-authority",
+   "public-key-infrastructure",
+   "digital-certificate"
+  ]
+ },
+ {
+  "id": "registry-analysis",
+  "term": "레지스트리 분석",
+  "term_en": "Registry Analysis",
+  "definition": "Windows 레지스트리 하이브에서 사용자 활동·실행 프로그램·USB 연결·네트워크 설정 등 시스템 사용 흔적을 분석하는 포렌식 기법.",
+  "features": [
+   "UserAssist·ShimCache·USBSTOR 등 핵심 키",
+   "자동 실행(지속성) 악성코드 탐지",
+   "타임라인 분석의 주요 입력",
+   "RegRipper·Registry Explorer 도구"
+  ],
+  "related": [
+   "digital-forensics",
+   "timeline-analysis"
+  ]
+ },
+ {
+  "id": "relying-party",
+  "term": "RP 서버",
+  "term_en": "Relying Party",
+  "definition": "FIDO·WebAuthn에서 사용자를 인증하는 서비스 측 서버로 공개키를 등록·저장하고 챌린지를 생성하여 서명을 검증.",
+  "features": [
+   "오리진(RP ID)에 키를 바인딩",
+   "어테스테이션 검증으로 인증장치 신뢰 확인",
+   "서버에는 공개키만 저장되어 유출 피해 최소",
+   "인증 정책(UV 요구 등) 설정"
+  ],
+  "related": [
+   "fido",
+   "webauthn",
+   "attestation",
+   "authenticator"
+  ]
+ },
+ {
+  "id": "remote-access-vpn",
+  "term": "원격접속 VPN",
+  "term_en": "Remote Access VPN",
+  "definition": "개별 사용자 단말이 인터넷을 통해 사내 VPN 게이트웨이에 접속하여 내부 자원을 이용하는 VPN 형태.",
+  "features": [
+   "재택·이동 근무의 핵심 수단",
+   "SSL VPN·IKEv2 클라이언트",
+   "MFA·단말 보안 점검 필수",
+   "ZTNA로 대체 추세"
+  ],
+  "related": [
+   "vpn",
+   "site-to-site-vpn",
+   "ssl-tls",
+   "zero-trust-network-access"
+  ]
+ },
+ {
+  "id": "remote-desktop-protocol",
+  "term": "RDP",
+  "term_en": "Remote Desktop Protocol",
+  "definition": "Windows 원격 데스크톱 접속 프로토콜(TCP 3389)로 인터넷 노출 시 무차별 대입·취약점 악용의 주요 랜섬웨어 침투 경로.",
+  "features": [
+   "BlueKeep 등 원격코드실행 취약점",
+   "유출 크리덴셜 재사용 공격",
+   "VPN 뒤 배치·MFA·NLA·계정 잠금 권고",
+   "APT 측면 이동에도 악용"
+  ],
+  "related": [
+   "ransomware",
+   "brute-force-attack",
+   "multi-factor-authentication",
+   "lateral-movement"
+  ]
+ },
+ {
+  "id": "right-to-be-forgotten",
+  "term": "잊힐 권리",
+  "term_en": "Right to be Forgotten",
+  "definition": "정보주체가 자신의 개인정보 삭제를 요구할 수 있는 권리로 GDPR 제17조·개인정보보호법상 삭제·파기 의무와 연결되며 블록체인 불변성과 충돌.",
+  "features": [
+   "블록체인 온체인 개인정보 저장 회피 근거",
+   "오프체인 저장 + 온체인 해시로 대응",
+   "암호화 후 키 폐기(Crypto-Shredding)",
+   "개인정보보호법 제21조 파기 의무"
+  ],
+  "related": [
+   "personal-information-protection-act"
+  ]
+ },
+ {
+  "id": "rights-expression-language",
+  "term": "권리표현언어",
+  "term_en": "Rights Expression Language",
+  "definition": "디지털 콘텐츠의 사용 권한(횟수·기간·기기·행위)을 기계가독 형식으로 기술하는 언어(XrML·ODRL·MPEG-21 REL).",
+  "features": [
+   "DRM 라이선스의 권한 정의 표준",
+   "상호운용성 확보 수단",
+   "ODRL은 W3C 권고",
+   "클라이언트가 해석·강제"
+  ],
+  "related": [
+   "clearing-house"
+  ]
+ },
+ {
+  "id": "risk-assessment",
+  "term": "위험평가",
+  "term_en": "Risk Assessment",
+  "definition": "정보자산의 위협·취약점·영향도를 분석하여 위험 수준을 산정하고 수용 가능 여부를 판단하는 활동.",
+  "features": [
+   "ISMS-P 1.2 위험관리의 핵심",
+   "정성적·정량적 평가 방법",
+   "BCP 위험분석과 동일 원리",
+   "보호대책 선정의 근거"
+  ],
+  "related": [
+   "risk-management",
+   "information-asset",
+   "information-security-management-system",
+   "business-continuity-planning"
+  ]
+ },
+ {
+  "id": "risk-management",
+  "term": "위험관리",
+  "term_en": "Risk Management",
+  "definition": "위험을 식별·평가하고 회피·감소·전가·수용 전략으로 수용 가능한 수준까지 통제하며 지속 모니터링하는 체계적 과정.",
+  "features": [
+   "ISMS의 중심 관리과정",
+   "ISO/IEC 27005 참조",
+   "보호대책 명세·이행계획 산출",
+   "잔여 위험 경영진 승인"
+  ],
+  "related": [
+   "risk-assessment",
+   "information-security-management-system",
+   "information-asset"
+  ]
+ },
+ {
+  "id": "rootkit",
+  "term": "루트킷",
+  "term_en": "Rootkit",
+  "definition": "운영체제 커널·부트 영역 등 깊은 수준에 상주하여 자신과 다른 악성코드의 존재를 숨기는 은닉형 악성코드.",
+  "features": [
+   "프로세스·파일·네트워크 연결 은닉",
+   "커널·부트킷·펌웨어 수준",
+   "APT 장기 잠복 수단",
+   "메모리 포렌식·무결성 검사로 탐지"
+  ],
+  "related": [
+   "backdoor",
+   "malware",
+   "advanced-persistent-threat",
+   "master-boot-record"
+  ]
+ },
+ {
+  "id": "rsa",
+  "term": "RSA",
+  "term_en": "RSA",
+  "definition": "큰 수의 소인수분해 난제에 기반한 최초의 실용적 공개키 암호 알고리즘(1977)으로 암호화와 전자서명에 사용.",
+  "features": [
+   "2048비트 이상 권고",
+   "하이브리드 암호의 키 암호화 용도",
+   "랜섬웨어의 세션키 봉인에도 악용",
+   "양자컴퓨터 Shor 알고리즘에 취약"
+  ],
+  "related": [
+   "public-key-cryptography",
+   "elliptic-curve-cryptography",
+   "shor-algorithm",
+   "hybrid-encryption"
+  ]
+ },
+ {
+  "id": "sandbox",
+  "term": "샌드박스",
+  "term_en": "Sandbox",
+  "definition": "의심 파일·코드를 격리된 가상 환경에서 실행하여 실제 행위를 관찰·분석하는 보안 기술.",
+  "features": [
+   "메일 첨부파일·다운로드 파일 사전 분석",
+   "알려지지 않은 악성코드 탐지",
+   "샌드박스 인지·지연 실행으로 회피 시도",
+   "CDR(콘텐츠 무해화)과 병행"
+  ],
+  "related": [
+   "advanced-persistent-threat",
+   "polymorphic-malware",
+   "malware"
+  ]
+ },
+ {
+  "id": "scrubbing-center",
+  "term": "스크러빙 센터",
+  "term_en": "Scrubbing Center",
+  "definition": "DDoS 발생 시 표적 트래픽을 BGP·DNS로 전용 세정 센터에 우회시켜 공격 트래픽을 제거하고 정상 트래픽만 회송하는 클라우드 기반 방어 모델.",
+  "features": [
+   "Tbps급 집중 세정 용량",
+   "온디맨드·상시(Always-on) 운영",
+   "GRE 터널로 정상 트래픽 회송",
+   "L7 HTTPS 공격은 인증서 제공 시에만 방어"
+  ],
+  "related": [
+   "ddos",
+   "content-delivery-network",
+   "gre",
+   "cyber-shelter"
+  ]
+ },
+ {
+  "id": "scrypt",
+  "term": "scrypt",
+  "term_en": "scrypt",
+  "definition": "대량 메모리를 요구하도록 설계된 메모리 하드 키 유도 함수로 ASIC·GPU 병렬 공격 비용을 높임.",
+  "features": [
+   "2009년 Percival 설계, RFC 7914",
+   "메모리·CPU·병렬도 파라미터",
+   "라이트코인 PoW에 채택",
+   "Argon2의 선행 모델"
+  ],
+  "related": [
+   "key-stretching",
+   "argon2",
+   "bcrypt",
+   "pbkdf2"
+  ]
+ },
+ {
+  "id": "second-preimage-resistance",
+  "term": "제2 역상 저항성",
+  "term_en": "Second Preimage Resistance",
+  "definition": "주어진 입력 M에 대해 H(M)=H(M')인 다른 입력 M'을 찾는 것이 계산적으로 불가능해야 한다는 해시 함수의 성질.",
+  "features": [
+   "약한 충돌 저항성이라고도 함",
+   "n비트 출력에 2^n 공격 비용",
+   "문서 위조 방지의 직접 근거",
+   "충돌 저항성보다 약한 조건"
+  ],
+  "related": [
+   "preimage-resistance",
+   "collision-resistance",
+   "hash-function"
+  ]
+ },
+ {
+  "id": "secret-sharing",
+  "term": "비밀 분산",
+  "term_en": "Secret Sharing",
+  "definition": "비밀을 n개 조각으로 분할하여 임계값 t개 이상이 모여야 복원되도록 하는 기법(Shamir).",
+  "features": [
+   "MPC·임계 서명의 기본 요소",
+   "키 분할 보관으로 단일 유출 방지",
+   "전자입찰 개찰 키 분산에 활용",
+   "t-1개 조각으로는 정보 없음"
+  ],
+  "related": [
+   "secure-multiparty-computation",
+   "multi-signature",
+   "key-management",
+   "garbled-circuit"
+  ]
+ },
+ {
+  "id": "secure-access-service-edge",
+  "term": "SASE",
+  "term_en": "Secure Access Service Edge",
+  "definition": "SD-WAN 네트워크 기능과 ZTNA·SWG·CASB·FWaaS 보안 기능을 클라우드에서 통합 제공하는 아키텍처.",
+  "features": [
+   "Gartner 2019 제시",
+   "사용자·위치 무관한 일관된 보안",
+   "VPN·경계 보안의 클라우드 대체",
+   "제로 트러스트 구현 플랫폼"
+  ],
+  "related": [
+   "zero-trust-network-access",
+   "software-defined-perimeter",
+   "vpn",
+   "zero-trust"
+  ]
+ },
+ {
+  "id": "secure-container",
+  "term": "보안 컨테이너",
+  "term_en": "Secure Container",
+  "definition": "암호화된 콘텐츠와 메타데이터·사용규칙·라이선스 정보를 하나로 묶은 DRM 패키지 포맷.",
+  "features": [
+   "패키저의 출력물",
+   "콘텐츠와 권한이 함께 이동",
+   "클라이언트가 라이선스로 개봉",
+   "포맷 표준화가 상호운용 관건"
+  ],
+  "related": [
+   "packager",
+   "rights-expression-language"
+  ]
+ },
+ {
+  "id": "secure-element",
+  "term": "보안 요소",
+  "term_en": "Secure Element",
+  "definition": "변조 방지 하드웨어 칩에서 키·인증서를 저장하고 암호 연산을 수행하는 격리된 보안 영역.",
+  "features": [
+   "스마트카드·eSE·SIM 형태",
+   "FIDO 인증장치 개인키 보관",
+   "TEE보다 높은 물리 보안",
+   "결제·전자신분증에 활용"
+  ],
+  "related": [
+   "trusted-execution-environment",
+   "authenticator",
+   "fido"
+  ]
+ },
+ {
+  "id": "secure-multiparty-computation",
+  "term": "안전한 다자간 계산",
+  "term_en": "Secure Multi-Party Computation",
+  "definition": "여러 참여자가 각자의 입력을 공개하지 않고 공동으로 함수 결과만 계산하는 암호 프로토콜.",
+  "features": [
+   "비밀 분산·가블드 서킷·불확정 전송 기반",
+   "기관 간 데이터 결합 통계에 적용",
+   "임계 서명(MPC 지갑)에도 활용",
+   "통신·연산 비용이 과제"
+  ],
+  "related": [
+   "secret-sharing",
+   "garbled-circuit",
+   "privacy-enhancing-technology",
+   "homomorphic-encryption"
+  ]
+ },
+ {
+  "id": "security-association",
+  "term": "보안 연관",
+  "term_en": "Security Association",
+  "definition": "IPSec에서 두 당사자 간 합의된 암호 알고리즘·키·수명 등 보안 파라미터 집합으로 SPI로 식별되는 단방향 논리 연결.",
+  "features": [
+   "IKE로 협상·수립",
+   "양방향 통신에 SA 2개 필요",
+   "SAD·SPD로 관리",
+   "수명 만료 시 재협상"
+  ],
+  "related": [
+   "ipsec",
+   "internet-key-exchange",
+   "encapsulating-security-payload"
+  ]
+ },
+ {
+  "id": "security-orchestration-automation-response",
+  "term": "SOAR",
+  "term_en": "Security Orchestration, Automation and Response",
+  "definition": "보안 경보 대응 절차를 플레이북으로 자동화하고 여러 보안 도구를 연동(오케스트레이션)하여 대응 시간을 단축하는 플랫폼.",
+  "features": [
+   "SIEM 경보 → 자동 격리·차단",
+   "반복 업무 자동화로 분석가 부담 감소",
+   "사례 관리·협업 기능",
+   "XDR에 기능 흡수 추세"
+  ],
+  "related": [
+   "siem",
+   "extended-detection-and-response",
+   "incident-response"
+  ]
+ },
+ {
+  "id": "selfish-mining",
+  "term": "이기적 채굴",
+  "term_en": "Selfish Mining",
+  "definition": "채굴한 블록을 즉시 공개하지 않고 비밀 체인을 유지하다가 유리한 시점에 일괄 공개하여 정직한 채굴자의 블록을 무효화하고 보상을 독식하는 전략.",
+  "features": [
+   "해시파워 1/3 수준에서도 이익 가능",
+   "PoW 인센티브 구조의 취약점",
+   "블록 전파 규칙 개선으로 완화",
+   "51% 공격보다 낮은 비용"
+  ],
+  "related": [
+   "proof-of-work",
+   "fifty-one-percent-attack"
+  ]
+ },
+ {
+  "id": "server-message-block",
+  "term": "SMB",
+  "term_en": "Server Message Block",
+  "definition": "Windows 파일·프린터 공유 프로토콜(TCP 445)로 EternalBlue(SMBv1) 취약점이 WannaCry 랜섬웨어 전파에 악용됨.",
+  "features": [
+   "SMBv1 비활성화 권고",
+   "내부망 측면 이동·랜섬웨어 확산 경로",
+   "방화벽에서 외부 445 차단",
+   "SMB 서명·암호화로 보안 강화"
+  ],
+  "related": [
+   "ransomware",
+   "lateral-movement",
+   "patch-management"
+  ]
+ },
+ {
+  "id": "service-level-agreement",
+  "term": "SLA",
+  "term_en": "Service Level Agreement",
+  "definition": "서비스 제공자와 이용자 간 가용성·성능·보안·지원 수준을 정량적으로 약정한 계약.",
+  "features": [
+   "클라우드 포렌식 협조 조항 포함 필요",
+   "가용성 99.9% 등 지표와 보상",
+   "BCP에서 공급자 복구 조건 명시",
+   "DDoS 방어 서비스 수준 약정"
+  ],
+  "related": [
+   "cloud-service-provider",
+   "cloud-forensics",
+   "business-continuity-planning"
+  ]
+ },
+ {
+  "id": "sha-1",
+  "term": "SHA-1",
+  "term_en": "Secure Hash Algorithm 1",
+  "definition": "1995년 NIST 표준 160비트 해시 함수로 2017년 실제 충돌(SHAttered)이 공개되어 보안 용도 사용이 중단됨.",
+  "features": [
+   "Merkle-Damgård 구조, 80라운드",
+   "TLS 인증서 2017년 이후 발급 금지",
+   "Git은 호환성 위해 잔존(SHA-256 전환 중)",
+   "SHA-2·SHA-3로 대체"
+  ],
+  "related": [
+   "hash-function",
+   "sha-2",
+   "md5",
+   "collision-resistance"
+  ]
+ },
+ {
+  "id": "sha-2",
+  "term": "SHA-2",
+  "term_en": "Secure Hash Algorithm 2",
+  "definition": "NIST FIPS 180-4의 해시 함수 군(SHA-224/256/384/512)으로 현재 가장 널리 사용되는 표준.",
+  "features": [
+   "Merkle-Damgård 구조",
+   "SHA-256은 비트코인·TLS·인증서 표준",
+   "길이 확장 공격은 HMAC으로 회피",
+   "양자 대비 SHA-384 이상 권고"
+  ],
+  "related": [
+   "hash-function",
+   "sha-3",
+   "merkle-damgard-construction",
+   "sha-1"
+  ]
+ },
+ {
+  "id": "sha-3",
+  "term": "SHA-3",
+  "term_en": "Secure Hash Algorithm 3",
+  "definition": "2015년 NIST FIPS 202로 표준화된 Keccak 기반 해시 함수로 스펀지 구조를 채택하여 SHA-2와 구조적으로 독립.",
+  "features": [
+   "SHA3-224/256/384/512, SHAKE128/256 가변 출력",
+   "길이 확장 공격 내성",
+   "SHA-2 붕괴 시 대체재",
+   "하드웨어 구현 효율 우수"
+  ],
+  "related": [
+   "hash-function",
+   "sponge-construction",
+   "sha-2"
+  ]
+ },
+ {
+  "id": "shor-algorithm",
+  "term": "쇼어 알고리즘",
+  "term_en": "Shor's Algorithm",
+  "definition": "1994년 Shor가 제안한 양자 알고리즘으로 소인수분해·이산대수를 다항시간에 풀어 RSA·ECC·DH 공개키 암호를 무력화.",
+  "features": [
+   "대규모 오류보정 양자컴퓨터 필요",
+   "PQC 전환의 직접적 동인",
+   "대칭키·해시에는 적용 불가",
+   "양자 푸리에 변환 기반"
+  ],
+  "related": [
+   "quantum-computer",
+   "rsa",
+   "elliptic-curve-cryptography",
+   "post-quantum-cryptography"
+  ]
+ },
+ {
+  "id": "siem",
+  "term": "SIEM",
+  "term_en": "Security Information and Event Management",
+  "definition": "다양한 보안 장비·시스템의 로그를 수집·정규화·상관분석하여 위협을 탐지하고 컴플라이언스 보고를 지원하는 통합 플랫폼.",
+  "features": [
+   "IDS·방화벽·EDR 로그 통합",
+   "상관분석 룰·UEBA로 APT 탐지",
+   "SOC 운영의 중심",
+   "SOAR·XDR과 연계"
+  ],
+  "related": [
+   "intrusion-detection-system",
+   "endpoint-detection-and-response",
+   "security-orchestration-automation-response",
+   "extended-detection-and-response"
+  ]
+ },
+ {
+  "id": "single-photon-detector",
+  "term": "단일 광자 검출기",
+  "term_en": "Single Photon Detector",
+  "definition": "광자 하나의 도달을 감지할 수 있는 초고감도 검출기로 QKD 수신부의 핵심 부품.",
+  "features": [
+   "APD(애벌랜치 포토다이오드)·SNSPD",
+   "암계수·검출 효율이 키 생성률 결정",
+   "검출기 블라인딩 공격의 표적",
+   "MDI-QKD로 취약점 제거"
+  ],
+  "related": [
+   "quantum-key-distribution",
+   "detector-blinding-attack",
+   "single-photon-source"
+  ]
+ },
+ {
+  "id": "single-photon-source",
+  "term": "단일 광자 광원",
+  "term_en": "Single Photon Source",
+  "definition": "펄스당 정확히 하나의 광자를 방출하도록 설계된 광원으로 QKD 송신부에서 큐비트를 부호화.",
+  "features": [
+   "실제로는 감쇄 레이저 사용(다광자 확률 존재)",
+   "광자수 분할 공격의 원인",
+   "디코이 상태로 보완",
+   "양자점 광원 연구 진행"
+  ],
+  "related": [
+   "quantum-key-distribution",
+   "photon-number-splitting-attack",
+   "decoy-state",
+   "qubit"
+  ]
+ },
+ {
+  "id": "sinkhole",
+  "term": "싱크홀",
+  "term_en": "Sinkhole",
+  "definition": "악성 도메인·C&C 서버로 향하는 트래픽을 보안기관이 통제하는 서버로 유도하여 봇넷 명령을 차단하고 감염 호스트를 식별하는 기법.",
+  "features": [
+   "KISA DNS 싱크홀 운영",
+   "C&C 차단으로 봇넷 무력화",
+   "감염 PC 식별·치료 연계",
+   "DDoS 트래픽 블랙홀 라우팅과 구분"
+  ],
+  "related": [
+   "botnet",
+   "command-and-control",
+   "ddos"
+  ]
+ },
+ {
+  "id": "site-to-site-vpn",
+  "term": "사이트 간 VPN",
+  "term_en": "Site-to-Site VPN",
+  "definition": "본사-지사 등 두 네트워크의 게이트웨이 간 상시 암호화 터널을 구성하여 LAN을 연결하는 VPN 형태.",
+  "features": [
+   "IPSec 터널 모드가 표준",
+   "인트라넷·엑스트라넷 VPN",
+   "개별 단말 설정 불필요",
+   "MPLS·전용선 대체"
+  ],
+  "related": [
+   "vpn",
+   "ipsec",
+   "tunnel-mode",
+   "remote-access-vpn"
+  ]
+ },
+ {
+  "id": "slack-space",
+  "term": "슬랙 공간",
+  "term_en": "Slack Space",
+  "definition": "파일시스템 할당 단위(클러스터)와 실제 파일 크기 차이로 생기는 미사용 영역으로 이전 파일의 데이터 조각이 잔존하여 포렌식 분석 대상이 됨.",
+  "features": [
+   "RAM 슬랙 + 드라이브 슬랙",
+   "삭제 파일 잔존 데이터 복원",
+   "안티 포렌식 데이터 은닉 장소",
+   "디스크 이미징으로만 수집 가능"
+  ],
+  "related": [
+   "ram-slack",
+   "drive-slack",
+   "file-system",
+   "unallocated-space",
+   "disk-imaging"
+  ]
+ },
+ {
+  "id": "sleuth-kit",
+  "term": "The Sleuth Kit",
+  "term_en": "The Sleuth Kit",
+  "definition": "파일시스템 구조를 분석하여 삭제 파일·메타데이터를 복원하는 오픈소스 디지털 포렌식 명령행 도구 모음.",
+  "features": [
+   "Autopsy의 분석 엔진",
+   "NTFS·FAT·ext·HFS 등 지원",
+   "fls·icat·mmls 등 도구",
+   "Brian Carrier 개발"
+  ],
+  "related": [
+   "autopsy",
+   "digital-forensics",
+   "file-system"
+  ]
+ },
+ {
+  "id": "slh-dsa",
+  "term": "SLH-DSA",
+  "term_en": "Stateless Hash-Based Digital Signature Algorithm",
+  "definition": "NIST FIPS 205로 표준화된 무상태 해시 기반 양자내성 전자서명(SPHINCS+ 기반).",
+  "features": [
+   "해시 함수 안전성에만 의존",
+   "서명 크기 8~50KB로 큼",
+   "격자 기반 백업 대안",
+   "펌웨어 서명 등 장기 보존 용도"
+  ],
+  "related": [
+   "hash-based-signature",
+   "post-quantum-cryptography",
+   "ml-dsa"
+  ]
+ },
+ {
+  "id": "slowloris",
+  "term": "Slowloris",
+  "term_en": "Slowloris",
+  "definition": "불완전한 HTTP 요청 헤더를 천천히 지속 전송하여 웹 서버의 동시 연결 슬롯을 장기 점유·고갈시키는 저대역폭 L7 DoS 공격.",
+  "features": [
+   "소량 트래픽으로 Apache 등 마비",
+   "RUDY(Slow POST)·Slow Read 변형",
+   "연결 타임아웃·동시 연결 제한으로 대응",
+   "리버스 프록시·WAF로 완화"
+  ],
+  "related": [
+   "http-flooding",
+   "ddos",
+   "waf"
+  ]
+ },
+ {
+  "id": "smart-contract",
+  "term": "스마트 컨트랙트",
+  "term_en": "Smart Contract",
+  "definition": "블록체인 위에서 조건 충족 시 자동 실행되는 프로그램 코드로 중개자 없이 계약을 이행하지만 코드 취약점이 그대로 자산 손실로 이어짐.",
+  "features": [
+   "이더리움 Solidity, Fabric 체인코드",
+   "배포 후 수정 불가(불변성)",
+   "재진입·오버플로·접근제어 취약점",
+   "코드 감사·정형 검증 필수"
+  ],
+  "related": [
+   "blockchain",
+   "reentrancy-attack",
+   "formal-verification",
+   "oracle-problem"
+  ]
+ },
+ {
+  "id": "smurf-attack",
+  "term": "스머프 공격",
+  "term_en": "Smurf Attack",
+  "definition": "출발지를 표적 IP로 위조한 ICMP Echo 요청을 브로드캐스트 주소로 보내 네트워크 내 모든 호스트의 응답이 표적에 집중되게 하는 반사형 DDoS.",
+  "features": [
+   "ICMP 증폭 공격의 원형",
+   "라우터의 directed broadcast 차단으로 방지",
+   "현대 네트워크에서는 대부분 차단",
+   "Fraggle은 UDP 변형"
+  ],
+  "related": [
+   "icmp-flooding",
+   "amplification-attack",
+   "ddos"
+  ]
+ },
+ {
+  "id": "snapshot",
+  "term": "스냅샷",
+  "term_en": "Snapshot",
+  "definition": "특정 시점의 VM·스토리지·파일시스템 상태를 그대로 보존한 사본으로 복구와 포렌식 증거 수집에 활용.",
+  "features": [
+   "클라우드 포렌식의 논리적 수집 수단",
+   "원본 변경 없이 분석용 사본 확보",
+   "백업 대체 아님(동일 스토리지 의존)",
+   "랜섬웨어는 VSS 스냅샷 삭제 시도"
+  ],
+  "related": [
+   "cloud-forensics",
+   "virtual-machine",
+   "hypervisor"
+  ]
+ },
+ {
+  "id": "snort",
+  "term": "Snort",
+  "term_en": "Snort",
+  "definition": "Cisco(구 Sourcefire)가 관리하는 오픈소스 NIDS/IPS로 룰 기반 시그니처 탐지의 사실상 표준.",
+  "features": [
+   "Snort 룰 문법이 업계 표준",
+   "인라인 IPS 모드 지원",
+   "커뮤니티·구독 룰셋",
+   "Suricata가 멀티스레드 대안"
+  ],
+  "related": [
+   "network-based-intrusion-detection",
+   "attack-signature",
+   "intrusion-detection-system",
+   "intrusion-prevention-system"
+  ]
+ },
+ {
+  "id": "social-engineering",
+  "term": "사회공학",
+  "term_en": "Social Engineering",
+  "definition": "기술적 취약점 대신 사람의 심리·신뢰·호기심을 이용하여 정보를 얻거나 행동을 유도하는 공격 기법.",
+  "features": [
+   "피싱·스피어 피싱·프리텍스팅·베이팅",
+   "APT 초기 침투의 핵심",
+   "보안 인식 교육·모의 훈련으로 대응",
+   "기술 통제만으로 방어 불가"
+  ],
+  "related": [
+   "phishing",
+   "spear-phishing",
+   "advanced-persistent-threat"
+  ]
+ },
+ {
+  "id": "software-defined-perimeter",
+  "term": "SDP",
+  "term_en": "Software-Defined Perimeter",
+  "definition": "인증·인가 전에는 자원을 네트워크에서 보이지 않게 숨기고(블랙 클라우드), 검증된 사용자·단말에만 1:1 암호화 연결을 허용하는 제로 트러스트 아키텍처.",
+  "features": [
+   "CSA(Cloud Security Alliance) 표준",
+   "SPA(단일 패킷 인증)로 포트 은닉",
+   "컨트롤러·게이트웨이·클라이언트 구성",
+   "VPN 대체, ZTNA 구현 방식"
+  ],
+  "related": [
+   "zero-trust",
+   "zero-trust-network-access",
+   "vpn",
+   "secure-access-service-edge"
+  ]
+ },
+ {
+  "id": "spear-phishing",
+  "term": "스피어 피싱",
+  "term_en": "Spear Phishing",
+  "definition": "특정 조직·인물을 사전 조사하여 업무 문서·지인 메일로 위장한 맞춤형 피싱으로 APT·랜섬웨어의 대표 초기 침투 수단.",
+  "features": [
+   "일반 피싱보다 성공률 높음",
+   "악성 매크로 문서·링크 첨부",
+   "임원 대상은 웨일링",
+   "모의 훈련·메일 샌드박스로 대응"
+  ],
+  "related": [
+   "phishing",
+   "social-engineering",
+   "advanced-persistent-threat",
+   "ransomware"
+  ]
+ },
+ {
+  "id": "split-tunneling",
+  "term": "스플릿 터널링",
+  "term_en": "Split Tunneling",
+  "definition": "VPN 접속 시 사내 자원 트래픽만 터널로 보내고 일반 인터넷 트래픽은 직접 전송하도록 분리하는 설정.",
+  "features": [
+   "VPN 게이트웨이 부하·지연 감소",
+   "단말이 인터넷 위협에 직접 노출",
+   "보안 정책에 따라 허용 범위 결정",
+   "풀 터널링은 모든 트래픽 터널 경유"
+  ],
+  "related": [
+   "vpn",
+   "remote-access-vpn",
+   "tunneling"
+  ]
+ },
+ {
+  "id": "sponge-construction",
+  "term": "스펀지 구조",
+  "term_en": "Sponge Construction",
+  "definition": "고정 크기 상태에 입력 블록을 흡수(Absorb)하며 순열 함수를 적용하고, 이후 원하는 길이만큼 출력을 압착(Squeeze)하는 해시 함수 설계 구조.",
+  "features": [
+   "SHA-3(Keccak)의 기반 구조",
+   "가변 길이 출력(SHAKE) 지원",
+   "길이 확장 공격 내성",
+   "MAC·난수생성·인증암호에도 활용"
+  ],
+  "related": [
+   "sha-3",
+   "merkle-damgard-construction",
+   "hash-function"
+  ]
+ },
+ {
+  "id": "ssl-tls",
+  "term": "SSL/TLS",
+  "term_en": "Secure Sockets Layer / Transport Layer Security",
+  "definition": "전송 계층 위에서 서버 인증·키 교환·암호화·무결성을 제공하는 보안 프로토콜로 HTTPS·SSL VPN의 기반.",
+  "features": [
+   "TLS 1.3이 현행, SSL·TLS 1.0/1.1 폐기",
+   "X.509 인증서 기반 서버 인증",
+   "ECDHE로 완전 순방향 비밀성",
+   "PQC 하이브리드 키 교환 도입 중"
+  ],
+  "related": [
+   "digital-certificate",
+   "public-key-infrastructure",
+   "diffie-hellman-key-exchange",
+   "vpn"
+  ]
+ },
+ {
+  "id": "statement-of-applicability",
+  "term": "보호대책 명세서",
+  "term_en": "Statement of Applicability",
+  "definition": "위험평가 결과에 따라 선정한 보호대책과 적용·제외 사유를 정리한 문서로 ISMS 인증 심사의 핵심 증적.",
+  "features": [
+   "ISO/IEC 27001 필수 문서",
+   "ISMS-P 1.2.3 보호대책 선정 산출물",
+   "제외 항목은 타당한 사유 기재",
+   "운영명세서로 구현 현황 연계"
+  ],
+  "related": [
+   "risk-assessment",
+   "information-security-management-system",
+   "isms-p"
+  ]
+ },
+ {
+  "id": "steganalysis",
+  "term": "스테그어낼리시스",
+  "term_en": "Steganalysis",
+  "definition": "스테가노그래피로 은닉된 정보의 존재를 통계적 편차·시그니처 불일치 등으로 탐지·추출하는 분석 기법.",
+  "features": [
+   "LSB 카이제곱·RS 분석",
+   "파일 크기·시그니처 불일치 점검",
+   "StegDetect·StegExpose 도구",
+   "포렌식 증거분석 기술의 하나"
+  ],
+  "related": [
+   "steganography",
+   "least-significant-bit",
+   "file-signature",
+   "digital-forensics"
+  ]
+ },
+ {
+  "id": "steganography",
+  "term": "스테가노그래피",
+  "term_en": "Steganography",
+  "definition": "이미지·음성·문서 등 정상 파일 안에 비밀 정보를 지각할 수 없게 숨겨 존재 자체를 은폐하는 기술.",
+  "features": [
+   "LSB 치환·주파수 영역 삽입",
+   "암호화와 달리 존재 은폐가 목적",
+   "범죄 증거 은닉·안티 포렌식에 악용",
+   "워터마킹과 기술 공유, 목적 상이"
+  ],
+  "related": [
+   "steganalysis",
+   "least-significant-bit",
+   "anti-forensics",
+   "digital-watermarking"
+  ]
+ },
+ {
+  "id": "supply-chain-attack",
+  "term": "공급망 공격",
+  "term_en": "Supply Chain Attack",
+  "definition": "소프트웨어 업데이트 서버·협력사·오픈소스 라이브러리 등 신뢰된 공급망을 변조하여 다수 고객을 동시에 감염시키는 공격.",
+  "features": [
+   "SolarWinds(2020)·3CX·Kaseya 사례",
+   "신뢰 경로를 통해 보안 통제 우회",
+   "SBOM·코드서명 검증·협력사 보안 평가로 대응",
+   "APT·랜섬웨어 침투 경로"
+  ],
+  "related": [
+   "advanced-persistent-threat",
+   "ransomware",
+   "patch-management"
+  ]
+ },
+ {
+  "id": "sybil-attack",
+  "term": "시빌 공격",
+  "term_en": "Sybil Attack",
+  "definition": "공격자가 다수의 가짜 신원(노드)을 생성하여 P2P 네트워크에서 영향력을 부당하게 확대하는 공격.",
+  "features": [
+   "이클립스 공격의 선행 단계",
+   "PoW·PoS는 비용으로 억제",
+   "허가형은 노드 인증으로 방지",
+   "평판·신원 검증 시스템 취약"
+  ],
+  "related": [
+   "eclipse-attack",
+   "permissioned-blockchain"
+  ]
+ },
+ {
+  "id": "syn-flooding",
+  "term": "SYN 플러딩",
+  "term_en": "SYN Flooding",
+  "definition": "TCP 3-way 핸드셰이크의 SYN만 대량 전송하고 ACK를 보내지 않아 서버의 반개방 연결 테이블(백로그)을 고갈시키는 DoS 공격.",
+  "features": [
+   "출발지 IP 위조로 추적 곤란",
+   "SYN 쿠키·SYN 프록시로 대응",
+   "백로그 큐 확대·타임아웃 단축",
+   "자원 소진형 L4 공격 대표"
+  ],
+  "related": [
+   "ddos",
+   "denial-of-service",
+   "rate-limiting"
+  ]
+ },
+ {
+  "id": "synthetic-data",
+  "term": "합성데이터",
+  "term_en": "Synthetic Data",
+  "definition": "원본 데이터의 통계적 분포·상관 구조를 학습한 생성모델로 만든 가상 데이터로 실제 개인 레코드를 포함하지 않으면서 분석·학습에 활용.",
+  "features": [
+   "GAN·확산모델·통계 모델 생성",
+   "AI 학습·테스트·외부 공유용",
+   "기억화·멤버십 추론 위험 검증 필요",
+   "차분 프라이버시 결합으로 보장 강화"
+  ],
+  "related": [
+   "generative-adversarial-network",
+   "differential-privacy",
+   "privacy-enhancing-technology",
+   "de-identification"
+  ]
+ },
+ {
+  "id": "t-closeness",
+  "term": "t-근접성",
+  "term_en": "t-Closeness",
+  "definition": "각 동질집합의 민감정보 분포와 전체 데이터 분포 간 거리가 t 이하가 되도록 하여 쏠림·유사성 공격을 방어하는 프라이버시 모델.",
+  "features": [
+   "l-다양성의 한계 보완",
+   "EMD(Earth Mover's Distance)로 거리 측정",
+   "비식별 적정성 평가 추가 기준",
+   "유용성 손실이 큰 편"
+  ],
+  "related": [
+   "k-anonymity",
+   "l-diversity",
+   "background-knowledge-attack"
+  ]
+ },
+ {
+  "id": "tamper-resistance",
+  "term": "변조 방지",
+  "term_en": "Tamper Resistance",
+  "definition": "소프트웨어·하드웨어가 역공학·수정·키 추출 시도에 저항하도록 설계된 성질로 DRM 클라이언트·보안 칩의 필수 요건.",
+  "features": [
+   "코드 난독화·무결성 검증·안티 디버깅",
+   "TEE·SE 하드웨어 격리",
+   "화이트박스 암호로 키 은닉",
+   "완전한 방지는 불가, 비용 상승이 목표"
+  ],
+  "related": [
+   "trusted-execution-environment",
+   "secure-element"
+  ]
+ },
+ {
+  "id": "teardrop-attack",
+  "term": "티어드롭 공격",
+  "term_en": "Teardrop Attack",
+  "definition": "IP 단편화 패킷의 오프셋을 중첩·조작하여 재조합 시 시스템 오류·충돌을 유발하는 DoS 공격.",
+  "features": [
+   "구형 OS의 재조합 로직 취약점",
+   "LAND·Ping of Death와 함께 프로토콜 악용형",
+   "단편 재조합 검증으로 방지",
+   "현대 시스템은 대부분 패치"
+  ],
+  "related": [
+   "denial-of-service",
+   "land-attack"
+  ]
+ },
+ {
+  "id": "threat-intelligence",
+  "term": "위협 인텔리전스",
+  "term_en": "Threat Intelligence",
+  "definition": "공격자·공격 기법·침해지표(IoC)에 관한 정보를 수집·분석·공유하여 선제적 방어와 탐지에 활용하는 활동과 그 산출물.",
+  "features": [
+   "전략·운영·전술 수준 구분",
+   "STIX/TAXII 표준으로 공유",
+   "KISA·ISAC·민간 피드",
+   "SIEM·EDR 자동 연동"
+  ],
+  "related": [
+   "advanced-persistent-threat",
+   "mitre-attack",
+   "siem",
+   "ransomware"
+  ]
+ },
+ {
+  "id": "three-two-one-backup-rule",
+  "term": "3-2-1 백업 원칙",
+  "term_en": "3-2-1 Backup Rule",
+  "definition": "데이터 사본 3개를 2가지 이상 매체에 저장하고 그중 1개는 오프사이트·오프라인에 보관하는 백업 원칙.",
+  "features": [
+   "랜섬웨어 대응의 기본",
+   "오프라인·불변 백업으로 감염 전파 차단",
+   "3-2-1-1-0(불변 1, 오류 0)으로 확장",
+   "복구 테스트 병행 필수"
+  ],
+  "related": [
+   "ransomware",
+   "business-continuity-planning",
+   "disaster-recovery-system"
+  ]
+ },
+ {
+  "id": "timeline-analysis",
+  "term": "타임라인 분석",
+  "term_en": "Timeline Analysis",
+  "definition": "파일시스템·레지스트리·로그·브라우저 기록 등의 시각 정보를 통합 정렬하여 사건 전후 행위를 시간 순으로 재구성하는 포렌식 기법.",
+  "features": [
+   "MAC 시간(수정·접근·생성) 활용",
+   "시각 동기화(NTP)·시간대 보정 필수",
+   "log2timeline(plaso) 도구",
+   "타임스탬프 조작(안티 포렌식) 주의"
+  ],
+  "related": [
+   "digital-forensics",
+   "registry-analysis",
+   "network-forensics",
+   "anti-forensics"
+  ]
+ },
+ {
+  "id": "timestamp-authority",
+  "term": "시점확인기관",
+  "term_en": "Time Stamp Authority",
+  "definition": "전자문서·서명의 해시에 신뢰할 수 있는 시각을 결합하여 서명한 타임스탬프 토큰을 발급함으로써 특정 시점에 존재했음을 증명하는 기관.",
+  "features": [
+   "RFC 3161 프로토콜",
+   "시점 부인 방지, 인증서 폐지 전 서명 입증",
+   "장기 서명 검증(LTV)의 요소",
+   "전자입찰 제출 시각 증명"
+  ],
+  "related": [
+   "non-repudiation",
+   "digital-signature",
+   "public-key-infrastructure"
+  ]
+ },
+ {
+  "id": "tor",
+  "term": "Tor",
+  "term_en": "The Onion Router",
+  "definition": "어니언 라우팅으로 트래픽을 3개 이상의 자원봉사 노드에 계층 암호화하여 중계함으로써 사용자 익명성을 제공하는 네트워크.",
+  "features": [
+   ".onion 숨김 서비스(다크웹)",
+   "VPN과 달리 단일 신뢰 주체 없음",
+   "랜섬웨어 C&C·협상 사이트 통신에 악용",
+   "출구 노드 도청·속도 저하 한계"
+  ],
+  "related": [
+   "onion-routing",
+   "dark-web",
+   "vpn",
+   "command-and-control"
+  ]
+ },
+ {
+  "id": "transport-mode",
+  "term": "전송 모드",
+  "term_en": "Transport Mode",
+  "definition": "IPSec에서 원본 IP 헤더는 유지하고 페이로드만 암호화·인증하는 모드로 종단 호스트 간 통신에 사용.",
+  "features": [
+   "IP 헤더 노출, 오버헤드 작음",
+   "호스트-호스트 보안 통신",
+   "L2TP/IPSec 결합에 사용",
+   "터널 모드는 헤더까지 보호"
+  ],
+  "related": [
+   "ipsec",
+   "tunnel-mode",
+   "encapsulating-security-payload"
+  ]
+ },
+ {
+  "id": "trojan-horse",
+  "term": "트로이목마",
+  "term_en": "Trojan Horse",
+  "definition": "유용한 프로그램으로 위장하여 사용자가 스스로 설치하게 한 뒤 백도어·정보 탈취 등 악성 행위를 수행하는 악성코드.",
+  "features": [
+   "자가 복제 없음(웜·바이러스와 구분)",
+   "RAT(원격 접근 트로이목마)가 APT 거점",
+   "다운로더·드로퍼 역할",
+   "코드서명 검증·행위 탐지로 대응"
+  ],
+  "related": [
+   "malware",
+   "backdoor",
+   "advanced-persistent-threat",
+   "worm"
+  ]
+ },
+ {
+  "id": "trusted-execution-environment",
+  "term": "신뢰실행환경",
+  "term_en": "Trusted Execution Environment",
+  "definition": "프로세서 내 격리된 보안 영역에서 코드와 데이터를 OS·관리자로부터 보호하며 실행하는 하드웨어 기반 보안 환경.",
+  "features": [
+   "ARM TrustZone·Intel SGX·AMD SEV",
+   "FIDO 개인키·DRM 키 보관",
+   "기밀 컴퓨팅(Confidential Computing) 기반",
+   "사이드채널 공격 사례 존재"
+  ],
+  "related": [
+   "secure-element",
+   "authenticator",
+   "privacy-enhancing-technology"
+  ]
+ },
+ {
+  "id": "tunnel-mode",
+  "term": "터널 모드",
+  "term_en": "Tunnel Mode",
+  "definition": "IPSec에서 원본 IP 패킷 전체를 암호화·인증하고 새 IP 헤더를 추가하는 모드로 게이트웨이 간 VPN에 사용.",
+  "features": [
+   "내부 주소 체계 은닉",
+   "사이트 간 VPN 표준",
+   "오버헤드 크나 보안성 높음",
+   "전송 모드는 페이로드만 보호"
+  ],
+  "related": [
+   "ipsec",
+   "transport-mode",
+   "site-to-site-vpn",
+   "encapsulating-security-payload"
+  ]
+ },
+ {
+  "id": "tunneling",
+  "term": "터널링",
+  "term_en": "Tunneling",
+  "definition": "한 프로토콜의 패킷을 다른 프로토콜의 페이로드로 캡슐화하여 중간 네트워크를 투명하게 통과시키는 기술.",
+  "features": [
+   "VPN의 기본 메커니즘",
+   "PPTP·L2TP·GRE·IPSec·TLS 터널",
+   "암호화는 별도 결합 필요(GRE 등)",
+   "DNS·ICMP 터널링은 C&C 은닉에 악용"
+  ],
+  "related": [
+   "vpn",
+   "ipsec",
+   "gre",
+   "l2tp",
+   "pptp"
+  ]
+ },
+ {
+  "id": "udp-flooding",
+  "term": "UDP 플러딩",
+  "term_en": "UDP Flooding",
+  "definition": "대량의 UDP 패킷을 무작위 포트로 전송하여 표적의 대역폭을 소진하고 ICMP 도달 불가 응답 처리 부하를 유발하는 DDoS 공격.",
+  "features": [
+   "비연결 프로토콜로 출발지 위조 용이",
+   "반사·증폭 공격과 결합",
+   "불필요 UDP 서비스 차단·임계치 제한",
+   "대역폭 소진형 L3/4 공격 대표"
+  ],
+  "related": [
+   "ddos",
+   "amplification-attack",
+   "icmp-flooding",
+   "rate-limiting"
+  ]
+ },
+ {
+  "id": "unallocated-space",
+  "term": "비할당 영역",
+  "term_en": "Unallocated Space",
+  "definition": "파일시스템이 현재 어떤 파일에도 할당하지 않은 디스크 영역으로 삭제된 파일의 데이터가 덮어쓰이기 전까지 잔존.",
+  "features": [
+   "파일 카빙의 주 대상",
+   "디스크 이미징으로만 수집",
+   "SSD TRIM은 잔존 데이터 제거",
+   "슬랙 공간과 함께 포렌식 복구 영역"
+  ],
+  "related": [
+   "file-carving",
+   "slack-space",
+   "file-system",
+   "disk-imaging"
+  ]
+ },
+ {
+  "id": "unified-threat-management",
+  "term": "UTM",
+  "term_en": "Unified Threat Management",
+  "definition": "방화벽·IPS·안티바이러스·웹 필터링·VPN 등 다수 보안 기능을 단일 장비에 통합한 솔루션.",
+  "features": [
+   "중소기업 보안 운영 단순화",
+   "단일 장애점·성능 병목 가능",
+   "NGFW와 기능 중첩",
+   "IPS·IDS 기능 흡수"
+  ],
+  "related": [
+   "firewall",
+   "intrusion-prevention-system",
+   "intrusion-detection-system",
+   "vpn"
+  ]
+ },
+ {
+  "id": "universal-authentication-framework",
+  "term": "UAF",
+  "term_en": "Universal Authentication Framework",
+  "definition": "FIDO 1.0의 패스워드리스 인증 프로토콜로 단말 내장 생체·PIN 인증 후 공개키 서명으로 서버에 인증.",
+  "features": [
+   "11개 기술표준 구성(아키텍처·프로토콜·ASM API 등)",
+   "모바일 앱 중심",
+   "거래 확인(Transaction Confirmation) 지원",
+   "FIDO2 WebAuthn으로 계승"
+  ],
+  "related": [
+   "fido",
+   "universal-second-factor",
+   "authenticator-specific-module",
+   "webauthn"
+  ]
+ },
+ {
+  "id": "universal-second-factor",
+  "term": "U2F",
+  "term_en": "Universal Second Factor",
+  "definition": "FIDO 1.0의 2차 인증 프로토콜로 패스워드 입력 후 USB·NFC 보안키를 터치하여 공개키 서명으로 인증.",
+  "features": [
+   "Google·Yubico 주도",
+   "브라우저 환경 중심",
+   "CTAP1으로 FIDO2 호환",
+   "피싱 내성 2단계 인증"
+  ],
+  "related": [
+   "fido",
+   "universal-authentication-framework",
+   "client-to-authenticator-protocol",
+   "multi-factor-authentication"
+  ]
+ },
+ {
+  "id": "virtual-machine",
+  "term": "가상머신",
+  "term_en": "Virtual Machine",
+  "definition": "하이퍼바이저 위에서 독립된 운영체제처럼 동작하는 소프트웨어 기반 컴퓨터로 클라우드 자원 제공의 기본 단위.",
+  "features": [
+   "VM 이미지·스냅샷이 포렌식 증거",
+   "하이퍼바이저에서 메모리 덤프 가능",
+   "VM 탈출 공격 위험",
+   "샌드박스 분석 환경으로 활용"
+  ],
+  "related": [
+   "hypervisor",
+   "snapshot",
+   "cloud-forensics",
+   "sandbox"
+  ]
+ },
+ {
+  "id": "volatile-data",
+  "term": "휘발성 데이터",
+  "term_en": "Volatile Data",
+  "definition": "메모리·프로세스·네트워크 연결·로그인 세션 등 전원 차단 시 소실되는 정보로 포렌식에서 가장 먼저 수집해야 하는 증거.",
+  "features": [
+   "RFC 3227 휘발성 순서 준수",
+   "라이브 포렌식으로 수집",
+   "신속성 원칙의 근거",
+   "암호키·파일리스 악성코드 단서"
+  ],
+  "related": [
+   "live-forensics",
+   "memory-forensics",
+   "digital-evidence"
+  ]
+ },
+ {
+  "id": "volatility",
+  "term": "Volatility",
+  "term_en": "Volatility",
+  "definition": "메모리 덤프에서 프로세스·네트워크·레지스트리·악성코드 흔적을 추출하는 오픈소스 메모리 포렌식 프레임워크.",
+  "features": [
+   "Windows·Linux·macOS 프로파일 지원",
+   "pslist·netscan·malfind 등 플러그인",
+   "Volatility 3로 재작성",
+   "파일리스·루트킷 분석 핵심 도구"
+  ],
+  "related": [
+   "memory-forensics",
+   "digital-forensics",
+   "fileless-malware"
+  ]
+ },
+ {
+  "id": "vpn",
+  "term": "VPN",
+  "term_en": "Virtual Private Network",
+  "definition": "공중망 위에 터널링·암호화·인증으로 전용선과 같은 보안 통신 채널을 구성하는 가상 사설 네트워크.",
+  "features": [
+   "IPSec VPN·SSL VPN",
+   "원격접속·사이트 간 유형",
+   "접속 후 전면 신뢰의 한계",
+   "ZTNA·SASE로 발전"
+  ],
+  "related": [
+   "ipsec",
+   "ssl-tls",
+   "tunneling",
+   "zero-trust-network-access"
+  ]
+ },
+ {
+  "id": "waf",
+  "term": "WAF",
+  "term_en": "Web Application Firewall",
+  "definition": "HTTP 요청·응답을 분석하여 SQL 인젝션·XSS 등 웹 애플리케이션 공격과 L7 DDoS를 차단하는 보안 장비.",
+  "features": [
+   "OWASP Top 10 공격 방어",
+   "시그니처·행위·학습 기반",
+   "CDN 엣지 WAF로 분산 방어",
+   "오탐 시 정상 요청 차단 주의"
+  ],
+  "related": [
+   "firewall",
+   "http-flooding",
+   "content-delivery-network",
+   "intrusion-prevention-system"
+  ]
+ },
+ {
+  "id": "warm-site",
+  "term": "웜 사이트",
+  "term_en": "Warm Site",
+  "definition": "핵심 장비와 네트워크는 사전 구비하되 데이터는 주기적 백업으로 복원하여 수일 내 복구하는 중간 수준의 재해복구 사이트.",
+  "features": [
+   "핫 사이트와 콜드 사이트의 절충",
+   "RTO 수일~수주, RPO 백업 주기",
+   "비용 대비 효과 균형",
+   "비핵심 업무 적용"
+  ],
+  "related": [
+   "disaster-recovery-system",
+   "hot-site",
+   "cold-site"
+  ]
+ },
+ {
+  "id": "watering-hole-attack",
+  "term": "워터링홀 공격",
+  "term_en": "Watering Hole Attack",
+  "definition": "표적 조직 구성원이 자주 방문하는 웹사이트를 사전에 감염시켜 방문 시 악성코드를 감염시키는 APT 침투 기법.",
+  "features": [
+   "맹수가 물웅덩이에서 기다리는 데 비유",
+   "드라이브 바이 다운로드 결합",
+   "특정 IP 대역만 공격하여 노출 최소화",
+   "웹 필터링·패치·샌드박스로 대응"
+  ],
+  "related": [
+   "advanced-persistent-threat",
+   "drive-by-download",
+   "spear-phishing"
+  ]
+ },
+ {
+  "id": "webauthn",
+  "term": "WebAuthn",
+  "term_en": "Web Authentication",
+  "definition": "W3C가 표준화한 브라우저 API로 웹 애플리케이션이 FIDO 인증장치를 이용해 공개키 기반 등록·인증을 수행하게 하는 FIDO2 핵심 규격.",
+  "features": [
+   "navigator.credentials API",
+   "CTAP과 함께 FIDO2 구성",
+   "오리진 바인딩으로 피싱 내성",
+   "패스키의 기반 표준"
+  ],
+  "related": [
+   "fido",
+   "client-to-authenticator-protocol",
+   "passkey",
+   "relying-party"
+  ]
+ },
+ {
+  "id": "wireguard",
+  "term": "WireGuard",
+  "term_en": "WireGuard",
+  "definition": "Linux 커널에 통합된 경량 VPN 프로토콜로 약 4천 줄 코드와 고정 암호 스위트(ChaCha20·Curve25519)로 단순성과 성능을 추구.",
+  "features": [
+   "IPSec·OpenVPN 대비 빠르고 감사 용이",
+   "UDP 기반, 공개키로 피어 식별",
+   "로밍·모바일 환경 적합",
+   "암호 민첩성은 제한(버전 교체 방식)"
+  ],
+  "related": [
+   "vpn",
+   "ipsec",
+   "tunneling"
+  ]
+ },
+ {
+  "id": "wireshark",
+  "term": "Wireshark",
+  "term_en": "Wireshark",
+  "definition": "수백 가지 프로토콜을 해석·필터링할 수 있는 오픈소스 패킷 분석 도구로 네트워크 포렌식·장애 분석의 표준.",
+  "features": [
+   "pcap 캡처·분석, 스트림 재조합",
+   "디스플레이 필터로 공격 트래픽 추적",
+   "TLS 키 제공 시 복호화 분석",
+   "tshark 명령행 버전"
+  ],
+  "related": [
+   "packet-capture",
+   "network-forensics"
+  ]
+ },
+ {
+  "id": "worm",
+  "term": "웜",
+  "term_en": "Worm",
+  "definition": "취약점을 이용해 네트워크를 통해 스스로 복제·전파하는 악성코드로 숙주 파일 없이 독립 실행.",
+  "features": [
+   "WannaCry(SMB)·Stuxnet(USB·네트워크) 전파",
+   "급속 확산으로 네트워크 마비",
+   "패치·망 분리로 전파 차단",
+   "랜섬웨어·APT와 결합"
+  ],
+  "related": [
+   "malware",
+   "ransomware",
+   "trojan-horse",
+   "server-message-block"
+  ]
+ },
+ {
+  "id": "write-blocker",
+  "term": "쓰기 방지 장치",
+  "term_en": "Write Blocker",
+  "definition": "증거 매체에 대한 모든 쓰기 명령을 차단하고 읽기만 허용하여 원본 무결성을 보장하는 하드웨어·소프트웨어 장치.",
+  "features": [
+   "디스크 이미징 시 필수",
+   "하드웨어 방식이 법적 신뢰 높음",
+   "OS 자동 마운트에 의한 변경 방지",
+   "NIST CFTT 검증 기준"
+  ],
+  "related": [
+   "disk-imaging",
+   "digital-forensics",
+   "digital-evidence"
+  ]
+ },
+ {
+  "id": "x-509",
+  "term": "X.509",
+  "term_en": "X.509",
+  "definition": "ITU-T가 정의한 공개키 인증서·CRL의 표준 형식으로 PKI·TLS 인증서의 기반.",
+  "features": [
+   "v3 확장 필드(키 용도·SAN·CRL 배포점)",
+   "버전·일련번호·발급자·유효기간·주체·공개키·서명",
+   "DER/PEM 인코딩",
+   "RFC 5280 인터넷 프로파일"
+  ],
+  "related": [
+   "digital-certificate",
+   "public-key-infrastructure",
+   "certificate-authority",
+   "certificate-revocation-list"
+  ]
+ },
+ {
+  "id": "zero-day-attack",
+  "term": "제로데이 공격",
+  "term_en": "Zero-Day Attack",
+  "definition": "패치가 공개되기 전의 알려지지 않은 취약점을 악용하는 공격으로 시그니처 기반 방어로는 탐지 불가.",
+  "features": [
+   "APT·랜섬웨어 초기 침투에 활용",
+   "이상 탐지·샌드박스·EDR로 대응",
+   "취약점 거래 시장 존재",
+   "가상 패치·공격 표면 축소로 완화"
+  ],
+  "related": [
+   "advanced-persistent-threat",
+   "anomaly-detection",
+   "patch-management",
+   "sandbox"
+  ]
+ },
+ {
+  "id": "zero-knowledge-proof",
+  "term": "영지식 증명",
+  "term_en": "Zero-Knowledge Proof",
+  "definition": "증명자가 명제가 참이라는 사실 외에 어떤 정보도 노출하지 않고 검증자를 설득하는 암호 프로토콜.",
+  "features": [
+   "완전성·건전성·영지식성 조건",
+   "zk-SNARK·zk-STARK로 블록체인 프라이버시·확장성",
+   "연령·자격 증명 등 PET 활용",
+   "신뢰 설정(Trusted Setup) 쟁점"
+  ],
+  "related": [
+   "privacy-enhancing-technology",
+   "decentralized-identity"
+  ]
+ },
+ {
+  "id": "zero-trust",
+  "term": "제로 트러스트",
+  "term_en": "Zero Trust",
+  "definition": "네트워크 위치를 신뢰 근거로 삼지 않고 모든 접근 요청을 사용자·단말·컨텍스트 기반으로 지속 검증하는 보안 모델.",
+  "features": [
+   "'절대 신뢰하지 말고 항상 검증'",
+   "NIST SP 800-207",
+   "최소 권한·마이크로 세그멘테이션·지속 인증",
+   "VPN 경계 모델의 한계 극복"
+  ],
+  "related": [
+   "zero-trust-network-access",
+   "software-defined-perimeter",
+   "least-privilege",
+   "multi-factor-authentication"
+  ]
+ },
+ {
+  "id": "zero-trust-network-access",
+  "term": "ZTNA",
+  "term_en": "Zero Trust Network Access",
+  "definition": "사용자·단말 신원과 상태를 검증한 뒤 네트워크 전체가 아닌 특정 애플리케이션에만 접근을 허용하는 제로 트러스트 기반 원격 접속 기술.",
+  "features": [
+   "VPN의 '접속 후 전면 신뢰' 대체",
+   "애플리케이션 단위 접근, 자원 은닉",
+   "SDP·SASE로 구현",
+   "지속적 신뢰 재평가"
+  ],
+  "related": [
+   "zero-trust",
+   "software-defined-perimeter",
+   "secure-access-service-edge",
+   "vpn"
+  ]
+ }
+]

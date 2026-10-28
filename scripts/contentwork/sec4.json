@@ -1,0 +1,268 @@
+[
+ {
+  "id": "t-7798153e",
+  "title": "HTTPS",
+  "title_en": "HTTP Secure",
+  "aliases": [],
+  "subs": [
+   "HTTP 취약점·HTTPS 특징"
+  ],
+  "questions": [
+   {
+    "id": "r113-s2-q05",
+    "round": 113,
+    "session": 2,
+    "text": "월드와이드웹(WWW) 프로토콜인 HTTP의 취약점을 설명하고, 그 대안으로 사용하는 HTTPS의 특징에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-bcd1661c",
+  "title": "ID 관리(Identity Management)",
+  "title_en": "Identity Management",
+  "aliases": [],
+  "subs": [
+   "인터넷 ID관리서비스 개념·핵심기술"
+  ],
+  "questions": [
+   {
+    "id": "r75-s2-q05",
+    "round": 75,
+    "session": 2,
+    "text": "인터넷 ID관리서비스의 개념과 서비스내용 그리고 핵심요소기술을 기술하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-ca818f95",
+  "title": "IPSec",
+  "title_en": "IP Security",
+  "aliases": [],
+  "subs": [
+   "보안기능·VPN 구축"
+  ],
+  "questions": [
+   {
+    "id": "r104-s2-q03",
+    "round": 104,
+    "session": 2,
+    "text": "범용적인 인터넷 보안 방법론인 IPSec을 보안기능 중심으로 설명하고, VPN(Virtual Private Network) 구축에 IPSec이 어떻게 사용되는지 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-c9b0b1d2",
+  "title": "ISA/IEC 62443",
+  "title_en": "ISA/IEC 62443",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r132-s1-q05",
+    "round": 132,
+    "session": 1,
+    "text": "ISA/IEC 62443"
+   }
+  ]
+ },
+ {
+  "id": "t-4232a2d1",
+  "title": "ISO 27001",
+  "title_en": "ISO 27001",
+  "aliases": [],
+  "subs": [
+   "개인정보 유출 방지·DB보안 조치"
+  ],
+  "questions": [
+   {
+    "id": "r102-s4-q03",
+    "round": 102,
+    "session": 4,
+    "text": "최근 카드 3사의 개인 정보 유출로 인해 사회적 파장이 아래와 같이 발생했다. (개인 측면에서는 스미싱 및 스팸 문자에 노출 / 기업 측면에서는 카드 재발급 비용 및 집단 소송, 사후 관리로 인한 소요 비용 발생 / 국가 차원에서는 개인 정보 보호 관련 제도 개선 등 사회적 우려 증가) 향후 개인 정보 유출 방지를 위하여 기업 측면에서 강화해야 할 보안 조치 사항을 ISO 27001과 DB보안 관점에서 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-05da02aa",
+  "title": "ISO/IEC 27017",
+  "title_en": "ISO/IEC 27017",
+  "aliases": [],
+  "subs": [
+   "클라우드 서비스 정보보호 통제"
+  ],
+  "questions": [
+   {
+    "id": "r122-s3-q02",
+    "round": 122,
+    "session": 3,
+    "text": "ISO/IEC 27017(클라우드 서비스 정보보호 통제)을 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-00ff785d",
+  "title": "JWT(JSON Web Token)",
+  "title_en": "JSON Web Token",
+  "aliases": [],
+  "subs": [
+   "구성·인증 메커니즘·장단점"
+  ],
+  "questions": [
+   {
+    "id": "r125-s3-q05",
+    "round": 125,
+    "session": 3,
+    "text": "JASON Web Token에 대하여 다음을 설명하시오. 가. JASON Web Token의 개념 나. JASON Web Token의 구성과 인증 메커니즘 다. JASON Web Token의 장․단점과 활용방안"
+   }
+  ]
+ },
+ {
+  "id": "t-41e2a304",
+  "title": "LLM 보안(LLM Security)",
+  "title_en": "LLM Security",
+  "aliases": [],
+  "subs": [
+   "도입 시 보안 위험·대응"
+  ],
+  "questions": [
+   {
+    "id": "r136-s2-q03",
+    "round": 136,
+    "session": 2,
+    "text": "AI 기반 소프트웨어 개발에서 LLM(Large Language Model)을 도입할 때 고려해야 할 보안 위험을 3가지 이상 쓰고 각 대응 방안을 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-c9483adb",
+  "title": "MCP 보안(MCP Security)",
+  "title_en": "Model Context Protocol Security",
+  "aliases": [],
+  "subs": [
+   "취약점·대응"
+  ],
+  "questions": [
+   {
+    "id": "r137-s2-q03",
+    "round": 137,
+    "session": 2,
+    "text": "MCP(Model Context Protocol)를 이용한 인공지능 서비스 구축 시 보안 취약점을 설명하고 대응 방안을 제시하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-760c8d9d",
+  "title": "OWASP Top 10",
+  "title_en": "OWASP Top 10",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r96-s1-q07",
+    "round": 96,
+    "session": 1,
+    "text": "OWASP Top 10(Open Web Application Security Project Top 10)에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-2115aa8c",
+  "title": "OWASP Top 10 for LLM",
+  "title_en": "OWASP Top 10 for LLM Applications",
+  "aliases": [],
+  "subs": [
+   "2025 보안 위협·대응"
+  ],
+  "questions": [
+   {
+    "id": "r136-s4-q05",
+    "round": 136,
+    "session": 4,
+    "text": "대형언어모델(LLM, Large Language Model)의 활용이 급격히 증가함에 따라 그와 관련된 보안 위협이 새롭게 대두되고 있다. OWASP에서는 2025년 버전의 LLM 애플리케이션을 위한 Top 10 보안 위협 목록(OWASP LLM, OWASP Top 10 for LLM Application 2025)을 발표하여 LLM 기반 시스템의 안전한 개발과 운영을 위한 기준을 제시하고 있다. 이와 관련하여 다음을 설명하시오. 가. OWASP LLM이 제시된 배경과 주요 특징 나. OWASP LLM에서 제시된 주요 보안 위협 다. 기업이 LLM 애플리케이션을 설계, 운영할 때 OWASP LLM을 활용한 보안 대응방안"
+   }
+  ]
+ },
+ {
+  "id": "t-19d9a9b4",
+  "title": "PAM(Pluggable Authentication Modules)",
+  "title_en": "Pluggable Authentication Modules",
+  "aliases": [],
+  "subs": [
+   "Linux"
+  ],
+  "questions": [
+   {
+    "id": "r113-s1-q05",
+    "round": 113,
+    "session": 1,
+    "text": "Linux PAM(Pluggable Authentication Modules)"
+   }
+  ]
+ },
+ {
+  "id": "t-2c2e6d3d",
+  "title": "PCI DSS",
+  "title_en": "Payment Card Industry Data Security Standard",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r107-s3-q06",
+    "round": 107,
+    "session": 3,
+    "text": "PCI DSS(Payment Card Industry Data Security Standard)의 정의, 필요성, 기준과 요구사항, 활용방안에 대해서 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-adefdc26",
+  "title": "RSA 알고리즘(RSA)",
+  "title_en": "Rivest-Shamir-Adleman",
+  "aliases": [],
+  "subs": [
+   "RSA vs DSA"
+  ],
+  "questions": [
+   {
+    "id": "r126-s4-q05",
+    "round": 126,
+    "session": 4,
+    "text": "RSA(Rivest-Shamir-Adleman)알고리즘과 DSA(Digital Signature Algorithm)를 비교 하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-d2004629",
+  "title": "SIEM",
+  "title_en": "Security Information and Event Management",
+  "aliases": [],
+  "subs": [
+   "SOAR 비교"
+  ],
+  "questions": [
+   {
+    "id": "r135-s1-q05",
+    "round": 135,
+    "session": 1,
+    "text": "SIEM(Security Information & Event Management)와 SOAR(Security Orchestration, Automation & Response) 비교"
+   }
+  ]
+ },
+ {
+  "id": "t-20dc2701",
+  "title": "SOAR(Security Orchestration, Automation and Response)",
+  "title_en": "Security Orchestration Automation and Response",
+  "aliases": [],
+  "subs": [
+   "개념·구성·기능·고려사항"
+  ],
+  "questions": [
+   {
+    "id": "r127-s3-q06",
+    "round": 127,
+    "session": 3,
+    "text": "SOAR(Security Orchestration, Automation and Response)의 개념 및 등장배경, 구성 요소, 주요 기능, 기대효과, 도입 시 고려사항에 대하여 설명하시오."
+   }
+  ]
+ }
+]

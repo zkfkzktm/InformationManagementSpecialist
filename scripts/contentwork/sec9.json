@@ -1,0 +1,258 @@
+[
+ {
+  "id": "t-da8f9398",
+  "title": "시큐어 코딩(Secure Coding)",
+  "title_en": "Secure Coding",
+  "aliases": [],
+  "subs": [
+   "SW 개발보안 가이드·취약 코드 수정"
+  ],
+  "questions": [
+   {
+    "id": "r98-s2-q04",
+    "round": 98,
+    "session": 2,
+    "text": "최근의 사이버 공격은 보안장비를 우회하거나 Zero Day 공격 등 소프트웨어 자체의 보안 취약점을 악용하는 공격의 증가에 따라 서비스의 보안 취약점을 지속적 진단 및 제거하기 위한 노력은 필수적이다. 이를 위해 정부에서 소프트웨어 개발 보안 가이드를 발표하였으며, 2012년 하반기부터 단계적으로 의무 적용될 예정에 있다. 소프트웨어 개발 보안 가이드와 관련하여 다음에 대해 설명하시오. 가. 소프트웨어 보안 취약점 유형에 따른 공격 기법 및 보안대책 나. 소프트웨어 개발 보안 가이드의 활성화 방안 다. 다음의 C 또는 JAVA 언어로 작성된 코드에 대해 안전하지 않은 이유를 설명하고, 안전한 코드로 변경하시오. 1) 안전하지 않은 C언어 코드 사례 1, 2 안전하지 않은 C언어 코드 사례 1 안전하지 않은 C언어 코드 사례 2 #include <stdio.h> void User_check(SQLHSTMT sqlh) #include <stdlib.h> { #define BUFSIZE 100 char \"query = getenv(\"query_string\"); void f() { SQLExecDirect(sqlh, query, SQL_NTS); char buf[BUFSIZE]; } gets(buf); } 2) 안전하지 않은 JAVA 언어 코드 사례 안전하지 않은 JAVA 언어 코드 사례 public class S_check extends HttpServlet { public void noExpiration(HttpSession session) { if (session.isNew() { session.setMaxInactiveInterval(-1); } } }"
+   }
+  ]
+ },
+ {
+  "id": "t-a77df2af",
+  "title": "식별과 인증(Identification and Authentication)",
+  "title_en": "Identification and Authentication",
+  "aliases": [],
+  "subs": [
+   "차이점, 보안 요구사항, 인증 유형 4가지"
+  ],
+  "questions": [
+   {
+    "id": "r128-s4-q06",
+    "round": 128,
+    "session": 4,
+    "text": "식별(Identification)과 인증(Authentication)에 대하여 다음을 설명하시오. 가. 개인 식별과 사용자 인증의 정의 및 차이점 나. 사용자 인증 시 보안 요구 사항 다. 인증 방식에 따른 4가지 유형 및 유형별 특징"
+   }
+  ]
+ },
+ {
+  "id": "t-736034db",
+  "title": "아이핀(I-PIN)",
+  "title_en": "Internet Personal Identification Number",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r83-s1-q13",
+    "round": 83,
+    "session": 1,
+    "text": "I-PIN(Internet Personal Identification Number) 정의, 등장배경, 특징 및 활용분야에 대해서 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-9feb5c80",
+  "title": "악성코드(Malware)",
+  "title_en": "Malware",
+  "aliases": [],
+  "subs": [
+   "종류·분석방법"
+  ],
+  "questions": [
+   {
+    "id": "r98-s4-q04",
+    "round": 98,
+    "session": 4,
+    "text": "악성코드 탐지 기법을 개발하기 위해서는 탐지하고자 하는 악성코드의 종류 및 특징을 분석해야 한다. 다음에 대해 설명하시오. 가. 악성코드의 종류 나. 악성코드 분석 방법"
+   }
+  ]
+ },
+ {
+  "id": "t-f98748c2",
+  "title": "안티포렌식(Anti-Forensics)",
+  "title_en": "Anti-Forensics",
+  "aliases": [],
+  "subs": [
+   "기술·컴플라이언스 시스템"
+  ],
+  "questions": [
+   {
+    "id": "r133-s3-q01",
+    "round": 133,
+    "session": 3,
+    "text": "안티포렌식(Anti-Forensic)이 등장하게 된 배경 및 기술을 설명하고, 안티포렌식에 대응하기 위한 컴플라이언스(Compliance) 시스템의 구축 프로세스와 활용 프로세스에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-85a2ead0",
+  "title": "암호 알고리즘 보안강도(Security Strength)",
+  "title_en": "Cryptographic Security Strength",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r101-s1-q01",
+    "round": 101,
+    "session": 1,
+    "text": "암호 알고리즘의 보안강도에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-ffae4cfb",
+  "title": "암호 알고리즘(Cryptographic Algorithm)",
+  "title_en": "Cryptographic Algorithm",
+  "aliases": [],
+  "subs": [
+   "정보단위·키 방식·기술별 분류"
+  ],
+  "questions": [
+   {
+    "id": "r98-s1-q05",
+    "round": 98,
+    "session": 1,
+    "text": "암호화 알고리즘을 정보단위, 키(Key) 적용 방식, 암호화 기술에 따라 분류하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-680a266f",
+  "title": "암호문 공격(Ciphertext Attack)",
+  "title_en": "Ciphertext Attack",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r137-s1-q04",
+    "round": 137,
+    "session": 1,
+    "text": "암호문 공격(Ciphertext Attack)을 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-faa3c0f3",
+  "title": "암호화 방식(Encryption)",
+  "title_en": "Encryption",
+  "aliases": [],
+  "subs": [
+   "대칭 vs 비대칭"
+  ],
+  "questions": [
+   {
+    "id": "r132-s1-q04",
+    "round": 132,
+    "session": 1,
+    "text": "대칭 암호화와 비대칭 암호화"
+   }
+  ]
+ },
+ {
+  "id": "t-88bce01d",
+  "title": "양자내성암호(PQC)",
+  "title_en": "Post-Quantum Cryptography",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r125-s1-q09",
+    "round": 125,
+    "session": 1,
+    "text": "포스트 양자 암호(Post-Quantum Cryptography)"
+   }
+  ]
+ },
+ {
+  "id": "t-c2897ea2",
+  "title": "얼굴 인식(Face Recognition)",
+  "title_en": "Face Recognition",
+  "aliases": [],
+  "subs": [
+   "인식 절차·알고리즘 비교"
+  ],
+  "questions": [
+   {
+    "id": "r92-s2-q04",
+    "round": 92,
+    "session": 2,
+    "text": "생체인식의 한 분야인 얼굴 인식시스템에 대하여 다음 질문에 답하시오. (1) 얼굴인식 시스템의 특징 및 인식 절차를 설명하시오. (2) 얼굴인식 알고리즘의 종류를 나열하고 비교분석 하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-9b2816b8",
+  "title": "엘가말(ElGamal)",
+  "title_en": "ElGamal",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r111-s1-q09",
+    "round": 111,
+    "session": 1,
+    "text": "엘가멜(ElGamal)"
+   }
+  ]
+ },
+ {
+  "id": "t-3c5abf9c",
+  "title": "역할기반 접근제어(RBAC)",
+  "title_en": "Role-Based Access Control",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r65-s1-q11",
+    "round": 65,
+    "session": 1,
+    "text": "RBAC(Role-based Access Control)을 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-1ee8930d",
+  "title": "오픈ID(OpenID)",
+  "title_en": "OpenID",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r89-s1-q10",
+    "round": 89,
+    "session": 1,
+    "text": "Open ID를 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-97221508",
+  "title": "웜(Worm)",
+  "title_en": "Worm",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r71-s1-q12",
+    "round": 71,
+    "session": 1,
+    "text": "웜(바이러스)"
+   }
+  ]
+ },
+ {
+  "id": "t-34340a05",
+  "title": "위험분석(Risk Analysis)",
+  "title_en": "Risk Analysis",
+  "aliases": [],
+  "subs": [
+   "절차"
+  ],
+  "questions": [
+   {
+    "id": "r69-s3-q04",
+    "round": 69,
+    "session": 3,
+    "text": "정보시스템에 대한 위험분석(Risk Analysis)절차를 기술하시오."
+   }
+  ]
+ }
+]

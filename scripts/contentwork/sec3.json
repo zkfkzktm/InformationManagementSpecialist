@@ -1,0 +1,281 @@
+[
+ {
+  "id": "t-de300924",
+  "title": "접근제어 모델(Access Control Model)",
+  "title_en": "Access Control Model",
+  "aliases": [
+   "접근통제 보안 모델(Access Control Model)"
+  ],
+  "subs": [
+   "BLP·Biba·Clark-Wilson",
+   "DB 접근제어 모델 3가지"
+  ],
+  "questions": [
+   {
+    "id": "r127-s2-q06",
+    "round": 127,
+    "session": 2,
+    "text": "아래의 접근 통제 보안 모델에 대하여 설명하시오. 가. 벨 라파듈라(BLP) 모델 나. 비바(BIBA) 모델 다. Clark and Wilson 모델"
+   },
+   {
+    "id": "r96-s3-q03",
+    "round": 96,
+    "session": 3,
+    "text": "개인정보 유출을 방지하기 위한 데이터베이스 접근제어 모델 3가지에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-3dd2be00",
+  "title": "접근제어(Access Control)",
+  "title_en": "Access Control",
+  "aliases": [],
+  "subs": [
+   "정책·절차·메커니즘",
+   "통제정책, LDAP 인증 흐름"
+  ],
+  "questions": [
+   {
+    "id": "r133-s4-q03",
+    "round": 133,
+    "session": 4,
+    "text": "정보보호 방법을 암호화와 접근제어로 크게 분류할 때, 접근제어에 대하여 그 개념과 정책, 절차, 그리고 이를 구현하는 메커니즘에 대하여 설명하시오."
+   },
+   {
+    "id": "r129-s2-q02",
+    "round": 129,
+    "session": 2,
+    "text": "접근 제어(Access Control)의 통제정책과 경량 디렉토리 액세스 프로토콜 (LDAP: Lightweight Directory Access Protocol)의 인증 흐름(Flow)에 대하여 설명 하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-66c5acac",
+  "title": "제로 트러스트(Zero Trust)",
+  "title_en": "Zero Trust",
+  "aliases": [],
+  "subs": [
+   "보안원리·핵심원칙·기존 모델 비교",
+   "성숙도모델 2.0·경계 기반 보안 비교"
+  ],
+  "questions": [
+   {
+    "id": "r135-s4-q06",
+    "round": 135,
+    "session": 4,
+    "text": "경계 기반 보안(Perimeter Security)과 제로 트러스트(Zero Trust) 성숙도모델 2.0에 대하여 비교 설명하고, 제로 트러스트 아키텍처 도입 시 고려사항에 대하여 설명하시오."
+   },
+   {
+    "id": "r131-s2-q04",
+    "round": 131,
+    "session": 2,
+    "text": "제로 트러스트 보안(Zero Trust Security)모델의 보안원리, 핵심원칙, 적용분야를 트러스트 보안(Trust Security) 모델과 비교하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-ead2cfae",
+  "title": "AAA",
+  "title_en": "Authentication Authorization Accounting",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r69-s1-q04",
+    "round": 69,
+    "session": 1,
+    "text": "AAA(Authentication Authorization Accounting)에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-ebadb62a",
+  "title": "AI 보안 위협(AI Security Threat)",
+  "title_en": "AI Security Threat",
+  "aliases": [],
+  "subs": [
+   "적대적 공격·생성형 AI 취약점"
+  ],
+  "questions": [
+   {
+    "id": "r130-s3-q04",
+    "round": 130,
+    "session": 3,
+    "text": "최근 인공지능 기술 활용이 증가하면서 다양한 보안 위협이 증가하고 있다. 이와 관련하여 아래 사항들에 대하여 설명하시오. 1) 머신러닝 학습과정에서의 적대적 공격 4가지와 방어기법 2) 생성형 언어모델 기반의 인공지능 기술 활용 시 발생할 수 있는 보안취약점"
+   }
+  ]
+ },
+ {
+  "id": "t-af192ddb",
+  "title": "ARP 스푸핑(ARP Spoofing)",
+  "title_en": "ARP Spoofing",
+  "aliases": [],
+  "subs": [
+   "개념·대처방안"
+  ],
+  "questions": [
+   {
+    "id": "r99-s1-q10",
+    "round": 99,
+    "session": 1,
+    "text": "ARP 스푸핑(Address Resolution Protocol spoofing)의 개념과 대처방안에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-5fa4b781",
+  "title": "BPFdoor",
+  "title_en": "Berkeley Packet Filter door",
+  "aliases": [],
+  "subs": [
+   "위협·대응방안"
+  ],
+  "questions": [
+   {
+    "id": "r137-s4-q01",
+    "round": 137,
+    "session": 4,
+    "text": "BPFdoor(Berkeley Packet Filter door) 악성코드와 관련하여 다음을 설명하시오. 가. BPFdoor의 개념 및 기존 백도어 방식과의 차이점 나. BPFdoor의 위협 요소와 기업 시스템에 미치는 영향 다. BPFdoor의 위협에 대응하기 위한 기술적, 관리적 방안 제시"
+   }
+  ]
+ },
+ {
+  "id": "t-a2fe0d5d",
+  "title": "CSOR",
+  "title_en": "Computer Security Objects Register",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r74-s1-q07",
+    "round": 74,
+    "session": 1,
+    "text": "CSOR(Computer Security Objects Register)"
+   }
+  ]
+ },
+ {
+  "id": "t-f3ce05af",
+  "title": "CTEM",
+  "title_en": "Continuous Threat Exposure Management",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r139-s1-q11",
+    "round": 139,
+    "session": 1,
+    "text": "CTEM(Continuous Threat Exposure Management)"
+   }
+  ]
+ },
+ {
+  "id": "t-ed93afd1",
+  "title": "DES",
+  "title_en": "Data Encryption Standard",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r72-s1-q06",
+    "round": 72,
+    "session": 1,
+    "text": "암호화 알고리즘인 DES(Data Encryption standard)를 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-92857b66",
+  "title": "DSA",
+  "title_en": "Digital Signature Algorithm",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r72-s1-q09",
+    "round": 72,
+    "session": 1,
+    "text": "비대칭형 암호 알고리즘인 DSA(Digital Signature Algorithm)에 대해 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-0f5dbce6",
+  "title": "EAM",
+  "title_en": "Extranet Access Management",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r71-s1-q09",
+    "round": 71,
+    "session": 1,
+    "text": "EAM(Extranet Access Management)"
+   }
+  ]
+ },
+ {
+  "id": "t-e1fef846",
+  "title": "EMP 공격(ElectroMagnetic Pulse Attack)",
+  "title_en": "ElectroMagnetic Pulse Attack",
+  "aliases": [],
+  "subs": [
+   "HEMP 원리·위협별 방호"
+  ],
+  "questions": [
+   {
+    "id": "r125-s2-q05",
+    "round": 125,
+    "session": 2,
+    "text": "EMP공격(ElectroMagnetic Pulse attack)에 대하여 다음 물음에 답하시오. 가. EMP공격의 정의와 구분 나. HEMP(High altitude EMP)의 원리 다. EMP공격의 위협을 정의하고 위협별 방호 방안 제시"
+   }
+  ]
+ },
+ {
+  "id": "t-2214329f",
+  "title": "FIPS 140-2",
+  "title_en": "FIPS 140-2",
+  "aliases": [],
+  "subs": [
+   "레벨 분류·암호시스템 설계"
+  ],
+  "questions": [
+   {
+    "id": "r132-s4-q01",
+    "round": 132,
+    "session": 4,
+    "text": "FIPS(Federal Information Processing Standard) 140-2에 대하여 다음을 설명하시오. 가. FIPS 140-2 레벨 분류 나. 암호화 시스템 설계 시 고려사항 다. 암호화 시스템의 보안 요소 라. 보안 위협 대응 전략"
+   }
+  ]
+ },
+ {
+  "id": "t-706df2cd",
+  "title": "GADI(Global Architecture for Digital Identity)",
+  "title_en": "Global Architecture for Digital Identity",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r123-s1-q12",
+    "round": 123,
+    "session": 1,
+    "text": "GADI(Global Architecture for Digital Identity)"
+   }
+  ]
+ },
+ {
+  "id": "t-5d48e35e",
+  "title": "HMAC(Hash-based Message Authentication Code)",
+  "title_en": "Hash-based Message Authentication Code",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r117-s1-q01",
+    "round": 117,
+    "session": 1,
+    "text": "HMAC(Hash-based Message Authentication Code)"
+   }
+  ]
+ }
+]

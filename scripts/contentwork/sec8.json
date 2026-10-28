@@ -1,0 +1,260 @@
+[
+ {
+  "id": "t-a1c3a5f8",
+  "title": "사이버 킬 체인(Cyber Kill Chain)",
+  "title_en": "Cyber Kill Chain",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r111-s1-q11",
+    "round": 111,
+    "session": 1,
+    "text": "사이버 킬 체인(Cyber Kill Chain)"
+   }
+  ]
+ },
+ {
+  "id": "t-ad913e2e",
+  "title": "사이버 테러(Cyber Terror)",
+  "title_en": "Cyber Terrorism",
+  "aliases": [],
+  "subs": [
+   "대응 방안"
+  ],
+  "questions": [
+   {
+    "id": "r66-s2-q02",
+    "round": 66,
+    "session": 2,
+    "text": "사이버 테러를 설명하고 대응 방안에 대해서 논하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-e6422e81",
+  "title": "사이버전(Cyber Warfare)",
+  "title_en": "Cyber Warfare",
+  "aliases": [],
+  "subs": [
+   "개념·특징·보안 기술"
+  ],
+  "questions": [
+   {
+    "id": "r111-s2-q03",
+    "round": 111,
+    "session": 2,
+    "text": "사이버전(Cyber Warfare)의 개념, 특징, 보안 기술을 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-b00d489c",
+  "title": "사회공학(Social Engineering)",
+  "title_en": "Social Engineering",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r114-s1-q12",
+    "round": 114,
+    "session": 1,
+    "text": "보안학적 측면에서의 사회공학(Social Engineering)"
+   }
+  ]
+ },
+ {
+  "id": "t-09a83ca7",
+  "title": "생성형 AI 보안(Generative AI Security)",
+  "title_en": "Generative AI Security",
+  "aliases": [],
+  "subs": [
+   "보안 위협·개발 시 고려사항"
+  ],
+  "questions": [
+   {
+    "id": "r133-s3-q02",
+    "round": 133,
+    "session": 3,
+    "text": "국가사이버안보센터는 생성형AI의 보안위협과 안전한 활용을 위한 가이드라인(챗GPT 등 생성형 AI 활용 보안 가이드라인, 2023.6)을 발간하였다. 이와 관련하여 다음을 설명하시오. 가. 생성형AI의 개념 및 활용 서비스 사례 나. 생성형AI의 보안 위협 종류별 주요 원인과 발생 가능한 보안위협 다. 생성형AI 모델/서비스 개발 시 보안 고려사항과 보안위협 대응방안"
+   }
+  ]
+ },
+ {
+  "id": "t-57d70981",
+  "title": "서비스형 보안(SECaaS)",
+  "title_en": "Security as a Service",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r125-s1-q01",
+    "round": 125,
+    "session": 1,
+    "text": "SECaaS(Security as a Service)"
+   }
+  ]
+ },
+ {
+  "id": "t-f9a468bb",
+  "title": "스마트카드(Smart Card)",
+  "title_en": "Smart Card",
+  "aliases": [],
+  "subs": [
+   "특징·구조"
+  ],
+  "questions": [
+   {
+    "id": "r90-s1-q02",
+    "round": 90,
+    "session": 1,
+    "text": "스마트카드(Smart Card)의 특징과 구조를 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-1ef1527f",
+  "title": "스마트폰 보안(Smartphone Security)",
+  "title_en": "Smartphone Security",
+  "aliases": [],
+  "subs": [
+   "보안 취약점"
+  ],
+  "questions": [
+   {
+    "id": "r96-s2-q01",
+    "round": 96,
+    "session": 2,
+    "text": "스마트 폰의 보안 취약점에 대하여 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-0b781d48",
+  "title": "스마트폰 포렌식(Smartphone Forensics)",
+  "title_en": "Smartphone Forensics",
+  "aliases": [],
+  "subs": [
+   "데이터·절차·논리적/물리적 추출"
+  ],
+  "questions": [
+   {
+    "id": "r101-s2-q03",
+    "round": 101,
+    "session": 2,
+    "text": "스마트폰 포렌식(Smartphone Forensic) 기술에 대하여 다음을 설명하시오. 1) 스마트폰 포렌식 데이터 2) 스마트폰 포렌식 절차 3) 스마트폰 데이터를 추출하기 위한 논리적 추출방법과 물리적 추출방법"
+   }
+  ]
+ },
+ {
+  "id": "t-1cd4af5d",
+  "title": "스턱스넷(Stuxnet)",
+  "title_en": "Stuxnet",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r110-s1-q13",
+    "round": 110,
+    "session": 1,
+    "text": "스턱스넷(Stuxnet)"
+   }
+  ]
+ },
+ {
+  "id": "t-8fe77db1",
+  "title": "스테가노그래피(Steganography)",
+  "title_en": "Steganography",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r75-s1-q10",
+    "round": 75,
+    "session": 1,
+    "text": "Steganography를 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-b82dacea",
+  "title": "스파이웨어(Spyware)",
+  "title_en": "Spyware",
+  "aliases": [],
+  "subs": [
+   "키로거 등 모니터링 기술"
+  ],
+  "questions": [
+   {
+    "id": "r98-s3-q05",
+    "round": 98,
+    "session": 3,
+    "text": "정보 기술 모니터링(Information Technology monitoring)은 키 입력수, 실수율, 거래처리 건수 같은 수단을 이용해서 사람들의 행동을 추적하는 것이다. 일반적인 모니터링기술(예, Key Logger Software, Spyware 등)을 설명하시오."
+   }
+  ]
+ },
+ {
+  "id": "t-1729657d",
+  "title": "스펙터(Spectre)",
+  "title_en": "Spectre",
+  "aliases": [],
+  "subs": [
+   "CPU 보안 취약점"
+  ],
+  "questions": [
+   {
+    "id": "r116-s1-q09",
+    "round": 116,
+    "session": 1,
+    "text": "CPU 보안 취약점에서의 스펙터(Spectre)"
+   }
+  ]
+ },
+ {
+  "id": "t-96d4962d",
+  "title": "스피어 피싱(Spear Phishing)",
+  "title_en": "Spear Phishing",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r116-s1-q07",
+    "round": 116,
+    "session": 1,
+    "text": "스피어 피싱(Spear Phishing)"
+   }
+  ]
+ },
+ {
+  "id": "t-73e1a8e2",
+  "title": "시도-응답 인증(Challenge-Response)",
+  "title_en": "Challenge-Response Authentication",
+  "aliases": [],
+  "subs": [],
+  "questions": [
+   {
+    "id": "r113-s1-q02",
+    "round": 113,
+    "session": 1,
+    "text": "암호화에서의 Challenge-response 방식"
+   }
+  ]
+ },
+ {
+  "id": "t-a250f9e9",
+  "title": "시큐어 SDLC(Secure SDLC)",
+  "title_en": "Secure Software Development Life Cycle",
+  "aliases": [],
+  "subs": [
+   "방법론 유형, SQL 인젝션 시큐어 코딩"
+  ],
+  "questions": [
+   {
+    "id": "r121-s4-q04",
+    "round": 121,
+    "session": 4,
+    "text": "안전한 소프트웨어 개발 관련하여 다음에 대하여 답하시오. 가. 보안 소프트웨어 개발 생명주기(Secure SDLC) 방법론의 유형을 설명하시오. 나. 다음 조건의 Java 코드에서 보안 위험성이 없는 안전한 코드로 수정하시오. 조건) String param = request.getParameter(\"id\");... String sql = \"select name from board where id = '\" + param + \"' \"; Connection con = db.getConnection(); Statement stmt = con.createStatement(); ResultSet rs = stmt.executeQuery(sql);"
+   }
+  ]
+ }
+]
