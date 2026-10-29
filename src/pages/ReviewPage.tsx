@@ -36,7 +36,7 @@ export default function ReviewPage() {
     <div className="flex flex-col gap-4">
       <div className="grid grid-cols-4 gap-2 text-center">
         {[
-          ['본 토픽', stats.seen, 'text-ink'],
+          ['학습한 토픽', stats.seen, 'text-ink'],
           ['안다', stats.know, 'text-ok'],
           ['애매', stats.unsure, 'text-warn'],
           ['모름', stats.dont, 'text-stamp'],

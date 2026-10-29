@@ -41,11 +41,25 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setLoading(false)
     }
     supabase.auth.getSession().then(({ data }) => apply(data.session?.user ?? null))
+    // 콜백 안에서 Supabase 호출 금지(인증 잠금 교착 방지) → 다음 틱으로 미룸
     const { data: sub } = supabase.auth.onAuthStateChange((event, session) => {
-      if (event === 'SIGNED_IN' || event === 'SIGNED_OUT' || event === 'TOKEN_REFRESHED')
-        void apply(session?.user ?? null)
+      if (event === 'SIGNED_IN' || event === 'SIGNED_OUT')
+        setTimeout(() => void apply(session?.user ?? null), 0)
     })
-    return () => sub.subscription.unsubscribe()
+    // 다른 기기에서 공부한 기록 반영: 앱으로 돌아올 때 재동기화 (1분 간격 제한)
+    let last = 0
+    const onVisible = () => {
+      if (document.visibilityState !== 'visible' || Date.now() - last < 60_000) return
+      last = Date.now()
+      void supabase!.auth.getSession().then(({ data }) => {
+        if (data.session?.user) void apply(data.session.user)
+      })
+    }
+    document.addEventListener('visibilitychange', onVisible)
+    return () => {
+      sub.subscription.unsubscribe()
+      document.removeEventListener('visibilitychange', onVisible)
+    }
   }, [])
 
   const signIn = async () => {

@@ -13,7 +13,7 @@ export default function Layout() {
       <header className="sticky top-0 z-20 bg-paper/95 backdrop-blur border-b border-rule">
         <div className="mx-auto max-w-3xl px-4 h-12 flex items-center justify-between">
           <NavLink to="/" className="font-semibold tracking-tight text-ink no-underline">
-            기술사 답안 연습
+            정보관리기술사
           </NavLink>
           <nav className="hidden sm:flex gap-1">
             {tabs.map((t) => (

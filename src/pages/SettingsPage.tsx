@@ -1,11 +1,13 @@
 import { useAuth } from '../lib/auth'
 import { getData } from '../lib/data'
-import { clearLocal } from '../lib/progress'
+import { useSyncExternalStore } from 'react'
+import { clearLocal, getPushError, subscribe } from '../lib/progress'
 import { syncAvailable } from '../lib/supabase'
 import { useAllProgress } from '../lib/useProgress'
 
 export default function SettingsPage() {
   const { user, loading, syncError, signIn, signOut } = useAuth()
+  const pushError = useSyncExternalStore(subscribe, getPushError)
   const { topics, questions, keywords } = getData()
   const progress = useAllProgress()
   const withAnswer = topics.filter((t) => t.has_answer).length
@@ -26,7 +28,9 @@ export default function SettingsPage() {
             <p className="m-0 text-sm">
               {user.email} 로 로그인됨. 북마크·자신감이 자동 동기화됩니다.
             </p>
-            {syncError && <p className="m-0 text-sm text-stamp">동기화 오류: {syncError}</p>}
+            {(syncError || pushError) && (
+              <p className="m-0 text-sm text-stamp">동기화 오류: {syncError ?? pushError}</p>
+            )}
             <button type="button" onClick={signOut} className="self-start px-3 py-1.5 rounded-md border border-rule text-sm">
               로그아웃
             </button>
