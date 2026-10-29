@@ -1,9 +1,9 @@
 # 답안·키워드 생성 가이드 (정보관리기술사)
 
-입력: `contentwork/secN.json` — 토픽 배열 `[{id, title, title_en, aliases, subs, questions[]}]`
+입력: `contentwork/{도메인소문자}N.json` (예: se3.json, new1.json) — 토픽 배열 `[{id, title, title_en, aliases, subs, questions[]}]`
 출력:
-1. `content/SEC/{topic id}.json` — 토픽마다 1파일
-2. `contentwork/keywords-secN.json` — 이 묶음에서 링크한 키워드 전부
+1. `content/{도메인대문자}/{topic id}.json` — 토픽마다 1파일 (예: content/SE/t-xxxx.json)
+2. `contentwork/kw/{topic id}.json` — 그 토픽 답안에서 **새로 만든** 키워드 배열 (기존 색인에 있는 id는 제외). 토픽 파일과 같은 시점에 바로 Write (중단 대비)
 
 ## 1. 토픽 파일 형식
 
@@ -76,6 +76,16 @@ flowchart TB ...
 - 다이어그램은 반드시 ```` ```mermaid ```` 블록 (flowchart·sequenceDiagram). 노드 라벨에 괄호·특수문자는 따옴표로: `A["PKI(공개키 기반구조)"]`
 - Markdown 표 머리행 필수. 표 안에서 `|` 사용 금지
 
+## 2-1. 분량 상한 (중요)
+
+| 양식 | 본문 글자 수(마크업 제외) | 넘기면 |
+|---|---|---|
+| 1교시형 | 400~650자 | 표 행·항목 줄이기 |
+| 서술형 | 1,500~2,200자 | 3장 축약 |
+
+- 표는 1교시형 최대 2개, 서술형 최대 4개. mermaid는 각 답안에 1개
+- 분량을 넘기는 것보다 핵심만 정확히 쓰는 것이 채점 기준에 맞음
+
 ## 3. 키워드 링크
 
 - 답안 본문의 **전문용어 전부** 링크. 표기: `[[kw-id|화면 표시]]` 예: `[[public-key-infrastructure|PKI]]`
@@ -85,6 +95,8 @@ flowchart TB ...
   - 좋음: `digital-signature`, `hash-function`, `zero-trust`, `role-based-access-control`
   - 나쁨: `전자서명`, `DigitalSignature`, `rbac-model`(→ `role-based-access-control`)
 - 같은 개념은 반드시 같은 id. 묶음 안에서 일관되게
+- **기존 키워드 재사용**: id를 만들기 전에 `contentwork/keyword_index.txt`(형식 `id | 한글 | 영문`, 1,400개)를 grep해서 이미 있으면 그 id 사용. 이 파일은 Read로 전부 읽지 말고 `grep -i` 로 필요한 용어만 찾을 것
+- 기존 id는 키워드 파일에 다시 쓰지 않음(링크만). 새 id만 키워드 파일에 추가
 
 ## 4. 키워드 파일 형식
 
@@ -107,7 +119,7 @@ flowchart TB ...
 ## 5. 작업 절차
 
 1. 입력 파일 Read
-2. 토픽 1개씩 답안 2개 작성 → `content/SEC/{id}.json` Write (한 토픽 = 한 Write)
-3. 전부 끝나면 키워드 파일 Write
-4. python3로 검증: 모든 토픽 파일 유효 JSON, answers.short/long 비어있지 않음, 답안의 `[[id|...]]` id 집합 == keywords 파일 id 집합 ⊇ 각 토픽 keywords
-5. 결과(토픽 수, 키워드 수, 검증 통과 여부)만 짧게 보고
+2. 토픽 1개씩: 답안 2개 작성 → `content/{도메인}/{id}.json` Write → 이어서 그 토픽의 새 키워드 `contentwork/kw/{id}.json` Write. 중간 원고 파일·빌드 스크립트 만들지 말 것. 임시 스크립트가 꼭 필요하면 공용 scratchpad 금지, /tmp/{묶음명}/ 전용 폴더 사용
+3. 다른 토픽에서 이미 만든 새 키워드를 다시 쓰는 경우 `kw/` 파일에 또 넣지 않아도 됨(링크만). `related`는 색인 또는 이 묶음에서 만든 id
+4. python3 한 번으로 검증: 모든 토픽 파일 유효 JSON, answers.short/long 비어있지 않음, 답안의 `[[id|...]]` id 전부가 (keyword_index.txt ∪ kw/*.json)에 존재, 각 답안 ```mermaid 펜스 짝 맞음. 실패 항목만 고치고 재검증
+5. 결과(토픽 수, 새 키워드 수, 검증 통과 여부)만 3줄 이내로 보고. 토큰 절약: 검증 스크립트는 짧게, 파일을 다시 Read해서 확인하지 말 것

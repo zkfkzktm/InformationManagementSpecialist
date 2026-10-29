@@ -16,7 +16,7 @@ by_id = {t["id"]: t for t in topics}
 
 # 1. 키워드 병합: 같은 id → 긴 definition 유지, features/related 합집합
 kw: dict[str, dict] = {}
-for f in sorted((ROOT / "contentwork").glob("keywords-*.json")):
+for f in sorted(list((ROOT / "contentwork").glob("keywords-*.json")) + list((ROOT / "contentwork" / "kw").glob("*.json"))):
     for k in json.loads(f.read_text(encoding="utf-8")):
         kid = k["id"].strip().lower()
         cur = kw.get(kid)
@@ -144,3 +144,39 @@ if missing_links:
         print("  ", kid, "<-", ", ".join(sorted(ts))[:80])
     if "--strict" in sys.argv:
         sys.exit(1)
+
+
+# 5. 지연 로딩용 분할: 목록·인덱스는 가볍게, 답안·위키 본문은 필요할 때만
+def split_for_app():
+    import shutil
+    ans_dir = DATA / "answers"; kw_dir = DATA / "kw"
+    for d in (ans_dir, kw_dir):
+        shutil.rmtree(d, ignore_errors=True); d.mkdir()
+    by_domain: dict[str, dict] = defaultdict(dict)
+    meta = []
+    for t in topics:
+        a = t.get("answers")
+        if a:
+            by_domain[t["domain"]][t["id"]] = a
+        m = {k: v for k, v in t.items() if k not in ("answers", "subs")}
+        m["has_answer"] = bool(a)
+        meta.append(m)
+    for dom, ans in by_domain.items():
+        (ans_dir / f"{dom}.json").write_text(json.dumps(ans, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    (DATA / "topics.json").write_text(json.dumps(meta, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    index = [{"id": k["id"], "term": k["term"], "term_en": k["term_en"]} for k in keywords]
+    (DATA / "keywords.json").write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    shards: dict[str, dict] = defaultdict(dict)
+    for k in keywords:
+        shards[kw_shard(k["id"])][k["id"]] = {f: k[f] for f in ("definition", "features", "related")}
+    for s, body in shards.items():
+        (kw_dir / f"{s}.json").write_text(json.dumps(body, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    print(f"split: answers {len(by_domain)} files, keyword shards {len(shards)}")
+
+
+def kw_shard(kid: str) -> str:
+    c = kid[:1]
+    return c if c.isalpha() else "0"
+
+
+split_for_app()

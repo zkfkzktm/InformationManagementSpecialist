@@ -1,5 +1,20 @@
 {
-  "merge": {"one-time-password": "otp", "two-factor-authentication": "multi-factor-authentication", "data-encryption": "encryption"},
-  "no_merge": [["mutual-authentication", "cross-certification"]],
-  "term_fix": {"sql-injection": "SQL 인젝션"}
+ "merge": {
+  "one-time-password": "otp",
+  "two-factor-authentication": "multi-factor-authentication",
+  "data-encryption": "encryption",
+  "table-partitioning": "database-partitioning",
+  "online-analytical-processing": "olap",
+  "multiversion-concurrency-control": "multi-version-concurrency-control",
+  "massive-machine-type-communications": "massive-machine-type-communication"
+ },
+ "no_merge": [
+  [
+   "mutual-authentication",
+   "cross-certification"
+  ]
+ ],
+ "term_fix": {
+  "sql-injection": "SQL 인젝션"
+ }
 }

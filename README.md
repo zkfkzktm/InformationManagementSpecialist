@@ -18,12 +18,15 @@
 | 경로 | 역할 |
 |---|---|
 | `public/data/questions.json` | 기출 문항 1,829개 (63~139회) |
-| `public/data/topics.json` | 토픽 1,238개 + 답안 + 키워드 id |
-| `public/data/keywords.json` | 키워드 위키 |
+| `public/data/topics.json` | 토픽 1,238개 메타 + 키워드 id (시작 시 로딩) |
+| `public/data/answers/{도메인}.json` | 답안 본문 (해당 도메인 토픽을 열 때 로딩) |
+| `public/data/keywords.json` | 키워드 7,260개 인덱스: id·한글·영문 (시작 시 로딩) |
+| `public/data/kw/{첫글자}.json` | 키워드 위키 본문 (위키를 열 때 로딩) |
 | `public/data/domains.json` | 도메인 8개 |
 | `scripts/parse_questions.py` | 기출 PDF/HWP → questions.json |
 | `scripts/merge_topics.py` | 문항별 토픽 추출 결과 → topics.json |
-| `scripts/build_content.py` | 답안·키워드 생성물 → topics.json/keywords.json 병합 |
+| `scripts/build_content.py` | 답안·키워드 생성물 병합 → topics·answers·keywords·kw 분할 저장 |
+| `scripts/find_orphans.py` | 답안 링크 중 위키 설명이 없는 키워드 찾기 |
 | `scripts/content/{도메인}.json` | 도메인별 답안 묶음 (생성물) |
 | `scripts/content/{도메인}/{토픽id}.json` | 토픽별 답안 — 있으면 묶음보다 우선 (수정용) |
 | `supabase/schema.sql` | 진도 테이블 + RLS |
@@ -60,7 +63,7 @@ npm run dev
 |---|---|---|
 | 기출 파싱 | `python3 scripts/parse_questions.py <기출 폴더>` | PDF/HWP → `questions.json` (99·101·102·105·107회는 `scripts/manual/` 수기 전사 사용) |
 | 토픽 병합 | `python3 scripts/merge_topics.py` | `scripts/topicwork/topics*.json` + `scripts/merge_rules.json` → `topics.json` |
-| 답안 병합 | `python3 scripts/build_content.py` | `scripts/content/`, `scripts/contentwork/keywords-*.json` → `topics.json`, `keywords.json` |
+| 답안 병합 | `python3 scripts/build_content.py` | `scripts/content/*.json`, `scripts/contentwork/keywords-*.json`, `scripts/keyword_rules.json` → `public/data/` |
 
 ## 예정된 막힘
 
@@ -68,4 +71,4 @@ npm run dev
 |---|---|---|
 | Google 로그인 후 빈 화면 | Supabase Redirect URL 미등록 | URL Configuration에 `https://<user>.github.io/<repo>/` 추가 |
 | 구성도가 코드로 보임 | mermaid 문법 오류 | 해당 토픽 `scripts/content/` 파일 수정 후 `build_content.py` |
-| 답안 없음 표시 | 해당 도메인 미생성 | 도메인별 생성 후 `build_content.py` |
+| 답안 불러오기 실패 | 네트워크 끊김 | 토픽 다시 열기 (도메인 묶음 1회만 받음) |

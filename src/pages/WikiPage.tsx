@@ -1,18 +1,19 @@
 import { Link, useParams } from 'react-router-dom'
-import { getData } from '../lib/data'
+import { getData, useKeywordDetail } from '../lib/data'
 
 export default function WikiPage() {
   const { id = '' } = useParams()
-  const { keywordById, topicById } = getData()
+  const { keywordById, topicById, topicsByKeyword } = getData()
   const kw = keywordById.get(id)
+  const detail = useKeywordDetail(id)
   if (!kw)
     return (
       <div className="py-16 text-center text-ink-2">
         아직 설명이 없는 키워드입니다. <Link to="/">출제로</Link>
       </div>
     )
-  const related = kw.related.map((r) => keywordById.get(r)).filter((k) => !!k)
-  const topics = kw.topic_ids.map((t) => topicById.get(t)).filter((t) => !!t)
+  const related = (detail.data?.related ?? []).map((r) => keywordById.get(r)).filter((k) => !!k)
+  const topics = (topicsByKeyword.get(id) ?? []).map((t) => topicById.get(t)).filter((t) => !!t)
 
   return (
     <article className="flex flex-col gap-5">
@@ -22,17 +23,24 @@ export default function WikiPage() {
         {kw.term_en && <div className="text-sm text-ink-2">{kw.term_en}</div>}
       </header>
 
-      <p className="m-0 text-[0.95rem] leading-7 word-break-keep">{kw.definition}</p>
-
-      {kw.features.length > 0 && (
-        <section>
-          <h2 className="text-sm font-semibold text-ink-2 m-0 mb-1.5">핵심 특징</h2>
-          <ul className="m-0 pl-5 leading-7 text-[0.95rem] list-disc">
-            {kw.features.map((f, i) => (
-              <li key={i}>{f}</li>
-            ))}
-          </ul>
-        </section>
+      {detail.loading ? (
+        <p className="m-0 text-sm text-ink-3">불러오는 중…</p>
+      ) : detail.error || !detail.data ? (
+        <p className="m-0 text-sm text-ink-3">설명을 불러오지 못했습니다.</p>
+      ) : (
+        <>
+          <p className="m-0 text-[0.95rem] leading-7 [word-break:keep-all]">{detail.data.definition}</p>
+          {detail.data.features.length > 0 && (
+            <section>
+              <h2 className="text-sm font-semibold text-ink-2 m-0 mb-1.5">핵심 특징</h2>
+              <ul className="m-0 pl-5 leading-7 text-[0.95rem] list-disc">
+                {detail.data.features.map((f, i) => (
+                  <li key={i}>{f}</li>
+                ))}
+              </ul>
+            </section>
+          )}
+        </>
       )}
 
       {related.length > 0 && (
@@ -50,7 +58,7 @@ export default function WikiPage() {
 
       {topics.length > 0 && (
         <section>
-          <h2 className="text-sm font-semibold text-ink-2 m-0 mb-1.5">등장 토픽</h2>
+          <h2 className="text-sm font-semibold text-ink-2 m-0 mb-1.5">등장 토픽 · {topics.length}</h2>
           <ul className="m-0 p-0 list-none flex flex-col gap-1">
             {topics.map((t) => (
               <li key={t.id}>

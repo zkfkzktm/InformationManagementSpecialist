@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { domainName, getData, topicQuestions } from '../lib/data'
+import { domainName, getData, topicQuestions, useAnswers } from '../lib/data'
 import type { Topic } from '../lib/types'
 import AnswerView from './AnswerView'
 import TopicActions from './TopicActions'
@@ -10,13 +10,14 @@ type Tab = 'short' | 'long'
 /** 토픽 상세: 답안 탭(1교시형/서술형) · 키워드 · 기출 이력 · 학습 상태 */
 export default function TopicDetail({ topic, initialTab }: { topic: Topic; initialTab?: Tab }) {
   const qs = topicQuestions(topic)
-  const hasShort = !!topic.answers?.short
-  const hasLong = !!topic.answers?.long
+  const answers = useAnswers(topic)
+  const hasShort = !!answers.data?.short
+  const hasLong = !!answers.data?.long
   const [tab, setTab] = useState<Tab>(initialTab ?? 'short')
   useEffect(() => {
     if (initialTab) setTab(initialTab)
   }, [initialTab, topic.id])
-  const md = tab === 'short' ? topic.answers?.short : topic.answers?.long
+  const md = tab === 'short' ? answers.data?.short : answers.data?.long
   const { keywordById } = getData()
   const kws = (topic.keywords ?? []).map((id) => keywordById.get(id)).filter((k) => !!k)
 
@@ -59,7 +60,13 @@ export default function TopicDetail({ topic, initialTab }: { topic: Topic; initi
           </div>
         ) : (
           <div className="px-4 py-8 text-center text-ink-3 text-sm bg-sheet">
-            {hasShort || hasLong ? '이 양식의 답안은 아직 없습니다.' : '답안 예시 준비 중인 토픽입니다.'}
+            {answers.loading
+              ? '답안 불러오는 중…'
+              : answers.error
+                ? '답안을 불러오지 못했습니다. 연결을 확인하고 다시 열어 주세요.'
+                : hasShort || hasLong
+                  ? '이 양식의 답안은 아직 없습니다.'
+                  : '답안 예시 준비 중인 토픽입니다.'}
           </div>
         )}
       </div>

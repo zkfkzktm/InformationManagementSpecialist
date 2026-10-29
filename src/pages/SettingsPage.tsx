@@ -8,7 +8,7 @@ export default function SettingsPage() {
   const { user, loading, syncError, signIn, signOut } = useAuth()
   const { topics, questions, keywords } = getData()
   const progress = useAllProgress()
-  const withAnswer = topics.filter((t) => t.answers?.short || t.answers?.long).length
+  const withAnswer = topics.filter((t) => t.has_answer).length
 
   return (
     <div className="flex flex-col gap-6">

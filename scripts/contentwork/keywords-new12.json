@@ -1,0 +1,668 @@
+[
+  {
+    "id": "advanced-driver-assistance-system",
+    "term": "첨단 운전자 보조 시스템",
+    "term_en": "Advanced Driver Assistance System (ADAS)",
+    "definition": "카메라·레이더·라이다 등 센서로 주변 상황을 인식하여 운전자에게 경고하거나 조향·제동을 보조함으로써 사고를 예방하는 차량 안전 시스템.",
+    "features": [
+      "전방 충돌 경고(FCW), 자동 긴급 제동(AEB), 차선 유지 보조(LKA), 스마트 크루즈(SCC) 등으로 구성",
+      "SAE 자율주행 Lv.1~2 수준의 부분 자동화 기능 제공",
+      "센서융합과 객체탐지 알고리즘이 인식 성능의 핵심",
+      "ISO 26262 기능안전과 UN 규정(UNECE R79, R152 등) 준수 필요",
+      "HUD·클러스터를 통해 경고·상태 정보를 운전자에게 전달"
+    ],
+    "related": ["sensor-fusion", "object-detection", "lidar", "iso-26262", "augmented-reality-head-up-display"]
+  },
+  {
+    "id": "picture-generation-unit",
+    "term": "영상생성부",
+    "term_en": "Picture Generation Unit (PGU)",
+    "definition": "HUD 내부에서 광원과 디스플레이 패널을 이용해 투영할 원본 영상을 생성하는 모듈로, HUD의 휘도·해상도·소비전력을 좌우하는 핵심 부품.",
+    "features": [
+      "TFT-LCD 백라이트 방식이 가장 대중적, DLP·LBS·마이크로LED로 고휘도화 진행",
+      "주간 시인성 확보를 위해 수천~1만 cd/m² 이상 허상 휘도 요구",
+      "태양광 역입사로 인한 패널 발열·열화 대책 필요",
+      "광학계 왜곡을 상쇄하는 사전 워핑 영상 출력"
+    ],
+    "related": ["tft-lcd", "digital-light-processing", "laser-beam-scanning", "virtual-image-distance"]
+  },
+  {
+    "id": "tft-lcd",
+    "term": "TFT-LCD",
+    "term_en": "Thin-Film-Transistor Liquid Crystal Display",
+    "definition": "각 화소를 박막 트랜지스터로 구동하는 능동형 액정 디스플레이로, 백라이트 빛을 액정이 투과·차단하여 영상을 표시하는 방식.",
+    "features": [
+      "성숙한 기술로 원가가 낮고 공급망이 안정적",
+      "HUD PGU에 LED 백라이트와 결합해 널리 적용",
+      "자발광이 아니어서 명암비와 효율이 DLP·마이크로LED 대비 낮음",
+      "고온 환경에서 액정 특성 변화로 색·응답속도 저하 가능"
+    ],
+    "related": ["picture-generation-unit", "digital-light-processing", "laser-beam-scanning"]
+  },
+  {
+    "id": "digital-light-processing",
+    "term": "DLP",
+    "term_en": "Digital Light Processing",
+    "definition": "수백만 개의 미세 거울(DMD)을 고속으로 기울여 빛을 반사·차단함으로써 영상을 만드는 TI의 투사 디스플레이 기술.",
+    "features": [
+      "반사형 구조로 광효율과 명암비가 높고 고휘도 구현 용이",
+      "AR-HUD의 대화면·장거리 허상 구현에 적합",
+      "DMD 칩과 광학 엔진으로 인해 TFT-LCD 대비 원가·부피 증가",
+      "컬러휠 또는 RGB LED 순차 구동으로 색 재현"
+    ],
+    "related": ["picture-generation-unit", "tft-lcd", "laser-beam-scanning"]
+  },
+  {
+    "id": "laser-beam-scanning",
+    "term": "레이저 빔 스캐닝",
+    "term_en": "Laser Beam Scanning (LBS)",
+    "definition": "RGB 레이저 광원을 MEMS 미러로 2차원 주사하여 화소를 직접 그리는 디스플레이 방식으로, 작은 체적에서 고휘도·고명암비를 얻는 기술.",
+    "features": [
+      "필요한 화소만 발광하여 소비전력이 낮고 흑색 표현이 우수",
+      "초점 없는 주사 방식으로 허상거리 변화에 유리",
+      "레이저 스페클(얼룩) 노이즈와 레이저 안전 등급 관리 필요",
+      "소형 HUD·AR 글래스의 차세대 광원으로 연구"
+    ],
+    "related": ["picture-generation-unit", "digital-light-processing", "holographic-optical-element"]
+  },
+  {
+    "id": "virtual-image-distance",
+    "term": "허상거리",
+    "term_en": "Virtual Image Distance (VID)",
+    "definition": "HUD가 형성한 허상이 운전자 눈에서 떨어져 보이는 거리로, 실도로 객체와의 초점 조절 부담을 결정하는 핵심 광학 사양.",
+    "features": [
+      "일반 윈드실드 HUD 2~3m, AR-HUD 7~10m 이상",
+      "허상거리가 길수록 실세계 객체와 초점 차이가 줄어 AR 정합이 자연스러움",
+      "허상거리 증가는 광학계 미러 크기와 HUD 체적 증가를 수반",
+      "듀얼 플레인 HUD는 근거리·원거리 두 허상면을 동시에 제공"
+    ],
+    "related": ["field-of-view", "eye-box", "augmented-reality-head-up-display"]
+  },
+  {
+    "id": "eye-box",
+    "term": "아이박스",
+    "term_en": "Eye-box",
+    "definition": "운전자의 눈이 위치했을 때 HUD 허상 전체가 왜곡 없이 보이는 3차원 공간 범위.",
+    "features": [
+      "일반적으로 수평 130mm, 수직 60mm 내외로 설계",
+      "운전자 체형·시트 위치 차이를 수용하기 위해 미러 각도 조절 기능 병행",
+      "아이박스가 클수록 광학계가 커지고 휘도가 분산됨",
+      "시선추적으로 눈 위치를 실시간 보정하면 AR 정합 오차 감소"
+    ],
+    "related": ["virtual-image-distance", "field-of-view", "eye-tracking"]
+  },
+  {
+    "id": "combiner-hud",
+    "term": "컴바이너형 HUD",
+    "term_en": "Combiner HUD",
+    "definition": "대시보드 위에 돌출된 별도의 반투명 반사판(컴바이너)에 영상을 투영하는 HUD 방식.",
+    "features": [
+      "윈드실드 특수 필름이 불필요해 원가가 낮고 후장착 가능",
+      "허상거리 1~2m, 시야각 4~6도 수준으로 표시 정보가 제한적",
+      "컴바이너의 돌출로 시야 방해와 디자인 제약 발생",
+      "소형·보급형 차량과 애프터마켓 제품에 주로 적용"
+    ],
+    "related": ["windshield-hud", "augmented-reality-head-up-display", "virtual-image-distance"]
+  },
+  {
+    "id": "windshield-hud",
+    "term": "윈드실드형 HUD",
+    "term_en": "Windshield HUD",
+    "definition": "차량 전면 유리를 반사면으로 사용하여 허상을 투영하는 HUD 방식으로, 현재 양산 차량에 가장 널리 적용되는 형태.",
+    "features": [
+      "유리 내외면 반사로 생기는 이중상을 쐐기형 PVB 필름으로 제거",
+      "허상거리 2~3m, 시야각 6~10도 수준",
+      "컴바이너 돌출이 없어 시야와 디자인이 깔끔",
+      "AR-HUD로 발전하는 기반 구조"
+    ],
+    "related": ["combiner-hud", "augmented-reality-head-up-display", "virtual-image-distance"]
+  },
+  {
+    "id": "augmented-reality-head-up-display",
+    "term": "AR-HUD",
+    "term_en": "Augmented Reality Head-Up Display",
+    "definition": "센서로 인식한 실도로의 차선·선행차·경로 위에 안내·경고 그래픽을 정확히 겹쳐 표시하는 증강현실 기반 HUD.",
+    "features": [
+      "허상거리 7~10m 이상, 시야각 10도×4도 이상의 대화면 요구",
+      "센서융합·HD맵·시선추적을 통한 실시간 공간 정합이 핵심",
+      "인식에서 표시까지의 지연시간이 정합 품질을 좌우",
+      "자율주행 Lv.3 제어권 전환 안내와 ADAS 경고의 직관적 전달 수단",
+      "2021년 이후 양산 확대, 홀로그래픽·광도파로로 소형화 진행"
+    ],
+    "related": ["augmented-reality", "windshield-hud", "sensor-fusion", "motion-to-photon-latency", "high-definition-map"]
+  },
+  {
+    "id": "field-of-view",
+    "term": "시야각",
+    "term_en": "Field of View (FOV)",
+    "definition": "디스플레이나 허상이 관찰자의 시야에서 차지하는 수평×수직 각도 범위.",
+    "features": [
+      "HUD는 수평×수직 도 단위로 표기, AR-HUD는 10도×4도 이상 요구",
+      "시야각이 클수록 표시 가능한 정보와 AR 정합 영역이 넓어짐",
+      "시야각 확대는 광학계 대형화와 체적 증가를 초래",
+      "VR·AR 글래스에서는 몰입감의 핵심 지표"
+    ],
+    "related": ["virtual-image-distance", "eye-box", "augmented-reality"]
+  },
+  {
+    "id": "sensor-fusion",
+    "term": "센서융합",
+    "term_en": "Sensor Fusion",
+    "definition": "카메라·레이더·라이다·GNSS 등 이종 센서의 데이터를 결합하여 단일 센서보다 정확하고 신뢰성 높은 환경 인식 결과를 얻는 기술.",
+    "features": [
+      "각 센서의 약점(카메라 야간, 레이더 해상도, 라이다 악천후)을 상호 보완",
+      "원시 데이터 융합(Early)과 객체 수준 융합(Late)으로 구분",
+      "칼만 필터·베이지안 추정·딥러닝 기반 융합 기법 활용",
+      "자율주행·ADAS·AR-HUD의 객체 위치 추정 기반"
+    ],
+    "related": ["lidar", "object-detection", "advanced-driver-assistance-system", "deep-learning"]
+  },
+  {
+    "id": "motion-to-photon-latency",
+    "term": "모션-투-포톤 지연",
+    "term_en": "Motion-to-Photon Latency",
+    "definition": "사용자 또는 차량의 움직임이 감지된 시점부터 그 결과가 디스플레이에 빛으로 반영될 때까지의 총 지연시간.",
+    "features": [
+      "센서 인식, 렌더링, 전송, 패널 응답 지연의 합",
+      "AR-HUD는 50ms 이하, VR 헤드셋은 20ms 이하가 권장 기준",
+      "지연이 크면 그래픽이 실객체에서 어긋나고 멀미·주의분산 유발",
+      "예측 렌더링·고주사율 패널·엣지 처리로 단축"
+    ],
+    "related": ["augmented-reality-head-up-display", "augmented-reality", "eye-tracking"]
+  },
+  {
+    "id": "iso-26262",
+    "term": "ISO 26262",
+    "term_en": "ISO 26262 Road Vehicles Functional Safety",
+    "definition": "차량 전기·전자 시스템의 기능안전을 위해 개념 설계부터 폐기까지 전 수명주기의 안전 활동을 규정한 국제 표준.",
+    "features": [
+      "위험 분석을 통해 ASIL A~D 등급을 부여하고 등급별 요구사항 적용",
+      "IEC 61508을 자동차 분야에 맞게 특화, 2018년 2판 발행",
+      "HUD·ADAS 등 안전 관련 시스템의 설계·검증·형상관리 근거",
+      "SOTIF(ISO 21448)와 함께 자율주행 안전성 확보의 양대 표준"
+    ],
+    "related": ["advanced-driver-assistance-system", "augmented-reality-head-up-display"]
+  },
+  {
+    "id": "augmented-reality",
+    "term": "증강현실",
+    "term_en": "Augmented Reality (AR)",
+    "definition": "실세계 영상이나 시야 위에 가상 객체·정보를 실시간으로 정합하여 겹쳐 보여주는 기술.",
+    "features": [
+      "현실을 완전히 대체하는 VR과 달리 현실을 보강",
+      "실시간성, 실세계-가상 정합, 3차원 상호작용이 3대 특성",
+      "마커 기반·위치 기반·SLAM 기반 정합 방식으로 구분",
+      "차량 HUD, 스마트 글래스, 제조·의료 가이드 등에 적용"
+    ],
+    "related": ["augmented-reality-head-up-display", "slam", "field-of-view", "motion-to-photon-latency"]
+  },
+  {
+    "id": "lidar",
+    "term": "라이다",
+    "term_en": "LiDAR (Light Detection and Ranging)",
+    "definition": "레이저 펄스를 발사하고 반사되어 돌아오는 시간을 측정하여 주변 물체까지의 거리와 형상을 3차원 점군으로 얻는 센서.",
+    "features": [
+      "cm급 거리 정밀도와 높은 각해상도로 객체 형상 인식에 유리",
+      "기계식 회전형에서 고정형(Solid-state) MEMS·OPA 방식으로 소형화·저가화",
+      "비·안개·눈 등 악천후와 강한 태양광에서 성능 저하",
+      "자율주행 센서융합과 HD맵 제작의 핵심 센서"
+    ],
+    "related": ["sensor-fusion", "high-definition-map", "object-detection", "slam"]
+  },
+  {
+    "id": "object-detection",
+    "term": "객체탐지",
+    "term_en": "Object Detection",
+    "definition": "영상이나 점군 데이터에서 관심 객체의 위치(경계상자)와 종류를 동시에 찾아내는 컴퓨터 비전 기법.",
+    "features": [
+      "CNN 기반 2단계(Faster R-CNN)와 1단계(YOLO, SSD) 검출기로 발전",
+      "실시간 처리를 위해 경량 모델과 차량용 가속기(NPU) 활용",
+      "보행자·차량·신호등·차선 인식이 ADAS와 AR-HUD의 입력",
+      "mAP, IoU로 성능 평가"
+    ],
+    "related": ["deep-learning", "sensor-fusion", "advanced-driver-assistance-system"]
+  },
+  {
+    "id": "high-definition-map",
+    "term": "HD맵",
+    "term_en": "High-Definition Map",
+    "definition": "차선·표지판·신호등·도로 곡률 등을 cm급 정밀도로 담은 자율주행용 정밀 도로 지도.",
+    "features": [
+      "일반 내비게이션 지도(m급)와 달리 10~20cm 수준 정밀도",
+      "라이다·카메라 MMS로 수집, 차선 단위 경로 계획과 측위에 활용",
+      "도로 변화를 반영하는 지속적 갱신과 대용량 데이터 관리가 과제",
+      "AR-HUD에서 차선·경로 그래픽을 실도로에 정합하는 기준 정보"
+    ],
+    "related": ["lidar", "slam", "augmented-reality-head-up-display"]
+  },
+  {
+    "id": "eye-tracking",
+    "term": "시선추적",
+    "term_en": "Eye Tracking",
+    "definition": "적외선 카메라 등으로 눈의 위치와 시선 방향을 실시간 측정하는 기술.",
+    "features": [
+      "AR-HUD에서 눈 위치 기준으로 허상 투영 좌표를 보정해 정합 오차 감소",
+      "운전자 졸음·주의분산 감지(DMS)에 활용",
+      "AR·VR 기기의 포비티드 렌더링으로 연산량 절감",
+      "안경·조명 변화에 강인한 알고리즘 필요"
+    ],
+    "related": ["eye-box", "augmented-reality-head-up-display", "motion-to-photon-latency"]
+  },
+  {
+    "id": "optical-waveguide",
+    "term": "광도파로",
+    "term_en": "Optical Waveguide",
+    "definition": "빛을 얇은 투명 기판 내부에서 전반사로 전달하고 회절 격자 등으로 입출력하는 광학 소자로, AR 디스플레이의 박형화를 가능하게 하는 기술.",
+    "features": [
+      "두께 수 mm 이하로 HUD·AR 글래스의 체적을 크게 축소",
+      "회절형(DOE)과 반사형(기하학적) 도파로로 구분",
+      "광효율이 낮아 고휘도 광원이 필요하고 색 균일도 확보가 과제",
+      "윈드실드 전체를 투영면으로 쓰는 차세대 HUD에 적용 연구"
+    ],
+    "related": ["holographic-optical-element", "augmented-reality-head-up-display", "laser-beam-scanning"]
+  },
+  {
+    "id": "holographic-optical-element",
+    "term": "홀로그래픽 광학소자",
+    "term_en": "Holographic Optical Element (HOE)",
+    "definition": "간섭 패턴을 기록한 얇은 필름이 렌즈·미러 기능을 수행하도록 만든 광학 소자.",
+    "features": [
+      "특정 파장·각도의 빛만 회절시켜 투명성을 유지하면서 영상 반사",
+      "윈드실드 필름 형태로 적용해 대형 미러 없이 대화면 HUD 구현",
+      "HUD 체적을 1/3 이하로 줄일 수 있어 소형화의 핵심",
+      "온도·습도에 따른 특성 변화와 대량 생산 수율이 과제"
+    ],
+    "related": ["optical-waveguide", "augmented-reality-head-up-display", "laser-beam-scanning"]
+  },
+  {
+    "id": "v2x",
+    "term": "V2X",
+    "term_en": "Vehicle-to-Everything",
+    "definition": "차량이 다른 차량(V2V), 인프라(V2I), 보행자(V2P), 네트워크(V2N)와 무선으로 정보를 주고받는 통신 기술.",
+    "features": [
+      "DSRC(IEEE 802.11p)와 C-V2X(LTE·5G) 두 방식이 경쟁",
+      "센서 가시 범위를 넘어선 사각지대·교차로 위험 정보 공유",
+      "신호 잔여시간, 공사 구간 등을 AR-HUD로 사전 경고 가능",
+      "메시지 인증과 프라이버시 보호를 위한 보안 인증서 체계 필요"
+    ],
+    "related": ["advanced-driver-assistance-system", "augmented-reality-head-up-display", "sensor-fusion"]
+  },
+  {
+    "id": "deep-learning",
+    "term": "딥러닝",
+    "term_en": "Deep Learning",
+    "definition": "다층 인공신경망으로 데이터의 계층적 특징을 자동 학습하여 인식·예측을 수행하는 기계학습의 한 분야.",
+    "features": [
+      "CNN(영상), RNN·Transformer(시계열·언어) 등 구조별 특화",
+      "대용량 데이터와 GPU 연산으로 특징 추출을 사람 개입 없이 수행",
+      "객체탐지·음성인식·생성형 AI의 기반 기술",
+      "학습 데이터 편향과 설명가능성 부족이 한계"
+    ],
+    "related": ["object-detection", "sensor-fusion", "monte-carlo-tree-search"]
+  },
+  {
+    "id": "slam",
+    "term": "SLAM",
+    "term_en": "Simultaneous Localization and Mapping",
+    "definition": "이동체가 미지 환경에서 센서 정보로 자신의 위치를 추정하는 동시에 주변 지도를 작성하는 기술.",
+    "features": [
+      "라이다 SLAM과 카메라 기반 비주얼 SLAM으로 구분",
+      "확장 칼만 필터, 그래프 최적화, 루프 클로저로 누적 오차 보정",
+      "GNSS 음영 지역에서 cm급 자차 측위 제공",
+      "자율주행·로봇·AR 공간 정합의 핵심 기술"
+    ],
+    "related": ["lidar", "high-definition-map", "augmented-reality"]
+  },
+  {
+    "id": "evaluation-function",
+    "term": "평가함수",
+    "term_en": "Evaluation Function",
+    "definition": "탐색 중인 상태나 노드가 목표에 얼마나 유망한지를 수치로 산출하여 확장 순서를 결정하는 함수로, 일반적으로 f(n)=g(n)+h(n) 형태.",
+    "features": [
+      "g(n)은 출발 노드에서 n까지의 실제 경로비용",
+      "h(n)은 n에서 목표까지의 잔여비용을 추정하는 휴리스틱 함수",
+      "h만 사용하면 탐욕 탐색, g만 사용하면 균일비용 탐색",
+      "게임 트리에서는 말단 국면의 유불리를 점수화하는 정적 평가함수로 사용"
+    ],
+    "related": ["a-star-algorithm", "admissible-heuristic", "greedy-best-first-search", "minimax-algorithm"]
+  },
+  {
+    "id": "informed-search",
+    "term": "정보 기반 탐색",
+    "term_en": "Informed Search",
+    "definition": "문제 영역의 지식을 휴리스틱 함수로 활용하여 목표에 가까운 상태를 우선 탐색하는 탐색 전략의 총칭.",
+    "features": [
+      "무정보 탐색 대비 확장 노드 수를 크게 감소",
+      "탐욕 최우선 탐색, A*, IDA*, 빔 탐색 등이 대표",
+      "휴리스틱의 정확도에 따라 성능이 좌우됨",
+      "허용 휴리스틱을 쓰면 최적해도 보장 가능"
+    ],
+    "related": ["uninformed-search", "evaluation-function", "a-star-algorithm"]
+  },
+  {
+    "id": "state-space-search",
+    "term": "상태공간 탐색",
+    "term_en": "State Space Search",
+    "definition": "문제를 초기상태·목표상태·연산자(상태 전이) 집합으로 모델링하고, 초기상태에서 목표상태에 이르는 연산자 열을 그래프 탐색으로 찾는 문제 해결 방식.",
+    "features": [
+      "상태 표현, 후계함수, 목표 검사, 경로비용이 4대 요소",
+      "분기계수 b와 깊이 d에 따라 상태 수가 지수적으로 증가",
+      "OPEN·CLOSED 리스트로 미확장·확장 완료 노드를 관리",
+      "퍼즐·경로 탐색·계획 수립 등 AI 문제의 공통 틀"
+    ],
+    "related": ["combinatorial-explosion", "informed-search", "uninformed-search"]
+  },
+  {
+    "id": "combinatorial-explosion",
+    "term": "조합 폭발",
+    "term_en": "Combinatorial Explosion",
+    "definition": "문제 크기가 커질 때 탐색해야 할 경우의 수가 지수적·계승적으로 급증하여 완전탐색이 불가능해지는 현상.",
+    "features": [
+      "체스 약 10^120 국면, TSP n개 도시에 n! 경로",
+      "휴리스틱 탐색과 가지치기의 등장 배경",
+      "NP-난해 문제에서 전형적으로 발생",
+      "근사 알고리즘·메타휴리스틱으로 실용적 해 확보"
+    ],
+    "related": ["np-hard", "state-space-search", "traveling-salesman-problem"]
+  },
+  {
+    "id": "np-hard",
+    "term": "NP-난해",
+    "term_en": "NP-hard",
+    "definition": "NP에 속한 모든 문제를 다항 시간에 환원할 수 있는 문제로, 다항 시간 알고리즘이 알려지지 않은 가장 어려운 부류의 문제.",
+    "features": [
+      "NP-완전은 NP-난해이면서 NP에 속하는 문제",
+      "TSP 최적화, 배낭 문제, 작업 스케줄링이 대표",
+      "P≠NP 가정 하에 정확한 다항 시간 해법 부재",
+      "휴리스틱·근사 알고리즘으로 실용 해를 구함"
+    ],
+    "related": ["combinatorial-explosion", "traveling-salesman-problem"]
+  },
+  {
+    "id": "admissible-heuristic",
+    "term": "허용 휴리스틱",
+    "term_en": "Admissible Heuristic",
+    "definition": "모든 노드에서 목표까지의 실제 최소 비용을 절대 과대평가하지 않는 휴리스틱 함수, 즉 h(n) ≤ h*(n)을 만족하는 함수.",
+    "features": [
+      "A* 알고리즘이 최적해를 보장하기 위한 조건",
+      "문제의 제약을 완화한(Relaxed) 문제의 정확한 해로 도출 가능",
+      "8-퍼즐의 맨해튼 거리, 경로 탐색의 유클리드 거리가 대표",
+      "실제 비용에 가까울수록(지배적일수록) 확장 노드 수 감소"
+    ],
+    "related": ["consistent-heuristic", "a-star-algorithm", "manhattan-distance", "euclidean-distance"]
+  },
+  {
+    "id": "hill-climbing",
+    "term": "언덕 오르기",
+    "term_en": "Hill Climbing",
+    "definition": "현재 상태의 이웃 중 평가값이 가장 좋은 상태로만 이동하며, 더 나은 이웃이 없으면 멈추는 지역 탐색 알고리즘.",
+    "features": [
+      "현재 상태만 유지하므로 메모리 사용이 O(1)",
+      "지역 최적해, 고원(Plateau), 능선(Ridge)에서 정지하는 한계",
+      "무작위 재시작, 확률적 이동으로 보완",
+      "최적화 문제와 제약 만족 문제에 널리 적용"
+    ],
+    "related": ["local-optimum", "simulated-annealing", "greedy-best-first-search"]
+  },
+  {
+    "id": "local-optimum",
+    "term": "지역 최적해",
+    "term_en": "Local Optimum",
+    "definition": "이웃 해들 중에서는 가장 좋지만 전체 탐색 공간의 최적해(전역 최적해)는 아닌 해.",
+    "features": [
+      "언덕 오르기 등 지역 탐색이 빠지기 쉬운 함정",
+      "담금질 기법은 나쁜 이동을 확률적으로 허용해 탈출",
+      "유전 알고리즘은 다수의 해를 병렬 유지해 다양성 확보",
+      "무작위 재시작과 타부 탐색도 대표적 탈출 전략"
+    ],
+    "related": ["hill-climbing", "simulated-annealing", "genetic-algorithm"]
+  },
+  {
+    "id": "greedy-best-first-search",
+    "term": "탐욕 최우선 탐색",
+    "term_en": "Greedy Best-First Search",
+    "definition": "평가함수로 휴리스틱 h(n)만 사용하여 목표에 가장 가까워 보이는 노드를 항상 먼저 확장하는 탐색 알고리즘.",
+    "features": [
+      "경로비용 g(n)을 무시해 빠르지만 최적해를 보장하지 않음",
+      "유한 상태공간에서 완전하나 무한 공간에서는 불완전",
+      "최악의 경우 시간·공간복잡도 O(b^m)",
+      "휴리스틱이 좋으면 실제로는 매우 효율적"
+    ],
+    "related": ["a-star-algorithm", "evaluation-function", "hill-climbing"]
+  },
+  {
+    "id": "a-star-algorithm",
+    "term": "A* 알고리즘",
+    "term_en": "A* Algorithm",
+    "definition": "평가함수 f(n)=g(n)+h(n)이 최소인 노드를 우선 확장하는 최우선 탐색으로, 허용 휴리스틱을 사용하면 최적해를 보장하는 대표적 휴리스틱 탐색 알고리즘.",
+    "features": [
+      "허용 휴리스틱이면 최적, 일관 휴리스틱이면 노드 재확장 불필요",
+      "같은 정보로는 최적해를 찾는 알고리즘 중 확장 노드 수가 최소",
+      "OPEN 리스트가 지수적으로 커지는 메모리 문제",
+      "메모리 제한 변형으로 IDA*, SMA*, RBFS",
+      "경로 탐색·게임 AI·로봇 내비게이션에 널리 사용"
+    ],
+    "related": ["evaluation-function", "admissible-heuristic", "consistent-heuristic", "iterative-deepening-a-star", "dijkstra-algorithm"]
+  },
+  {
+    "id": "beam-search",
+    "term": "빔 탐색",
+    "term_en": "Beam Search",
+    "definition": "각 깊이에서 평가값 상위 k개(빔 폭)의 노드만 유지하고 나머지는 버리는 메모리 제한형 최우선 탐색.",
+    "features": [
+      "메모리 사용이 빔 폭에 비례해 예측 가능",
+      "유망 노드를 버릴 수 있어 완전성·최적성 미보장",
+      "k=1이면 언덕 오르기, k=∞이면 최우선 탐색",
+      "기계번역·음성인식 디코딩에 널리 적용"
+    ],
+    "related": ["greedy-best-first-search", "hill-climbing", "a-star-algorithm"]
+  },
+  {
+    "id": "manhattan-distance",
+    "term": "맨해튼 거리",
+    "term_en": "Manhattan Distance",
+    "definition": "두 점 사이의 각 좌표축 차이의 절댓값 합으로, 격자 위에서 수평·수직 이동만 허용할 때의 최단 거리.",
+    "features": [
+      "8-퍼즐에서 각 타일의 목표 위치까지 거리 합이 대표적 허용 휴리스틱",
+      "4방향 이동 격자 경로 탐색에서 실제 비용을 과대평가하지 않음",
+      "대각선 이동이 허용되면 허용성이 깨질 수 있음",
+      "L1 노름이라고도 함"
+    ],
+    "related": ["euclidean-distance", "admissible-heuristic", "eight-puzzle"]
+  },
+  {
+    "id": "breadth-first-search",
+    "term": "너비우선 탐색",
+    "term_en": "Breadth-First Search (BFS)",
+    "definition": "시작 노드에서 가까운 노드부터 깊이 순서대로 모든 노드를 확장하는 무정보 탐색 알고리즘.",
+    "features": [
+      "큐(FIFO)로 구현, 단계 비용이 동일하면 최적해 보장",
+      "완전하지만 시간·공간복잡도가 O(b^d)로 메모리 소모가 큼",
+      "최단 경로 문제와 그래프 연결성 검사에 활용",
+      "균일비용 탐색은 경로비용 기준으로 일반화한 형태"
+    ],
+    "related": ["depth-first-search", "uninformed-search", "uniform-cost-search"]
+  },
+  {
+    "id": "depth-first-search",
+    "term": "깊이우선 탐색",
+    "term_en": "Depth-First Search (DFS)",
+    "definition": "한 경로를 끝까지 내려간 뒤 막히면 되돌아와 다른 경로를 탐색하는 무정보 탐색 알고리즘.",
+    "features": [
+      "스택(LIFO) 또는 재귀로 구현, 공간복잡도 O(bm)로 메모리 효율적",
+      "무한 깊이 경로에서 완전성 상실, 최적해 미보장",
+      "깊이 제한 탐색과 반복 심화로 보완",
+      "백트래킹 기반 제약 만족 문제에 적합"
+    ],
+    "related": ["breadth-first-search", "uninformed-search", "iterative-deepening-a-star"]
+  },
+  {
+    "id": "uninformed-search",
+    "term": "무정보 탐색",
+    "term_en": "Uninformed Search (Blind Search)",
+    "definition": "목표에 대한 추가 정보 없이 문제 정의만으로 상태를 체계적으로 생성·확인하는 탐색 전략.",
+    "features": [
+      "너비우선, 깊이우선, 균일비용, 반복 심화 탐색이 대표",
+      "분기계수 b, 깊이 d에 대해 O(b^d)의 조합 폭발",
+      "작은 문제에서는 완전성·최적성 보장 가능",
+      "휴리스틱 탐색과 대비되는 기본 전략"
+    ],
+    "related": ["informed-search", "breadth-first-search", "depth-first-search", "uniform-cost-search"]
+  },
+  {
+    "id": "traveling-salesman-problem",
+    "term": "외판원 문제",
+    "term_en": "Traveling Salesman Problem (TSP)",
+    "definition": "n개 도시를 모두 한 번씩 방문하고 출발지로 돌아오는 최소 비용 순회 경로를 찾는 대표적 NP-난해 조합 최적화 문제.",
+    "features": [
+      "가능한 경로 수가 (n-1)!/2로 조합 폭발",
+      "최소 신장 트리 비용이 허용 휴리스틱으로 사용됨",
+      "담금질·유전 알고리즘·2-opt 등 메타휴리스틱으로 근사해 탐색",
+      "물류 배송·PCB 드릴링·칩 배선 등에 응용"
+    ],
+    "related": ["np-hard", "combinatorial-explosion", "simulated-annealing", "genetic-algorithm"]
+  },
+  {
+    "id": "eight-puzzle",
+    "term": "8-퍼즐",
+    "term_en": "8-Puzzle",
+    "definition": "3×3 격자에서 8개의 숫자 타일을 빈칸으로 밀어 목표 배열을 만드는 문제로, 휴리스틱 탐색의 표준 예제.",
+    "features": [
+      "도달 가능한 상태 수 9!/2 = 181,440개",
+      "h1은 제자리가 아닌 타일 수, h2는 맨해튼 거리 합",
+      "h2가 h1을 지배하여 A* 확장 노드 수가 크게 감소",
+      "15-퍼즐로 확장하면 상태 수 약 10^13으로 급증"
+    ],
+    "related": ["manhattan-distance", "admissible-heuristic", "a-star-algorithm"]
+  },
+  {
+    "id": "euclidean-distance",
+    "term": "유클리드 거리",
+    "term_en": "Euclidean Distance",
+    "definition": "두 점을 잇는 직선의 길이로, 좌표 차이 제곱합의 제곱근으로 계산되는 거리.",
+    "features": [
+      "경로 탐색에서 직선거리는 실제 경로보다 짧으므로 허용 휴리스틱",
+      "맨해튼 거리보다 작거나 같아 격자 문제에서는 덜 정확",
+      "연속 공간·자유 이동 문제의 기본 휴리스틱",
+      "L2 노름이라고도 함"
+    ],
+    "related": ["manhattan-distance", "admissible-heuristic"]
+  },
+  {
+    "id": "consistent-heuristic",
+    "term": "일관 휴리스틱",
+    "term_en": "Consistent Heuristic (Monotonic)",
+    "definition": "모든 노드 n과 그 후계 n'에 대해 h(n) ≤ c(n,n') + h(n')의 삼각부등식을 만족하는 휴리스틱 함수.",
+    "features": [
+      "일관 휴리스틱은 항상 허용 휴리스틱",
+      "A*에서 f값이 경로를 따라 단조 증가하여 CLOSED 노드 재확장 불필요",
+      "그래프 탐색에서 A*의 최적성 보장 조건",
+      "맨해튼 거리, 유클리드 거리는 일관성 만족"
+    ],
+    "related": ["admissible-heuristic", "a-star-algorithm"]
+  },
+  {
+    "id": "dijkstra-algorithm",
+    "term": "다익스트라 알고리즘",
+    "term_en": "Dijkstra's Algorithm",
+    "definition": "음이 아닌 가중치 그래프에서 출발 노드로부터 모든 노드까지의 최단 경로를 경로비용이 작은 순서로 확정해 나가는 알고리즘.",
+    "features": [
+      "우선순위 큐 사용 시 O((V+E) log V)",
+      "휴리스틱 h=0인 A*와 동일한 동작",
+      "음의 가중치 간선이 있으면 사용 불가",
+      "네트워크 라우팅(OSPF), 지도 경로 탐색의 기반"
+    ],
+    "related": ["uniform-cost-search", "a-star-algorithm"]
+  },
+  {
+    "id": "uniform-cost-search",
+    "term": "균일비용 탐색",
+    "term_en": "Uniform Cost Search",
+    "definition": "경로비용 g(n)이 가장 작은 노드를 우선 확장하는 무정보 탐색으로, 단계 비용이 다른 문제에서 최적해를 보장하는 알고리즘.",
+    "features": [
+      "너비우선 탐색을 경로비용 기준으로 일반화",
+      "단일 목표에 대한 다익스트라 알고리즘과 동등",
+      "단계 비용이 양수이면 완전하고 최적",
+      "휴리스틱 없이 동작하므로 확장 노드 수가 많음"
+    ],
+    "related": ["dijkstra-algorithm", "breadth-first-search", "uninformed-search"]
+  },
+  {
+    "id": "iterative-deepening-a-star",
+    "term": "IDA*",
+    "term_en": "Iterative Deepening A*",
+    "definition": "f값 임계치를 점진적으로 늘리며 깊이우선 탐색을 반복하여 A*의 메모리 문제를 해결한 알고리즘.",
+    "features": [
+      "공간복잡도 O(bd)로 메모리가 깊이에 선형",
+      "허용 휴리스틱이면 완전하고 최적",
+      "노드를 반복 재방문하므로 시간이 다소 증가",
+      "15-퍼즐 등 대규모 상태공간 문제 해결에 성공"
+    ],
+    "related": ["a-star-algorithm", "depth-first-search", "admissible-heuristic"]
+  },
+  {
+    "id": "simulated-annealing",
+    "term": "담금질 기법",
+    "term_en": "Simulated Annealing",
+    "definition": "금속 담금질에서 착안하여 초기에는 나쁜 이동도 높은 확률로 허용하고 온도를 낮추며 점차 수렴시키는 확률적 지역 탐색 알고리즘.",
+    "features": [
+      "나쁜 이동 수용 확률 exp(-ΔE/T)로 지역 최적해 탈출",
+      "온도 감소 스케줄이 충분히 느리면 전역 최적해에 확률 1로 수렴",
+      "TSP, VLSI 배치, 일정 수립 등 조합 최적화에 적용",
+      "현재 상태만 유지하므로 메모리 효율적"
+    ],
+    "related": ["local-optimum", "hill-climbing", "genetic-algorithm", "traveling-salesman-problem"]
+  },
+  {
+    "id": "minimax-algorithm",
+    "term": "미니맥스 알고리즘",
+    "term_en": "Minimax Algorithm",
+    "definition": "2인 제로섬 게임에서 자신은 평가값을 최대화하고 상대는 최소화한다고 가정하여 게임 트리의 말단 평가값을 역전파해 최선의 수를 결정하는 알고리즘.",
+    "features": [
+      "탐색 깊이를 제한하고 말단에 정적 평가함수 적용",
+      "시간복잡도 O(b^m)으로 깊이에 지수적",
+      "알파베타 가지치기로 동일 결과를 절반 깊이 비용으로 산출",
+      "체스·오목·틱택토 등 완전정보 게임 AI의 기본"
+    ],
+    "related": ["alpha-beta-pruning", "evaluation-function", "monte-carlo-tree-search"]
+  },
+  {
+    "id": "alpha-beta-pruning",
+    "term": "알파베타 가지치기",
+    "term_en": "Alpha-Beta Pruning",
+    "definition": "미니맥스 탐색에서 현재까지의 최선값(α, β) 범위를 벗어나 결과에 영향을 줄 수 없는 분기를 평가하지 않고 잘라내는 기법.",
+    "features": [
+      "미니맥스와 동일한 결과를 보장하면서 탐색량 감소",
+      "최선의 수 순서에서 시간복잡도 O(b^(m/2))로 탐색 깊이 2배 확장",
+      "수 정렬(Move Ordering)이 가지치기 효율을 좌우",
+      "딥블루 등 전통적 게임 AI의 핵심"
+    ],
+    "related": ["minimax-algorithm", "evaluation-function"]
+  },
+  {
+    "id": "genetic-algorithm",
+    "term": "유전 알고리즘",
+    "term_en": "Genetic Algorithm",
+    "definition": "해 집단을 염색체로 표현하고 선택·교차·돌연변이 연산을 세대별로 반복하여 적합도가 높은 해로 진화시키는 메타휴리스틱 최적화 기법.",
+    "features": [
+      "다수의 해를 병렬 유지하여 지역 최적해 회피에 유리",
+      "적합도 함수가 평가함수 역할",
+      "교차율·돌연변이율·집단 크기 등 파라미터 튜닝 필요",
+      "TSP, 스케줄링, 신경망 구조 탐색에 적용"
+    ],
+    "related": ["local-optimum", "simulated-annealing", "traveling-salesman-problem"]
+  },
+  {
+    "id": "monte-carlo-tree-search",
+    "term": "몬테카를로 트리 탐색",
+    "term_en": "Monte Carlo Tree Search (MCTS)",
+    "definition": "무작위 시뮬레이션(Rollout) 결과로 노드의 가치를 추정하며 선택·확장·시뮬레이션·역전파를 반복해 유망한 수에 탐색을 집중하는 게임 트리 탐색 기법.",
+    "features": [
+      "정적 평가함수 없이 시뮬레이션 승률로 국면 평가",
+      "UCB1 기반 선택으로 탐험과 활용의 균형",
+      "AlphaGo는 심층신경망으로 정책·가치를 추정해 MCTS 효율 극대화",
+      "바둑 등 분기계수가 큰 게임에서 미니맥스보다 우수"
+    ],
+    "related": ["minimax-algorithm", "deep-learning", "alpha-beta-pruning"]
+  }
+]

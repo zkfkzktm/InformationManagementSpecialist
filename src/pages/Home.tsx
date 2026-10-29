@@ -3,7 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom'
 import FilterBar from '../components/FilterBar'
 import QuestionCard from '../components/QuestionCard'
 import TopicDetail from '../components/TopicDetail'
-import { domainName, topicQuestions } from '../lib/data'
+import { domainName, prefetchAnswers, topicQuestions } from '../lib/data'
 import { candidates, pickRandom } from '../lib/pick'
 import { loadFilters, markSeen, saveFilters } from '../lib/progress'
 import type { Filters, Question, Topic } from '../lib/types'
@@ -33,6 +33,7 @@ export default function Home() {
 
   const next = (f = filters) => {
     const t = pickRandom(f, topic?.id, reviewOnly)
+    if (t?.has_answer) prefetchAnswers(t.domain)
     setTopic(t)
     setQuestion(t ? pickQuestion(t, f) : null)
     setRevealed(false)

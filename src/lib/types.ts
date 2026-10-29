@@ -23,18 +23,28 @@ export interface Topic {
   domain: DomainCode
   aliases: string[]
   question_ids: string[]
-  answers?: { short?: string; long?: string }   // Markdown, [[kw-id|표시]] 링크
+  has_answer: boolean
   keywords?: string[]
 }
 
+/** 답안 본문 (data/answers/{도메인}.json, 지연 로딩). Markdown, [[kw-id|표시]] 링크 */
+export interface Answers {
+  short?: string
+  long?: string
+}
+
+/** 키워드 인덱스 (data/keywords.json, 시작 시 로딩) */
 export interface Keyword {
   id: string
   term: string
   term_en: string
+}
+
+/** 키워드 본문 (data/kw/{첫글자}.json, 지연 로딩) */
+export interface KeywordDetail {
   definition: string
   features: string[]
   related: string[]     // keyword ids
-  topic_ids: string[]
 }
 
 /** 0 미학습 · 1 모름 · 2 애매 · 3 안다 */
