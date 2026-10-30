@@ -11,6 +11,7 @@
 | react-router-dom (HashRouter) | 화면 이동. GitHub Pages 호환 | `src/App.tsx` |
 | react-markdown + remark-gfm | 답안 Markdown 렌더 | `src/components/AnswerView.tsx` |
 | mermaid (지연 로딩) | 구성도 렌더 | `src/components/Mermaid.tsx` |
+| 브라우저 인쇄 (라이브러리 없음) | 토픽 답안 PDF 저장 | `src/components/PdfMenu.tsx`, `PrintSheet.tsx`, `index.css`의 `@media print` |
 | @supabase/supabase-js | Google 로그인 + 진도 동기화 | `src/lib/supabase.ts`, `progress.ts` |
 
 ## 폴더 구조
@@ -72,3 +73,4 @@ npm run dev
 | Google 로그인 후 빈 화면 | Supabase Redirect URL 미등록 | URL Configuration에 `https://<user>.github.io/<repo>/` 추가 |
 | 구성도가 코드로 보임 | mermaid 문법 오류 | 해당 토픽 `scripts/content/` 파일 수정 후 `build_content.py` |
 | 답안 불러오기 실패 | 네트워크 끊김 | 토픽 다시 열기 (도메인 묶음 1회만 받음) |
+| PDF에 주소·날짜가 찍힘 | 브라우저 인쇄 머리글·바닥글 | 인쇄 창 → 설정 더보기 → 머리글과 바닥글 해제 |

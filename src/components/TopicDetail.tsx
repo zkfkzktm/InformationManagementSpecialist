@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { domainName, getData, topicQuestions, useAnswers } from '../lib/data'
 import type { Topic } from '../lib/types'
 import AnswerView from './AnswerView'
+import PdfMenu from './PdfMenu'
 import TopicActions from './TopicActions'
 
 type Tab = 'short' | 'long'
@@ -23,12 +24,15 @@ export default function TopicDetail({ topic, initialTab }: { topic: Topic; initi
 
   return (
     <section className="flex flex-col gap-4">
-      <header>
-        <div className="text-sm text-ink-3">{domainName(topic.domain)}</div>
-        <h1 className="text-xl font-bold m-0 leading-snug">{topic.title}</h1>
-        {topic.title_en && topic.title_en !== topic.title && (
-          <div className="text-sm text-ink-2">{topic.title_en}</div>
-        )}
+      <header className="flex items-start gap-3">
+        <div className="flex-1 min-w-0">
+          <div className="text-sm text-ink-3">{domainName(topic.domain)}</div>
+          <h1 className="text-xl font-bold m-0 leading-snug">{topic.title}</h1>
+          {topic.title_en && topic.title_en !== topic.title && (
+            <div className="text-sm text-ink-2">{topic.title_en}</div>
+          )}
+        </div>
+        <PdfMenu topic={topic} answers={answers.data} />
       </header>
 
       <TopicActions topicId={topic.id} />

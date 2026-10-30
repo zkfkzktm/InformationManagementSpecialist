@@ -32,8 +32,11 @@ function loadFontFor(code: string) {
   ]).catch(() => undefined)
 }
 
-/** 구성도: mermaid 코드 → SVG. 실패하면 원문 코드를 그대로 보여줌 */
-export default function Mermaid({ code }: { code: string }) {
+// 다이어그램별 설정(frontmatter)으로 전역 테마(다크일 수 있음)를 덮어씀
+const LIGHT = '---\nconfig:\n  theme: neutral\n---\n'
+
+/** 구성도: mermaid 코드 → SVG. 실패하면 원문 코드를 그대로 보여줌. light = 인쇄용 밝은 테마 */
+export default function Mermaid({ code, light }: { code: string; light?: boolean }) {
   const ref = useRef<HTMLDivElement>(null)
   const id = useId().replace(/[^a-zA-Z0-9]/g, '')
   const [failed, setFailed] = useState(false)
@@ -41,7 +44,7 @@ export default function Mermaid({ code }: { code: string }) {
     let alive = true
     Promise.all([loadMermaid(), loadFontFor(code)])
       // 측정용 임시 요소를 같은 자리(.answer 안)에 만들어 실제 표시 CSS와 같은 조건으로 크기 계산
-      .then(([m]) => m.render(`mm${id}`, code, ref.current ?? undefined))
+      .then(([m]) => m.render(`mm${id}`, light ? LIGHT + code : code, ref.current ?? undefined))
       .then(({ svg }) => {
         if (alive && ref.current) ref.current.innerHTML = svg
       })
@@ -49,7 +52,7 @@ export default function Mermaid({ code }: { code: string }) {
     return () => {
       alive = false
     }
-  }, [code, id])
+  }, [code, id, light])
   if (failed) return <pre>{code}</pre>
   return <div ref={ref} className="diagram" />
 }

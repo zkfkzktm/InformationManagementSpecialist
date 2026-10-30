@@ -13,14 +13,15 @@ export function linkKeywords(md: string): string {
   })
 }
 
-export default function AnswerView({ markdown }: { markdown: string }) {
+/** light: 인쇄용. 다크 모드여도 구성도를 밝은 테마로 그림 */
+export default function AnswerView({ markdown, light }: { markdown: string; light?: boolean }) {
   return (
     <div className="answer">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
           code: ({ className, children, ...rest }) => {
-            if (className === 'language-mermaid') return <Mermaid code={String(children).trim()} />
+            if (className === 'language-mermaid') return <Mermaid code={String(children).trim()} light={light} />
             return (
               <code className={className} {...rest}>
                 {children}
