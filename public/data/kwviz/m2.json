@@ -1,0 +1,1 @@
+{"m2-form-factor":{"diagram":"flowchart TB\n  M2[\"M.2 슬롯 (케이블 없이 직결)\"] --> K1[\"B 키: SATA·PCIe x2\"]\n  M2 --> K2[\"M 키: PCIe x4 (NVMe)\"]\n  M2 --> K3[\"A·E 키: 무선랜·블루투스\"]\n  K2 --> NV[\"NVMe SSD (고성능 주력)\"]\n  K1 --> SA[\"SATA SSD (약 600MB/s 한계)\"]\n  M2 --> SZ[\"크기: 2242 = 폭 22mm × 길이 42mm\"]\n  SZ --> S2[\"2280: 노트북·데스크톱 표준\"]"}}

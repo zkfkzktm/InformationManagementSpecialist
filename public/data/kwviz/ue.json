@@ -1,0 +1,1 @@
+{"uefi":{"diagram":"flowchart TB\n  ROT[\"신뢰 루트(펌웨어 서명 검증)\"] --> FW[\"UEFI 펌웨어\"]\n  FW -->|\"서명 검증(db·dbx)\"| BL[\"부트로더\"]\n  BL -->|\"서명 검증\"| OSK[\"OS 커널\"]\n  FW -.->|\"해시 측정\"| TPM[\"TPM PCR 확장 기록\"]\n  BL -.->|\"해시 측정\"| TPM\n  OSK -.->|\"해시 측정\"| TPM\n  TPM --> AT[\"측정 부트 → 원격 증명\"]\n  KEYS[\"키 계층: PK → KEK → db·dbx\"] -.- FW\n  R[\"펌웨어 변조 → 신뢰 체인 붕괴\"] -.- ROT"}}

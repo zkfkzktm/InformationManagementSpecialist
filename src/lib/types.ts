@@ -47,6 +47,12 @@ export interface KeywordDetail {
   related: string[]     // keyword ids
 }
 
+/** 키워드 도식·슈도코드 (data/kwviz/{앞 2글자}.json, 지연 로딩). 없는 키워드는 항목 없음 */
+export interface KeywordViz {
+  diagram?: string      // mermaid 코드
+  pseudocode?: string
+}
+
 /** 0 미학습 · 1 모름 · 2 애매 · 3 안다 */
 export type Confidence = 0 | 1 | 2 | 3
 

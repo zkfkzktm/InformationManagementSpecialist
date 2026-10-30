@@ -1,0 +1,1 @@
+{"jndi":{"diagram":"flowchart TB\n  A[\"애플리케이션\"] -->|\"lookup('jdbc/myDS')\"| C[\"InitialContext (JNDI API)\"]\n  C --> SPI[\"JNDI SPI\"]\n  SPI --> L[\"LDAP 제공자\"]\n  SPI --> D[\"DNS 제공자\"]\n  SPI --> W[\"WAS 네이밍 서비스\"]\n  AD[\"관리자·배포 시\"] -->|\"bind(이름, 객체)\"| W\n  W -->|\"바인딩 객체 반환\"| R[\"DataSource·EJB·JMS 자원\"]\n  R -.->|\"위치 투명성\"| A"}}

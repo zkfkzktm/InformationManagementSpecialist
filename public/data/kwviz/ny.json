@@ -1,0 +1,1 @@
+{"nyquist-shannon-sampling-theorem":{"diagram":"flowchart TB\n  X[\"대역 제한 신호(최고 fmax)\"] --> AA[\"앤티앨리어싱 LPF\"]\n  AA --> S{\"표본화 주파수 fs\"}\n  S -->|\"fs ≥ 2·fmax\"| OK[\"표본으로 완전 복원 가능\"]\n  S -->|\"fs가 2·fmax 미만\"| AL[\"앨리어싱(겹침 왜곡)\"]\n  OK --> R[\"LPF 보간으로 원 신호 복원\"]\n  N[\"나이퀴스트 주파수 = fs/2\"] -.-> S\n  E[\"예: 오디오 20kHz → 44.1kHz\"] -.-> S"}}

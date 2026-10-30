@@ -1,0 +1,1 @@
+{"6lowpan":{"diagram":"flowchart TB\n  APP[\"응용(CoAP 등)\"] --> UDP[\"UDP\"]\n  UDP --> IP6[\"IPv6(RPL 라우팅)\"]\n  IP6 --> AD[\"6LoWPAN 적응 계층\"]\n  AD --> MAC[\"IEEE 802.15.4 MAC·PHY(127B 프레임)\"]\n  AD --> F1[\"헤더 압축 IPHC(RFC 6282)\"]\n  AD --> F2[\"단편화·재조립: 1280B MTU 대응\"]\n  AD --> F3[\"이웃 탐색 최적화(RFC 6775)\"]\n  TH[\"Thread 네트워크 계층 기반\"] -.- AD"}}

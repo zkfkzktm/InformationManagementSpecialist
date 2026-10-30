@@ -23,6 +23,7 @@
 | `public/data/answers/{도메인}.json` | 답안 본문 (해당 도메인 토픽을 열 때 로딩) |
 | `public/data/keywords.json` | 키워드 7,260개 인덱스: id·한글·영문 (시작 시 로딩) |
 | `public/data/kw/{첫글자}.json` | 키워드 위키 본문 (위키를 열 때 로딩) |
+| `public/data/kwviz/{앞 2글자}.json` | 키워드 도식(mermaid)·슈도코드 (위키를 열 때 로딩) |
 | `public/data/domains.json` | 도메인 8개 |
 | `scripts/parse_questions.py` | 기출 PDF/HWP → questions.json |
 | `scripts/merge_topics.py` | 문항별 토픽 추출 결과 → topics.json |
@@ -30,6 +31,8 @@
 | `scripts/find_orphans.py` | 답안 링크 중 위키 설명이 없는 키워드 찾기 |
 | `scripts/content/{도메인}.json` | 도메인별 답안 묶음 (생성물) |
 | `scripts/content/{도메인}/{토픽id}.json` | 토픽별 답안 — 있으면 묶음보다 우선 (수정용) |
+| `scripts/contentwork/kwviz/out/all.json` | 키워드 도식·슈도코드 생성물 7,260개 (`KWVIZ_GUIDE.md` 규칙) |
+| `scripts/contentwork/kwviz/fix/*.json` | 키워드 도식·슈도코드 수정본 — 생성물보다 우선 |
 | `supabase/schema.sql` | 진도 테이블 + RLS |
 
 ## 실행
@@ -64,7 +67,7 @@ npm run dev
 |---|---|---|
 | 기출 파싱 | `python3 scripts/parse_questions.py <기출 폴더>` | PDF/HWP → `questions.json` (99·101·102·105·107회는 `scripts/manual/` 수기 전사 사용) |
 | 토픽 병합 | `python3 scripts/merge_topics.py` | `scripts/topicwork/topics*.json` + `scripts/merge_rules.json` → `topics.json` |
-| 답안 병합 | `python3 scripts/build_content.py` | `scripts/content/*.json`, `scripts/contentwork/keywords-*.json`, `scripts/keyword_rules.json` → `public/data/` |
+| 답안 병합 | `python3 scripts/build_content.py` | `scripts/content/*.json`, `scripts/contentwork/keywords-*.json`, `scripts/contentwork/kwviz/`, `scripts/keyword_rules.json` → `public/data/` |
 
 ## 예정된 막힘
 

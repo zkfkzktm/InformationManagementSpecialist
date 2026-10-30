@@ -1,0 +1,1 @@
+{"sgml":{"diagram":"flowchart TB\n  SGML[\"SGML (ISO 8879 메타 언어)\"] --> DTD[\"DTD로 문서 구조 정의\"]\n  DTD --> TAG[\"태그로 논리 구조 표시\"]\n  SGML --> USE[\"출판·국방 기술문서\"]\n  SGML -.->|\"복잡도 높음\"| LIM[\"웹 확산 한계\"]\n  SGML -->|\"파생\"| HTML[\"HTML\"]\n  SGML -->|\"단순화 부분집합\"| XML[\"XML\"]"}}

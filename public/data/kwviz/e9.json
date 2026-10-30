@@ -1,0 +1,1 @@
+{"e91-protocol":{"diagram":"sequenceDiagram\n  participant A as Alice\n  participant S as 얽힘 광자쌍 광원\n  participant B as Bob\n  S->>A: 얽힌 광자 1\n  S->>B: 얽힌 광자 2\n  A->>A: 무작위 기저 선택·측정\n  B->>B: 무작위 기저 선택·측정\n  A->>B: 사용 기저 공개 (공개 채널)\n  B->>A: 사용 기저 공개\n  Note over A,B: 같은 기저 결과 → 원시 키\n  Note over A,B: 다른 기저 결과 → 벨(CHSH) 검사\n  Note over A,B: 위배 정도 감소 → 도청 탐지·폐기"}}

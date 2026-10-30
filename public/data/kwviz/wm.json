@@ -1,0 +1,1 @@
+{"wmlscript":{"diagram":"flowchart TB\n  SRC[\"WMLScript 소스 (ECMAScript 경량화)\"] --> WS[\"웹 서버\"]\n  WS --> GW[\"WAP 게이트웨이: 바이트코드 컴파일\"]\n  GW --> VM[\"단말 WMLScript 인터프리터\"]\n  WML[\"WML 문서 (카드·덱)\"] -->|\"함수 호출\"| VM\n  VM --> F1[\"입력값 검증\"]\n  VM --> F2[\"간단 연산·대화상자\"]\n  LIB[\"표준 라이브러리: Lang·String·URL·WMLBrowser\"] -.-> VM\n  F1 --> RT[\"서버 왕복 통신 감소\"]\n  F2 --> RT"}}

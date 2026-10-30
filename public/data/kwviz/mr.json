@@ -1,0 +1,1 @@
+{"mr-muf":{"diagram":"flowchart TB\n  S[\"범프 형성된 DRAM 다이 적층\"] --> MR[\"Mass Reflow: 전 층 일괄 접합\"]\n  MR --> MU[\"Molded Underfill: 액상 소재 주입\"]\n  MU --> F[\"칩 사이 공간 충전 + 몰딩 동시\"]\n  F --> C[\"경화 → HBM 스택 완성\"]\n  C --> A1[\"장점: 생산성·방열 우수\"]\n  C --> A2[\"과제: 고단 적층 시 휨 제어\"]\n  T[\"대비: TC-NCF는 층별 열압착 + 필름\"] -.- MR\n  H[\"SK하이닉스 HBM 적용\"] -.- C"}}

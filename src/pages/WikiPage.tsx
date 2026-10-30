@@ -1,11 +1,14 @@
 import { Link, useParams } from 'react-router-dom'
-import { getData, useKeywordDetail } from '../lib/data'
+import { getData, useKeywordDetail, useKeywordViz } from '../lib/data'
+import Mermaid from '../components/Mermaid'
+import Pseudocode from '../components/Pseudocode'
 
 export default function WikiPage() {
   const { id = '' } = useParams()
   const { keywordById, topicById, topicsByKeyword } = getData()
   const kw = keywordById.get(id)
   const detail = useKeywordDetail(id)
+  const viz = useKeywordViz(id)
   if (!kw)
     return (
       <div className="py-16 text-center text-ink-2">
@@ -38,6 +41,21 @@ export default function WikiPage() {
                   <li key={i}>{f}</li>
                 ))}
               </ul>
+            </section>
+          )}
+          {viz.data?.diagram && (
+            <section>
+              <h2 className="text-sm font-semibold text-ink-2 m-0 mb-1.5">도식</h2>
+              {/* .answer: 구성도 박스 스타일 공유 */}
+              <div className="answer">
+                <Mermaid key={id} code={viz.data.diagram} />
+              </div>
+            </section>
+          )}
+          {viz.data?.pseudocode && (
+            <section>
+              <h2 className="text-sm font-semibold text-ink-2 m-0 mb-1.5">슈도코드</h2>
+              <Pseudocode code={viz.data.pseudocode} />
             </section>
           )}
         </>

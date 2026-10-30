@@ -1,0 +1,1 @@
+{"jre":{"diagram":"flowchart TB\n  subgraph JRE[\"JRE\"]\n    L[\"표준 라이브러리 (java.base 등)\"]\n    V[\"JVM (HotSpot·OpenJ9)\"]\n  end\n  A[\".class·.jar 애플리케이션\"] -->|\"java 명령 실행\"| V\n  V -->|\"클래스 로딩\"| L\n  V --> OS[\"운영체제·하드웨어\"]\n  JDK[\"JDK (개발 도구 포함)\"] -.->|\"상위 집합\"| JRE\n  JL[\"jlink (JDK 9+)\"] -->|\"필요 모듈만\"| C[\"맞춤 런타임 이미지\"]"}}

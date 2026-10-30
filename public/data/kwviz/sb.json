@@ -1,0 +1,1 @@
+{"sbom":{"diagram":"flowchart TB\n  BUILD[\"빌드·SCA 도구\"] --> SB[\"SBOM 생성\"]\n  SB --> F1[\"SPDX\"]\n  SB --> F2[\"CycloneDX\"]\n  SB --> C[\"컴포넌트·버전·의존성·라이선스\"]\n  C --> DB[(\"SBOM 저장소\")]\n  CVE[\"신규 CVE (Log4Shell 등)\"] --> M{\"SBOM 대조: 영향 있음?\"}\n  DB --> M\n  M -->|\"있음\"| P[\"패치·완화 조치\"]\n  M -->|\"없음\"| OK[\"영향 없음 확인\"]\n  DB -.-> EXT[\"EO 14028·IEC 62443\"]"}}

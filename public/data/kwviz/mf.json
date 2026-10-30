@@ -1,0 +1,1 @@
+{"mfa-fatigue":{"diagram":"sequenceDiagram\n  participant A as 공격자\n  participant I as 인증 서버(IdP)\n  participant V as 피해자 폰\n  A->>I: 탈취한 ID·비밀번호 로그인\n  I->>V: 푸시 승인 요청\n  V-->>I: 거부\n  loop 반복 (심야 등)\n    A->>I: 재로그인 시도\n    I->>V: 푸시 승인 요청\n  end\n  V-->>I: 피로·실수로 승인\n  I-->>A: 세션 발급 (침투 성공)\n  Note over I,V: 완화: 번호 매칭·요청 횟수 제한"}}

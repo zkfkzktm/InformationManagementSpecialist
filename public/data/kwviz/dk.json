@@ -1,0 +1,1 @@
+{"dkim":{"diagram":"sequenceDiagram\n  participant S as 발신 MTA (example.com)\n  participant D as DNS\n  participant R as 수신 MTA\n  S->>S: 헤더·본문 해시 → 개인키 서명\n  S->>R: 메일 + DKIM-Signature (d=, s=)\n  R->>D: s._domainkey.example.com TXT 조회\n  D-->>R: 공개키\n  R->>R: 서명 검증 (무결성·도메인 인증)\n  R->>R: 결과를 DMARC 정렬 판정에 사용"}}

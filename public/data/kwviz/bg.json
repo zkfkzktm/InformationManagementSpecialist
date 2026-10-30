@@ -1,0 +1,1 @@
+{"bgp-hijacking":{"diagram":"flowchart TB\n  subgraph DF[\"방어\"]\n    D1[\"RPKI ROV: ROA로 출처 AS 검증\"]\n    D2[\"BGPsec: AS 경로 서명\"]\n    D3[\"IRR 필터링·경로 모니터링\"]\n  end\n  V[\"정상 AS: 203.0.113.0/24 광고\"] --> INET[\"인터넷 라우터들 (무검증 수용)\"]\n  A[\"공격 AS: /25 두 개 광고 (더 구체적)\"] --> INET\n  INET -->|\"최장 접두어 일치 → 공격 경로\"| X[\"트래픽 우회·차단·도청\"]\n  DF -.->|\"Invalid 경로 폐기\"| INET"}}

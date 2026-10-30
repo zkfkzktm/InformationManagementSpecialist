@@ -1,0 +1,1 @@
+{"ejb-container":{"diagram":"flowchart TB\n  CL[\"클라이언트\"]\n  subgraph EC[\"EJB 컨테이너 (애플리케이션 서버 내)\"]\n    PX[\"EJB 객체: 호출 가로채기\"]\n    TX[\"트랜잭션 (JTA)\"]\n    SE[\"보안 (선언적 권한)\"]\n    PL[\"인스턴스 풀링·패시베이션\"]\n    B[\"빈 인스턴스 (비즈니스 로직)\"]\n  end\n  CL -->|\"RMI-IIOP·로컬 호출\"| PX\n  PX --> TX\n  PX --> SE\n  TX --> B\n  SE --> B\n  PL -.->|\"생명주기 관리\"| B\n  B --> R[(\"DB·JMS 자원\")]"}}

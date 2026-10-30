@@ -1,0 +1,1 @@
+{"l7-switch":{"diagram":"flowchart TB\n  C[\"클라이언트 HTTPS 요청\"] --> L7[\"L7 스위치 (SSL 종료·HTTP 해석)\"]\n  L7 --> R{\"콘텐츠 규칙\"}\n  R -->|\"URL /api/*\"| A[\"API 서버군\"]\n  R -->|\"URL /img/*\"| I[\"정적 서버군 (캐싱)\"]\n  R -->|\"쿠키 세션 ID\"| S[\"세션 유지 대상 서버\"]\n  R -->|\"헤더 User-Agent\"| M[\"모바일 서버군\"]\n  L7 -.-> W[\"WAF·압축·API 게이트웨이 융합\"]"}}

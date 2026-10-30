@@ -1,0 +1,1 @@
+{"rbl":{"diagram":"sequenceDiagram\n  participant S as 송신 메일서버\n  participant M as 수신 MTA\n  participant B as RBL (DNS)\n  S->>M: 메일 전송 시도 (IP 1.2.3.4)\n  M->>B: 조회 4.3.2.1.rbl.예시.net\n  alt 목록 등재 (악성 IP)\n    B-->>M: 127.0.0.x (등재)\n    M->>S: 수신 거부\n  else 미등재\n    B-->>M: NXDOMAIN\n    M->>M: 콘텐츠·패턴 추가 검사\n  end\n  Note over M,B: 봇넷 분산 발신·공용 IP 오차단 한계"}}

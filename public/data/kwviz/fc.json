@@ -1,0 +1,1 @@
+{"fcaps":{"diagram":"flowchart TB\n  SRC[\"SNMP·Syslog·NetFlow\"] -.->|\"관리 정보 수집\"| NMS[\"네트워크 관리 (ISO·ITU-T)\"]\n  NMS --> F[\"F 장애: 탐지·격리·복구\"]\n  NMS --> C[\"C 구성: 장비·설정 정보\"]\n  NMS --> A[\"A 과금: 자원 사용량·과금\"]\n  NMS --> P[\"P 성능: 지표 측정·분석\"]\n  NMS --> S[\"S 보안: 접근통제·감사\"]"}}

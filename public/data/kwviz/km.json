@@ -1,0 +1,1 @@
+{"kmip":{"diagram":"sequenceDiagram\n  participant C as 클라이언트 (DB·스토리지)\n  participant S as KMIP 서버 (KMS)\n  C->>S: TLS 상호 인증 연결\n  C->>S: Create (대칭키 AES-256)\n  S-->>C: Unique Identifier\n  C->>S: Get (UID)\n  S-->>C: 키 객체 (래핑 전달)\n  C->>S: ReKey (키 교체)\n  C->>S: Revoke → Destroy\n  Note over C,S: 벤더 무관 TTLV 메시지 (OASIS)"}}

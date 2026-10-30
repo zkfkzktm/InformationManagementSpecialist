@@ -1,0 +1,1 @@
+{"vdso":{"diagram":"flowchart TB\n  subgraph AS[\"프로세스 주소 공간\"]\n    APP[\"응용 코드\"]\n    VDSO[\"vDSO (커널 매핑 공유 라이브러리)\"]\n    KD[\"커널이 갱신하는 시각·CPU 정보 (읽기 전용)\"]\n  end\n  APP -->|\"clock_gettime 호출\"| VDSO\n  VDSO -->|\"매핑된 데이터 직접 읽기\"| KD\n  VDSO -->|\"모드 전환 없이 반환\"| APP\n  APP -.->|\"일반 시스템 호출\"| TRAP[\"트랩 → 커널 (문맥 저장 비용)\"]\n  N[\"고빈도 호출 성능 향상, ASLR 적용\"] -.-> VDSO"}}

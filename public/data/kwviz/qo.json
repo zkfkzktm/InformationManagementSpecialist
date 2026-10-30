@@ -1,0 +1,1 @@
+{"qos-class-identifier":{"diagram":"flowchart TB\n  BR[\"EPS 베어러\"] --> QCI[\"QCI 값\"]\n  QCI --> AT[\"특성: 우선순위·지연 예산·손실률\"]\n  QCI --> GBR[\"GBR 자원 유형\"]\n  QCI --> NG[\"Non-GBR\"]\n  GBR --> Q1[\"QCI 1: 음성 (100ms)\"]\n  GBR --> Q2[\"QCI 2: 영상 통화 (150ms)\"]\n  NG --> Q5[\"QCI 5: IMS 시그널링 (우선순위 1)\"]\n  NG --> Q9[\"QCI 9: 기본 인터넷 (300ms)\"]\n  QCI -.->|\"5G 확장\"| FQ[\"5QI\"]"}}

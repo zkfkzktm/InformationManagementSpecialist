@@ -1,0 +1,1 @@
+{"xdr":{"diagram":"flowchart TB\n  E1[\"엔드포인트 (EDR)\"] --> DL[\"통합 데이터 레이크 (벤더 통합)\"]\n  E2[\"네트워크 (NDR)\"] --> DL\n  E3[\"이메일\"] --> DL\n  E4[\"클라우드·ID\"] --> DL\n  DL --> CO[\"교차 계층 상관분석·ML\"]\n  CO --> INC[\"공격 전체 흐름 인시던트 (고품질 경보)\"]\n  INC --> AR[\"자동 대응: 격리·차단\"]\n  AR --> KPI[\"MTTD·MTTR 단축\"]\n  SIEM[\"SIEM·SOAR와 역할 중복·보완\"] -.- CO"}}

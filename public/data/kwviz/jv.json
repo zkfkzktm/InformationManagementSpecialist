@@ -1,0 +1,1 @@
+{"jvm-language":{"diagram":"flowchart TB\n  J[\"Java\"] -->|\"javac\"| BC[\".class 바이트코드\"]\n  K[\"Kotlin\"] -->|\"kotlinc\"| BC\n  S[\"Scala\"] -->|\"scalac\"| BC\n  G[\"Groovy·Clojure\"] -->|\"컴파일·동적 로딩\"| BC\n  BC --> V[\"JVM\"]\n  V --> L[\"Java 라이브러리 상호 운용\"]\n  ID[\"invokedynamic (Java 7)\"] -.->|\"동적 언어 지원\"| V"}}

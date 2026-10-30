@@ -1,0 +1,1 @@
+{"gvisor":{"diagram":"flowchart TB\n  APP[\"컨테이너 앱\"] -->|\"시스템 호출\"| PL[\"플랫폼: systrap·KVM 가로채기\"]\n  PL --> SE[\"Sentry(Go 사용자 공간 커널)\"]\n  SE -->|\"파일 접근\"| GO[\"Gofer(파일 프록시)\"]\n  SE -->|\"축소된 호출만(seccomp)\"| HK[\"호스트 커널\"]\n  GO --> HK\n  R[\"runsc(OCI 런타임)\"] -.->|\"생성·관리\"| SE\n  CMP[\"격리 강도: 컨테이너＜gVisor＜VM\"] -.-> SE"}}

@@ -1,0 +1,14 @@
+{
+ "padding-oracle-attack": {
+  "diagram": "flowchart TB\n  A[\"공격자: 조작 암호문 전송\"] --> S[\"서버: 복호 후 패딩 검사\"]\n  S --> R{\"응답 차이(오라클)\"}\n  R -->|\"패딩 오류\"| E[\"오류 메시지·시간 차\"]\n  R -->|\"패딩 정상\"| V[\"다른 응답\"]\n  E & V --> G[\"CBC: 직전 블록 바이트를 바꿔 중간값 D(C) 역추론\"]\n  G --> P[\"P = D(C) ⊕ 이전 블록 → 평문 1바이트 복원\"]\n  P -->|\"바이트 단위 반복\"| G\n  P --> ALL[\"키 없이 전체 평문 복원\"]\n  ALL -.->|\"대응\"| M[\"AEAD·Encrypt-then-MAC·응답 균일화·상수시간\"]",
+  "pseudocode": "# 방어: 복호화 전에 무결성 검증 + 오류 응답 통일\ndef decrypt_message(k_enc, k_mac, iv, ct, tag):\n    # Encrypt-then-MAC: 패딩 검사보다 MAC 검증이 먼저\n    expected = hmac_sha256(k_mac, iv + ct)\n    if not constant_time_eq(tag, expected):\n        raise DecryptError()  # 실패 사유를 구분하지 않음\n    pt = cbc_decrypt(k_enc, iv, ct)\n    if not valid_pkcs7(pt):\n        raise DecryptError()  # 같은 오류·같은 응답 시간\n    return strip_pkcs7(pt)\n\n# 권장: AES-GCM 등 AEAD 사용 → 패딩 자체가 없음"
+ },
+ "command-injection": {
+  "diagram": "flowchart TB\n  IN[\"입력: 8.8.8.8 && cat /etc/passwd\"] --> APP[\"앱: 'ping ' + 입력 → 셸 실행\"]\n  APP --> SH[\"셸이 메타문자 해석 (&&·$() 등)\"]\n  SH --> X[\"임의 명령 실행 → 권한 탈취\"]\n  subgraph DEF[\"방어\"]\n    D1[\"셸 미사용 API (인자 배열)\"]\n    D2[\"입력 화이트리스트 (IP 형식)\"]\n    D3[\"최소권한·샌드박스\"]\n  end\n  DEF -.->|\"차단·피해 한정\"| SH",
+  "pseudocode": "# 취약: 입력을 셸 명령 문자열에 그대로 결합\ndef ping_bad(host):\n    return shell_exec('ping -c 1 ' + host)\n# 입력에 셸 메타문자가 섞이면 뒤 명령까지 실행됨\n\n# 방어 1: 화이트리스트 검증 (IPv4 형식만 허용)\ndef is_valid_ip(host):\n    parts = host.split('.')\n    return len(parts) == 4 and all(\n        p.isdigit() and 0 <= int(p) <= 255 for p in parts)\n\n# 방어 2: 셸을 거치지 않고 인자 배열로 실행\ndef ping_safe(host):\n    if not is_valid_ip(host):\n        raise ValueError('잘못된 호스트')\n    return exec_argv(['ping', '-c', '1', host])"
+ },
+ "injection-attack": {
+  "diagram": "flowchart TB\n  IN[\"신뢰되지 않은 입력\"] --> CAT{\"해석기 명령에 문자열 결합\"}\n  CAT --> SQ[\"SQL: ' OR 1=1 주석\"]\n  CAT --> OS[\"OS 명령: && whoami\"]\n  CAT --> LD[\"LDAP: 필터 조작 *\"]\n  CAT --> XS[\"XSS: script 태그 삽입\"]\n  SQ --> R[\"의도치 않은 명령·코드 실행\"]\n  OS --> R\n  LD --> R\n  XS --> R\n  subgraph DEF[\"방어: 코드와 데이터 분리\"]\n    D1[\"파라미터화(바인딩) 쿼리\"]\n    D2[\"입력 검증(허용 목록)\"]\n    D3[\"출력 인코딩·최소 권한\"]\n  end\n  DEF -.->|\"차단\"| CAT",
+  "pseudocode": "# 취약: 입력을 SQL 문자열에 직접 결합\ndef login_bad(db, uid, pw):\n    q = (\"SELECT * FROM users WHERE id='\" + uid +\n         \"' AND pw='\" + pw + \"'\")\n    return db.query(q)\n# 따옴표·주석 기호가 섞이면 조건 구조가 바뀜 → 인증 우회\n\n# 안전: 파라미터 바인딩(입력은 데이터로만 취급)\ndef login_safe(db, uid, pw):\n    q = \"SELECT * FROM users WHERE id = ? AND pw = ?\"\n    return db.query(q, (uid, pw))"
+ }
+}

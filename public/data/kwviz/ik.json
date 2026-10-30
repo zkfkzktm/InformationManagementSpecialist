@@ -1,0 +1,1 @@
+{"ike":{"diagram":"sequenceDiagram\n  participant I as 개시자\n  participant R as 응답자\n  Note over I,R: IKE_SA_INIT(UDP 500)\n  I->>R: SA 제안, DH 공개값 KEi, Ni\n  R-->>I: SA 선택, KEr, Nr\n  Note over I,R: DH 공유 키 생성 → 이후 암호화\n  I->>R: IKE_AUTH: IDi·AUTH·SAi2\n  R-->>I: IDr·AUTH·SAr2\n  Note over I,R: IKE SA + Child SA(IPSec SA)\n  Note over I,R: NAT 감지 시 UDP 4500(NAT-T)"}}

@@ -1,0 +1,1 @@
+{"tta":{"diagram":"flowchart TB\n  TTA[\"한국정보통신기술협회 TTA\"] --> STD[\"ICT 표준 제정 (TTAS)\"]\n  TTA --> TC[\"시험인증\"]\n  TC --> GS[\"GS인증 (SW시험인증연구소)\"]\n  TC --> CC[\"CC평가 (정보보호)\"]\n  GS --> Q[\"ISO/IEC 25051 기반 품질 시험\"]\n  GS --> P[\"공공조달 우선구매 근거\"]\n  KTL[\"KTL (공동 지정기관)\"] -.-> GS"}}

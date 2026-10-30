@@ -1,0 +1,1 @@
+{"ggplot2":{"diagram":"flowchart TB\n  D[\"data: 데이터프레임\"] --> A[\"aes(): x·y·색 미적 매핑\"]\n  A --> G[\"geom_*: 점·선·막대 기하 객체\"]\n  G --> S[\"stat·scale: 통계 변환·척도\"]\n  S --> F[\"facet: 패널 분할\"]\n  F --> T[\"coord·theme: 좌표계·테마\"]\n  EX[\"ggplot(df, aes(x, y)) + geom_point()\"] -.- G\n  GG[\"그래픽 문법: + 로 레이어 추가\"] -.- A\n  TV[\"Hadley Wickham, tidyverse 구성요소\"] -.- D"}}

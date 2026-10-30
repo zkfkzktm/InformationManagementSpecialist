@@ -1,0 +1,1 @@
+{"xen":{"diagram":"flowchart TB\n  HW[\"물리 하드웨어\"] --> XEN[\"Xen 하이퍼바이저 (Type 1, 마이크로커널형)\"]\n  XEN --> DOM0[\"Dom0 (특권 도메인)\"]\n  XEN --> DU1[\"DomU 1 (게스트)\"]\n  XEN --> DU2[\"DomU 2 (게스트)\"]\n  DOM0 --> DRV[\"디바이스 드라이버·관리 도구\"]\n  DRV -.->|\"백엔드-프론트엔드\"| DU1\n  M1[\"반가상화(PV)·하드웨어 가상화(HVM)\"] -.-> XEN\n  M2[\"초기 AWS EC2 기반\"] -.-> XEN"}}

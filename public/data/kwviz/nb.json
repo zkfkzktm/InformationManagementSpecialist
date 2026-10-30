@@ -1,0 +1,1 @@
+{"nb-iot":{"diagram":"flowchart TB\n  subgraph DP[\"배치 모드: 1 PRB(180kHz)\"]\n    D1[\"인밴드: LTE 대역 내\"]\n    D2[\"가드밴드: LTE 보호대역\"]\n    D3[\"독립형: 별도 대역(GSM 재배치)\"]\n  end\n  DP --> C[\"커버리지 확장: MCL 164dB\"]\n  C --> PW[\"전력 절감 기법\"]\n  PW --> P1[\"PSM: 장시간 수면\"]\n  PW --> P2[\"eDRX: 긴 페이징 주기\"]\n  P1 --> B[\"배터리 10년 목표\"]\n  P2 --> B\n  B --> U[\"고정형 원격검침·5G mMTC\"]"}}

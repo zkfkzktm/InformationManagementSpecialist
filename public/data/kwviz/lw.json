@@ -1,0 +1,1 @@
+{"lwm2m":{"diagram":"flowchart TB\n  subgraph DEV[\"LwM2M 클라이언트 (장치)\"]\n    OBJ[\"객체: /3/0/0 (Device)\"]\n    STK[\"LwM2M·CoAP·DTLS·UDP\"]\n  end\n  BS[\"부트스트랩 서버\"] -->|\"① 서버 정보·보안키 주입\"| DEV\n  DEV -->|\"② 등록 (Register)\"| SV[\"LwM2M 서버\"]\n  SV -->|\"③ Read·Write·Exec\"| DEV\n  SV -->|\"④ Observe 요청\"| DEV\n  DEV -->|\"⑤ Notify (정보 보고)\"| SV"}}

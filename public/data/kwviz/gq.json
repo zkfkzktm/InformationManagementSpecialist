@@ -1,0 +1,1 @@
+{"gql":{"diagram":"flowchart TB\n  CY[\"Cypher (Neo4j)\"] -->|\"패턴 문법 계승\"| GQL[\"GQL (ISO/IEC 39075:2024)\"]\n  PG[\"PGQL·G-CORE\"] --> GQL\n  GQL ---|\"패턴 매칭 문법 공유\"| PGQ[\"SQL/PGQ (SQL:2023)\"]\n  GQL --> F1[\"그래프 타입·스키마 정의\"]\n  GQL --> F2[\"MATCH 패턴 질의\"]\n  GQL --> F3[\"벤더 간 이식성\"]\n  EX[\"MATCH (p)-[:KNOWS]->(f) RETURN f\"] -.- F2"}}

@@ -1,0 +1,1 @@
+{"zrtp":{"diagram":"sequenceDiagram\n  participant A as 발신자\n  participant B as 수신자\n  A->>B: Hello (지원 알고리즘)\n  B-->>A: HelloACK\n  A->>B: Commit (DH 공개값 해시)\n  B-->>A: DHPart1 (DH 공개값)\n  A->>B: DHPart2 (DH 공개값)\n  Note over A,B: 공유 비밀 → SRTP 키·SAS 유도\n  B-->>A: Confirm1\n  A->>B: Confirm2\n  Note over A,B: SAS를 음성으로 읽어 비교\n  Note over A,B: 이전 비밀 캐시 연속성 → MitM 탐지"}}

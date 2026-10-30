@@ -1,0 +1,1 @@
+{"lpwan":{"diagram":"flowchart TB\n  L[\"LPWAN: 저전력·장거리·저속\"] --> U[\"비면허 대역\"]\n  L --> LIC[\"면허 대역(3GPP)\"]\n  U --> U1[\"LoRaWAN\"]\n  U --> U2[\"Sigfox\"]\n  LIC --> L1[\"NB-IoT\"]\n  LIC --> L2[\"LTE-M: 이동성 지원\"]\n  L --> F1[\"배터리 수년·모듈 저가\"]\n  L --> F2[\"커버리지 수 km 이상\"]\n  L --> X[\"부적합: 영상 등 대용량\"]"}}

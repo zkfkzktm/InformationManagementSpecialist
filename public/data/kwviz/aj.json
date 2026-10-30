@@ -1,0 +1,1 @@
+{"ajax":{"diagram":"sequenceDiagram\n  participant U as 사용자\n  participant B as 브라우저 (JS)\n  participant S as 서버\n  U->>B: 버튼 클릭\n  B->>S: fetch·XHR 비동기 요청\n  Note over B: 응답 대기 중에도 조작 가능\n  S-->>B: JSON 데이터 응답\n  B->>B: DOM 일부만 갱신\n  Note over B,S: 다른 출처는 CORS 허용 필요"}}

@@ -1,0 +1,1 @@
+{"hl7-fhir":{"diagram":"flowchart TB\n  APP[\"앱·마이데이터 서비스\"] -->|\"REST: GET /Patient/123\"| SRV[\"FHIR 서버(EMR 연동)\"]\n  SRV -->|\"JSON·XML 리소스\"| APP\n  SRV --- P[\"Patient: 환자\"]\n  P --- E[\"Encounter: 진료\"]\n  P --- O[\"Observation: 검사 결과\"]\n  P --- M[\"MedicationRequest: 처방\"]\n  E --- DR[\"DiagnosticReport: 판독\"]\n  N[\"리소스 단위 모듈형, 프로파일로 확장\"] -.- P"}}

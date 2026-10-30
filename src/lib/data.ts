@@ -1,6 +1,6 @@
 /** 정적 JSON 로딩 + 조회 인덱스. 시작 시 loadAll() 1회(목록·인덱스), 답안·위키 본문은 loadAnswers/loadKeywordDetail로 지연 로딩. */
 import { useEffect, useState } from 'react'
-import type { Answers, Domain, Keyword, KeywordDetail, Question, Topic } from './types'
+import type { Answers, Domain, Keyword, KeywordDetail, KeywordViz, Question, Topic } from './types'
 
 export interface Dataset {
   domains: Domain[]
@@ -55,6 +55,7 @@ export function getData(): Dataset {
 /* ---------- 지연 로딩 ---------- */
 const answerCache = new Map<string, Promise<Record<string, Answers>>>()
 const kwCache = new Map<string, Promise<Record<string, KeywordDetail>>>()
+const vizCache = new Map<string, Promise<Record<string, KeywordViz>>>()
 
 /** 도메인 답안 묶음. 같은 도메인은 1회만 요청 */
 export function loadAnswers(domain: string) {
@@ -81,6 +82,23 @@ export function loadKeywordDetail(id: string) {
     kwCache.set(s, p)
   }
   return p.then((m) => m[id])
+}
+
+/** 도식 파일은 앞 2글자로 잘게 나눔 (파일당 수 KB) — 위키 본문과 따로 받아 본문이 먼저 뜸 */
+function vizShard(id: string) {
+  return id.slice(0, 2).toLowerCase().replace(/[^a-z0-9]/g, '_').padEnd(2, '_')
+}
+
+export function loadKeywordViz(id: string) {
+  const s = vizShard(id)
+  let p = vizCache.get(s)
+  if (!p) {
+    p = fetchJson<Record<string, KeywordViz>>(`kwviz/${s}`)
+    p.catch(() => vizCache.delete(s)) // 실패하면 다음에 다시 시도
+    vizCache.set(s, p)
+  }
+  // 도식은 부가 정보: 못 받아도 위키 본문은 그대로 보이게 undefined로 끝냄
+  return p.then((m) => m[id]).catch(() => undefined)
 }
 
 type Async<T> = { data: T | undefined; loading: boolean; error: string | null }
@@ -113,6 +131,19 @@ export function useKeywordDetail(id: string): Async<KeywordDetail> {
     loadKeywordDetail(id)
       .then((d) => alive && setState({ data: d, loading: false, error: null }))
       .catch((e) => alive && setState({ data: undefined, loading: false, error: String(e.message ?? e) }))
+    return () => {
+      alive = false
+    }
+  }, [id])
+  return state
+}
+
+export function useKeywordViz(id: string): Async<KeywordViz> {
+  const [state, setState] = useState<Async<KeywordViz>>({ data: undefined, loading: true, error: null })
+  useEffect(() => {
+    let alive = true
+    setState({ data: undefined, loading: true, error: null })
+    loadKeywordViz(id).then((d) => alive && setState({ data: d, loading: false, error: null }))
     return () => {
       alive = false
     }

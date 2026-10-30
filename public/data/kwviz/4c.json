@@ -1,0 +1,1 @@
+{"4c-analysis":{"diagram":"flowchart TB\n  C1[\"환경 Circumstance (거시)\"] --> OT[\"외부: 기회·위협\"]\n  C2[\"고객 Customer\"] --> OT\n  C3[\"경쟁 Competition\"] --> OT\n  C4[\"자사 Company\"] --> SW[\"내부: 강점·약점\"]\n  OT & SW --> SWOT[\"SWOT 매트릭스\"]\n  SWOT --> ST[\"SO·ST·WO·WT 전략 도출\"]\n  B[\"3C + 거시 환경 = 4C\"] -.-> C1"}}

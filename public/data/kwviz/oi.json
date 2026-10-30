@@ -1,0 +1,1 @@
+{"oid-resolution-system":{"diagram":"sequenceDiagram\n  participant C as 응용·IoT 기기\n  participant R as ORS 클라이언트\n  participant D as DNS(ORS 영역)\n  C->>R: OID 해석 요청\n  R->>R: OID를 도메인명으로 변환\n  Note over R: 역순 + oid-res.org 접미사\n  R->>D: NAPTR 등 레코드 질의\n  D-->>R: URL·인증서·메타데이터\n  R-->>C: 객체 정보 반환"}}

@@ -1,0 +1,1 @@
+{"kpqc":{"diagram":"flowchart TB\n  S[\"2021 공모 시작\"] --> R1[\"1라운드: KEM·서명 후보 평가\"]\n  R1 --> R2[\"2라운드: 후보 압축\"]\n  R2 --> FIN[\"2024년 말 최종 선정\"]\n  FIN --> K1[\"KEM: SMAUG-T (격자)\"]\n  FIN --> K2[\"KEM: NTRU+ (격자)\"]\n  FIN --> S1[\"서명: HAETAE (격자)\"]\n  FIN --> S2[\"서명: AIMer (대칭 프리미티브)\"]\n  K1 & K2 & S1 & S2 --> KC[\"KCMVP 반영·국가 PQC 전환\"]"}}

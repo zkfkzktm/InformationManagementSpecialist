@@ -1,0 +1,1 @@
+{"ibeacon":{"diagram":"flowchart TB\n  B[\"iBeacon BLE 광고 프레임\"] --> U[\"UUID 16B: 조직·서비스\"]\n  U --> MJ[\"Major 2B: 매장·건물\"]\n  MJ --> MN[\"Minor 2B: 구역·개별 비콘\"]\n  B --> MP[\"측정 전력: 1m 기준 RSSI\"]\n  MP --> D[\"수신 RSSI와 비교 → 거리 추정\"]\n  D --> Z1[\"Immediate\"]\n  D --> Z2[\"Near\"]\n  D --> Z3[\"Far\"]\n  APP[\"iOS: 지역 모니터링·레인징\"] -.-> D"}}

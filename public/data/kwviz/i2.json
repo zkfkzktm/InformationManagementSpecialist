@@ -1,0 +1,1 @@
+{"i2c":{"diagram":"sequenceDiagram\n  participant M as 마스터\n  participant S as 슬레이브(주소 0x48)\n  M->>S: START(SCL High 중 SDA 하강)\n  M->>S: 7비트 주소 + R/W 비트\n  S-->>M: ACK(SDA Low)\n  M->>S: 데이터 바이트(8비트)\n  S-->>M: ACK\n  M->>S: STOP(SCL High 중 SDA 상승)\n  Note over M,S: 오픈드레인+풀업, 주소로 장치 선택"}}

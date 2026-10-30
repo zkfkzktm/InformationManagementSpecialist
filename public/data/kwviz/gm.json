@@ -1,0 +1,1 @@
+{"gmac":{"diagram":"flowchart TB\n  K[\"키 K\"] --> H[\"H = AES_K(0¹²⁸)\"]\n  M[\"메시지 (전부 AAD로 처리)\"] --> GH[\"GHASH_H\"]\n  H --> GH\n  IV[\"IV (논스)\"] --> J[\"AES_K(J0)\"]\n  K --> J\n  GH --> X[\"XOR\"]\n  J --> X\n  X --> T[\"인증 태그 (암호화 없음)\"]\n  NR[\"논스 재사용 → H 노출\"] -.->|\"주의\"| IV\n  U[\"IPsec AH·ESP (AES-GMAC)\"] -.->|\"적용\"| T"}}

@@ -1,0 +1,1 @@
+{"cncf":{"diagram":"flowchart TB\n  LF[\"리눅스 재단\"] --> CN[\"CNCF (2015, 벤더 중립)\"]\n  CN --> K8S[\"첫 프로젝트: Kubernetes\"]\n  CN --> M[\"프로젝트 성숙도 단계\"]\n  M --> S1[\"Sandbox\"]\n  S1 --> S2[\"Incubating\"]\n  S2 --> S3[\"Graduated\"]\n  S3 --> EX[\"예: Kubernetes·Prometheus·Envoy\"]\n  CN --> L[\"클라우드 네이티브 정의 주도\"]"}}

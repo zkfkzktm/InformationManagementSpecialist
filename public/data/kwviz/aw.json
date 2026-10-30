@@ -1,0 +1,1 @@
+{"aws-cloudformation":{"diagram":"flowchart TB\n  T[\"템플릿(YAML·JSON)\"] --> CF[\"CloudFormation 엔진\"]\n  P[\"파라미터\"] --> CF\n  CF -->|\"생성\"| S[\"스택\"]\n  S --> R1[\"VPC\"]\n  S --> R2[\"EC2\"]\n  S --> R3[\"S3·RDS\"]\n  T2[\"수정 템플릿\"] --> CS[\"변경 세트(영향 미리보기)\"]\n  CS -->|\"실행\"| S\n  CF -.->|\"실패 시\"| RB[\"자동 롤백\"]\n  S -.-> DR[\"드리프트 탐지: 실제 vs 템플릿\"]"}}

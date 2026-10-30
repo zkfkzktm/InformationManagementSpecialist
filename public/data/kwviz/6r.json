@@ -1,0 +1,1 @@
+{"6r-migration-strategy":{"diagram":"flowchart TB\n  A[\"애플리케이션 포트폴리오 평가\"] --> Q{\"전환 방식 결정\"}\n  Q --> R1[\"Rehost: 변경 없이 이전\"]\n  Q --> R2[\"Replatform: 일부 최적화\"]\n  Q --> R3[\"Refactor: 클라우드 네이티브 재설계\"]\n  Q --> R4[\"Repurchase: SaaS로 대체\"]\n  Q --> R5[\"Retire: 폐기\"]\n  Q --> R6[\"Retain: 현행 유지\"]\n  R1 -.->|\"변경 범위·비용 ↑, 클라우드 효과 ↑\"| R3\n  R7[\"+ Relocate = 7R\"] -.-> Q"}}

@@ -172,6 +172,37 @@ def split_for_app():
     for s, body in shards.items():
         (kw_dir / f"{s}.json").write_text(json.dumps(body, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print(f"split: answers {len(by_domain)} files, keyword shards {len(shards)}")
+    split_viz()
+
+
+# 6. 키워드 도식·슈도코드: contentwork/kwviz/out/*.json (생성물) → fix/*.json (수정본, 우선) → data/kwviz/{앞 2글자}.json
+def viz_shard(kid: str) -> str:
+    return re.sub(r"[^a-z0-9]", "_", kid[:2].lower()).ljust(2, "_")
+
+
+def split_viz():
+    import shutil
+    viz_dir = DATA / "kwviz"
+    shutil.rmtree(viz_dir, ignore_errors=True); viz_dir.mkdir()
+    src = ROOT / "contentwork" / "kwviz"
+    viz: dict[str, dict] = {}
+    for sub in ("out", "fix"):
+        for f in sorted((src / sub).glob("*.json")):
+            viz.update(json.loads(f.read_text(encoding="utf-8")))
+    ids = {k["id"] for k in keywords}
+    # 도식 없는 접두어도 빈 파일을 만들어 앱이 404 없이 받게 함
+    shards: dict[str, dict] = {viz_shard(i): {} for i in ids}
+    n_d = n_p = 0
+    for kid, v in viz.items():
+        if kid not in ids:
+            continue
+        e = {k: v[k].strip() for k in ("diagram", "pseudocode") if isinstance(v.get(k), str) and v[k].strip()}
+        n_d += "diagram" in e; n_p += "pseudocode" in e
+        if e:
+            shards[viz_shard(kid)][kid] = e
+    for s, body in shards.items():
+        (viz_dir / f"{s}.json").write_text(json.dumps(body, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    print(f"kwviz: diagrams {n_d}, pseudocode {n_p}, files {len(shards)}")
 
 
 def kw_shard(kid: str) -> str:

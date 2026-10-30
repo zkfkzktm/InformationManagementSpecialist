@@ -1,0 +1,1 @@
+{"pptp":{"diagram":"flowchart TB\n  C[\"VPN 클라이언트\"] -->|\"TCP 1723: 제어 연결\"| S[\"PPTP 서버\"]\n  C ==>|\"GRE 터널: 데이터\"| S\n  subgraph PK[\"데이터 캡슐화 구조\"]\n    IP[\"외부 IP 헤더\"] --> GRE[\"GRE 헤더\"]\n    GRE --> PPP[\"PPP 프레임\"]\n    PPP --> MP[\"MPPE 암호화 페이로드\"]\n  end\n  S -.-> PK\n  S -.-> W[\"취약: MS-CHAPv2 크랙 가능\"]\n  W -.->|\"대체\"| R[\"L2TP·IKEv2·WireGuard\"]"}}

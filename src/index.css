@@ -120,6 +120,23 @@ button { font: inherit; }
 }
 .answer .diagram svg { display: inline-block; max-width: 100%; height: auto; }
 .answer .diagram:empty { min-height: 6rem; }
+.diagram-hint { margin: -0.5rem 0 0.875rem; font-size: 0.75rem; line-height: 1.5; color: var(--ink-3); text-align: right; }
+@media print { .diagram-hint { display: none; } }
+
+/* 키워드 위키 슈도코드: 줄 번호 + 예약어·주석 색 */
+.pseudo {
+  background: var(--sheet); border: 1px solid var(--rule); border-radius: 4px;
+  padding: 0.75rem 0.75rem 0.75rem 0; margin: 0; overflow-x: auto;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, "D2Coding", monospace;
+  font-size: 0.8125rem; line-height: 1.6; tab-size: 4;
+}
+.pseudo .pc-line { display: block; padding-right: 0.75rem; }
+.pseudo .pc-no {
+  display: inline-block; width: 2.25rem; padding-right: 0.75rem; margin-right: 0.75rem;
+  text-align: right; color: var(--ink-3); border-right: 1px solid var(--rule); user-select: none;
+}
+.pseudo .pc-kw { color: var(--pen); font-weight: 600; }
+.pseudo .pc-cm { color: var(--ok); }
 
 /* PDF 저장용 인쇄 답안지 (PrintSheet). 화면에서는 보이지 않는 곳에 A4 본문 폭으로 그려 둠
    — display:none이면 구성도 크기 계산이 0이 되므로 visibility로 숨김 */
@@ -142,7 +159,7 @@ button { font: inherit; }
 .print-root .answer table { font-size: 9.5pt; margin: 2.5mm 0; }
 .print-root .answer a.kw { color: inherit; text-decoration: none; }
 .print-root .answer .diagram { margin: 2.5mm 0; padding: 2mm; }
-.print-root .answer .diagram svg { max-height: 200mm; }
+.print-root .answer .diagram svg { max-height: 200mm; min-width: 0 !important; }
 
 @media print {
   @page { size: A4; margin: 14mm; }

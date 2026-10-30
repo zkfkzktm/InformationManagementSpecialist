@@ -1,0 +1,1 @@
+{"jtag":{"diagram":"flowchart TB\n  B[\"대상 기기 기판\"] --> ID[\"TAP 핀 식별: TDI·TDO·TCK·TMS\"]\n  ID --> CN[\"JTAG 어댑터 연결\"]\n  CN --> CPU[\"프로세서 디버그 모드 진입\"]\n  CPU --> RD[\"메모리 버스로 플래시 읽기\"]\n  RD --> IMG[(\"물리 이미지 + 해시 검증\")]\n  N1[\"칩 분리 없이 비파괴 획득\"] -.-> RD\n  N2[\"제조사 JTAG 비활성화 추세\"] -.-> ID"}}
