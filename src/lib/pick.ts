@@ -7,8 +7,13 @@ import type { Confidence, Filters, Topic } from './types'
 export const WEIGHT: Record<Confidence, number> = { 0: 3, 1: 4, 2: 2, 3: 1 }
 
 export function candidates(f: Filters): Topic[] {
-  const { topics } = getData()
+  const { topics, tierById } = getData()
   return topics.filter((t) => {
+    if (f.tier) {
+      const tier = tierById.get(t.id)
+      if (!tier) return false
+      if (f.tier === 'core' ? tier === 'T' : tier !== f.tier) return false
+    }
     if (f.domains.length && !f.domains.includes(t.domain)) return false
     const qs = topicQuestions(t)
     if (f.round_min && !qs.some((q) => q.round >= f.round_min)) return false

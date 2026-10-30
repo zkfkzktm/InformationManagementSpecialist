@@ -1,6 +1,6 @@
 /** 정적 JSON 로딩 + 조회 인덱스. 시작 시 loadAll() 1회(목록·인덱스), 답안·위키 본문은 loadAnswers/loadKeywordDetail로 지연 로딩. */
 import { useEffect, useState } from 'react'
-import type { Answers, Domain, Keyword, KeywordDetail, KeywordViz, Question, Topic } from './types'
+import type { Answers, Domain, Keyword, KeywordDetail, KeywordViz, Priority, Question, Tier, Topic } from './types'
 
 export interface Dataset {
   domains: Domain[]
@@ -12,6 +12,9 @@ export interface Dataset {
   keywordById: Map<string, Keyword>
   topicsByQuestion: Map<string, Topic>
   topicsByKeyword: Map<string, string[]>
+  priority: Priority
+  tierById: Map<string, Tier>
+  rankById: Map<string, number>   // 등급 안 순위 (1부터)
 }
 
 let cache: Dataset | null = null
@@ -24,11 +27,13 @@ async function fetchJson<T>(name: string): Promise<T> {
 
 export async function loadAll(): Promise<Dataset> {
   if (cache) return cache
-  const [domains, questions, topics, keywords] = await Promise.all([
+  const emptyPriority: Priority = { last_round: 0, rounds: 0, questions: 0, tiers: { S: [], A: [], T: [] } }
+  const [domains, questions, topics, keywords, priority] = await Promise.all([
     fetchJson<Domain[]>('domains'),
     fetchJson<Question[]>('questions'),
     fetchJson<Topic[]>('topics'),
     fetchJson<Keyword[]>('keywords').catch(() => [] as Keyword[]),
+    fetchJson<Priority>('priority').catch(() => emptyPriority),
   ])
   const questionById = new Map(questions.map((q) => [q.id, q]))
   const topicById = new Map(topics.map((t) => [t.id, t]))
@@ -43,7 +48,17 @@ export async function loadAll(): Promise<Dataset> {
       else topicsByKeyword.set(kid, [t.id])
     }
   }
-  cache = { domains, questions, topics, keywords, questionById, topicById, keywordById, topicsByQuestion, topicsByKeyword }
+  const tierById = new Map<string, Tier>()
+  const rankById = new Map<string, number>()
+  for (const tier of ['S', 'A', 'T'] as Tier[])
+    priority.tiers[tier].forEach((id, i) => {
+      tierById.set(id, tier)
+      rankById.set(id, i + 1)
+    })
+  cache = {
+    domains, questions, topics, keywords, questionById, topicById, keywordById, topicsByQuestion, topicsByKeyword,
+    priority, tierById, rankById,
+  }
   return cache
 }
 

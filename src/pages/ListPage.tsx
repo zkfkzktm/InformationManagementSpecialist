@@ -1,13 +1,14 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getData } from '../lib/data'
+import { TIER_INFO } from '../lib/priority'
 import { useAllProgress } from '../lib/useProgress'
 import type { DomainCode } from '../lib/types'
 
 const dot: Record<number, string> = { 0: 'bg-rule', 1: 'bg-stamp', 2: 'bg-warn', 3: 'bg-ok' }
 
 export default function ListPage() {
-  const { domains, topics, keywords } = getData()
+  const { domains, topics, keywords, tierById } = getData()
   const progress = useAllProgress()
   const [domain, setDomain] = useState<DomainCode | ''>('')
   const [q, setQ] = useState('')
@@ -81,6 +82,11 @@ export default function ListPage() {
                 <span className={`w-2 h-2 rounded-full shrink-0 ${dot[p?.confidence ?? 0]}`} aria-hidden />
                 <span className="flex-1 min-w-0 truncate">{t.title}</span>
                 {p?.bookmarked && <span className="text-xs text-pen">북마크</span>}
+                {tierById.has(t.id) && (
+                  <span className={`px-1.5 py-0.5 rounded text-xs shrink-0 ${TIER_INFO[tierById.get(t.id)!].badge}`}>
+                    {TIER_INFO[tierById.get(t.id)!].label}
+                  </span>
+                )}
                 <span className="text-xs text-ink-3 shrink-0">{t.question_ids.length}회</span>
               </Link>
             </li>

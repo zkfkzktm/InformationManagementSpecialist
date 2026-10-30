@@ -5,8 +5,9 @@ import QuestionCard from '../components/QuestionCard'
 import TopicDetail from '../components/TopicDetail'
 import { domainName, prefetchAnswers, topicQuestions } from '../lib/data'
 import { candidates, pickRandom } from '../lib/pick'
+import { TIER_FILTER_LABEL } from '../lib/priority'
 import { loadFilters, markSeen, saveFilters } from '../lib/progress'
-import type { Filters, Question, Topic } from '../lib/types'
+import type { Filters, Question, TierFilter, Topic } from '../lib/types'
 
 function pickQuestion(t: Topic, f: Filters): Question {
   let qs = topicQuestions(t)
@@ -24,7 +25,17 @@ function pickQuestion(t: Topic, f: Filters): Question {
 export default function Home() {
   const [params, setParams] = useSearchParams()
   const reviewOnly = params.get('review') === '1'
-  const [filters, setFilters] = useState<Filters>(loadFilters)
+  // ?tier=S 로 들어오면(우선 학습 화면의 '랜덤 출제') 그 등급으로 범위를 바꿔 저장
+  const tierParam = params.get('tier') as TierFilter | null
+  const [filters, setFilters] = useState<Filters>(() => {
+    const f = loadFilters()
+    if (tierParam && tierParam in TIER_FILTER_LABEL) {
+      const nf = { ...f, tier: tierParam }
+      saveFilters(nf)
+      return nf
+    }
+    return f
+  })
   const [showFilter, setShowFilter] = useState(false)
   const [topic, setTopic] = useState<Topic | null>(null)
   const [question, setQuestion] = useState<Question | null>(null)
@@ -54,6 +65,7 @@ export default function Home() {
   }
 
   const filterSummary = [
+    ...(filters.tier ? [TIER_FILTER_LABEL[filters.tier]] : []),
     filters.domains.length ? filters.domains.map(domainName).join('·') : '전체 도메인',
     filters.sessions.length === 1 ? (filters.sessions[0] === 1 ? '1교시' : '2~4교시') : '전 교시',
     filters.round_min ? `${filters.round_min}회 이후` : '전체 회차',

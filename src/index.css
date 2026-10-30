@@ -70,7 +70,10 @@ body {
   -webkit-font-smoothing: antialiased;
   line-height: 1.55;
 }
-a { color: var(--pen); }
+/* base 레이어: 유틸리티(text-paper 등)가 링크 색을 덮어쓸 수 있게 */
+@layer base {
+  a { color: var(--pen); }
+}
 button { font: inherit; }
 :focus-visible { outline: 2px solid var(--pen); outline-offset: 2px; }
 

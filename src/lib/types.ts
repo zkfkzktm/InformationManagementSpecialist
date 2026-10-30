@@ -69,4 +69,17 @@ export interface Filters {
   domains: DomainCode[]      // 빈 배열 = 전체
   sessions: Array<1 | 2>     // 1 = 1교시형, 2 = 서술형(2~4교시). 빈 배열 = 전체
   round_min: number          // 0 = 전체
+  tier?: TierFilter          // 없음·'' = 전체 토픽
+}
+
+/** 대표 토픽 등급: S 필수 · A 중요 · T 최신 (data/priority.json, scripts/build_priority.py) */
+export type Tier = 'S' | 'A' | 'T'
+/** 출제 범위: core = 필수+중요 */
+export type TierFilter = '' | 'core' | Tier
+
+export interface Priority {
+  last_round: number
+  rounds: number
+  questions: number
+  tiers: Record<Tier, string[]>   // 등급별 토픽 id, 우선순위 순
 }

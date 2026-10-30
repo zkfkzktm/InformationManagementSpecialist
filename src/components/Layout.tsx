@@ -2,6 +2,7 @@ import { NavLink, Outlet } from 'react-router-dom'
 
 const tabs = [
   { to: '/', label: '출제', end: true },
+  { to: '/priority', label: '우선' },
   { to: '/topics', label: '목록' },
   { to: '/review', label: '복습' },
   { to: '/settings', label: '설정' },
@@ -39,7 +40,7 @@ export default function Layout() {
       </main>
 
       <nav className="sm:hidden fixed bottom-0 inset-x-0 z-20 bg-sheet border-t border-rule pb-[env(safe-area-inset-bottom)]">
-        <div className="grid grid-cols-4 h-14">
+        <div className="grid grid-cols-5 h-14">
           {tabs.map((t) => (
             <NavLink
               key={t.to}

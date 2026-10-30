@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { domainName, getData, topicQuestions, useAnswers } from '../lib/data'
+import { TIER_INFO } from '../lib/priority'
 import type { Topic } from '../lib/types'
 import AnswerView from './AnswerView'
 import PdfMenu from './PdfMenu'
@@ -19,14 +20,22 @@ export default function TopicDetail({ topic, initialTab }: { topic: Topic; initi
     if (initialTab) setTab(initialTab)
   }, [initialTab, topic.id])
   const md = tab === 'short' ? answers.data?.short : answers.data?.long
-  const { keywordById } = getData()
+  const { keywordById, tierById, rankById } = getData()
+  const tier = tierById.get(topic.id)
   const kws = (topic.keywords ?? []).map((id) => keywordById.get(id)).filter((k) => !!k)
 
   return (
     <section className="flex flex-col gap-4">
       <header className="flex items-start gap-3">
         <div className="flex-1 min-w-0">
-          <div className="text-sm text-ink-3">{domainName(topic.domain)}</div>
+          <div className="text-sm text-ink-3 flex items-center gap-1.5">
+            {domainName(topic.domain)}
+            {tier && (
+              <Link to={`/priority?tier=${tier}`} className={`px-1.5 py-0.5 rounded text-xs no-underline ${TIER_INFO[tier].badge}`}>
+                {TIER_INFO[tier].label} {rankById.get(topic.id)}위
+              </Link>
+            )}
+          </div>
           <h1 className="text-xl font-bold m-0 leading-snug">{topic.title}</h1>
           {topic.title_en && topic.title_en !== topic.title && (
             <div className="text-sm text-ink-2">{topic.title_en}</div>

@@ -5,6 +5,7 @@ import { AuthProvider } from './lib/auth'
 import { loadAll } from './lib/data'
 import Home from './pages/Home'
 import ListPage from './pages/ListPage'
+import PriorityPage from './pages/PriorityPage'
 import ReviewPage from './pages/ReviewPage'
 import SettingsPage from './pages/SettingsPage'
 import TopicPage from './pages/TopicPage'
@@ -35,6 +36,7 @@ export default function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<Home />} />
+            <Route path="priority" element={<PriorityPage />} />
             <Route path="topics" element={<ListPage />} />
             <Route path="topic/:id" element={<TopicPage />} />
             <Route path="wiki/:id" element={<WikiPage />} />

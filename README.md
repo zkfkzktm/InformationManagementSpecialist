@@ -25,6 +25,8 @@
 | `public/data/kw/{첫글자}.json` | 키워드 위키 본문 (위키를 열 때 로딩) |
 | `public/data/kwviz/{앞 2글자}.json` | 키워드 도식(mermaid)·슈도코드 (위키를 열 때 로딩) |
 | `public/data/domains.json` | 도메인 8개 |
+| `public/data/priority.json` | 대표 토픽 등급(필수·중요·최신)과 우선순위 — 우선 학습 화면 |
+| `scripts/build_priority.py` | 기출 빈도·최근성으로 대표 토픽 선정 → priority.json (수동 조정: `scripts/priority_rules.json`) |
 | `scripts/parse_questions.py` | 기출 PDF/HWP → questions.json |
 | `scripts/merge_topics.py` | 문항별 토픽 추출 결과 → topics.json |
 | `scripts/build_content.py` | 답안·키워드 생성물 병합 → topics·answers·keywords·kw 분할 저장 |
@@ -67,6 +69,7 @@ npm run dev
 |---|---|---|
 | 기출 파싱 | `python3 scripts/parse_questions.py <기출 폴더>` | PDF/HWP → `questions.json` (99·101·102·105·107회는 `scripts/manual/` 수기 전사 사용) |
 | 토픽 병합 | `python3 scripts/merge_topics.py` | `scripts/topicwork/topics*.json` + `scripts/merge_rules.json` → `topics.json` |
+| 대표 토픽 | `python3 scripts/build_priority.py` | `questions.json`·`topics.json` → `priority.json` (새 회차 추가 후 실행) |
 | 답안 병합 | `python3 scripts/build_content.py` | `scripts/content/*.json`, `scripts/contentwork/keywords-*.json`, `scripts/contentwork/kwviz/`, `scripts/keyword_rules.json` → `public/data/` |
 
 ## 예정된 막힘
