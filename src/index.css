@@ -112,6 +112,14 @@ button { font: inherit; }
 .answer a.kw:hover { text-decoration-style: solid; }
 .answer blockquote { margin: 0; padding-left: 0.75rem; border-left: 3px solid var(--rule); color: var(--ink-2); }
 .answer hr { border: 0; border-top: 1px solid var(--ink-3); margin: 0.875rem 0; }
+/* 구성도: 괘선 가림 + 가운데 정렬 + 넓으면 가로 스크롤. 답안 본문 줄간격이 라벨에 새지 않게 초기화 */
+.answer .diagram {
+  background: var(--sheet); border: 1px solid var(--rule); border-radius: 4px;
+  padding: 0.75rem; margin: 0.875rem 0; overflow-x: auto;
+  line-height: normal; text-align: center;
+}
+.answer .diagram svg { display: inline-block; max-width: 100%; height: auto; }
+.answer .diagram:empty { min-height: 6rem; }
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }

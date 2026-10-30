@@ -1,5 +1,7 @@
 import { useEffect, useId, useRef, useState } from 'react'
 
+const FONT = '"Pretendard Variable", Pretendard, sans-serif'
+
 let mermaidPromise: Promise<typeof import('mermaid')['default']> | null = null
 function loadMermaid() {
   if (!mermaidPromise)
@@ -9,13 +11,25 @@ function loadMermaid() {
       m.default.initialize({
         startOnLoad: false,
         theme: dark ? 'dark' : 'neutral',
-        fontFamily: 'Pretendard Variable, Pretendard, sans-serif',
-        flowchart: { htmlLabels: true, curve: 'linear' },
+        fontFamily: FONT,
+        htmlLabels: true,
+        // wrappingWidth: mermaid 12 기본 120px → 짧은 라벨도 '·' 뒤에서 줄바꿈되는 문제
+        flowchart: { curve: 'basis', wrappingWidth: 220, nodeSpacing: 30, rankSpacing: 50, padding: 12 },
         securityLevel: 'strict',
       })
       return m.default
     })
   return mermaidPromise
+}
+
+/** 라벨 글자가 든 웹폰트 조각(unicode-range)을 먼저 받아야 박스 크기가 맞음 */
+function loadFontFor(code: string) {
+  if (!document.fonts?.load) return Promise.resolve()
+  const chars = Array.from(new Set(code.replace(/\s/g, ''))).join('')
+  return Promise.race([
+    Promise.all([document.fonts.load(`16px ${FONT}`, chars), document.fonts.load(`bold 16px ${FONT}`, chars)]),
+    new Promise((r) => setTimeout(r, 3000)),
+  ]).catch(() => undefined)
 }
 
 /** 구성도: mermaid 코드 → SVG. 실패하면 원문 코드를 그대로 보여줌 */
@@ -25,8 +39,9 @@ export default function Mermaid({ code }: { code: string }) {
   const [failed, setFailed] = useState(false)
   useEffect(() => {
     let alive = true
-    loadMermaid()
-      .then((m) => m.render(`mm${id}`, code))
+    Promise.all([loadMermaid(), loadFontFor(code)])
+      // 측정용 임시 요소를 같은 자리(.answer 안)에 만들어 실제 표시 CSS와 같은 조건으로 크기 계산
+      .then(([m]) => m.render(`mm${id}`, code, ref.current ?? undefined))
       .then(({ svg }) => {
         if (alive && ref.current) ref.current.innerHTML = svg
       })
@@ -36,5 +51,5 @@ export default function Mermaid({ code }: { code: string }) {
     }
   }, [code, id])
   if (failed) return <pre>{code}</pre>
-  return <div ref={ref} className="diagram my-3 overflow-x-auto [&_svg]:max-w-full [&_svg]:h-auto" />
+  return <div ref={ref} className="diagram" />
 }
